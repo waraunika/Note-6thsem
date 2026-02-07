@@ -1,0 +1,251 @@
+{
+  "main": {
+    "id": "9697e70f202b841a",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab9ed6a85da79764",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6810633da72b3e92",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OOSE/Chapter 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 1"
+            }
+          },
+          {
+            "id": "be345448503f09cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OOSE/Chapter 3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 3"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fe4965da53112d14",
+    "type": "split",
+    "children": [
+      {
+        "id": "7534692cdf6496d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b7e92c52599ac8e1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "304d0e66d16e56a8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d1143b630c759feb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "eaf33f7d715fa62b",
+    "type": "split",
+    "children": [
+      {
+        "id": "e8195a9d4ad0ad27",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1bde39abb95c9787",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Antenna and Propag/Chapter 1 - Propagation and Antenna.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Chapter 1 - Propagation and Antenna"
+            }
+          },
+          {
+            "id": "c3f6672b43331b29",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Signals and Systems.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Signals and Systems"
+            }
+          },
+          {
+            "id": "34c12d740025a5a2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3b74ca1daf5ac5ea",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "2449cb5ce173346c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "OOSE/Chapter 1.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Chapter 1"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 232.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "6810633da72b3e92",
+  "lastOpenFiles": [
+    "OOSE/attachments/Pasted image 20260207113002.png",
+    "OOSE/attachments/Pasted image 20260207111321.png",
+    "OOSE/attachments/Pasted image 20260207110958.png",
+    "OOSE/attachments/Pasted image 20260207110456.png",
+    "OOSE/attachments/Pasted image 20260207104850.png",
+    "OOSE/attachments/Pasted image 20260207103157.png",
+    "OOSE/attachments/Pasted image 20260207101311.png",
+    "OOSE/attachments/sdlc.png",
+    "OOSE/attachments",
+    "OOSE/Chapter 3.md",
+    "OOSE/Chapter 1.md",
+    "2026-02-03.md",
+    "Untitled.md",
+    "Untitled.canvas",
+    "2026-01-28.md",
+    "attachments/Screenshot_2026-01-28_PageMarker.png",
+    "attachments/Screenshot_2026-01-28_PageMarker_1.png",
+    "2026-01-25.md",
+    "Short Points/Antenna/Chapter 2.md",
+    "Short Points/Antenna/Chapter 1.md",
+    "Antenna and Propag/Chapter 3 - Antennas Classification.md",
+    "Short Points/Antenna/attachments/3.jpg",
+    "Antenna and Propag/Chapter 1 - Propagation and Antenna.md",
+    "Short Points/Antenna/attachments",
+    "2026-01-21.md",
+    "2026-01-22.md",
+    "Chapter.md",
+    "Short Points/Antenna",
+    "Short Points",
+    "attachments",
+    "Antenna and Propag/Chapter.md",
+    "Syllabus.md",
+    "2026-01-20.md",
+    "Communication System/Class.md",
+    "Antenna and Propag/Chapter 2 - Antenna Parameters & Arrays.md",
+    "Antenna and Propag/attachments",
+    "Communication System/Chapter 1 - Introduction to Communication System (CS).md",
+    "English/English RK.md",
+    "Communication System/Chapter 2 - Representation of signals and systems in communication.md",
+    "Communication System/Chapter 4 - Amplitude Modulation and Demodulation.md",
+    "Communication System/Chapter 3 - Spectral Analysis.md",
+    "English/English VKY.md",
+    "English",
+    "Untitled",
+    "Untitled.base",
+    "Communication System/attachments",
+    "Signals and Systems.md"
+  ]
+}
