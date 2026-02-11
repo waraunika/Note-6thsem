@@ -33,6 +33,18 @@
 	- front to back ratio (FBR) = $\dfrac{max\ P_{av}\ in\ back\ lobe}{max\ P_{av}\ in\ main\ lobe}$
 	- minimum value is used
 ## C. Antenna Gain
+- ndjasda
+- kjadjnasd
+	- dnajs dasdjas
+	- adjkdndasjndjas
+		- kajsdjasndasjd
+			- pjsncasn
+			1. jdnjsandjsa
+			2. jnjan
+			3. snjansd
+			4. kjsanj
+
+
 - this antenna gain is used for only aperture antenna
 - can be for both, Tx or Rx
 - only depends on $\lambda$

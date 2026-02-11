@@ -4,10 +4,12 @@
   "vimMode": true,
   "pdfExportSettings": {
     "includeName": true,
-    "pageSize": "Letter",
-    "landscape": false,
-    "margin": "0",
+    "pageSize": "A3",
+    "landscape": true,
+    "margin": "2",
     "downscalePercent": 100
   },
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "spellcheck": true,
+  "readableLineLength": false
 }
