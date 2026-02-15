@@ -47,15 +47,7 @@
 	- adaptable to choose appropriate actions based on the project
 - a **roadmap** for building software through predictable steps
 - Goal is to ensure high-quality software
-
-| S.N. | Feature1     | Feature2                                                             |
-| ---- | ------------ | -------------------------------------------------------------------- |
-| 1    | Apple        | Apple is a wet fruit that is wet. it is nice                         |
-| 2    | Banana Shake | Banana is bananaing but what bananaing ajsndassdad<br>laijiadisdaisd |
-|      |              |                                                                      |
-|      |              |                                                                      |
-
-- Roles:
+Roles:
 	- **Software engineers** perform the work
 	- **Managers** manage/adapt the process
 	- **Stakeholders** contribute to defining, building, and testing.

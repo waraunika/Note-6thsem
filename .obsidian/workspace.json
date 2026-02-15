@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OOSE/Chapter 3.md",
+                "file": "OOSE/Chapter 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 3"
+              "title": "Chapter 1"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "eaf33f7d715fa62b",
@@ -171,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OOSE/Chapter 3.md",
+                "file": "OOSE/Chapter 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 3"
+              "title": "Outline of Chapter 1"
             }
           }
         ],
@@ -201,8 +202,8 @@
   },
   "active": "4440260a1043bffd",
   "lastOpenFiles": [
-    "OOSE/Chapter 1.md",
     "OOSE/Chapter 3.md",
+    "OOSE/Chapter 1.md",
     "push.sh~",
     "OOSE/attachments/Pasted image 20260214165610.png",
     "OOSE/attachments/Pasted image 20260214105919.png",
