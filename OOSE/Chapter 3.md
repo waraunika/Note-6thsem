@@ -1,7 +1,7 @@
 ---
 ---
 # 3.1 Class Relationship
-Present at: [[#3.2.B Relationships]]
+Present at: [[#3.A.v Class Relationship]]
 # 3.2 Conceptual Model of UML
 ## 3.2.A Concept of UML
 - Unified Modeling Language
