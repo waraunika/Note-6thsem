@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "eaf33f7d715fa62b",
@@ -203,6 +202,8 @@
   },
   "active": "4440260a1043bffd",
   "lastOpenFiles": [
+    "OOSE/Chapter 1.md",
+    "OOSE/Chapter 3.md",
     "push.sh~",
     "OOSE/attachments/Pasted image 20260214165610.png",
     "OOSE/attachments/Pasted image 20260214105919.png",
@@ -223,7 +224,6 @@
     "Project Management/MCQ",
     "2026-02-11.md",
     "Project Management",
-    "OOSE/Chapter 1.md",
     "2026-02-10.md",
     "Short Points/Untitled.md",
     "2026-02-08.md",
@@ -234,7 +234,6 @@
     "2026-02-03.md",
     "Short Points/Antenna/Chapter 2.md",
     "Short Points/Antenna/Chapter 1.md",
-    "OOSE/Chapter 3.md",
     "OOSE/attachments",
     "Untitled.canvas",
     "2026-01-25.md",
@@ -248,7 +247,6 @@
     "Antenna and Propag/Chapter.md",
     "Syllabus.md",
     "Antenna and Propag/attachments",
-    "English",
-    "Untitled"
+    "English"
   ]
 }

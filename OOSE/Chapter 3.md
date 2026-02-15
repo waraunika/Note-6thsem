@@ -1329,7 +1329,7 @@ Postconditions:
 | **Analyze performance**            | Network bandwidth, processing load           |
 | **Document physical architecture** | Installation, configuration                  |
 ### 3.H.iii Components
-1. Node
+1. **Node**
 	- a physical element that exists at run time, represents a computation resource
 	- generally has some memory and processing capability
 	- types:
@@ -1341,48 +1341,1123 @@ Postconditions:
 			- e.g., Printer, sensor, modem
 	- used to model the topology of the hardware on which our system executes.
 	- graphically a node is rendered as a cube.
-2. Names
+2. **Names**
 	- is a textual string.
 	- must be unique within its enclosing package to distinguish other nodes.
-	- that name alone is known as a simple name;
-	- a path name is the node name prefixed by the name of the package in which that node lives.
-	- a node is typically shown only its  name, as in figure below.
+	- types:
+		- Simple Name:
+			- Just the name
+			- e.g., `WebServer`
+		- Path Name:
+			- Package + name
+			- e.g., `Production::Webserver`
+	- Figure:
 		- ![[Pasted image 20260214104447.png]]
 	- just as with classes, we may draw nodes adorned with tagged values or with additional compartments to expose their details.
-### 3.H.iii Common uses
-- to model the static deployment view of a system
-- this view primarily addresses the distribution, delivery and installation of the parts that make up the physical system.
-- there are some kinds of systems for which deployment diagrams are unnecessary.
-- if we are developing a piece of software that lives on one machine and interfaces only with standard devices on that machine that are already managed by the host operating system (for example, a personal computer's keyboard, display and modem), we can ignore deployment diagrams.
-- on the other hand, if we are developing a piece of software that interacts with devices that the host operating system does not typically manage or that is physically distributed across multiple processors, then using deployment diagrams will help us reason about our system's software to hardware mapping
-- when we model the static deployment view of a system, we'll typically use deployment diagrams in one of three ways.
-	- **To model embedded systems**
-		- an emebedded system is a software intensive collection of harhdware that interfaces with the physical world.
-		- embedded systems involve software thhat control device such as motors, actuators, and displays and thaht, in turn, is controlled by external stimuli such as sensor input, movement, and temperature changes.
-		- we can use deployment diagrams to model the devices and processors that comprise an embedded system.
-			- example
-				- ![[Pasted image 20260214105430.png]]
-				- we'll find one node (pentium motherboard) stereotyped as a processor. surrounding this node are eight devices, each stereotyped as a device and rendered with an icon thaht offers a clear visual cue to its real world equivalent.
-	- **to model client/server systems**
-		- a client/server system is a common architecture focused on making a clear separation of concerns between the system's user interface (which lives on the client) and the system's persistent data (which lives on the server)
-		- client/server systems are one end of the continuum of distributed systems and require us to make decisions about the network connectivity of clients to servers and about the physical distribution of our system's software components across the nodes.
-		- we can model the topology of such systems by using deployment diagrams.
-			- example:
-				- ![[Pasted image 20260214105525.png]]
-	- **to model fully distributed systems**
-		- at the end of the continuum of distributed systems are those that are widely, if not globally, distributed, typically encompassing multiple levels of servers
-		- such systems are often hosts to multiple versions of software components, some of which may even migrate from node to node
-		- crafting such systems require us to make decision that enable the continuous change in system's topology.
-		- we can use deployment diagrams to visualize the system's current topology and distribution of components to reason about the impact of changes on that topology.
-			- example:
-				- ![[Pasted image 20260214105545.png]]# 3.3 Class Diagram
+3. **Component on Nodes**
+	- Components are placed inside nodes where they execute
+```
+┌─────────────────────────┐
+│      WebServer          │
+│  ┌─────────────────┐    │
+│  │  <<component>>  │    │
+│  │  WebApp.war     │    │
+│  └─────────────────┘    │
+│  ┌─────────────────┐    │
+│  │  <<component>>  │    │
+│  │  AuthModule.dll │    │
+│  └─────────────────┘    │
+└─────────────────────────┘
+```
+4. Communication Paths
+	- Definition: Association between nodes showing communication
+	- Notation of solid line between nodes
+	- Can show protocol or network type.
+```
+┌─────────────┐     HTTP      ┌─────────────┐
+│ WebServer   │───────────────│ ClientPC    │
+└─────────────┘               └─────────────┘
+```
+### 3.H.iv Common uses
+1. **To model embedded systems**
+	- Hardware + software integration
+	- Sensor, actuators, contropllers
+	- Real-time constraints
+		- example
+			- ![[Pasted image 20260214105430.png]]
+		- we'll find one node (pentium motherboard) stereotyped as a processor. surrounding this node are eight devices, each stereotyped as a device and rendered with an icon thaht offers a clear visual cue to its real world equivalent.
+2. **Model client/server systems**
+	- Client nodes, server nodes
+	- network connections
+	- load balancing, failover
+		- example:
+			- ![[Pasted image 20260214105525.png]]
+3. **Model fully distributed systems**
+	- Multiple server tiers
+	- Geographic distribution
+	- Replication, caching
+		- example:
+			- ![[Pasted image 20260214105545.png]]
+4. **Model System Topology**
+	- Network Architecture
+	- Hardware specifications
+	- Communication Protocols
+### 3.H.v Examples
+#### H.iv.a Simple Client-Server System
+```
+┌─────────────────────────┐      ┌─────────────────────────┐
+│      ClientPC           │      │      DatabaseServer     │
+│  ┌─────────────────┐    │      │  ┌─────────────────┐    │
+│  │  <<component>>  │    │      │  │  <<component>>  │    │
+│  │  Browser        │    │      │  │  Oracle 19c     │    │
+│  └─────────────────┘    │      │  └─────────────────┘    │
+│                         │      │                         │
+│  ┌─────────────────┐    │      │  ┌─────────────────┐    │
+│  │  <<component>>  │    │      │  │  <<component>>  │    │
+│  │  VPN Client     │    │      │  │  Backup Agent   │    │
+│  └─────────────────┘    │      │  └─────────────────┘    │
+└─────────────────────────┘      └─────────────────────────┘
+            │                                    │
+            │          HTTPS (Internet)          │
+            └────────────────────────────────────┘
+```
+#### H.iv.b Three-Tier Architecture
+```
+┌─────────────────┐
+│  Client Tier    │
+│  ┌───────────┐  │
+│  │ PC        │  │
+│  │ Browser   │  │
+│  └───────────┘  │
+└────────┬────────┘
+         │ HTTPS
+         ▼
+┌─────────────────┐
+│  Web Tier       │
+│  ┌───────────┐  │
+│  │ WebServer │  │
+│  │ Tomcat    │  │
+│  │ WebApp.war│  │
+│  └───────────┘  │
+└────────┬────────┘
+         │ RMI/IIOP
+         ▼
+┌─────────────────┐
+│  Business Tier  │
+│  ┌───────────┐  │
+│  │ AppServer │  │
+│  │ JBoss/EJB │  │
+│  │ Orders.jar│  │
+│  │ Payment.jar│ │
+│  └───────────┘  │
+└────────┬────────┘
+         │ JDBC
+         ▼
+┌─────────────────┐
+│  Data Tier      │
+│  ┌───────────┐  │
+│  │ Database  │  │
+│  │ Server    │  │
+│  │ MySQL     │  │
+│  └───────────┘  │
+└─────────────────┘
+```
+#### H.iv.c: Embedded System
+```
+┌───────────────────────────────────────┐
+│  Factory Floor                        │
+│                                       │
+│  ┌─────────────────┐                  │
+│  │  Control Room   │                  │
+│  │  ┌───────────┐  │                  │
+│  │  │ HMI PC    │  │                  │
+│  │  │ SCADA     │  │                  │
+│  │  └───────────┘  │                  │
+│  └────────┬────────┘                  │
+│           │ Ethernet                  │
+│           ▼                           │
+│  ┌─────────────────┐                  │
+│  │  PLC Rack       │                  │
+│  │  ┌───────────┐  │  ┌───────────┐   │
+│  │  │ CPU Module│  │──│ I/O Module│   │
+│  │  │ Control   │  │  │ Sensors   │   │
+│  │  │ Logic     │  │  └───────────┘   │
+│  │  └───────────┘  │                  │
+│  │  ┌───────────┐  │  ┌───────────┐   │
+│  │  │ Comm      │  │──│ Motor     │   │
+│  │  │ Module    │  │  │ Driver    │   │
+│  │  └───────────┘  │  └───────────┘   │
+│  └─────────────────┘                  │
+│                                       │
+│  ┌─────────────────┐                  │
+│  │  Sensor Network │                  │
+│  │  ┌───────────┐  │  ┌───────────┐   │
+│  │  │ Temp      │  │  │ Pressure  │   │
+│  │  │ Sensor    │  │  │ Sensor    │   │
+│  │  └───────────┘  │  └───────────┘   │
+│  │  ┌───────────┐  │                  │
+│  │  │ Proximity │  │                  │
+│  │  │ Sensor    │  │                  │
+│  │  └───────────┘  │                  │
+│  └─────────────────┘                  │
+└───────────────────────────────────────┘
+```
+#### H.iv.d Mobile/Cloud Application
+```
+┌──────────────────┐
+│  Mobile Device   │
+│  ┌────────────┐  │
+│  │ iOS/Android│  │
+│  │ Mobile App │  │
+│  │ Offline    │  │
+│  │ Cache      │  │
+│  └────────────┘  │
+└────────┬─────────┘
+         │ 4G/WiFi
+         ▼
+┌─────────────────┐
+│  CDN            │
+│  ┌───────────┐  │
+│  │ Edge      │  │
+│  │ Server    │  │
+│  │ Static    │  │
+│  │ Content   │  │
+│  └───────────┘  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────────────────────────┐
+│  Cloud Provider (AWS/Azure)         │
+│  ┌─────────────────────────────┐    │
+│  │ Load Balancer               │    │
+│  └─────────────┬───────────────┘    │
+│                │                    │
+│  ┌─────────────┴───────────────┐    │
+│  │ Web Server Farm             │    │
+│  │ ┌─────────┐ ┌─────────┐     │    │
+│  │ │ EC2-1   │ │ EC2-2   │     │    │
+│  │ │ Node.js │ │ Node.js │     │    │
+│  │ └─────────┘ └─────────┘     │    │
+│  └─────────────┬───────────────┘    │
+│                │                    │
+│  ┌─────────────┴───────────────┐    │
+│  │ Database Cluster            │    │
+│  │ ┌─────────┐ ┌─────────┐     │    │
+│  │ │ Primary │ │ Replica │     │    │
+│  │ │ MongoDB │ │ MongoDB │     │    │
+│  │ └─────────┘ └─────────┘     │    │
+│  └─────────────────────────────┘    │
+│                                     │
+│  ┌─────────────────────────────┐    │
+│  │ Storage                     │    │
+│  │ S3 Bucket / Images          │    │
+│  └─────────────────────────────┘    │
+└─────────────────────────────────────┘
+```
+#### H.iv.e With Node Stereotypes
+```
+┌─────────────────────────┐
+│ <<processor>>           │
+│   ApplicationServer     │
+│   {OS = Linux}          │
+│   {vendor = Dell}       │
+│   {cores = 16}          │
+│   {ram = 64GB}          │
+│                         │
+│   ┌─────────────────┐   │
+│   │  app.war        │   │
+│   └─────────────────┘   │
+└─────────────────────────┘
+            │
+            │ Gigabit Ethernet
+            │
+┌─────────────────────────┐
+│ <<device>>              │
+│   NetworkAttachedStorage│
+│   {capacity = 10TB}     │
+│   {protocol = NFS}      │
+│                         │
+│   ┌─────────────────┐   │
+│   │  backup.dat     │   │
+│   └─────────────────┘   │
+└─────────────────────────┘
+```
+#### Example 6: With Communication Protocols
+```
+┌─────────────┐              ┌─────────────┐
+│  WebServer  │  <<HTTP>>    │  Client     │
+│  Port: 80   │──────────────│  Browser    │
+│  HTTPS: 443 │              └─────────────┘
+└─────────────┘
+      │
+      │ <<RMI>> 1099
+      │
+      ▼
+┌─────────────┐    <<JDBC>> 3306     ┌─────────────┐
+│ AppServer   │──────────────────────│ Database    │
+│ Port: 8080  │                      │ Port: 3306  │
+└─────────────┘                      └─────────────┘
+      │
+      │ <<JMS>>
+      │
+      ▼
+┌─────────────┐
+│ MessageQueue│
+│ ActiveMQ    │
+└─────────────┘
+```
+### 3.H.vi Component vs Deployment
+|Aspect|Component Diagram|Deployment Diagram|
+|---|---|---|
+|**Focus**|Software components|Hardware nodes|
+|**Elements**|Components, interfaces|Nodes, devices, components on nodes|
+|**Shows**|Code structure, dependencies|Physical deployment|
+|**Relationships**|Dependencies, realizations|Communication paths|
+|**Level**|Implementation view|Deployment view|
+|**Question answered**|_What are the parts?_|_Where do they run?_|
+## 3.3.I Summary
+|Diagram|View|Focus|
+|---|---|---|
+|**Class Diagram**|Logical|Static structure|
+|**Object Diagram**|Logical|Instances at a moment|
+|**Use Case Diagram**|Use Case|Functional requirements|
+|**Sequence Diagram**|Dynamic|Time-ordered messages|
+|**Communication Diagram**|Dynamic|Message + structure|
+|**Activity Diagram**|Dynamic|Workflow/process|
+|**State Diagram**|Dynamic|Object lifecycle|
+|**Component Diagram**|Implementation|Physical code structure|
+|**Deployment Diagram**|Deployment|Hardware topology|
 # 3.4 Advanced Classes
-Present at: [[#3.4 Advanced Classes]]
+### 3.4.A Overview
+- Beyond basic class notation (name, attributes, operations), UML provides **advanced class features** for precise modeling.
+- Used when standard class notation isn't sufficient for complex scenarios.
+### 3.4.B Advanced Class Features
+#### 1. **Class Multiplicity**
+- **Definition**: Number of instances a class may have.
+- **Notation**: Multiplicity expression in **upper-right corner** of class rectangle.
+- **Purpose**: Specify cardinality constraints at class level.
+```
+┌──────────────────┐ 1
+│ NetworkController│
+├──────────────────┤
+│ - instanceId     │
+│ + getInstance()  │
+└──────────────────┘
+┌─────────────────┐ 0..3
+│   ControlRod    │
+├─────────────────┤
+│ - position      │
+│ + raise()       │
+└─────────────────┘
+```
+
+|Multiplicity|Meaning|
+|---|---|
+|`1`|Exactly one (singleton)|
+|`0..1`|Zero or one|
+|`*`|Many (unbounded)|
+|`1..*`|One or more|
+|`3`|Exactly three|
+|`2..5`|Two to five|
+#### 2. **Abstract Class**
+- **Definition**: Class that **cannot be instantiated**; used only as parent.
+- **Notation**: Class name in _italics_ OR `{abstract}` below name.
+- **Purpose**: Provide common interface/behavior for subclasses.
+```
+┌─────────────────┐
+│   *Shape*       │  ← italics
+├─────────────────┤
+│ + area() *      │  ← abstract method in italics
+│ + draw() *      │
+└─────────────────┘
+        ▲
+        │
+ ┌──────┴─────────┐
+ │                │
+┌▼─────┐       ┌──▼───┐
+│Circle│       │Square│
+└──────┘       └──────┘
+```
+
+#### 3. **Root, Leaf, and Polymorphic Elements**
+| Type                      | Notation  | Meaning                               |
+| ------------------------- | --------- | ------------------------------------- |
+| **Root Class**            | `{root}`  | No ancestors (top of hierarchy)       |
+| **Leaf Class**            | `{leaf}`  | No descendants (cannot be subclassed) |
+| **Polymorphic Operation** | _italics_ | Can be overridden in subclasses       |
+```
+┌─────────────────┐ {root}
+│   Vehicle       │
+├─────────────────┤
+│ + move() *      │ ← polymorphic
+└─────────────────┘
+        ▲
+        │
+ ┌──────┴────────┐
+ │               │
+┌▼────┐       ┌──▼──┐ {leaf}
+│ Car │       │ Bike│ ← cannot be subclassed
+└─────┘       └─────┘
+```
+#### 4. **Active Class**
+- **Definition**: Class whose instances **own a thread of control** and can initiate activities.
+- **Notation**: Thick border on class rectangle.
+- **Purpose**: Model concurrent/autonomous objects.
+```
+┌═════════════┐
+║   Sensor    ║  ← thick border
+║   Monitor   ║
+├═════════════┤
+║ - threshold ║
+├═════════════┤
+║ + run()     ║
+║ + alert()   ║
+└═════════════┘
+```
+#### 5. **Parameterized Class (Template)
+- **Definition**: Class with **type parameters** for generic programming.
+- **Notation**: Dotted rectangle in upper-right corner with parameters.
+- **Purpose**: Reusable class definitions.
+```
+┌─────────────────┐
+│     List<T>     │
+├─────────────────┤
+│ - items: T[]    │
+├─────────────────┤
+│ + add(item: T)  │
+│ + get(index): T │
+└─────────────────┘
+// Instantiated as:
+┌─────────────────┐
+│ List<Student>   │
+└─────────────────┘
+```
+#### 6. **Utility Class**
+- **Definition**: Class with only **class-scoped features** (static methods/attributes).
+- **Notation**: `«utility»` stereotype.
+- **Purpose**: Group related functions; no instances.
+```
+┌─────────────────┐
+│ «utility»       │
+│ MathUtils       │
+├─────────────────┤
+│ + PI: double    │
+├─────────────────┤
+│ + sin(x): double│
+│ + cos(x): double│
+└─────────────────┘
+```
+#### 7. **Metaclass**
+- **Definition**: Class whose instances are **classes**.
+- **Notation**: `«metaclass»` stereotype.
+- **Purpose**: Model class-of-class relationships (e.g., in modeling tools).
+```
+┌─────────────────┐
+│ «metaclass»     │
+│    Class        │
+├─────────────────┤
+│ - name: String  │
+│ - attributes    │
+└─────────────────┘
+        │
+        │ instanceOf
+        ▼
+┌─────────────────┐
+│   Student       │ ← this is a class (instance of Class)
+└─────────────────┘
+```
+### 3.4.C Advanced Attribute Features
+#### 1. **Attribute Multiplicity**
+- **Definition**: How many values an attribute can hold.
+- **Notation**: `[min..max]` after type.
+```
+┌─────────────────┐
+│    Student      │
+├─────────────────┤
+│ - name: String[1]    ← exactly one
+│ - phone: String[0..*] ← zero or more
+│ - grades: int[5]      ← exactly five
+└─────────────────┘
+```
+#### 2. **Derived Attribute**
+- **Definition**: Attribute whose value can be **computed** from others.
+- **Notation**: `/` before attribute name.
+```
+┌─────────────────┐
+│    Person       │
+├─────────────────┤
+│ - birthDate: Date
+│ - /age: int     ← computed from birthDate
+└─────────────────┘
+```
+#### 3. **Attribute Properties**
+| Property     | Meaning                            | Notation     |
+| ------------ | ---------------------------------- | ------------ |
+| **readOnly** | Cannot change after initialization | `{readOnly}` |
+| **unique**   | Value must be unique               | `{unique}`   |
+| **ordered**  | Elements have order                | `{ordered}`  |
+| **bag**      | Unordered collection               | `{bag}`      |
+```
+┌─────────────────┐
+│    Course       │
+├─────────────────┤
+│ - courseId: String {unique, readOnly}
+│ - students: Student[*] {ordered}
+│ - tags: String[*] {bag}
+└─────────────────┘
+```
+### 3.4.D Advanced Operation Features
+#### 1. **Query Operation**
+- **Definition**: Operation that **doesn't modify** the object state.
+- **Notation**: `{query}` property.
+```
+┌─────────────────┐
+│    BankAccount  │
+├─────────────────┤
+│ - balance: Money│
+├─────────────────┤
+│ + getBalance(): Money {query}
+│ + calculateInterest(): Money {query}
+│ + deposit(amount: Money)  ← not a query
+└─────────────────┘
+```
+#### 2. **Operation Concurrency**
+| Stereotype     | Meaning                             |
+| -------------- | ----------------------------------- |
+| `{sequential}` | Must coordinate access              |
+| `{guarded}`    | Multiple calls safe                 |
+| `{concurrent}` | Multiple simultaneous calls allowed |
+```
+┌─────────────────┐
+│    Printer      │
+├─────────────────┤
+│ + print(doc) {guarded}
+│ + cancel() {sequential}
+└─────────────────┘
+```
+### 3.4.E Visibility Beyond Basic
+| Visibility    | Symbol | Scope        | Meaning                             |
+| ------------- | ------ | ------------ | ----------------------------------- |
+| **Public**    | `+`    | Any          | Accessible to all                   |
+| **Protected** | `#`    | Subclasses   | Accessible in inheritance hierarchy |
+| **Private**   | `-`    | Same class   | No external access                  |
+| **Package**   | `~`    | Same package | Accessible within package           |
+```
+┌─────────────────┐
+│    Employee     │
+├─────────────────┤
+│ + name: String  │  ← public
+│ # ssn: String   │  ← protected
+│ - salary: Money │  ← private
+│ ~ dept: String  │  ← package
+├─────────────────┤
+│ + work()        │
+│ # getSSN()      │
+│ - calculateTax()│
+└─────────────────┘
+```
+### 3.4.F Advanced Class Relationships Summary
+| Feature                 | Purpose               | Example                       |
+| ----------------------- | --------------------- | ----------------------------- |
+| **Class Multiplicity**  | Limit instances       | Singleton (1), ControlRod (3) |
+| **Abstract Class**      | Common interface      | Shape                         |
+| **Root/Leaf**           | Hierarchy constraints | Vehicle {root}, Bike {leaf}   |
+| **Active Class**        | Concurrent objects    | SensorMonitor                 |
+| **Parameterized Class** | Generics/templates    | List<T>                       |
+| **Utility Class**       | Static methods        | MathUtils                     |
+| **Metaclass**           | Class-of-classes      | Class (in modeling tools)     |
 # 3.5 Advanced Relationship
-yet to be done
+### 3.5.A Overview
+- Beyond basic relationships (dependency, association, generalization), UML provides **advanced relationships** for more precise modeling.
+- Used when standard relationships don't capture specific semantics.
+### 3.5.B Types of Advanced Relationships
+
+#### 1. **Derived Association**
+- **Definition**: Association that can be **computed** from other associations.
+- **Notation**: `/` (slash) before association name.
+- **Purpose**: Show redundancy explicitly; avoid duplication.
+```
+┌─────────┐          ┌─────────┐
+│ Person  │          │ Company │
+└─────────┘          └─────────┘
+     │                     │
+     │ /employer           │
+     │ (derived from       │
+     │  worksFor)          │
+     └─────────────────────┘
+     
+     ┌─────────┐
+     │ WorksFor│
+     └─────────┘
+```
+#### 2. **Qualified Association**
+- **Definition**: Association with a **qualifier** that selects among multiple target objects.
+- **Notation**: Small rectangle on association end (qualifier).
+- **Purpose**: Reduce multiplicity; act like dictionary/hash lookup.
+```
+┌─────────┐   ┌─────┐   ┌─────────┐
+│  Bank   │   │account│   │ Account │
+│         │◀──│number │──▶│         │
+└─────────┘   └─────┘   └─────────┘
+   (1)         (qualifier)   (0..1)
+   
+Without qualifier: Bank (1) ──── (0..*) Account
+With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
+```
+#### 3. **Association Class**
+- **Definition**: Association that has **attributes/operations** of its own.
+- **Notation**: Class attached to association with dashed line.
+- **Purpose**: Model properties of the relationship itself    
+```
+┌─────────┐                    ┌─────────┐
+│ Person  │────────────────────│ Company │
+└─────────┘                    └─────────┘
+               │
+               │
+         ┌─────▼─────┐
+         │ Employment│
+         ├───────────┤
+         │ startDate │
+         │ salary    │
+         │ jobTitle  │
+         └───────────┘
+```
+#### 4. **Composition with Shared vs Exclusive Ownership**
+- **Shared Composition**: Part can belong to multiple wholes (rare).
+- **Exclusive Composition**: Part belongs to exactly one whole (standard).
+```
+┌─────────┐          ┌─────────┐
+│ Window  │◆─────────│ Frame   │ (exclusive - filled diamond)
+└─────────┘          └─────────┘
+┌─────────┐          ┌─────────┐
+│ Room    │◇─────────│ Wall    │ (shared - hollow diamond)
+└─────────┘          └─────────┘
+```
+#### 5. **Powertype**
+- **Definition**: Class whose instances are **subclasses** of another class.
+- **Notation**: Dependency with `<<powertype>>` stereotype.
+```
+┌─────────┐     <<powertype>>   ┌─────────┐
+│ Animal  │────────────────────▶│ Species │
+└─────────┘                      └─────────┘
+     ▲                                ▲
+     │                                │
+     │ instances are                  │ instances are
+     │ subclasses                     │ classification
+┌────┴────┐                          │ criteria
+│Mammal   │───────────────────────────┘
+│Bird     │
+│Reptile  │
+└─────────┘
+```
+#### 6. **Interface Realization with Ball/Socket**
+- More precise than basic realization:
+    - **Provided Interface**: Ball (○) - services offered
+    - **Required Interface**: Socket (⊂) - services needed
+    - **Assembly Connector**: Ball connects to socket
+```
+┌────────────┐    ○─⊂      ┌────────────┐
+│ ComponentA │─────────────│ ComponentB │
+│ (requires) │  (provides) │            │
+└────────────┘             └────────────┘
+```
+### 3.5.C Advanced Relationship Summary
+| Relationship          | Notation                   | Purpose                          | Example                              |
+| --------------------- | -------------------------- | -------------------------------- | ------------------------------------ |
+| Derived Association   | `/name`                    | Computed value                   | `age` from `birthDate`               |
+| Qualified Association | [qualifier]                | Reduce multiplicity              | Account number selects account       |
+| Association Class     | Class + dashed line        | Relationship with properties     | Employment (salary, startDate)       |
+| Composition Types     | ◆ (exclusive) / ◇ (shared) | Ownership semantics              | Window-Frame vs Room-Wall            |
+| Powertype             | `<<powertype>>`            | Type whose instances are classes | Species classifies Animal subclasses |
+| Interface Assembly    | ○─⊂                        | Component wiring                 | Plug-in architecture                 |
+### 3.5.D When to Use Advanced Relationships
+| Scenario                      | Advanced Relationship |
+| ----------------------------- | --------------------- |
+| Relationship has its own data | Association Class     |
+| Need to reduce multiplicity   | Qualified Association |
+| Show redundancy explicitly    | Derived Association   |
+| Part sharing semantics        | Shared Composition    |
+| Classifies subclasses         | Powertype             |
+| Component-based wiring        | Interface Assembly    |
 # 3.6 Interface
-Present at: [[#3.3.G Component Diagram]]
+### 3.6.A Concept
+- **Interface** = collection of **operations** that specify a **service** of a class or component.
+- **No implementation**, only declaration.
+- Defines a **contract** between provider and consumer.
+- Supports **information hiding** and **loose coupling**.
+### 3.6.B Interface Notation
+#### 1. **Class/Expanded Notation**
+```
+┌─────────────────┐
+│ «interface»     │
+│    IOrder       │
+├─────────────────┤
+│ + placeOrder()  │
+│ + cancelOrder() │
+│ + trackOrder()  │
+└─────────────────┘
+```
+#### 2. **Ball/Lollipop Notation (Provided Interface)**
+ ```
+    ┌─────────┐
+    │ Order   │───○ IOrder
+    │ Service │
+    └─────────┘
+ ```
+- Ball (○) = provided interface (services offered)
+#### 3. **Socket Notation (Required Interface)**
+    ┌─────────┐
+    │ Payment │───⊂ IPayment
+    │ Client  │
+    └─────────┘
+- Socket (⊂) = required interface (services needed)
+#### 4. **Ball-and-Socket Assembly**
+```
+┌─────────┐    ○───⊂    ┌─────────┐
+│ ComponentA │───────────│ ComponentB │
+│ (requires) │           │ (provides) │
+└─────────┘               └─────────┘
+```
+### 3.6.C Interface Relationships
+#### 1. **Realization** (Class → Interface)
+- Class **implements** interface operations.
+- Notation: Dashed line with hollow triangle arrowhead.
+```
+┌─────────┐        - - - ▷    ┌─────────────────┐
+│ Order   │───────────────────▶│ «interface»     │
+│ Service │                    │    IOrder       │
+└─────────┘                    └─────────────────┘
+```
+#### 2. **Usage/Dependency** (Client → Interface)
+- Client **uses** interface.
+- Notation: Dashed arrow (→).
+```
+┌─────────┐        - - - →    ┌─────────────────┐
+│ Payment │───────────────────▶│ «interface»     │
+│ Client  │                    │    IPayment     │
+└─────────┘                    └─────────────────┘
+```
+#### 3. **Interface Inheritance**
+- Interface can **extend** another interface.
+- Notation: Solid line with hollow triangle (like class inheritance).
+```
+    ┌─────────────────┐
+    │ «interface»     │
+    │   IBasic        │
+    └─────────────────┘
+            ▲
+            │
+    ┌───────┴───────┐
+    │               │
+┌───▼───┐       ┌───▼───┐
+│IAdvanced│       │IExtended│
+└────────┘       └────────┘
+```
+### 3.6.D Provided vs Required Interfaces
+| Aspect          | Provided Interface | Required Interface |
+| --------------- | ------------------ | ------------------ |
+| **Definition**  | Services offered   | Services needed    |
+| **Notation**    | Ball (○)           | Socket (⊂)         |
+| **Direction**   | Outgoing           | Incoming           |
+| **Role**        | Supplier           | Consumer           |
+| **Also called** | Export interface   | Import interface   |
+```
+┌─────────────────────────────────┐
+│           WebServer             │
+│                                 │
+│  ┌─○ IHttp (provided)           │
+│  │                              │
+│  └─○ IHttps (provided)          │
+│                                 │
+│  ┌─⊂ ILogger (required)         │
+│  │                              │
+│  └─⊂ IAuth (required)           │
+└─────────────────────────────────┘
+```
+### 3.6.E Interface vs Abstract Class
+| Aspect                   | Interface                      | Abstract Class                  |
+| ------------------------ | ------------------------------ | ------------------------------- |
+| **Implementation**       | No implementation              | Can have partial implementation |
+| **Multiple inheritance** | Yes (class can implement many) | No (single inheritance)         |
+| **Attributes**           | Only constants (static final)  | Can have instance variables     |
+| **Constructors**         | No                             | Yes                             |
+| **Methods**              | All abstract (by default)      | Mix of abstract/concrete        |
+| **When to use**          | Capability/contract            | Common base with shared code    |
+### 3.6.F Interface Examples
+#### Example 1: Multiple Interfaces
+```
+┌─────────────────┐
+│   «interface»   │
+│    IPrint       │
+├─────────────────┤
+│ + print()       │
+└─────────────────┘
+        ▲
+        │
+┌───────┴─────────────────┐
+│                         │
+┌▼─────────┐     ┌────────▼───┐
+│«interface»│     │«interface» │
+│  IScan    │     │  IFax      │
+├───────────┤     ├────────────┤
+│ + scan()  │     │ + fax()    │
+└───────────┘     └────────────┘
+        ▲                 ▲
+        └───────┬─────────┘
+                │
+        ┌───────▼─────────┐
+        │   AllInOnePrinter│
+        │   (implements    │
+        │   IPrint, IScan, │
+        │   IFax)          │
+        └─────────────────┘
+```
+#### Example 2: Component with Interfaces
+```
+┌─────────────────────────────────┐
+│       OnlineStoreSystem         │
+│                                 │
+│  ┌─────────────────────────┐    │
+│  │     OrderComponent      │    │
+│  │  ┌─○ IOrder             │    │
+│  │  └─⊂ IPayment           │    │
+│  └─────────────────────────┘    │
+│            │                    │
+│            │ uses                │
+│            ▼                    │
+│  ┌─────────────────────────┐    │
+│  │    PaymentComponent     │    │
+│  │  ┌─○ IPayment           │    │
+│  │  └─⊂ IInventory         │    │
+│  └─────────────────────────┘    │
+│                                 │
+└─────────────────────────────────┘
+```
+#### Example 3: Interface Segregation
+```
+// Bad: Fat interface
+┌─────────────────┐
+│ «interface»     │
+│   IWorker       │
+├─────────────────┤
+│ + work()        │
+│ + eat()         │
+│ + sleep()       │
+│ + manage()      │
+└─────────────────┘
+// Better: Segregated interfaces
+┌─────────────────┐   ┌─────────────────┐
+│ «interface»     │   │ «interface»     │
+│   IWorkable     │   │   IEatable      │
+├─────────────────┤   ├─────────────────┤
+│ + work()        │   │ + eat()         │
+└─────────────────┘   └─────────────────┘
+┌─────────────────┐   ┌─────────────────┐
+│ «interface»     │   │ «interface»     │
+│   ISleepable    │   │   IManageable   │
+├─────────────────┤   ├─────────────────┤
+│ + sleep()       │   │ + manage()      │
+└─────────────────┘   └─────────────────┘
+┌─────────────────┐
+│    Robot        │   (implements IWorkable only)
+└─────────────────┘
+┌─────────────────┐
+│    Human        │   (implements IWorkable, IEatable, ISleepable)
+└─────────────────┘
+┌─────────────────┐
+│    Manager      │   (implements IWorkable, IManageable)
+└─────────────────┘
+```
+
+### 3.6.G Interface in Component-Based Development
+| Concept                   | Role of Interface                                           |
+| ------------------------- | ----------------------------------------------------------- |
+| **Binary Replaceability** | Components can be swapped if they implement same interfaces |
+| **Plug-in Architecture**  | New features added by implementing interfaces               |
+| **Contract-Based Design** | Interface defines exact contract between provider/consumer  |
+| **Versioning**            | New interface versions allow evolution                      |
+| **Testing**               | Mock implementations for testing                            |
 # 3.8 Interactions
-Present at: [[#3.3.D Interaction Diagram]]
+### 3.8.A Concept
+- **Interaction** = behavior comprising a set of **messages exchanged** among a set of **objects** within a context to accomplish a purpose.
+- Captures **dynamic behavior** of collaborating objects.
+- Represented by **interaction diagrams** (Sequence, Communication).
+### 3.8.B Elements of Interaction
+#### 1. **Object**
+- Instance of a class participating in interaction.
+- Notation: `objectName : ClassName` (underlined).
+#### 2. **Message**
+- Communication between objects conveying information with expectation of activity.
+- Can be: operation call, signal, creation, destruction.
+#### 3. **Link**
+- Connection path between objects along which messages flow.
+- Instance of an association.
+#### 4. **Lifeline**
+- Represents object's existence over time.
+#### 5. **Activation**
+- Period during which object is performing an action.
+### 3.8.C Types of Interactions
+| Type                        | Description         | Diagram                     |
+| --------------------------- | ------------------- | --------------------------- |
+| **Simple Interaction**      | Linear sequence     | Sequence Diagram            |
+| **Conditional Interaction** | Alternative paths   | Sequence (alt fragment)     |
+| **Iterative Interaction**   | Loops/repetition    | Sequence (loop fragment)    |
+| **Concurrent Interaction**  | Parallel activities | Sequence (par fragment)     |
+| **Structured Interaction**  | Nested/combined     | Any with combined fragments |
+### 3.8.D Message Types
+| Message Type       | Notation               | Description      |
+| ------------------ | ---------------------- | ---------------- |
+| **Synchronous**    | →▸ (solid, filled)     | Caller waits     |
+| **Asynchronous**   | → (solid, open)        | Caller continues |
+| **Return**         | - - - > (dashed)       | Response         |
+| **Create**         | → with «create»        | New object       |
+| **Destroy**        | → with «destroy» and X | Terminate object |
+| **Self/Reflexive** | ↻                      | Message to self  |
+### 3.8.E Interaction Contexts
+#### 1. **Within an Operation**
+- Messages inside a single method.
+#### 2. **Within a Class**
+- All interactions involving instances of a class
+#### 3. **Within a Component**
+- Internal collaboration of component parts.
+#### 4. **Within a Use Case**
+- Realization of a use case scenario
+#### 5. **Within a System**
+- Overall system behavior.
+### 3.8.F Combined Fragments (Revisited)
+| Fragment            | Purpose                           | Syntax            |
+| ------------------- | --------------------------------- | ----------------- |
+| **alt**             | Alternative paths (if-else)       | `alt [condition]` |
+| **opt**             | Optional path                     | `opt [condition]` |
+| **loop**            | Repetition                        | `loop [min,max]`  |
+| **par**             | Parallel execution                | `par`             |
+| **critical**        | Atomic region                     | `critical`        |
+| **ignore/consider** | Ignore/consider specific messages | `ignore {event}`  |
+| **assert**          | Assert condition                  | `assert`          |
+| **neg**             | Invalid/negative scenario         | `neg`             |
+### 3.8.G Interaction Examples
+
+#### Example 1: Simple Interaction (Sequence)
+```
+┌─────┐         ┌─────┐         ┌─────┐
+│:User│         │:ATM │         │:Bank│
+└──┬──┘         └──┬──┘         └──┬──┘
+   │                │                │
+   │ insertCard()   │                │
+   │───────────────>│                │
+   │                │ validate()     │
+   │                │───────────────>│
+   │                │                │
+   │                │     valid      │
+   │                │<───────────────│
+   │   ready        │                │
+   │<───────────────│                │
+   │                │                │
+```
+#### Example 2: Complex Interaction with Combined Fragments
+```
+┌─────┐         ┌─────┐         ┌─────┐
+│:User│         │:ATM │         │:Bank│
+└──┬──┘         └──┬──┘         └──┬──┘
+   │                │                │
+   │ enterPIN()     │                │
+   │───────────────>│                │
+   │                │                │
+   loop [max 3]     │                │
+   │                │ validatePIN()  │
+   │                │───────────────>│
+   │                │                │
+   │                │     result     │
+   │                │<───────────────│
+   │                │                │
+   alt [valid]      │                │
+   │                │ showMenu()     │
+   │<───────────────│                │
+   │                │                │
+   [else]           │                │
+   │  invalidPIN    │                │
+   │<───────────────│                │
+   end alt          │                │
+   end loop         │                │
+   │                │                │
+   opt [cardTrapped]│                │
+   │                │ trapCard()     │
+   │                │───────────────>│
+   │                │                │
+   end opt          │                │
+   │                │                │
+```
+### 3.8.H Interaction vs Other Concepts
+| Concept           | Relationship to Interaction                              |
+| ----------------- | -------------------------------------------------------- |
+| **Collaboration** | Society of objects working together (structure)          |
+| **Interaction**   | Behavior of collaboration (dynamics)                     |
+| **Use Case**      | Defines goal; interaction realizes it                    |
+| **Operation**     | Single service; interaction may span multiple operations |
 # 3.9 Use Cases
-Yet to be done
+### 3.9.A Concept
+- **Use case** = description of a sequence of actions a system performs that yields an **observable result of value** to an actor.
+- Captures **functional requirements** from user perspective.
+- Answers: _What does the system do?_ (not how).
+### 3.9.B Use Case Components
+#### 1. Use Case Name
+- **Verb phrase** (e.g., "Withdraw Money", "Register Student")
+- Should be **unique** and **descriptive**
+#### 2. Actor
+- **Primary Actor**: Initiates use case, gets value
+- **Secondary Actor**: Participates but doesn't initiate
+- **Supporting Actor**: Provides service (e.g., payment system)
+#### 3. Flow of Events
+- **Basic Flow**: Normal, happy path
+- **Alternative Flows**: Variations, exceptions
+#### 4. Precondition
+- What must be true **before** use case begins
+#### 5. Postconditions
+- What must be true **after** use case completes successfully
+### 3.9.C Use Case Template
+| Section               | Description       | Example (Withdraw Money)                                                              |
+| --------------------- | ----------------- | ------------------------------------------------------------------------------------- |
+| **Use Case Name**     | Verb phrase       | Withdraw Money                                                                        |
+| **Primary Actor**     | Who initiates     | Customer                                                                              |
+| **Secondary Actors**  | Others involved   | Bank System                                                                           |
+| **Preconditions**     | What must be true | ATM has cash, network OK, customer has card                                           |
+| **Basic Flow**        | Normal sequence   | 1. Customer inserts card  <br>2. System validates card  <br>3. Customer enters PIN... |
+| **Alternative Flows** | Exceptions        | Invalid card, wrong PIN, insufficient funds                                           |
+| **Postconditions**    | What changes      | Balance reduced, transaction recorded                                                 |
+### 3.9.D Writing Good Use Cases
+#### Guidelines:
+1. **Focus on user goals**, not system internals
+2. Use **active voice** ("Customer enters PIN" not "PIN is entered")
+3. Keep **technology independent**
+4. Each step should be **atomic** (single action)
+5. Show **value** to actor
+#### Common Mistakes
+- Too detailed (design-level)
+- Too vague (missing steps)
+- Mixed with non-functional requirements
+- No clear actor goal
+### 3.9.E Use Case Relationships (Detailed)
+#### 1. **Include Relationship** (`<<include>>`)
+- **Definition**: Base use case **always includes** behavior of included use case.
+- **Purpose**: Reuse common functionality across multiple use cases.
+- **Direction**: Base → Include
+```
+┌─────────────┐    <<include>>    ┌─────────────┐
+│ Place Order │────────────────G─▶│ Validate    │
+└─────────────┘                   │ User        │
+                                  └─────────────┘
+┌─────────────┐    <<include>>    ┌─────────────┐
+│ Track Order │──────────────────▶│ Validate    │
+└─────────────┘                   │ User        │
+                                  └─────────────┘
+```
+
+#### 2. **Extend Relationship** (`<<extend>>`)
+- **Definition**: Extension use case **optionally adds** behavior to base use case.
+- **Purpose**: Handle optional/exceptional behavior.
+- **Direction**: Extension → Base
+- **Extension points**: Where behavior can be inserted
+```
+┌─────────────┐    <<extend>>    ┌─────────────┐
+│ Place Order │◀─────────────────│ Apply       │
+│ [if VIP]    │                  │ Discount    │
+└─────────────┘                  └─────────────┘
+     ▲
+     │ extension point: after validation
+```
+#### 3. **Generalization**
+- **Definition**: Child use case inherits from parent, may override/add steps.
+ - **Purpose**: Common behavior with specialization.
+```
+    ┌─────────────┐
+    │ Purchase    │
+    │ Ticket      │
+    └─────────────┘
+         ▲
+    ┌────┴─────┐
+    │          │
+┌───▼────┐ ┌───▼────┐
+│Purchase│ │Purchase│
+│Movie   │ │Concert │
+│Ticket  │ │Ticket  │
+└────────┘ └────────┘
+```
+### 3.9.F Include vs Extend vs Generalization
+| Aspect                     | Include              | Extend               | Generalization               |
+| -------------------------- | -------------------- | -------------------- | ---------------------------- |
+| **Mandatory?**             | Yes                  | No (optional)        | Depends                      |
+| **Direction**              | Base → Included      | Extension → Base     | Child → Parent               |
+| **Base complete without?** | No                   | Yes                  | Yes (but less specific)      |
+| **Purpose**                | Common functionality | Optional/exceptional | Specialization               |
+| **Execution**              | Always               | When condition true  | Substituted                  |
+| **Example**                | Validate user        | Apply discount       | MovieTicket vs ConcertTicket |
+### 3.9.G Use Case Levels
+| Level             | Scope            | Example                   |
+| ----------------- | ---------------- | ------------------------- |
+| **Summary/Cloud** | Business process | "Manage Customer Account" |
+| **User Goal**     | Single user goal | "Withdraw Money"          |
+| *Subfunction**    | Reusable piece   | "Validate PIN"            |
+### 3.9.H Use Case Formats
+#### 1. **Brief Format**
+- One paragraph summary
+- For simple use cases or early analysis
+#### 2. **Casual Format**
+- Several paragraphs
+- Includes basic flow and some alternatives
+#### 3. **Fully Dressed Format**
+- Complete template with all sections
+- For critical, complex use cases
+### 3.9.I Complete Example: "Borrow Book" (Fully Dressed)
+```
+USE CASE: Borrow Book
+ACTORS:
+  - Primary: Library Member
+  - Secondary: Librarian, Library System
+PRECONDITIONS:
+  - Member has valid library card
+  - Book is available in catalog
+  - Member has no overdue books or fines
+BASIC FLOW:
+  1. Member presents library card to librarian
+  2. Librarian scans card
+  3. System validates member status
+  4. Member provides book details
+  5. Librarian scans book barcode
+  6. System checks book availability
+  7. System records loan
+  8. System updates book status to "Checked Out"
+  9. System prints due date receipt
+  10. Librarian gives receipt and book to member
+ALTERNATIVE FLOWS:
+  
+  3a. Member has overdue books:
+      3a1. System displays overdue books
+      3a2. Member returns books before continuing
+      
+  3b. Member has unpaid fines:
+      3b1. System displays fine amount
+      3b2. Member pays fines (use case: Pay Fine)
+      3b3. Return to step 4
+      
+  6a. Book not available:
+      6a1. System shows "Book Checked Out"
+      6a2. System offers reservation option
+      6a3. Member may reserve (use case: Reserve Book)
+      6a4. Use case ends
+  6b. Book is reference-only:
+      6b1. System shows "Reference Only - 2 hour loan"
+      6b2. Librarian confirms special loan terms
+      6b3. Continue to step 7 with 2-hour limit
+POSTCONDITIONS:
+  - Book status = "Checked Out"
+  - Loan record created with due date
+  - Member's borrowed count incremented
+  - Book removed from available list
+```
+### 3.9.J Use Cases in OOAD
+| Phase            | Use Case Role                        |
+| ---------------- | ------------------------------------ |
+| **Requirements** | Capture functional requirements      |
+| **Analysis**     | Identify objects from use case steps |
+| **Design**       | Design realization of use cases      |
+| **Testing**      | Basis for test cases                 |
