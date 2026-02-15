@@ -1,390 +1,583 @@
+---
+---
 # 3.1 Class Relationship
-- a relationship is a connection among things.
-- in Object Oriented (OO) modeling, the 3 most important relationships are dependencies, generalizations and associations
-## 3.1.A Dependencies
-- relationship that states that one thing (for example class Window) uses the information and services of another thing (for example, class Event), but not necessarily the reverse
-- graphically, a dependency is rendered as a dashed directed line, directed to the thing being depended on.
+Present at: [[#3.2.B Relationships]]
+# 3.2 Conceptual Model of UML
+## 3.2.A Concept of UML
+- Unified Modeling Language
+- standardized visual language for specifying, constructing and documenting software systems.
+- is not a method, only notation.
+- used with various development processes.
+- combines best practices from earlier OO methods (Booch, OMT, OOSE).
+	- OMT (Object Modeling Technique)
+		- precursor to UML
+		- focusing on objects, dynamics and functions
+## 3.2.B Use of UML in System Development
+| Purpose       | Description                                                    |
+| ------------- | -------------------------------------------------------------- |
+| **Visualize** | Represent complex systems graphically for better understanding |
+| **Specify**   | Build precise, unambigouus models of systems                   |
+| **Construct** | Map models directly to implementation code                     |
+| **Document**  | Capture architectural decisions, requirements, design          |
+## 3.2.C Five views of UML
+| View                | Focus                                              | Diagrams Used                                 |
+| ------------------- | -------------------------------------------------- | --------------------------------------------- |
+| **Use Case View**   | System Functionality from user persepctive         | Use Case                                      |
+| **Logical View**    | System structure (classes, objects, relationships) | Class, Object, State, Sequence, Communication |
+| **Process View**    | Concurrency, performance, scalability              | Activity, State, Sequence                     |
+| **Deployment View** | Physical distribution across hardware              | Deployment                                    |
+## 3.2.D Conceptual Model of UML
+Has 3 major elements
+### 2.D.i Basic Building Blocks
+#### D.i.a Things
+- nouns of the model
+- structural - mostly static parts
+- behavioral - dynamic parts
+- grouping things - organizational parts
+- annotational things - explanatory parts
+##### i.a.1 Structural Things
+| Thing             | Description                                                  | Notation                                            |
+| ----------------- | ------------------------------------------------------------ | --------------------------------------------------- |
+| **Class**         | Set of objects with shared attributes, operations, semantics | Rectangle with name, attributes, operations         |
+| **Interface**     | Collection of operations specifying a service                | Circle (lollipop) or rectangle with `<<interface>>` |
+| **Collaboration** | Defines interaction between roles                            | Dashed ellipse                                      |
+| **Use Case**      | Sequence of actions yielding observable result               | Ellipse with name                                   |
+| **Component**     | Physical resource (processor/device)                         | Cube                                                |
+##### i.a.2 Behavioral Things
+| Thing             | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| **Interaction**   | Set of messages exchanged between objects            |
+| **State Machine** | Behavior showing states and transitions of an object |
+| **Activity**      | Flow of control between steps                        |
+##### i.a.3 Grouping Things
+| Thing             | Description                                    | Notation                                            |
+| ----------------- | ---------------------------------------------- | --------------------------------------------------- |
+| **Package**       | General-purpose mechanism to group elements    | Tabbed folder                                       |
+##### i.a.4 Annotational Things
+| Thing    | Description                 | Notation                        | Figure:                                     |
+| -------- | --------------------------- | ------------------------------- | ------------------------------------------- |
+| **Note** | Comment attached to element | Rectangle with dog eared corner | ![[Pasted image 20260207224041.png \| 400]] |
+#### D.i.b Relationships
+- verbs of the model
+##### i.b.1 Dependency Relationship
+- One thing (client) uses another thing (supplier)
+- change to supplier may affect client
+- unidirectional (client -> supplier)
+- notation of dashed directed line (->)
+ - used when one class uses operations/variables of another; temporary connection.
 - figure:
   ![[Pasted image 20260208112349.png]]
-- Most often we will use dependencies between classes to show that one class uses operations from another class or it uses variables or arguments typed by the other class.
-- this is very much a using relationship
-	- if the used class changes, the operation of the other class may be affected as well,
-	- because the used class may now present a different interface or behavior
-- in the UML, we can also create dependencies among many other things, especially notes and packages.
-- unidirectional relationship
-- we can use dependency relationships in class diagrams, component diagrams, deployment diagrams, and use case diagram to indicate that a change to the supplier might require a change to the client
-- typically, dependency relationships do not have names
-## 3.1.B Generalizations
-- relationship between a general kind of thing (called the superclass or parent) and a more specific kind of thing (called subclass or child)
-- graphically, generalization is rendered as a solid directed line with a large unfilled triangular arrowhead, pointing to the parent, as shown below
-- use generalizations when we want to show parent/child relationships
-- figure:
-  ![[Pasted image 20260208112711.png]]
-## 3.1.C Associations
-- structural relationship that specifies that objects of one thing are connected to another object
-- given an association connecting two classes, we can relate objects of one class to objects of the other class.
-- an asosciation that oconects exactly 2 classes is called a binary association.
-- we can have associations that connect mroe than 2 classes, called n-ary associations
-- graphically, an association is rendered as a solid line connecting the same or different classes
-- use associations when we want to show structural relationships
-- beyond this basic form, there are four adornments that apply to associations
-	- name
-	- role
-	- multiplicity
-	- aggregation
-### 1.C.i Name
-- an association can have a name, and we use that name to describe the nature of the relationship.
-- So that there is no ambiguity about its meaning
-- Also we can give a direction to the name by providing a direction triangle that points in the direction we intend to read the name.
-- figure:
-  ![[Pasted image 20260209080653.png]]
-### 1.C.ii Role
-- When a class participates in an association, it has a specific role that it plays in that relationship
-	-  a role is just the face the class at the far end of the association presents to the class at the near end of the association
-- we can explicitly name the role a class plays in an association.
-- the role played by an end of an association is called an end name
-- in figure:
-	- the class Person playing the role of employee is associated with the class Company playing the role of employer.
-	- ![[Pasted image 20260209080849.png]]
-- the same class can play the same or different roles in other associations
-### 1.C.iii Multiplicity
-- important for us to state how many objects may be connected across an instance of an association.
-- this "how many" is called the multiplicity of an association's role
-- it represents a range of integers specifying the possible size of the set of related objects.
-- it is written as an expression with a minimum and maximum value, which may be the same
-- two dots are used to separate the minimum and maximum values.
-- the number of objects must be in the given range.
-- we can show a multiplicity as:
-	- exact one (1)
-	- zero or one (0..1)
-	- many (0..\*), or one or more (1..\*)
-	- integer range (such as 2..5)
-	- exact number (3..3 for 3)
-- figure:
+##### i.b.2 Association Relationship
+- Structural connection between objects of two classes.
+- notation of solid line connecting clauses
+- binary association: connects exactly 2 classes
+- N-ary association: connects 3+ classes
+###### Association Adornments:
+| Adornment    | Description                                          | Example                   |
+| ------------ | ---------------------------------------------------- | ------------------------- |
+| Name         | Describes nature of relationship                     | `works for`               |
+| Role         | Face a class presents at assocation end              | `employee`, `employer`    |
+| Multiplicity | How many objects connected                           | `1`, `0..*`, `1..*`       |
+| Aggregation  | "Has-a" relationship (whole-part)                    | Car has Wheels            |
+| Composition  | Stronger whole-part where part lives/dies with whole | Order contains OrderItems |
+Figures:
+1. Name:
+	1. ![[Pasted image 20260209080653.png]]
+2. Role: 
+	1. ![[Pasted image 20260209080849.png]]
+3. Multiplicity
 	- ![[Pasted image 20260209081206.png]]
-	- Person 1..* and * Company
-	- each company object has an employee one or more person objects (multiplicity 1..\*)
-	- each person has an employer zero or more company objects (multiplicity \*, which is equivalent to 0..\*).
-### 1.C.iv Aggregation
-- plain aggregation between two classes represents a structural relationship between peers, meaning that both classes are conceptually at the same level, no one more important than the other
-- sometimes we will want to model a "whole/part" relationship, in which one class represents a larger thing (the "whole"), which consists of smaller things (the "parts)
-- this kind of relationship is called aggregation, which represents a "has-a" relationship meaning that an object of the whole has objects of the part.
-- an aggregation association appears as a solid line, with an unfilled diamond at the association end,
-	- which is connected to the classifier that represents the aggregate.
+4. Aggregation
+	1. ![[Pasted image 20260209082121.png]]
+	2. ![[Pasted image 20260209082131.png]]
+5. Composition:
+	1. ![[Pasted image 20260214165610.png]]
+###### Multiplicity Values
+| Expression    | Meaning             |
+| ------------- | ------------------- |
+| `1`           | Exactly one         |
+| `0..1`        | Zero or one         |
+| `0..*` or `*` | Zero or more (many) |
+| `1..*`        | One or more         |
+| `2..5`        | Integer range       |
+##### i.b.3 Aggregation vs Composition
+| Aspect        | Aggregation             | Composition                       |
+| ------------- | ----------------------- | --------------------------------- |
+| Diamond       | Hollow                  | Filled                            |
+| Part lifetime | Can exist without whole | cannot exist without whole        |
+| sharing       | part can be shared      | part belongs to exactly one whole |
+| example       | Car <-> Wheel           | Window <- Frame                   |
+| Relationship  | "has-a" (weaker)        | "contains" (stronger)             |
+##### i.b.4 Generalization
+- Parent/child relationship where child inherits from parent
+- notation of solid line with hollow triangular arrowhead (-> ▷ ) pointing to parent.
+- also called inheritance "is-a" relationship
 - figure:
-	- ![[Pasted image 20260209082121.png]]
-	- ![[Pasted image 20260209082131.png]]
-	- let us consider an example of a car and a wheel
-	- a car needs a wheel to function correctly, but a wheel doesn't always need a car and can also be used with bike, bicycle, or any other vehicles
-	- wheel object is meaningful even without the car object.
-	- such relationship is called UML Aggregation relation
-### 1.C.v Composition
-- A composition association relationship represents a whole-part relationship and is a form of aggregation
-- A composition association relationship specifies that the lifetime of the part of classifier is dependent on the lifetime of the whole classifier.
-- in a composition association relationship, data usually flows in only direction
-  - from whole classifier to part classifier
-- for example, a composition association relationship connects a Student class with a Schedule class, which means that if we remove the student, the schedule is also removed.
-- We can rename any association to describe the nature of the relationship between the two classifiers.
-- As the following figure illustrates, a compsition association relationship appears as a solid line with a filled diamond at the association end, which is connected to the whole, or composite, classifier.
-- figure: (slide 133)
-### 1.C.vi Association vs. Aggregation vs. Composition
-- 1st
-  - Association is the most general (m:n) relationship.
-  - Aggregation is a stronger relationship where one is a part of the other.
-  - Composition is even stronger than aggregation, ties the lifecycle of the part and the whole together.
-- 2nd
-  - Association relationship can be reflexive (objects can have relation to itself)
-  - but aggregation cannot be reflexive.
-  - aggregation is anti-symmetric (If B is a part of A, A can't be a part of B).
-- 3rd
- - Composition has the property of exclusive aggregation i.e. an object can be a part of only one composite at a time.
- - for example, a frame belongs to exactly one Window, whereas in simple aggregation, a part may be shared by several objects.
- for example, a Wall may be a part of one or more Room objects.
-- 3rd
-  - in addition, in composition, the whole has the responsibility for the disposal of all its parts, i.e. for their creation and destruction.
-- 4th
-  - for example, when a Frame object is created, it has to be attached to an enclosing Window.
-  - Similarly, when the Window is destroyed, it must in turn destroy its Frame parts.
-# 3.2 Conceptual Model of UML
-- to understand the UML, we need to form a conceptual model of the language, and this requires learning three major elements:
-	- The UML's basic building blocks.
-	- The rules that dictate how those building blocks may be put together and
-	- some common mechanisms that apply throughout the UML
-## 3.2.A Basic Building Blocks of the UML
+	- ![[Pasted image 20260208112711.png]]
+##### i.b.5 Realization
+- one element specifies behavior, another implements it.
+- notation of: dashed line with hollow triangular arrowhead.
+- commonly uses: Interface - -> Class, Use Case - -> Collaboration.
+
+	- Dependency, Association, Generalization, Realization
+- Diagrams (views of the model)
+	- 13 diagram types organized into structural/behavioral categories
+### 2.D.ii Rules
+- How building blocks may be put together
+- Rules for:
+	- Naming (what one can call things)
+	- Scope (context visibility)
+	- Integrity (how things relate properly)
+### 2.D.iii Common Mechanisms
+- Stereotypes -> Extend UML vocabulary ( `<<include>>`, `<<extend>>`)
+- Tagged values -> properties (`{author=Smith}`)
+- Constraints -> rules (`{balance >= 0}`)
+## 3.2.E Conceptual Model vs Implementation Model
+| Aspect          | Conceptual Model                 | Implementation Model                   |
+| --------------- | -------------------------------- | -------------------------------------- |
+| **Purpose**     | Understand real-world domain     | Build software system                  |
+| **Abstraction** | High-level, problem-focused      | Low-level, solution-focused            |
+| **Language**    | Domain vocabulary                | Programming Language constructs        |
+| **Audience**    | Stakeholders, domain experts     | Developers, testers                    |
+| **Change**      | Stable (domain rarely changes)   | Volatile (code evolves)                |
+| **Examples**    | Domain model, conceptual classes | Class Diagram with methods, DB schemas |
+## 3.2.F Behavioral Model of the System
+- Describes dynamic behavior of objects over time
+- it answers how the system responds to events
+- Diagrams used:
+	- State Chart diagram (object states)
+	- Activity Diagram (workflow)
+	- Sequence Diagram (message ordering)
+	- Communication Diagram (message structure)
+## 3.2.G Domain Modeling
+- Domain Model = visual representation of real world concepts, not software classes.
+- Shows:
+	- Conceptual classes (real world entities)
+	- Associations between them
+	- Attributes (simple properties)
+- Purpose:
+	- Bridges communication gap between domain experts and developers
+	- Capture key terminology and relationships
+	- Foundation for design class diagrams.
+## 3.2.H Conceptual Classes
+- Definition:
+	- Real world concepts or things in the domain of interest
+- not software classes -> they exist regardless of system
+- how to find them:
+	- noun identification (underline nouns in requirements)
+	- category lists (use predefined categories)
+	- reuse existing domain models
+### 2.H.i Category List Method:
+| Category         | Examples                    |
+| ---------------- | --------------------------- |
+| Physical objects | Bok, Car, Product           |
+| Places           | Store, Warehouse, Office    |
+| Transactions     | Sale, Payment, Order        |
+| People           | Customer, Employee, Manager |
+| Organizations    | Department, Company, Bank   |
+### 2.H.ii Online Movie Ticket Booking
+- Conceptual classes: Movie, Show, Theater, Seat, Booking, Payment, Customer
+- Not Conceptual classes: Database, Connection, Controller
+	- these are design/implementation
+
 - The vocabulary of the UML encompasses three kinds of building blocks:
-### 2.A.i Things
-- 4 kinds of things in the UML
-1. **Structural Things**
-	- These are the nouns of UML models
-	- there are the mostly static parts of a model
-	- represent element that are either conceptual or physical
-	- collectively the structural things are called classifiers
-	- Class, interface, collaboration, use case, component, node, etc. are example of structural things in UML.
-2. **Behavioral Things**
-	- These are the dynamic parts of UML models.
-	- these are the verbs of a model,
-	- representing behavior over time and psace
-	- in all, there are three primary kinds of behavioral things:
-		- interaction, state machine and activity
-3. **Grouping Things**
-	- These are the organizational parts of UML models
-	- these are the boxes into which a model can be decomposed
-	- there is one primary kind of grouping thing called packages
-4. **Annotational Things**
-	- These are explanatory parts of UML models.
-	- comments you may apply to describe illuminate and remark about any element in a model
-	- there is one primary kind of annotational thing called a note.
-	- Graphically, a note is rendered as a rectangle with a dog eared corner together with a textual or graphical comment, as in figure below:
-	  ![[Pasted image 20260207224041.png | 400]]
-### 2.A.ii Relationships
-Four kinds of relationships in the UML:
-#### A.ii.a Dependency
-#### A.ii.b Association
-#### A.ii.a Generalization
-#### A.ii.a Realization
-### 2.A.iii Diagrams
-- a diagram is the graphical presentation of a set of elements, most often rendered as a connected graph of vertices (things) and paths (relationships)
-- we draw diagrams to visualize a system from different perspectives, so a diagram is a projection into a system.
-- the uml includes thirteen kinds of diagrams
-#### A.iii.a Class Diagram
-##### iii.a.1 Concept
-- class is description of a set of objects that share the same attributes, operations, relationships, and semantics
-- graphically, a class is rendered as a rectangle.
-- notation permits you to visualize an abstraction apart from any specific programming language and in a way that lets you emphasize the most important parts of an abstraction: its name, attributes and operations
+---
+---
+# 3.3 UML Diagrams
+## 3.3.A Class Diagram
+### 3.A.i Concept
+- Class diagram = static structure diagram showing system's classes, attributes, operations and relationships
+- most common UML diagram for object oriented modeling
+- represents the logical view of a system.
+- blueprint for implementation
+### 3.A.ii Notation
+- A class is rendered as a rectangle divided into 3 compartments
+	- Name, Attribute & Operations
 - figure:
   ![[Pasted image 20260208104157.png]]
-##### iii.a.2 Components
-1. Class Name
-	- An attribute is a named property of a class that describes a range of values that instances of the property may hold.
-	- a name is a textual string
-	- that name alone is known as a simple name
-	- a qualified name is the class name prefixed by the name of the package in which that class lives
-	- a class maybe drawn showing only its name as shown below
-	- symbols:
-	  ![[Pasted image 20260208104404.png]]
-2. Attributes
-	- named property of a class that describes a range of values that instance sof the property may hold
-	- a class may have any number of attributes or no attributes at all
-	- an attribute represents some property of the thing you are modeling that is shared by all objects of that class
-	- for example: every wall has a height, width, and thickness
-	- you might model our customers in such a way that each has a name, address, phone number and date of birth
-	- an attribute may be text, just like a class name
-	- in practice an attribute name is a short noun or noun phrase that represents some property of its enclosing class.
-	- extra info:
-		- at the most abstract level, we simply write each attribute's name
-		- usually enough information for the average reader to understand the intent of our model.
-		- however, we can also specify the visibility, scope and multiplicity of each attribute
-		- we can also specify the type, initial value, and changeability of each attribute
-		- for example, legal attribute declarations
-			- origin <- Name only
-			- + origin <- Visibility and name
-			- origin: Point <- Name and type
-			- name: string\[0..1] <- Name, type, and multiplicity
-			- origin: Point = (0, 0) <- Name, type and initial value
-			- id: Integer \{readonly} <- Name and property
-		- unless otherwise specified, attributes are always changeable. we can use the readonly property to indicate that the attribute's value may not be changed after the object is initialized
-	- symbols:
-	  ![[Pasted image 20260208104526.png]]
-	- we can further specify an attribute by stating its type and possibly a default initial value, as shown below:
-	  ![[Pasted image 20260208104553.png]]
-3. Operations
-	- implementation of a service that can be requested from an object of the class to affect behavior
-	- in other words, an operation is an abstraction of something you can do to an object that is shared by all objects of that class.
-	- operations may be drawn showing only their names
-	- extra nifo:
-		- at the most abstract level, wee simply write each operation's name
-		- however, we can also specify the visibility and scope of each operation.
-		- we can also specify the parameters, return type, concurrency semantics, and other properties of each operation
-		- collectively, the name of an operation plus its parameters (including its return type, if any) is called the operation's signature
-	- For example: the following are legal declarations:
-		- display <- Name only
-		- + display <- visibility and name
-		- set(n: Name, s: String) <- Name and parameters
-		- getID(): Integer <- Name and return type
-		- restart() {guarded} <- Name and property
-	 - figure:
-	  ![[Pasted image 20260208104825.png]]
-	- an operation name may be text
-	- in practice, an operation name is a short verb or verb phrase that represents some behavior of its enclosing class
-4. Responsibilities
-	- contract or obligation of a class
-	- e.g., 
-		- a Wall class is responsible for knowing about height, width, and thickness
-		- a FraudAgent class, for a credit card application, is responsible for processing orders and determining if they are legitimate, suspect or fraudulent
-		- a TempSensor class is responsible for measuring temperature and raising an alarm if the temperature reaches a certain point.
-	- graphically, responsibilities can be drawn in a separate compartment at the botto of the class icon.
+### 3.A.ii Components
+#### A.iii.a Class Name
+- **Simple name**: Just the class name (e.g., `Student`)
+- **Qualified Name**: Package + classname (e.g., `University::Student)
+- **Abstract class**: Name in italics of `{abstract}`
+- a class maybe drawn showing only its name as shown below
+- symbols:
+	- ![[Pasted image 20260208104404.png]]
+#### A.iii.b Attributes
+| Visbility | Symbol | Meaning                                |
+| --------- | ------ | -------------------------------------- |
+| Public    | +      | Accessibly by any class                |
+| Private   | -      | Accessibly only within class           |
+| Protected | #      | Accessible within class and subclasses |
+| Package   | ~      | Accessible within same package         |
+- Visibility example:
+	- ![[Pasted image 20260208110422.png]]
+- Attribute example:
+```txt
++ name: String
+- studentId: Integer = 1001
+# dateOfBirth: Date
+~ gpa: Float {readonly}
+```
+- a class may have any number of attributes or no attributes
+- represents some property of the thing to be modeled
+- shared by all objects of that class
+- attribute name is a short noun or noun phrase that represents some property of its enclosing class.
+- unless otherwise specified, attributes are always changeable.
+- use the readonly property to indicate that the attribute's value may not be changed after the object is initialized
+- we can also specify the visibility, scope and multiplicity of each attribute
+	- for example, legal attribute declarations
+		- origin <- Name only
+		- + origin <- Visibility and name
+		- origin: Point <- Name and type
+		- name: string\[0..1] <- Name, type, and multiplicity
+		- origin: Point = (0, 0) <- Name, type and initial value
+		- id: Integer `{readonly}` <- Name and property
+- Figures:
+	- 1.
+		- ![[Pasted image 20260208104526.png]]
+	- 2.
+		- ![[Pasted image 20260208104553.png]]
+#### A.iii.c Operations
+- abstraction of something you can do to an object that is shared by all objects of that class
+- Implementation of a service can be requested from an object.
+- Represents what the class does.
+- Syntax: `[visibility] name ([parameter list]) [: return type] [{property}] `
+- operations may be drawn showing only their names
+- can specify the visibility, scope, parameters, return type, concurrency semantics, etc. of each operation.
+- collectively, the name of an operation plus its parameters (including its return type, if any) is called the operation's signature
+- For example: the following are legal declarations:
+	- display <- Name only
+	- + display <- visibility and name
+	- set(n: Name, s: String) <- Name and parameters
+	- getID(): Integer <- Name and return type
+	- restart() `{guarded}` <- Name and property
+- Example:
+```txt
++ registerCourse(courseId: Integer): Boolean
+- calculateGPA(): Float
+# validatePayment(): void
+```
+- Figure:
+	- ![[Pasted image 20260208104825.png]]
+#### A.iii.d Responsibilities
+- Contract or obligation of a class
+- Documented in a separate compartment at bottom
+- Textual description of what class must provide
+- Example:
+```txt
+┌───────────────────────────────────┐
+│    Student                        │
+├───────────────────────────────────┤
+│ - name: String                    │
+│ - id: Integer                     │
+├───────────────────────────────────┤
+│ + register()                      │
+│ + dropCourse()                    │
+├───────────────────────────────────┤
+│ Responsibilities                  │
+│ • Maintain student personal info  │
+│ • Handle course registration      │
+└───────────────────────────────────┘
+```
+### 3.A.iv Advanced Class Features
+#### A.iv.a Multiplicity of a class
+- number of instances a class may have.
+- written in upper right corner
+- example
+```txt
+┌─────────────────────┐
+│    NetworkController│ 1
+├─────────────────────┤
+│ ...                 │
+└─────────────────────┘
+
+┌─────────────────────┐
+│    ControlRod       │ 3
+├─────────────────────┤
+│ ...                 │
+└─────────────────────┘
+```
+- figure:
+	- ![[Pasted image 20260208110654.png]]
+#### A.iv.b Abstract, Root, Leaf
+| Type            | Notation                    | Meaning            |
+| --------------- | --------------------------- | ------------------ |
+| Abstract Class  | *ClassName* or `{abstract}` | Cannot instantiate |
+| Abstract Method | *methodName()*              | No implementation  |
+| Root Class      | `{root}`                    | No ancestors       |
+| Leaf Class      | `{leaf}`                    | No descendants     |
+#### A.iv.c Polymorphic Elements
+- Methods with same signature in different classes.
+- Represented in *italics*.
+### 3.A.v Class Relationship
+| Relationship       | Notation | Description                  |
+| ------------------ | -------- | ---------------------------- |
+| **Dependency**     | - - - →  | Uses relationship            |
+| **Association**    | ———      | Structural connection        |
+| **Aggregation**    | ◇———     | Has-a (weak whole-part)      |
+| **Composition**    | ◆———     | Contains (strong whole-part) |
+| **Generalization** | —▷       | Inheritance (is-a)           |
+| **Realization**    | - - - ▷  | Interface implementation     |
+### 3.A.vi UML classifiers
+| Name        | Description                                                                                                                                                         | Figure                               |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| Interface   | collection of operations that are used to specify a service of a class or component                                                                                 | ![[Pasted image 20260208105648.png]] |
+| Datatype    | - type whose values are immutable<br>- including primitive built-in and enumeration types                                                                           | ![[Pasted image 20260208105732.png]] |
+| Association | Description of a set of links, each of which relates two or more objects                                                                                            |                                      |
+| Signal      | the specification of an asynchronous message communicated between instances                                                                                         |                                      |
+| Component   | a modular part of a system that hides its implementation behind a set of external interfaces                                                                        | ![[Pasted image 20260208105843.png]] |
+| Node        | a physical element that exists at run time and that represents a computational resource generally having atleast some memory and often processing capabilities.     | ![[Pasted image 20260208110136.png]] |
+| Use Case    | - a description of a set of a sequence of actions, including variants<br>		- that a system performs that yields an observable result of value to a particular actor | ![[Pasted image 20260208110147.png]] |
+| Subsystem   | a component that represents a major part of a system                                                                                                                | ![[Pasted image 20260208110155.png]] |
+### 3.A.vi Example
+1. Library Management System
+```txt
+┌─────────────┐          ┌──────────────┐
+│   Librarian │1        *│   Book       │
+├─────────────┤ manages  ├──────────────┤
+│ - name      ├─────────►│ - title      │
+│ - id        │          │ - author     │
+├─────────────┤          │ - ISBN       │
+│ + addBook() │          ├──────────────┤
+│ + removeBook│          │ + issueBook()│
+│ + search()  │          │ + returnBook │
+└─────────────┘          └──────────────┘
+       │                        │
+       │                        1
+       │                        │
+       │                        │
+┌──────▼──────┐           ┌─────▼──────┐
+│   User      │           │  Account   │
+├─────────────┤           ├────────────┤
+│ - name      │           │ - fine     │
+│ - userId    │           │ - borrowed │
+├─────────────┤           ├────────────┤
+│ + login()   │           │ + calcFine │
+│ + logout()  │           └────────────┘
+└─────────────┘
+       ▲
+       │
+   ┌───┴───┐
+   │       │
+┌──▼───┐ ┌─▼─────┐
+│Staff │ │Student│
+└──────┘ └───────┘
+```
+2. Diagram Tool Example
+![[Pasted image 20260213201103.png]]
+## 3.3.B Object Diagram
+### 3.B.i Concept
+- object diagram = snapshot of system at a specific point in time.
+- Shows instances of classes (objects) and their relationships (links)
+- Also called instance diagram.
+- represents the static design view at a moment in time.
+- essentially an instance of a class diagram or the static part of an interaction diagram.
+- important for
+	- visualizing, specifying and documenting structural models
+	- constructing static aspects of system through forward/reverse engineering
+- object diagram is a collection of vertices and arcs
+- expresses the static part of an interaction, consisting of the objects that corroborate, but without any of the messages passed among them.
+- figure:
+	- ![[Pasted image 20260214105919.png]]
+### 3.B.ii Components
+#### B.ii.a Objects
+- Notation: Rectangle with `objectName : ClassName` underlined
+- Format: `[instanceName] : [ClassName]`
+- Both parts underlined
+- example:
+```
+┌─────────────┐
+│ john : Student │  ← Named object
+└─────────────┘
+
+┌─────────────┐
+│ : Student   │  ← Anonymous object
+└─────────────┘
+```
+#### B.ii.b Object State
+- Attributes with Values
+- Can show attribute values in a second compartment
+- example:
+```
+┌─────────────────────┐
+│ john : Student      │
+├─────────────────────┤
+│ name = "John Smith" │
+│ id = 1001           │
+│ gpa = 3.75          │
+└─────────────────────┘
+```
+#### B.ii.c Links
+- instance of an association that shows connection between objects.
+- notation of solid line between objects.
+- can show link name and role names.
+- example:
+```txt
+┌───────────────┐         ┌───────────────┐
+│ john : Student│         │ cs101 : Course│
+└───────────────┘         └───────────────┘
+        │                     │
+        │ takes               │
+        └─────────────────────┘
+```
+#### B.ii.d Multiplicity at Instance Level
+- Shows actual number of connected objects at that moment.
+### 3.B.iii Purpose
+| Purpose       | Description                               |
+| ------------- | ----------------------------------------- |
+| **Visualize** | Concrete examples of system state         |
+| **Validate**  | Test class diagram against real scenarios |
+| **Document**  | Prototypical instances for understanding  |
+| **Debug**     | Trace object relationships at runtime     |
+### 3.B.iv Object vs Class Diagram
+| Aspect           | Class Diagram          | Object Diagram           |
+| ---------------- | ---------------------- | ------------------------ |
+| **Purpose**      | Blueprint/type         | Snapshot/instance        |
+| **Contents**     | Classes, associations  | Objects, links           |
+| **Names**        | Plain (not underlined) | Underlined               |
+| **Values**       | No attribute values    | Shows actual values      |
+| **Multiplicity** | Shows possible range   | Shows actual connections |
+| **Abstraction**  | High-level             | Concrete                 |
+| **Time**         | Static (timeless)      | Specific moment          |
+### 3.B.v Examples
+1. Simple Object Diagram
+```
+At a specific moment in a library system:
+
+┌─────────────────┐         ┌─────────────────┐
+│ lib1 : Library  │         │ book101 : Book  │
+├─────────────────┤         ├─────────────────┤
+│ name = "Central"│         │ title = "UML"   │
+│ address = "Main"│         │ author = "Booch"│
+└─────────────────┘         └─────────────────┘
+        │                           │
+        │ contains                  │
+        └───────────────────────────┘
+```
+2. Multiple Objects with Links
+```
+Course Registration Snapshot:
+
+┌─────────────────┐
+│ alice : Student │
+├─────────────────┤
+│ id = "S001"     │
+│ name = "Alice"  │
+└─────────────────┘
+        │
+        │ enrolled
+        ▼
+┌─────────────────┐        ┌─────────────────┐
+│ math201 : Course│        │ bob : Student   │
+├─────────────────┤        ├─────────────────┤
+│ code = "MATH201"│        │ id = "S002"     │
+│ credits = 3     │        │ name = "Bob"    │
+└─────────────────┘        └─────────────────┘
+        ▲                           ▲
+        │ enrolled                  │ enrolled
+        │                           │
+┌─────────────────┐        ┌─────────────────┐
+│charlie : Student│        │ : Professor     │
+├─────────────────┤        ├─────────────────┤
+│ id = "S003"     │        │ name = "Dr. X"  │
+│ name = "Charlie"│        │ dept = "Math"   │
+└─────────────────┘        └─────────────────┘
+```
+3. Object Diagram from ATM System
+```
+ATM Transaction at 10:30 AM:
+
+┌──────────────────┐         ┌─────────────────┐
+│ atm12 : ATM      │         │ acc456 : Account│
+├──────────────────┤         ├─────────────────┤
+│ location = "Mall"│         │ number = "456"  │
+│ cash = 5000      │         │ balance = 1500  │
+└──────────────────┘         └─────────────────┘
+        │                           ▲
+        │ uses                      │ owns
+        │                           │
+┌───────▼───────────────┐   ┌───────┴─────────┐
+│ txn789 : Transaction  │   │ jane : Customer │
+├───────────────────────┤   ├─────────────────┤
+│ type = "withdrawal"   │   │ name = "Jane"   │
+│ amount = 200          │   │ cardNo = "789"  │
+│ time = "10:30:00"     │   └─────────────────┘
+└───────────────────────┘
+```
+### 3.B.vi When to Use
+| Scenario                             | Benefit                                         |
+| ------------------------------------ | ----------------------------------------------- |
+| **Testing class diagrams**           | Verify relationships work with real data        |
+| **Explaining complex relationships** | Concrete examples help understanding            |
+| **Reverse engineering**              | Show actual object structures from running code |
+| **Documenting prototypes**           | Capture typical system states                   |
+| **Debugging**                        | Visualize object connections at breakpoints     |
+### 3.3.B.vii Relationship with Other Diagrams
+- **Class Diagram** → defines the types
+- **Object Diagram** → shows instances of those types
+- **Interaction Diagrams** → object diagrams + messages (dynamic)
+### 3.3.B.viii Key Points for Exam
+- Object diagram = **snapshot in time**.
+- Object names are **underlined**: `instance : Class`.
+- Shows **attribute values**, not just types.
+- Links = **instances of associations**.
+- Used to **validate class diagrams** with concrete examples.
+- Helpful for **testing, debugging, documentation**.
+---
+## 3.3.C Use Case Diagram
+### 3.C.i Concept
+- shows interactions between actors and use cases within a system boundary.
+- Captures functional requirements from an external perspective.
+- Answers: *What does the system do?*
+- doesn't care about how
+- represents the **use case view of the system**.
+### 3.C.ii Purpose
+| Purpose                           | Description                                 |
+| --------------------------------- | ------------------------------------------- |
+| **Capture requirements**          | Identify what users need from system        |
+| **Communicate with stakeholders** | Simple, non-technical view                  |
+| **Define scope**                  | System boundary separates internal/external |
+| **Drive development**             | Use cases guide design and testing          |
+### 3.C.iii Components
+#### C.iii.a Actor
+- **Definition**: Someone/something that interacts with the system (external).
+- **Notation**: Stick figure or rectangle with `<<actor>>`. 
+- **Location**: Outside system boundary.
+- e.g. figure:
+	![[Pasted image 20260208073322.png]]
+- single actor may perform more than 1 functionality (use case)
+- **function**:
+	- input information to the system
+	- receive information from the system
+	- input to and out from the system
+- **Finding Actors - Ask:**
+	- Who uses the system?
+	- Who installs/maintains the system?
+	- What other systems interact with this system?
+	- Who provides information to the system?
+	- Who receives information from the system?
+- categories
+
+| Category              | Description                | Example                   |
+| --------------------- | -------------------------- | ------------------------- |
+| **Primary**           | Uses main system functions | Customer, User            |
+| **Secondary**         | Administration/maintenance | Admin, Support Staff      |
+| **External Hardware** | Physical devices           | Card Reader, Sensor       |
+| **External System**   | Other software             | Payment Gateway, Database |
+#### C.iii.b Use Case
+- **Definition**: Sequence of actions producing observable result of value to actor.
+- **Notation**: Ellipse with name inside.
+- **Name**: Verb phrase (e.g., "Withdraw Money", "Register Student").
+- **Finding Use Cases - Ask:**
+	- What functions does actor want from system?
+	- Does system store information? Who creates/reads/updates/deletes?
+	- Does system notify actors about changes?
+	- What events trigger system actions?
+- e.g. 
 	- figure:
-	  ![[Pasted image 20260208105130.png]]
-5. Advance class
-	- classifiers (and classes) have a number of advanced features beyond simpler properties of attributes and operations
-	- we can model multiplicity, visibility, signature, polymorphism and other characteristics
-	- we can model the semantics of a class so that you can state its meaning to whatever degree of formality you like
-	- earlier it was sufficient to include a customer class that carries out certain responsibilities
-	- as we refine architecture and move to construction, we'll have to decide on a structure for the class (its attributes) and a behavior (its operations) that are sufficient and necessary to carry out those responsibilities
-	- finally, as we evolve to the executable system, we'll need to model details, such as the visibility of individual attributes and operations, the concurrency semantics of the class as a whole and its individual operations, and the interfaces the class realizes
-	- the uml provides a representation for a number of advanced properties
-	- this notation permits us to visualize, specify, construct and document a class to any level of details we wish.
-	- figure:
-	  ![[Pasted image 20260208105552.png]]
-	- UML also provides several other kinds of classifiers to help us model
-		1. interface
-			- collection of operations that are used to specify a service of a class or a component
-			- figure:
-			  ![[Pasted image 20260208105648.png]]
-		2. Datatype
-			- a type whose values are immutable
-			- including primitive built-in types (such as numbers and string) and enumeration types (such as boolean).
-			- figure:
-			  ![[Pasted image 20260208105732.png]]
-		3. Association
-			- A description of a set of links, each of which relates two or more objects
-		4. Signal
-			- the specification of an asynchronous message communicated between instances
-		5. Component
-			- a modular part of a system that hides its implementation behind a set of external interfaces
-			- figure:
-			  ![[Pasted image 20260208105843.png]]
-		6. Node
-			- a physical element that exists at run time and that represents a computational resource generally having atleast some memory and often processing capabilities.
-			- symbol:
-			  ![[Pasted image 20260208110136.png]]
-		7. Use Case
-			- a description of a set of a sequence of actions, including variants
-			- that a system performs that yields an observable result of value to a particular actor
-			- symbol:
-			  ![[Pasted image 20260208110147.png]]
-		8. Subsystem
-			- a component that represents a major part of a system
-			- symbol:
-			  ![[Pasted image 20260208110155.png]]
-6. Visibility
-	- the visibility of a feature specifies whether it can be used by other classifiers
-	- when we specify the visiblity of a classifier's features, we generally want to hide all its implementation details and expose only those features that are necessary to carry out the responsibilities of the abstraction.
-	- we specify any of four levels of visiblity
-		1. public
-			- any outside classifiers with visibility to the given classifier can use the feature
-			- specified by prepending the symbol +
-		2. protected
-			- any descendant of the classifier can use the feature
-			- specified by prepending the symbol #
-		3. private
-			- only the classifier itself can use the feature;
-			- specified by prepending the symbol -
-		4. package
-			- only classifiers declared in the same package can use the feature
-			- specified by prepending the symbol ~
-	- Figure:
-	  ![[Pasted image 20260208110422.png]]
-7. Multiplicity
-	- the number of instances a class may have is called its multiplicity
-	- we can specify the multiplicity of a class my writing a multiplicity expression in the upper-right corner of the class icon
-	- for example, NetworkController is a singleton class (it can have exactly one instance)
-	- similarly, there are exactly three instance of the class ControlRod in the system
-	- Multiplicity applies to attributes, as well.
-	- we can specify the multiplicity of an attribute by writing a suitable expression in brackets just after the attribute name.
-	- figure:
-	  ![[Pasted image 20260208110654.png]] 
-8. Abstract, Root, Leaf and Polymorphic elements
-	- to represent abstract classes for which we cannot create instances, the class name is written in italics in UML
-	- to represent abstract methods, we write the operation signature in italics.
-	- We can also represent leaf and root classes in UML. 
-	- a class which has no child classes is known as leaf class.
-	- such a class can be represented by writing leaf as a property under the class name
-	- in class hierarchies it is common for the classes to have methods with same signatures
-	- this feature of declaring methods with same signatures is known as polymorphism
-	- such methods are represented in UML by writing their signatures in italics.
-	- figure:
-	  ![[Pasted image 20260208111530.png]]
-##### iii.a.3 Example
-1. Library management system
-	- Classes
-		- Library management system class: 
-			- manages all operations of Library manager system
-			- it is central part of organization for which software is being designed.
-		- User Class - It manages all operations of user
-		- Librarian Class - It manages all operations of Librarian
-		- Book Class - It manages all operations of books. basic building block of system
-		- account class - it manages all operations of account
-		- library database class - it manages all operations of library database
-		- staff class -manages all operations of staff
-		- student class - it manages all operations of student
-	- Attributes
-		- Library Management system attributes: usertype, username, password
-		- user attributes - name, id
-		- librarian attributes - name, id
-		- librarian attributes - name, id, password, searchstring
-		- book attributes - title, author, isbn, publication
-		- account attributes - no_borrowed_books, no_reserved_books, no_returned_books, no_lost_books, fine_amount
-		- library database attribtues - list_of_books
-		- staff class attributes - dept
-		- student class attributes - class
-	- Methods
-		- library management system methods - Login(), Register, Logout()
-		- user methods - Verify(), CheckAccount(), get_book_info()
-		- Librarian Methods - Verify_librarian(), search()
-		- book methods - show duedate(), reservation_status(), feedback(), book_request(), renew_info()
-		- account methods - calculate_fine()
-		- library database methods - add(), delete, update(), display(), search()
-#### A.iii.b Object Diagram
-#### A.iii.c Component Diagram
-#### A.iii.d Composite Structure Diagram
-#### A.iii.e Use Case Diagram
-##### iii.e.1 Concept
-- diagram that shows a set of use cases and actors and their relationships
-- represents user's interaction with the system
-- like all other diagrams, use case diagrams may contain notes and constraints
-- we may want to place instances of use cases in our diagrams, when we want to visualize a specific executing system
-- Components:
-	- Actors
-	- Use Case
-	- System Boundary
-	- Relationship
-- Functions:
-	- helps to identify, clarify and organize the system requirements
-	- describes the behavior of the target system from an external point of view
-	- helps in understanding its components
-	- depict who (or what) interacts with the system
-	- show what outside world wants the system to do.
-##### iii.e.2 Components
-1. Actor
-	- someone or something that must interact with the system under development
-	- e.g. figure:
-	  ![[Pasted image 20260208073322.png]]
-	- not part of the system, is external to it
-	- single actor may perform more than 1 functionality (use case)
-	- function:
-		- input information to the system
-		- receive information from the system
-		- input to and out from the system
-	- find who is actor by asking:
-		- who uses the system?
-		- who installs the system
-		- who starts up the system
-		- what other system use this system
-		- who gets the information to the system
-	- categories
-		- **principle**: who uses the main system functions
-		- **secondary**: who takes care of administration and maintenance
-		- **external hardware**: the hardware devices which are part of application domain and must be used
-		- **other system**: the other system with which the system must interact
-2. Use Case
-	- represents functionality of a system which are the specific roles played by the actors within and around the system
-	- e.g. figure:
-	  ![[Pasted image 20260208073716.png | 400]]
-	- how to find use cases:
-		- what functions will the actor want from the system
-		- does the system store information?
-			- if yes, then which actors will perform CRUD operation?
-		- does system need to notify and actor about changes in its internal state?
-	- generic format for documenting a use case
-		- pre condition: if any
-		- use case: name of the use case
-		- actor: list of actors, indicating who initiates the use case
-		- purpose: intention of the use case
-		- overview: description
-		- type: primary/secondary
-		- post condition: if any
-	- example: description of opening a new account in the bank
+	![[Pasted image 20260208073716.png | 400]]
+	- description of opening a new account in the bank
 		- use case: open new account
 		- actors: customer, cashier, manager
 		- purpose like to have a new saving account
@@ -393,188 +586,293 @@ Four kinds of relationships in the UML:
 			- customer requests for the new account form, fill the form and submit
 				- along with the minimal deposit
 			- at the end of complete successful process customer receives the passbook
-3. System Boundary
-	- helps to identify what is an external vs internal
-	- external environment is represented only by actors
-	- represented as a rectangle
-	- e.g., figure:
-	  ![[Pasted image 20260208074117.png]]
-4. Relationship
-	- communicates:
-		- relationship between use case and actor
-	- include/extend:
-		- relationship between two use cases
-	- notation to show the include and extend relationship: figure:
-	  ![[Pasted image 20260208074250.png]]
-	- \<\<include>> relationship
-		- may contain the functionality of another use case
-		- used to show how the system can use a pre-existing components
-		- an include relationship is a relationship in which one use case (the base use case, BUC) includes or uses the functionality of another use case (the inclusion use case, IUC)
-		- represented as a dashed line with an open arrow pointing from the BUC to IUC.
-		- keyword \<\<include>> is attached to the connector arrow.
-		- format, figure:
-		  ![[Pasted image 20260208074501.png]]
-		- e.g., figure:
-		  ![[Pasted image 20260208074521.png]]
-		- the figure illustrates restaurant order management system that provides customer with the option of placing orders as well as tracking orders.
-		- This behavior is modeled with 2 BUC called *PlaceOrder* and *TrackOrder* that has an IUC called *ValidateUser*.
-		- the *ValidateUser* use case is a separate inclusion use case because it contains behaviors that several other use cases in the system use.
-		- That include relationship points from the *PlaceOrder* & *TrackOrder* use case to the *ValidateUser* use case indicate that
-			- *PlaceOrder* & *TrackOrder* use cases always includes the behaviors of the *ValidateUser* use case
-	- \<\<extend>> relationship
-		- used to show optional behavior, which is required only under certain conditions.
-		- typically used in exceptional circumstances
-		- represented as dotted line labeled \<\<extend>> with an arrow toward the base case.
-		- format, figure:
-		  ![[Pasted image 20260208074941.png]]
-		- example, figure:
-		  ![[Pasted image 20260208075001.png]]
-			- here, *OrderPizza* & *Help* use cases are optional to BUC PlaceOrder
-	- Key difference between extend and include:
-			
-| Particulars                                    | Included use case | Extending use case |
-| ---------------------------------------------- | ----------------- | ------------------ |
-| is this use case optional                      | No                | Yes                |
-| Is the BUC complete without this use case?     | No                | Yes                |
-| Is the execution of this use case conditional? | No                | Yes                |
-| Does this use case change the behavior of BUC? | No                | Yes                |
-- Association
-	- it indicates the communication between an actor and a use case
-	- it is represented by a solid line
-- Generalization
-	- relationship between general use case and a special use case
-	- generalization relationships can be used to relate use cases.
-		- use cases can have common behaviors that other use cases (i.e., child use cases) can modify by adding steps or refining others
-	- represented by a line with a triangular arrow head toward the parent use case.
-	- e.g., figure:
-	  ![[Pasted image 20260208075406.png]]
-	- e.g., figure:
-	  ![[Pasted image 20260208075425.png]]
-		- figure shows the use case for purchasing various tickets
-		- purchase ticket contains the basic steps necessary for purchasing tickets
-			- while the child use cases, (Purchase Concert Ticket, Purchase Theater Ticket, Purchase Baseball Ticket) specialize Purchase Ticket for specific kind of tickets being purchased.
-- Example: Withdraw money from ATM
-	- Description
-		- Use case Scenario: Withdraw money from ATM
-		- Participating actors:
-			- Customer
-			- ATM Machine
-			- Bank
-		- Preconditions:
-			- Network connection is active
-			- ATM has available cash
-		- Flow of events:
-			- Bank customer inserts ATM card and enters PIN
-			- Customer is validated
-			- ATM displays actions available on ATM unit 
-			- Customer selects withdraw cash
-			- ATM prompts the account
-			- customer selects account
-			- ATM prompts amount
-			- customer enters desired amount
-			- information sent to Bank, inquiring if sufficient funds/allowable withdrawal limit
-			- money is dispensed and receipt prints
+#### C.iii.c System Boundary
+- **Definition**: Rectangle separating system from external environment.
+- **Inside**: Use cases.
+- **Outside**: Actors.
+- Shows **scope** of system.
+- e.g., figure:
+	![[Pasted image 20260208074117.png]]
+#### C.iii.d Relationship
+##### iii.d.1 Association
+- Actor <-> Use case
+- **Definition**: Communication between actor and use case.
+- **Notation**: Solid line.
+- **Direction**: Arrow optional (shows who initiates).
+- example:
+```
+┌─────────┐       ┌─────────────┐
+│ Customer│───────│ Place Order │
+└─────────┘       └─────────────┘
+```
+##### iii.d.2 Include Relationship
+- Use Case <-> Use Case
+- **Definition**: One use case **always includes** behavior of another.
+- **Notation**: Dashed arrow with `<<include>>`.
+- **Direction**: From base to included use case.
+- **Purpose**: Reuse common functionality.
+- example:
+```txt
+┌─────────────┐       <<include>>    ┌─────────────┐
+│ Place Order │─────────────────────▶│ Validate    │
+└─────────────┘                      │ User        │
+                                     └─────────────┘
+┌─────────────┐       <<include>>    ┌─────────────┐
+│ Track Order │─────────────────────▶│ Validate    │
+└─────────────┘                      │ User        │
+                                     └─────────────┘
+```
+- figure:
+	- ![[Pasted image 20260208074521.png]]
+##### iii.d.3 Extend Relationship
+- Use Case <-> Use Case
+- **Definition**: One use case **optionally** adds behavior to another.
+- **Notation**: Dashed arrow with `<<extend>>`.    
+- **Direction**: From extension to base use case.
+- **Purpose**: Handle optional/exceptional behavior.
+- example:
+```
+┌─────────────┐       <<extend>>    ┌─────────────┐
+│ Place Order │◀────────────────────│ Apply       │
+└─────────────┘                     │ Discount    │
+                                    └─────────────┘
+```
+- figure:
+	- ![[Pasted image 20260208075001.png]]
+##### iii.d.4 Generalization 
+- Actor <-> Actor or Use Case <-> Use Case
+- **Definition**: Parent/child relationship where child inherits from parent.
+- **Notation**: Solid line with hollow arrowhead pointing to parent.
+###### d.4.A Actor Generalization
+```
+    ┌─────────┐
+    │  User   │
+    └─────────┘
+        ▲
+    ┌───┴─────┐
+    │         │
+┌───▼────┐ ┌──▼────┐
+│Customer│ │Admin  │
+└────────┘ └───────┘
+```
+###### d.4.B Use Case Generalization
+```
+    ┌─────────────┐
+    │ Purchase    │
+    │ Ticket      │
+    └─────────────┘
+        ▲
+    ┌───┴────┐
+    │        │
+┌───▼────┐ ┌─▼──────┐
+│Purchase│ │Purchase│
+│Movie   │ │Concert │
+│Ticket  │ │Ticket  │
+└────────┘ └────────┘
+```
+### 3.C.iv Include vs Extend
+| Aspect                        | Include (`<<include>>`)            | Extend (`<<extend>>`)       |
+| ----------------------------- | ---------------------------------- | --------------------------- |
+| **Optional?**                 | No (always executed)               | Yes (conditional)           |
+| **Base complete without it?** | No                                 | Yes                         |
+| **Direction**                 | Base → Included                    | Extension → Base            |
+| **Purpose**                   | Common functionality               | Optional/exceptional        |
+| **Execution**                 | Always                             | Only when condition true    |
+| **Example**                   | Validate user in every transaction | Apply discount only for VIP |
+### ### 3.C.v Documenting Use Cases
+| Section               | Description                       |
+| --------------------- | --------------------------------- |
+| **Use Case Name**     | Verb phrase                       |
+| **Actors**            | Who participates (initiator bold) |
+| **Preconditions**     | What must be true before          |
+| **Postconditions**    | What must be true after           |
+| **Main Flow**         | Normal sequence of events         |
+| **Alternative Flows** | Variations/exceptions             |
+| **Purpose**           | Why this use case exists          |
+Each use case should have a **description**:
+Example:
+```
+Use Case: Withdraw Money
+Actors: Customer (initiator), Bank System
+Preconditions: 
+  - ATM has cash
+  - Network connection active
+  - Customer has valid card
+Main Flow:
+  1. Customer inserts card
+  2. System validates card
+  3. Customer enters PIN
+  4. System validates PIN
+  5. Customer selects account
+  6. Customer enters amount
+  7. System checks balance
+  8. System dispenses cash
+  9. System prints receipt
+  10. System returns card
+Alternative Flows:
+  - 2a. Invalid card → eject card
+  - 4a. Wrong PIN → retry (max 3 attempts)
+  - 7a. Insufficient funds → display error
+Postconditions: 
+  - Balance reduced by amount
+  - Transaction recorded
+```
+### 3.C.vi Complete Example
+1. ATM System
+```
+┌──────────────────────────────────────┐
+│           ATM System                 │
+│  ┌─────────────┐   ┌─────────────┐   │
+│  │ Withdraw    │   │ Deposit     │   │
+│  │ Money       │   │ Cash        │   │
+│  └─────────────┘   └─────────────┘   │
+│                                      │
+│  ┌─────────────┐   ┌─────────────┐   │
+│  │ Check       │   │ Transfer    │   │
+│  │ Balance     │   │ Funds       │   │
+│  └─────────────┘   └─────────────┘   │
+│           │            │             │
+│           └──────┬─────┘             │
+│              <<include>>             │
+│             ┌─────────────┐          │
+│             │ Validate    │          │
+│             │ User        │          │
+│             └─────────────┘          │
+└──────────────────────────────────────┘
+         ▲              ▲
+         │              │
+    ┌────┴────┐    ┌────┴─────┐
+    │ Customer│    │ Bank     │
+    └─────────┘    │ System   │
+                   └──────────┘
+```
+![[Pasted image 20260208080100.png]]
+2. Library Management System
+```
+┌─────────────────────────────────────┐
+│      Library Management System      │
+│                                     │
+│  ┌─────────────┐   ┌─────────────┐  │
+│  │ Borrow Book │   │ Return Book │  │
+│  └─────────────┘   └─────────────┘  │
+│                                     │
+│  ┌─────────────┐   ┌─────────────┐  │
+│  │ Search      │   │ Reserve     │  │
+│  │ Catalog     │   │ Book        │  │
+│  └─────────────┘   └─────────────┘  │
+│                                     │
+│  ┌─────────────┐   ┌─────────────┐  │
+│  │ Manage      │   │ Generate    │  │
+│  │ Members     │   │ Reports     │  │
+│  └─────────────┘   └─────────────┘  │
+│         ▲              ▲            │
+│         │              │            │
+└─────────┼──────────────┼────────────┘
+          │              │
+    ┌─────┴─────┐   ┌────┴─────┐
+    │ Member    │   │ Librarian│
+    └───────────┘   └──────────┘
+```
+![[Pasted image 20260208080124.png]]
+3. A coffee vending machine dispenses coffee to customers. Customers order coffee by selecting a recipe from a set of recipes. Customers pay using coins. Change is given back if any to the customer. The service staff loads ingredients into machine. The service staff can also add a recipe by indicating name of coffee, units of coffee powder, milk, sugar, water and chocolate to be added as well as the cost of coffee.
+	- Actors:
+		- Customer, Service staff
+	- Use Cases:
+		- Dispense coffee
+		- Order
+		- Pay coins
+		- Payback
+		- Load ingredients
+		- Add recipe
 	- Figure:
-	  ![[Pasted image 20260208080100.png]]
-- Example: Library management System
+	  ![[Pasted image 20260208080507.png]]
+4. Restaurant order system
 	- figure:
-	  ![[Pasted image 20260208080124.png]]
-#### A.iii.f Sequence Diagram
-##### iii.f.1 Concept
-- interaction diagram
-- shows message exchanged or interaction between objects in the system
-- mainly emphasizes on time ordering of messages between objects
-- used to illustrate the dynamic view of the system
-##### iii.f.2 Components
-1. Object/Participants
-	- diagram is made up of collection of participants or objects
-	- participants are system parts that interact with each other
-	- participants interact with each other by sending and receiving message
-	- the object is represented as:
-	  ![[Pasted image 20260208081102.png]]
-2. Lifeline
-	- represents the existence of an object over a period of time
-	- represented by vertical dashed line
-	- most objects that appeared in Interaction diagram will be in existence for the duration of an interaction.
-	- So these objects are aligned at the top of diagram with their lifeline from top to bottom of diagram
+	  ![[Pasted image 20260208080550.png]]
+5. Banking Application
 	- figure:
+	  ![[Pasted image 20260208080733.png]]
+### 3.C.vii Main Points
+- Use case diagrams = **functional requirements** from **external view**.
+- **3 main components**: Actors, Use Cases, System Boundary.
+- **4 relationship types**: Association, Include, Extend, Generalization.
+- **Include** = mandatory, **Extend** = optional/conditional.
+- Use cases named with **verb phrases**.
+- Actors are **external** to system.
+- **System boundary** defines scope.
+---
+## 3.3.D Interaction Diagram
+- shows how objects interact via messages to accomplish a task
+- 2 types
+	1. Sequence diagram -> Emphasizes time ordering
+	2. Communication diagram -> Emphasizes structural relationships.
+### 3.D.i Sequence Diagram
+#### D.i.a Concept
+- Shows **message exchange** between objects over **time**.
+- Emphasizes **temporal order** (what happens when).
+- Used to model dynamic behavior of use cases.
+#### D.i.b Components
+##### i.b.1 Object/Participants
+- **Notation**: Rectangle with `objectName : ClassName` (underlined).
+- Placed across top of diagram.
+- system parts that interact with each other
+- participants interact with each other by sending and receiving message
+- object is represented as:
+	- ![[Pasted image 20260208081102.png | 300]]
+##### i.b.2 Lifeline
+- **Notation**: Vertical dashed line below each object.
+- Represents object's **existence over time**.
+- most objects will be in existence for the duration of an interaction.
+- So these objects are aligned at the top of diagram with their lifeline from top to bottom of diagram
+-  figure:
 	  ![[Pasted image 20260208081333.png]]
-3. Activation bar
-	- represented by tall thin rectangle
-	- can be marked by a written message
-	- also called focus of control
-	- shows period of time during which an object is performing action or operation
-		- the top of rectangle is aligned with start of the action
-		- bottom is aligned with its completion
-	- figure
+##### i.b.3 Activation Bar
+- **Notation**: Tall thin rectangle on lifeline, can be marked by written message
+	- the top of rectangle is aligned with start of the action
+	- bottom is aligned with its completion
+- Shows when object is **executing/active**.
+- AKA **focus of control**.
+- figure
 	  ![[Pasted image 20260208081346.png]]
-4. Messages:
-	- Messages can flow in whatever direction required for interaction (L -> R or R -> L)
-	- the messages on sequence diagram are specified using an arrow from participant that wants to pass the messages to the participant that receive the messages
-	- the interaction in a sequence diagram between the objects can be shown by using messages.
-	- Types:
-		1. Asynchronous message
-			- It is a messaga where the sender is not blocked and can continue executing
-			- representing by solid line with open arrowhead
-			- figure:
-			  ![[Pasted image 20260208081544.png]]
-		2. Synchronous message
-			- message where the sender is blocked and waits until the receiver has finished processing of message
-			- when invoked, the caller waits for the receiver to return from the message invocation
-			- represented by solid line with filled arrowhead.
-			- figure:
-			  ![[Pasted image 20260208081631.png]]
-		3. Reflexive message/ self message
-			-  if the object sends the message to itself
-			- represented by solid line with loops the lifeline of object.
-			- figure:
-			  ![[Pasted image 20260208081732.png]]
-		4. Return messages
-			- used at the end of activation bar to show that control flow of activation returns to the participant that pass the original message
-			- represented by dashed line from receiver to sender
-			- figure:
-			  ![[Pasted image 20260208081820.png]]
-		5. Create messages
-			- used to create object during interaction
-			- object can be created by using \<\<create>> to indicate the timing of creation
-			- figure:
-			  ![[Pasted image 20260208081858.png]]
-		6. Destroy messages
-		- used to destroy the objects during interactin
-		- objects can be terminated using \<\<destroy>> which points to an "X"
-		- indicates that the object named message is terminated
-		- object destruction is avoided unless memory management is critical
-		- figure:
-		  ![[Pasted image 20260208082013.png]]
-5. Time
-	- about ordering, not duration
-	- important factor
-	- time on sequence diagram starts at top of the page just below the object and then progress down the page
-	- describes the order in which interaction takes place
+##### i.b.4 Messages
+- **Notation**: Arrow from sender lifeline to receiver lifeline.
+- flow in R->L or L->R direction
+- used to show interaction between objects.
+###### Types
+| Type               | Notation                     | Description                    | Figure                                   |
+| ------------------ | ---------------------------- | ------------------------------ | ---------------------------------------- |
+| **Synchronous**    | →▸ (solid, filled arrow)     | Caller waits for response      | ![[Pasted image 20260208081631.png]]<br> |
+| **Asynchronous**   | → (solid, open arrow)        | Caller continues execution     | <br>![[Pasted image 20260208081544.png]] |
+| **Return**         | - - - > (dashed, open arrow) | Response to previous call      | ![[Pasted image 20260208081820.png]]     |
+| **Self/Reflexive** | ↻                            | Object sends message to itself | ![[Pasted image 20260208081732.png]]     |
+| **Create**         | → with `<<create>>`          | Creates new object             | ![[Pasted image 20260208081858.png]]     |
+| **Destroy**        | → with `<<destroy>>` and X   | Terminates object              | ![[Pasted image 20260208082013.png]]     |
+##### i.b.5 Time
+- **Direction**: Top (start) to bottom (end).
+- Represents **ordering**, not duration.
+- describes the order in which interaction takes place
+- time on sequence diagram starts at top of the page just below the object and then progress down the page
+- figure:
+	![[Pasted image 20260208082152.png]]
+##### i.b.6 Combined Fragments (Control Structures)
+- Condition:
+	- syntax: \[expression or condition] message-label
+	- the message is sent only if the condition is true
+	- example: \[ user valid = "true" ] give access
+- Iteration
+	- syntax: * \[expression] message-label or *message-label
+	- * \[expression] message-label is not standard syntax
+	- message is sent many times to possibly multiple receiver objects.
 	- figure:
-	  ![[Pasted image 20260208082152.png]]
-6. Event
-	- Event is created while sending/receiving message 
-	- when interaction takes place, events are called as built in blocks for messages and signals
-	- can be referred as smallest part of an interaction and event can occur at any given point in a time.
-	- figure:
-	  ![[Pasted image 20260208082300.png]]
-7. Control Information
-	- Condition:
-		- syntax: \[expression or condition] message-label
-		- the message is sent only if the condition is true
-		- example: \[ user valid = "true" ] give access
-	- Iteration
-		- syntax: * \[expression] message-label or *message-label
-		- * \[expression] message-label is not standard syntax
-		- message is sent many times to possibly multiple receiver objects.
-		- figure:
-		  ![[Pasted image 20260208082448.png]]
-	- the control mechanisms suffice only for modeling simple alternatives
-	- consider drawing several diagrams for modeling complex scenarios
-	- don't use sequence diagrams for detailed modeling of algorithms
-		- done better by activity diagrams, pseudo code or state charts
-##### iii.f.3 Example
+		![[Pasted image 20260208082448.png]]
+- the control mechanisms suffice only for modeling simple alternatives
+##### i.b.7 Event
+- created while sending/receiving message 
+- when interaction takes place, events are called as built in blocks for messages and signals
+- can be referred as smallest part of an interaction and event can occur at any given point in a time.
+- figure:
+	![[Pasted image 20260208082300.png]]
+#### D.i.c Example
 1. Order processing -> POS
    ![[Pasted image 20260208083551.png]]
 2. Borrowing Book from library
@@ -587,163 +885,134 @@ Four kinds of relationships in the UML:
    ![[Pasted image 20260208083724.png]]
 6. Online shopping
    ![[Pasted image 20260208083743.png]]
-#### A.iii.g Communication Diagram
-- aka Collaboration Diagram
-- show a particular sequence of messages exchanged between a number of objects
-- sequence diagram highlight more of temporal aspect in timely manner
+### 3.D.ii Communication Diagram
+#### D.ii.a Concept
+- AKA **Collaboration Diagram**
+- Shows **message exchange** between objects focusing on **structural relationships**.
+- Objects can be placed anywhere (graph/network format).
 	- no need to number messages
-- collaboration diagram, temporal aspect can be shown by numbering interactions with sequential labels
+- Uses **sequence numbers** to show time ordering.
 - used to show the time ordering among messages
 - Notations:
   ![[Pasted image 20260208083956.png]]
-- Example:
-  ![[Pasted image 20260208084010.png]]
-- 2 main feature that distinguish them sequence diagram
-	- path:
-		- attach a path stereotype to far end of a link, to indicate how one object is linked to another
-		- link could be \>\> local$\cdot$d indicating that the designated object is local to the sender
-		- typically we will only need to render the path of the link explicitly for local, parameter, global, and self but not association paths
-	- sequence number
-		- to indicate the time order of a message, we prefix the message with a number
-			- start with message numbered 1
-		- increase monotonically for each new message in control flow
-		- to show nesting, we use Dewey decimal numbering
-			- 1 is 1st message
-			- 1.1 is first message nested in message 1
-			- 1.2 is second message nested in message 1 and so on
-		- we can show nesting to an arbitrary depth
-		- along the same link, we can show many message (possible being sent from direction direction)
-		- each will have a unique sequence number
-- illustrate in a graph or network format
-- objects can be placed anywhere on the diagram
-- example:
-	- collaboration diagram for bookRenew use case
-	  ![[Pasted image 20260208084541.png]]
-	- collaboration diagram for makePayment
-	  ![[Pasted image 20260208084559.png]]
-		- read as:
-		1. message makePayment is sent to instance of Register
-			- sender is not identified
-		2. Register instance sends the makePayment message to a Sale instance
-		3. Sale instance creates an instance of a Payment
-- Link
-	- connection path between two objects
-	- indicates form of navigation and visibility between the objects is possible
-	- link is an instance of an association
-		- e.g., there is a link or path of navigation from a register to a sale, along which messages may flow, such as makePayment message
+#### D.ii.b Components
+##### ii.b.1 Objects
+- Same notation as sequence diagram: `objectName : ClassName` (underlined). 
+- Connected by **links** (instances of associations).
+##### ii.b.2 Links
+- **Notation**: Solid line between objects.
+- Instance of association
+	- e.g., there is a link or path of navigation from a register to a sale, along which messages may flow, such as makePayment message
+ - Represents connection path.
+	 - indicates form of navigation and visibility between the objects is possible
+- Can show **stereotypes** for visibility: `<<local>>`, `<<global>>`, `<<parameter>>`, `<<self>>`
 	- figure:
 	  ![[Pasted image 20260208085017.png]]
-- Messages
-	- each message between objects is represented with a message expression and small arrow indicating the direction of the message
-	- many messages may flow along this link
+##### ii.b.3 Messages
+- **Notation**: Arrow along link with **sequence number** and message name.
+- Format: `sequenceNumber : messageName(parameters)`
+- many messages may flow along a single link
 	- a sequence number is added to show the sequential order of messages in the current thread of control
-	- figure:
+- figure:
 	  ![[Pasted image 20260208085031.png]]
-	- Message to "self" or "this"
-		- a message can be sent fro an object to itself.
-		- illustrated by a link to itself, with messages flowing along the link.
-		- figure:
-		  ![[Pasted image 20260208101452.png]]
-- Creation of instances
-	- any message can be used to create an instance, but there is a convention in UML to use a message named *create* for this purpose.
-	- if another (perhaps less obvious) message name is used, the message may be annotated with a special feature called a UML stereotype, like so: \<\<create>>
-	- the create message may include parameters, indicating the passing of initial values.
-	- UML property {new} may be optionally be added to the instance box to highlight the creation.
+- Message to "self" or "this"
+	- message can be sent from an object to itself.
+		-  by a link to itself, with messages flowing along the link.
 	- figure:
-	  ![[Pasted image 20260208101735.png]]
+		![[Pasted image 20260208101452.png]]
 - Conditional Messages:
-	- shown by following a sequence number with a conditional clause in square brackets, similar to an iteration clause.
+	- shown by following a sequence number with a conditional clause in square brackets.
 	- message is only sent if the clause evaluates to be true.
 	- figure:
 	  ![[Pasted image 20260208101952.png]]
-- Mutually exclusive conditional pahts
-	- if it is necessary to modify the sequence expressions with a conditional path letter.
-	- the first letter used is a by convention.
+- Mutually exclusive conditional patts
+	- used if necessary to modify the sequence expressions with a conditional path letter.
+	- first letter used is `a` by convention.
 	- figure states that either 1a or 1b could execute after msg1.
-	- both are sequence number 1 since either could be the first internal message.
-	- not that subsequent nested messages are still consistently prepended with their outer message sequence.
-	- thus 1b. 1 is nested message within 1b.
+	- both are sequence number 1 
+	- note: subsequent nested messages are still consistently prepended with their outer message sequence.
 	- figure:
 	  ![[Pasted image 20260208102136.png]]
 - Iteration or looping
 	- if the details of the iteration clause are not important to the modeler, a simple '\*' can be used.
 	- figure:
 	  ![[Pasted image 20260208102221.png]]
-- example of sequence diagram:
-  ![[Pasted image 20260208102244.png]]
-- another one:
-  ![[Pasted image 20260208102300.png]]
-- another one:
-  ![[Pasted image 20260208102313.png]]
-#### A.iii.h State Diagram
-#### A.iii.i Activity Diagram
-##### iii.i.1 Concept
-- visually represents a series of actions or flow of control in a system similar to flowchart
-- activities modeled can be sequential and concurrent
-- in both cases, an activity diagram will have a beginning (initial state) and an end (final state)
-- and in between them, series of actions to be performed by the system.
-##### iii.i.2 Symbols
-1. Initial state or start point
-	- small circle followed by an arrow represents the initial action state or the start point for any activity diagram.
-	- symbol:
-	  ![[Pasted image 20260208102537.png]]
-2. activity or action state
-	- an activity represents execution of an action or performing some operation.
-	- represented using a rectangle with rounded corners.
-	- symbol:
-	  ![[Pasted image 20260208102905.png]]
-3. action flow
-	- aka edges and paths
-	- illustrate the transitions from one action state to another
-	- usually drawn with an arrowed line
-	- symbol:
-	  ![[Pasted image 20260208102622.png]]
-4. object flow
-	- refers to creation and modification of objects by activities
-	- an object flow arrow from an action to an object means that the action creates or influences the object
-	- an object flow arrow from an object to an action indicates that the action state uses the object.
-	- symbol:
-	  ![[Pasted image 20260208102746.png]]
-5. decision and branching
-	- a diamond represents a decision with alternate paths
-	- when an activity requires a decision prior to moving on to the next activity, add a diamond between 2 activities
-	- the outgoing alternates should be labeled with a condition or guard expression.
-	- one of the path can be labeled as 'else'
-	- symbol:
-	  ![[Pasted image 20260208103010.png]]
-6. Final state or End Point
-	- an arrow pointing to a filled circle nested inside another circle represents the final action state.
-	- symbol:
-	  ![[Pasted image 20260208103039.png]]
-7. Synchronization
-	- a fork node is used to split a single incoming flow into multiple concurrent flows.
-	- represented as a straight, slightly thicker line
-	- a join node joins multiple concurrent flows back into a single outgoing flow
-	- a fork and join mode used together are often referred to as synchronization.
-	- symbol:
-	  ![[Pasted image 20260208103232.png]]
-8. Fork
-	- used to split a single incoming flow into multiple concurrent flows
-	- represented as straight, slightly thicker line in an activity diagram.
-	- symbol:
-	  ![[Pasted image 20260208103304.png]]
-9. Join
-	- joins multiple concurrent flows back into a single outgoing flow.
-	- symbol:
-	  ![[Pasted image 20260208103340.png]]
-10. Time event
-	- refers to an event that stops the flow for some amount of  time
-	- represented by an hourglass.
-	- symbol:
-	  ![[Pasted image 20260208103430.png]]
-	  ![[Pasted image 20260208103438.png]]
-11. Swimlanes
+###### Sequence Numbering Rules:
+| Pattern    | Meaning                                |
+| ---------- | -------------------------------------- |
+| `1:`       | First message                          |
+| `2:`       | Second message                         |
+| `1.1:`     | First nested message within message 1  |
+| `1.2:`     | Second nested message within message 1 |
+| `1.1.1:`   | Deeper nesting                         |
+| `2a:, 2b:` | Conditional alternatives               |
+| `*1:`      | Iteration                              |
+##### ii.b.4 Instances
+- any message can be used to create an instance,
+- convention to use a message named *create* for this purpose.
+- if another message name is used, the message may be annotated with UML stereotype, like so:` <<create>>`
+- the create message may include parameters, indicating the passing of initial values.
+- UML property `{new}` may be optionally be added to the instance box to highlight the creation.
+- figure:
+	  ![[Pasted image 20260208101735.png]]
+### D.ii.c Communication vs Sequence Diagram
+| Aspect         | Sequence Diagram                 | Communication Diagram    |
+| -------------- | -------------------------------- | ------------------------ |
+| **Focus**      | Time ordering                    | Structural relationships |
+| **Layout**     | Top-to-bottom                    | Graph/network (freeform) |
+| **Objects**    | Along top                        | Anywhere                 |
+| **Time**       | Vertical position                | Sequence numbers         |
+| **Links**      | Implicit via lifelines           | Explicit lines           |
+| **Complexity** | Better for simple flows          | Better for many objects  |
+| **Space**      | Horizontal space for each object | Compact                  |
+### D.ii.d Example:
+  1. 
+     ![[Pasted image 20260208084010.png]]
+  2. collaboration diagram for bookRenew use case
+	  ![[Pasted image 20260208084541.png]]
+3. collaboration diagram for makePayment
+	  ![[Pasted image 20260208084559.png]]
+4. 
+     ![[Pasted image 20260208102244.png]]
+5. 
+   ![[Pasted image 20260208102300.png]]
+6. another one:
+   ![[Pasted image 20260208102313.png]]
+## 3.3.E Activity Diagram
+### 3.E.i Concept
+- **Activity diagram** = flowchart-like representation of **workflow** or **process**.
+- Shows flow of control from one activity to another.
+- Models **sequential and concurrent** activities.
+- Used for business process modeling, use case details, algorithm flow.
+### 3.E.ii Purpose
+| Purpose              | Description                        |
+| -------------------- | ---------------------------------- |
+| **Model workflows**  | Business processes, operations     |
+| **Detail use cases** | Show steps within a use case       |
+| **Model algorithms** | Logic flow with decisions/loops    |
+| **Show concurrency** | Parallel activities with fork/join |
+### 3.E.iii Symbols
+| Symbol              | Notation                             | Description                       |
+| ------------------- | ------------------------------------ | --------------------------------- |
+| **Initial State**   | ![[Pasted image 20260208102537.png]] | Start of activity flow            |
+| **Activity/Action** | ![[Pasted image 20260208102905.png]] | Task or operation performed<br>   |
+| **Flow/Edge**       | ![[Pasted image 20260208102622.png]] | Transition between activities     |
+| **Decision**        | ![[Pasted image 20260208103010.png]] | Branch with conditions            |
+| **Merge**           | ◇                                    | Join alternative flows            |
+| **Fork**            | ![[Pasted image 20260208103304.png]] | Split into concurrent flows       |
+| **Join**            | ![[Pasted image 20260208103340.png]] | Merge concurrent flows            |
+| **Final State**     | ![[Pasted image 20260208103039.png]] | End of activity flow              |
+| **Object Flow**     | ![[Pasted image 20260208102746.png]] | Object passing between activities |
+| **Time Event**      | ![[Pasted image 20260208103438.png]] | Timer or delay                    |
+| **Swimlanes**       |                                      |                                   |
+
+1. Swimlanes
 	- when modeling workflows of business processes, to partition the activity states on an activity diagram into groups, each group representing the business organization responsible for those activities
 	- in UML, each group is called a swimlane, because, visually, each group is divided from its neighbor by a vertical solid line.
 	- a swimlane specifies a locus of activities
 	- each swimlane has a high-level responsibility for part of overall activity of an activity diagram, and each swimlane may eventually be implemented by one or more classes
 	- in an activity diagram partitioned into swimlanes, every activity belongs to exactly one swimlane, but transitions may cross lanes.
-##### Example
+### 3.E.iii Example
 1. Activity diagram of borrowing a book from library
 	- figure:
 	  ![[Pasted image 20260208103525.png]]
@@ -767,42 +1036,295 @@ Four kinds of relationships in the UML:
 		- The registrar asks the student to pay for the initial tuition.
 	- figure:
 	  ![[Pasted image 20260208104004.png]]
-#### A.iii.j Deployment Diagram
-#### A.iii.k Package Diagram
-#### A.iii.l Timing Diagram
-#### A.iii.m Interaction Overview Diagram
-# 3.3 Class Diagram
-# 3.4 Advanced Relationship
-# 3.5 Advanced Relationship
-# 3.6 Interface
-# 3.7 Object Diagram
-# 3.8 Interactions
-# 3.9 Use Cases
-# 3.10 Use Case Diagram
-# 3.11 Interaction Diagram
-# 3.12 Activity Diagram State Chart Diagram
-# 3.13 Component and Components Diagram
-# 3.14 Deployment Diagram
-
-
-# 3.15 Examples
-### 3.15.A Use Case:
-1. A coffee vending machine dispenses coffee to customers. Customers order coffee by selecting a recipe from a set of recipes. Customers pay using coins. Change is given back if any to the customer. The service staff loads ingredients into machine. The service staff can also add a recipe by indicating name of coffee, units of coffee powder, milk, sugar, water and chocolate to be added as well as the cost of coffee.
-	- Actors:
-		- Customer, Service staff
-	- Use Cases:
-		- Dispense coffee
-		- Order
-		- Pay coins
-		- Payback
-		- Load ingredients
-		- Add recipe
+## 3.3.F State Diagram
+### 3.F.i Concept
+- aka state machine / state chart diagram
+- models the behavior of a single object, specifying the sequence of events that an object goes through driving its lifetime in response to events.
+- An object responds differently to the same event depending on what state it is in.
+- State diagrams are used to show possible states a single object can get into.
+	- i.e. shows states of an object
+- How object changes state in response to events.
+	- shows transitions between states
+- Both activity and statechart diagrams are useful in modeling the lifetime of an object..
+- However, an activity diagram shows flow of control from activity to activity while a statechart diagram shows flow of control from state to state.
+- for the most part, this involves modeling the behavior of reactive objects.
+- reactive objects are objects that can receive and process events.
+- a reactive object has a clear lifetime whose current behavior is affected by its past.
+### 3.F.ii Components
+1. States
+	- state is denoted by a round cornered rectangle with the name of the state written inside it.
 	- Figure:
-	  ![[Pasted image 20260208080507.png]]
-2. Restaurant order system
+		- ![[Pasted image 20260213202523.png]]
+	- Initial State
+		- denoted by a filled black circle nad may be labeled with a name.
+	- Final State
+		- denoted by a circle with a dot inside and may also be labeled with a name.
+	- Figure:
+		- ![[Pasted image 20260213202538.png]]
+2. Transitions
+	- transition from one state to next are denoted by lines with arrowheads.
+	- a transition may have a trigger, a guard or an effect, as below figure:
+		- ![[Pasted image 20260213202702.png]]
+	- Trigger
+		- is the cause of the transition
+		- could be a signal, an event, a change in some condition, or passage of time
+	- Guard
+		- condition which must be true in order for the trigger to cause the transition
+	- Effect
+		- action which will be invoked directly on the object that owns the state machine as a result of the transition.
+3. State Actions
+	- for each transition, an effect was associated with the transition
+		- entry: Action performed an entry to state
+		- exit: action performed on leaving state
+		- do: Action performed while in state
+		- defer: event that does not trigger any state transition, but remain in the event pool ready for processing when the object transitions to another state.
+	- For state name 'At work'
+	- Actions:
+		- Entry Activity: entry/unlock
+		- Do activity: do/prepare materials
+		- Defer: telephone rings/defer
+		- Exit: exit / lock door
+4. Self-Transitions
+	- A state can have a transition that returns to itself, as in the following diagram
+		- ![[Pasted image 20260213203642.png]]
+5. Compound States or Sub States
+	- A state machine diagram may include sub-machine diagrams, as in the figure.
+		- ![[Pasted image 20260213203342.png]]
+	- the alternative way to show the same information is as follows:
+		- ![[Pasted image 20260213203414.png]]
+		- the notation in this figure indicates that the details of the Check PIN sub-machine are shown in separate diagram.
+6. Terminate Pseudo-State
+	- entering a terminate pseudo state indicates that the lifeline of the state machine has ended.
+	- a terminate pseudo-state is notated as a cross.
 	- figure:
-	  ![[Pasted image 20260208080550.png]]
-3. Banking Application
+		- ![[Pasted image 20260213203745.png]]
+7. History States
+	- used to remember the previous state of a state machine when it was interrupted.
+	- the below diagram illustrates the use of history states.
+		- ![[Pasted image 20260213203929.png]]
+	- the example is a state machine belonging to a washing machine.
+	- in the state machine, when a washing machine is running, it will progress from washing through rinsing to spinning
+	- if there is a power cut, the washing machine will stop running and will go to 'power off' state
+	- when power is restored, the running state is entered at the 'History State' symbol meaning that it should resume where it last left off.
+8. Concurrent state machine
+	- a state may be divided into regions containing sub-states that exist and execute concurrently.
+	- the example below states that within the state 'Applying Brakes', the front and rear brakes will be operating simultaneously and independently.
 	- figure:
-	  ![[Pasted image 20260208080733.png]]
-4. 
+		- ![[Pasted image 20260213205139.png]]
+	- notice the use of fork and join pseudo-states, rather than choice and merge pseud-states.
+	- these symbols are used to synchronize the concurrent threads.
+### 3.F.iii SMD of Recruitment process
+1. ![[Pasted image 20260213205032.png]]
+2.  sub states or compounded states example.
+	- ![[Pasted image 20260213205342.png]]
+3. atm pin verification
+	- ![[Pasted image 20260213205409.png]]
+4. Statechart diagram for Digital Clock
+	- ![[Pasted image 20260213205452.png]]
+5. State diagram of a candy vending machine
+	- ![[Pasted image 20260213205517.png]]
+
+## 3.3.G Component Diagram
+### 3.G.i Concept
+- Shows a set of components and their relationships.
+- graphically, a component diagram is a collection of vertices and arcs.
+- commonly contains
+	- components
+	- interfaces
+	- dependency, generalization, association, and realization relationships
+- like all other diagrams, component diagram may contain notes and constraints.
+- is just a special kind of class diagram that focuses on a system's components
+### 3.G.ii Components
+1. Component
+	- A component is a physical and replaceable part of a system that conforms to and provides the realization of a set of interfaces. 
+	- Graphically, a component is rendered as rectangle with tabs
+2. Names
+	- Every component must have a name that distinguishes it from other components.
+	- a name is a textual string.
+	- That name alone is known as a simple name
+	- a path name is the component name prefixed by the name of the package in a which that component lives
+	- a component is typically drawn showing only its name, as in figure below.
+	- just with classes, we may draw components adorned with tagged values or with additional compartments to expose their details, as wee see in the figure.
+	- figure:
+		- ![[Pasted image 20260213212329.png]]
+3. Components and Classes
+	- in many ways, components are like classes:
+		- both have names; both may realize a set of interfaces; both may participate in dependency, generalization, and association relationships; both may be nested; both may have instances; both may be participants in interactions.
+		- However, there are some significant differences between components and classes.
+			- classes represent logical abstractions; components represent physical things that live in the world of bits.
+			- in short, components may live on nodes, classes may not.
+			- components represent the physical packaging of otherwise logical components and are at a different level of abstraction.
+			- classes may have attributes and operations directly.
+			- in general components only have operations that are reachable only through their interfaces.
+		- the first difference is the most important.
+			- when modeling a system, deciding if we should use a class or a component involves a simple decision - if the thing we are modeling lives directly on a node, we use a component; otherwise, use a class.
+		- the second difference suggests a relationship between class and components.
+			- in particular, a component is the physical implementation of a set of other logical elements, such as classes and collaborations.
+			- as figure shows the relationship between a component and the classes it implements can be shown explicitly by using a dependency relationship.
+		- most of the time, we'll never need to visualize these relationships graphically.
+			- rather, we will keep them as a part of the component's specification.
+		- the third difference points out how interfaces bridge components and classes.
+			- As described in more detail in the next section, components and classes may both realize an interface, but a component's services are usually available only through its interfaces.
+			- ![[Pasted image 20260213213108.png]]
+4. Components and Interfaces
+	- an interface is a collection of operations that are used to specify a service of a class or a component
+	- the relationship between component and interface is important.
+		- all the most common component-based operating system facilities (such as COM+, COBRA, and Enterprise Java Beans) use interfaces as the glue that binds components together.
+	- using one of these facilities, we decompose our physical implementation by specifying interfaces that represent the major seams in the system.
+	- We then provide components that realize the interfaces, along with other components that access the services through their interfaces.
+	- As figure below indicates, we can show the relationship between a component and its interfaces in one of two ways.
+		- ![[Pasted image 20260213213517.png]]
+	- The first (and most common) style renders the interface in its elided, iconic form.
+		- the component that realizes the interface is connected to the interface is connected to the interface using an elided realization relationship.
+	- The second style renders the interface in its expanded form, perhaps revealing its operations.
+		- the component that realizes the interface is connected to the interface using a full realization relationship.
+	- in both cases, the component that accesses the services of the other component through the interface is connected to the interface using a dependency relationship
+	- an interface that a component realizes is called an export interface, meaning an interface that the component provides as a service to other components.
+		- A component may provide many export interfaces.
+	- the interface that a component uses is called an import interface, meaning an interface that the component conforms to and so builds on.
+	- a component may conform to many import interfaces.
+		- also, a component may both import and export interfaces.
+	- a given interface may be exported by one component and imported by another.
+	- the fact that this interface
+5. Binary Replaceability
+	- the basic intent of every component-based operating system facility is to permit the assembly of systems from binary replaceable parts.
+	- This means that we can create a system out of components and then evolve that system by adding new components and replacing old ones, without rebuilding the system.
+	- Interfaces are the key to making this happen. When we specify an interface, we can drop into the executable system any component that conforms to or provides that interface.
+	- We can extend the system by making the components provide new services through other interfaces, which, in turn, other components can discover and use.
+	- These semantics explain the intent behind the definition of components in the UML. A component is a physical and replaceable part of a system that conforms to and provide the realization of a set of interfaces.
+	- First, a component is *physical*. it lives in the world of bits, not concepts.
+	- Second, a component is *replaceable*. A component is substitutable. it is possible replace a component with another that conforms to the same interfaces.
+	- Third, a component is *part of a system*. A component rarely stands alone. Rather, a given component collaborates with other components and in so doing exists in the architectural or technology context in which it is intended to be used.
+	- A component may be reused across many system. Therefore, a component represents a fundamental building block on which systems can be designed and composed.
+	- This definition is a recursive, a system at one level of abstraction may simply be a component at a higher level of abstraction.
+	- Fourth, a component *confirms to and provides the realization of a set of interfaces*.
+6. Kinds of Components
+	- Three kinds of components may be distinguished.
+	- First there are *deployment components*. these are the components necessary and sufficient to form an executable system, such as dynamic libraries (DLLs) and executables (EXEs)
+	- Second, there are *work product components*. these components are essentially the residue of the development process, consisting of things such as source code files and data files from which deployment components are created.
+	- These components do not directly participate in an executable system but are the work products of development that are used to create the executable system.
+	- Third are *execution components*. these components are created as a consequence of an executing system, such as COM+ object, which is instantiated from a DLL.
+7. Interfaces
+	- *interfaces* are model elements that define sets of operations that other model elements, such as classes, or components must implement.
+	- An implementing model element realizes an interface by overriding each of the operations that the interface declares.
+	- We can use interfaces in class  diagrams and component diagrams to specify a contract between the interface and the classifier that realizes the interface
+	- each interface specifies a well defined set of operations that have public visibility.
+	- the operation signatures tell the implementing classifiers what kind fo behavior to invoke, but not how they should invoke that behavior
+	- many classifiers can implement a single interface each one providing a unique implementation.
+	- Interfaces support the hiding of information and protect client code by publicly declaring certain behavior of services.
+	- we can specify the following types of interfaces.
+		- provided interfaces
+			- these interfaces describe the services that instance s of a classifier (supplier) offer to their clients.
+			- component realizes the interface.
+			- in other words, component implements the interfaces
+		- Required interfaces
+			- these interfaces specify the services that a classifier needs to perform its functions and to fulfill its own obligations to its clients.
+			- the component uses required interface.
+			- as the following figure illustrate, the diagram editor displays an interface in the following ways:
+				- class rectangle symbol that contains the keyword \<\< interface>>. This notation is also called the internal or class view.
+				- ![[Pasted image 20260214094633.png]]
+			- we use the class shape when we need to model the details of the interface.
+			- compartments in the class s shape display information about the attributes, operations, and signal receptions of the interface.
+			- ball and socket notation in which the implementation dependency from a classifier to the provided interface is displayed as a circle (ball) and the usage dependency from  a classifier to the required internal interface is displayed as a half-circle (socket). This notation is also called the external view.
+			- figure:
+				- ![[Pasted image 20260214094819.png]]
+			- we use the ball and socket notation, also called the lollypop notation, when we need to model only that provided and required interfaces exist.
+			- the UML provides a graphical representation for interfaces, as figure below shows. This notation permits us to visualize the specification of an abstraction apart from any implementation.
+				- figure:![[Pasted image 20260214094921.png]]
+### 3.G.iii Common Uses of Component Diagram
+- We use a component diagrams to model the static implementation view of a system.
+- this view primarily supports the configuration management of a system's parts, made up of components that can be assembled in various ways to produce a running system.
+- when we model the static implementation view of a system, we typically use component diagrams in one of four ways.
+	1. To model source code
+		- with most contemporary object-oriented programming languages, we'll cut code using integrated development environments that store our source code in files.
+		- We can use component diagrams to model the configuration management of these files, which represent work-product components.
+	2. To model executable releases.
+		- A release is a relatively complete and consistent set of artifacts delivered to an internal or external user.
+		- In the context of components, a release focuses on the parts necessary to deliver a running system.
+		- When we model a release using component diagrams, we visualize, specify and document the decision about physical parts that constitute our software, i.e., its deployment components.
+	3. to model executable releases
+		- we can think of a physical database as the concrete realization of a schema, living in the world of bits.
+		- schemas, in effect, offer an API to persistent information; the model of a physical database represents the storage of that information in the tables of a relational database or the pages of an object-oriented datbase.
+		- We use component diagrams to represent these and other kinds of physical databases.
+	4. to model physical databases
+		- some systems are quite static; their components enter the scene, participate in an execution, and then depart.
+		- other systems are more dynamic, involving mobile agents or components that migrate for purposes of load balancing and failure recovery.
+		- we use component diagrams in conjunction with some of the UML's diagrams for modeling behavior to represent these kinds of systems.
+### 3.G.iv Modeling Examples
+1. source code:
+	- figure:
+		- ![[Pasted image 20260214100901.png]]
+	- this header file (signal.h) is used by two other files (interp.cpp and signal.cpp), both of which are bodies.
+	- one of these files (interp.cpp) has a compilation depemdency to another header (irq/h); in turn, device.cpp has a compilation dependency to interp.cpp
+	- given this component diagram, its easy to trace the impact of changes.
+	- for this example, changing the source code file signal.h will require the recompilation of three other files: signal.cpp, interp.cpp and trasitively, device.cpp
+2. Adaptable systems
+	- If we want to show the details of each database, we can render them in their canonical form, a component stereotyped as a database.
+
+## 3.3.H Deployment Diagram
+### 3.H.i Concept
+- deployment diagrams are one of the two kinds of diagrams used in modeling the physical aspects of an object-oriented system
+- a deployment diagram shows the configuration of run time processing nodes and the components that live on thhem.
+- We use deployment diagrams to model the static deployment view of a system.
+- For the most part, this involves modeling the topology of the hardware on which our system executes.
+- Deployment diagrams are essentially class diagrams that focus on a system's nodes.
+- diagram commonly contain
+	- nodes
+	- dependency and association relationships
+- like all other diagrams, deployment diagrams may contain notes and constraints
+- deployment diagrams may also contain components, each of which must live on some node.
+- deployment diagrams may also contain packages or subsystems, both of which are used to group elements of our model into larger chunks.
+- sometimes we will want to place isntances in our deployment diagrams, as well, especially when we want to visualize  one instance of a family of hardware topologies.
+###  3.H.ii Components
+1. Node
+	- a node is a physical element that exists at run time and represents a computation resource, generally having at least some memory and often, processing capability
+	- we use nodes to model the topology of the hardware on which our system executes.
+	- a node typically represents a processor or a device on which components may be deployed.
+	- good nodes accurately depicts the vocabulary of tehh hardware in our solution domain.
+	- graphically a node is rendered as a cube.
+2. Names
+	- A node name must be unique within its enclosing package.
+	- every node must have a name that distinguishes it from other nodes.
+	- a name is a textual string.
+	- that name alone is known as a simple name;
+	- a path name is the node name prefixed by the name of the package in which that node lives.
+	- a node is typically shown only its  name, as in figure below.
+		- ![[Pasted image 20260214104447.png]]
+	- just as with classes, we may draw nodes adorned with tagged values or with additional compartments to expose their details.
+### 3.H.iii Common uses
+- to model the static deployment view of a system
+- this view primarily addresses the distribution, delivery and installation of the parts that make up the physical system.
+- there are some kinds of systems for which deployment diagrams are unnecessary.
+- if we are developing a piece of software that lives on one machine and interfaces only with standard devices on that machine that are already managed by the host operating system (for example, a personal computer's keyboard, display and modem), we can ignore deployment diagrams.
+- on the other hand, if we are developing a piece of software that interacts with devices that the host operating system does not typically manage or that is physically distributed across multiple processors, then using deployment diagrams will help us reason about our system's software to hardware mapping
+- when we model the static deployment view of a system, we'll typically use deployment diagrams in one of three ways.
+	- **To model embedded systems**
+		- an emebedded system is a software intensive collection of harhdware that interfaces with the physical world.
+		- embedded systems involve software thhat control device such as motors, actuators, and displays and thaht, in turn, is controlled by external stimuli such as sensor input, movement, and temperature changes.
+		- we can use deployment diagrams to model the devices and processors that comprise an embedded system.
+			- example
+				- ![[Pasted image 20260214105430.png]]
+				- we'll find one node (pentium motherboard) stereotyped as a processor. surrounding this node are eight devices, each stereotyped as a device and rendered with an icon thaht offers a clear visual cue to its real world equivalent.
+	- **to model client/server systems**
+		- a client/server system is a common architecture focused on making a clear separation of concerns between the system's user interface (which lives on the client) and the system's persistent data (which lives on the server)
+		- client/server systems are one end of the continuum of distributed systems and require us to make decisions about the network connectivity of clients to servers and about the physical distribution of our system's software components across the nodes.
+		- we can model the topology of such systems by using deployment diagrams.
+			- example:
+				- ![[Pasted image 20260214105525.png]]
+	- **to model fully distributed systems**
+		- at the end of the continuum of distributed systems are those that are widely, if not globally, distributed, typically encompassing multiple levels of servers
+		- such systems are often hosts to multiple versions of software components, some of which may even migrate from node to node
+		- crafting such systems require us to make decision that enable the continuous change in system's topology.
+		- we can use deployment diagrams to visualize the system's current topology and distribution of components to reason about the impact of changes on that topology.
+			- example:
+				- ![[Pasted image 20260214105545.png]]# 3.3 Class Diagram
+# 3.4 Advanced Classes
+Present at: [[#3.4 Advanced Classes]]
+# 3.5 Advanced Relationship
+yet to be done
+# 3.6 Interface
+Present at: [[#3.3.G Component Diagram]]
+# 3.8 Interactions
+Present at: [[#3.3.D Interaction Diagram]]
+# 3.9 Use Cases
+Yet to be done
