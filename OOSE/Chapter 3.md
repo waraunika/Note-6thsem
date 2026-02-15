@@ -1036,221 +1036,228 @@ Postconditions:
 		- The registrar asks the student to pay for the initial tuition.
 	- figure:
 	  ![[Pasted image 20260208104004.png]]
+#### 3.E.iv Activity vs Flowchart
+| Aspect           | Activity Diagram      | Flowchart               |
+| ---------------- | --------------------- | ----------------------- |
+| **Scope**        | System/process level  | Algorithm/program level |
+| **Concurrency**  | Supported (fork/join) | Limited                 |
+| **Swimlanes**    | Yes (responsibility)  | No                      |
+| **Object Flow**  | Yes                   | No                      |
+| **UML Standard** | Yes                   | No                      |
 ## 3.3.F State Diagram
 ### 3.F.i Concept
-- aka state machine / state chart diagram
-- models the behavior of a single object, specifying the sequence of events that an object goes through driving its lifetime in response to events.
-- An object responds differently to the same event depending on what state it is in.
-- State diagrams are used to show possible states a single object can get into.
-	- i.e. shows states of an object
-- How object changes state in response to events.
-	- shows transitions between states
-- Both activity and statechart diagrams are useful in modeling the lifetime of an object..
-- However, an activity diagram shows flow of control from activity to activity while a statechart diagram shows flow of control from state to state.
-- for the most part, this involves modeling the behavior of reactive objects.
-- reactive objects are objects that can receive and process events.
-- a reactive object has a clear lifetime whose current behavior is affected by its past.
-### 3.F.ii Components
+- AKA **state machine** / **state chart** diagram
+- Models the **behavior of a single object**, over its lifetime
+- Show **states** an object can be and transitions between states in response to events.
+- Particularly useful for **reactive objects** (objects that respond to events).
+### 3.F.ii Purpose
+| Purpose                    | Description                                          |
+| -------------------------- | ---------------------------------------------------- |
+| **Model object lifecycle** | Show all possible states of an object                |
+| **Event-driven behavior**  | How object responds to events based on current state |
+| **Complex behavior**       | Objects with many states and transitions             |
+| **Real-time systems**      | Controllers, devices, protocols                      |
+### 3.F.iii Components
 1. States
+	- Condition or situation during object's life when it satisfies some condition, performs some activity, or waits for an event.
 	- state is denoted by a round cornered rectangle with the name of the state written inside it.
 	- Figure:
 		- ![[Pasted image 20260213202523.png]]
-	- Initial State
-		- denoted by a filled black circle nad may be labeled with a name.
-	- Final State
-		- denoted by a circle with a dot inside and may also be labeled with a name.
+2. Initial State
+	- Starting point of state machine.
+	- Only one initial state.
+3. Final State
+	- End of object's lifetime.
+	- May have multiple final states.
 	- Figure:
 		- ![[Pasted image 20260213202538.png]]
-2. Transitions
-	- transition from one state to next are denoted by lines with arrowheads.
+4. Transitions
+	- Movement from one state to another in response to an event
+	- Notation of arrow from source to target state.
 	- a transition may have a trigger, a guard or an effect, as below figure:
 		- ![[Pasted image 20260213202702.png]]
-	- Trigger
-		- is the cause of the transition
-		- could be a signal, an event, a change in some condition, or passage of time
+	- Event/Trigger
+		- what causes transition
+		- could be signal, event, change in some condition, or passage of time
+		- e.g., `insertCard`
 	- Guard
-		- condition which must be true in order for the trigger to cause the transition
-	- Effect
-		- action which will be invoked directly on the object that owns the state machine as a result of the transition.
-3. State Actions
-	- for each transition, an effect was associated with the transition
-		- entry: Action performed an entry to state
-		- exit: action performed on leaving state
-		- do: Action performed while in state
-		- defer: event that does not trigger any state transition, but remain in the event pool ready for processing when the object transitions to another state.
+		- condition that must be true for the trigger to cause the transition
+		- e.g., `[cardValid`
+	- Action/Effect
+		- what happen during transition.
+		- e.g., `/readPIN`
+5. State Actions
+	- activities that occur within a state
+		- entry: 
+			- syntax: `entry / action`
+			- On entering the state
+		- exit:
+			- syntax: `exit / action`
+			- on leaving state
+		- do:
+			- syntax: `do / activity`
+			- while in state (on going)
+		- defer: 
+			- syntax: `defer / event`
+			- event that remain in the event pool ready for processing when the object transitions to another state.
 	- For state name 'At work'
 	- Actions:
 		- Entry Activity: entry/unlock
 		- Do activity: do/prepare materials
 		- Defer: telephone rings/defer
 		- Exit: exit / lock door
-4. Self-Transitions
-	- A state can have a transition that returns to itself, as in the following diagram
+6. Self-Transitions
+	- transition that returns to the same state
+	- entry/exit actions execute again
 		- ![[Pasted image 20260213203642.png]]
-5. Compound States or Sub States
-	- A state machine diagram may include sub-machine diagrams, as in the figure.
+7. Compound States or Sub States
+	- state containing nested states.
+	- shows hierarchy and refinement
 		- ![[Pasted image 20260213203342.png]]
 	- the alternative way to show the same information is as follows:
 		- ![[Pasted image 20260213203414.png]]
 		- the notation in this figure indicates that the details of the Check PIN sub-machine are shown in separate diagram.
-6. Terminate Pseudo-State
-	- entering a terminate pseudo state indicates that the lifeline of the state machine has ended.
-	- a terminate pseudo-state is notated as a cross.
-	- figure:
+8. Terminate Pseudo-State
+	- indicates object lifetime ends immediately
+	- no exit actions executed.
 		- ![[Pasted image 20260213203745.png]]
-7. History States
-	- used to remember the previous state of a state machine when it was interrupted.
-	- the below diagram illustrates the use of history states.
+9. History States
+	- remembers last active substate within a compound state.
+	- Shallow History (H): remembers only top level substate
+	- Deep History (H*): remembers nested substates as well.
 		- ![[Pasted image 20260213203929.png]]
 	- the example is a state machine belonging to a washing machine.
 	- in the state machine, when a washing machine is running, it will progress from washing through rinsing to spinning
 	- if there is a power cut, the washing machine will stop running and will go to 'power off' state
 	- when power is restored, the running state is entered at the 'History State' symbol meaning that it should resume where it last left off.
-8. Concurrent state machine
-	- a state may be divided into regions containing sub-states that exist and execute concurrently.
-	- the example below states that within the state 'Applying Brakes', the front and rear brakes will be operating simultaneously and independently.
-	- figure:
+10. Concurrent state machine
+	- state divided into regions executing in parallel
+	- uses fork/join notation
 		- ![[Pasted image 20260213205139.png]]
 	- notice the use of fork and join pseudo-states, rather than choice and merge pseud-states.
 	- these symbols are used to synchronize the concurrent threads.
-### 3.F.iii SMD of Recruitment process
-1. ![[Pasted image 20260213205032.png]]
-2.  sub states or compounded states example.
+### 3.F.iii SMD Examples
+1. Recruitment process
+   - ![[Pasted image 20260213205032.png]]
+1.  sub states or compounded states example.
 	- ![[Pasted image 20260213205342.png]]
-3. atm pin verification
+2. atm pin verification
 	- ![[Pasted image 20260213205409.png]]
-4. Statechart diagram for Digital Clock
+3. Statechart diagram for Digital Clock
 	- ![[Pasted image 20260213205452.png]]
-5. State diagram of a candy vending machine
+4. State diagram of a candy vending machine
 	- ![[Pasted image 20260213205517.png]]
+### State Diagram vs Activity Diagram
 
+| Aspect          | State Diagram          | Activity Diagram      |
+| --------------- | ---------------------- | --------------------- |
+| **Focus**       | Single object's states | Process/workflow      |
+| **Events**      | Triggers transitions   | Flow of control       |
+| **States**      | Explicitly named       | Implicit (activities) |
+| **Concurrency** | Concurrent states      | Fork/join             |
+| **Best for**    | Reactive objects       | Business processes    |
+
+---
 ## 3.3.G Component Diagram
 ### 3.G.i Concept
-- Shows a set of components and their relationships.
-- graphically, a component diagram is a collection of vertices and arcs.
-- commonly contains
-	- components
-	- interfaces
-	- dependency, generalization, association, and realization relationships
-- like all other diagrams, component diagram may contain notes and constraints.
-- is just a special kind of class diagram that focuses on a system's components
-### 3.G.ii Components
+- **Component diagram** = shows **physical structure** of code/components in a system.
+- Models **implementation view** of the system.
+- Represents **components**, **interfaces**, and **relationships** between them.
+- Focuses on **binary replaceable parts** of a system.
+### 3.G.ii Purpose
+| Purpose                           | Description                    |
+| --------------------------------- | ------------------------------ |
+| **Model source code**             | File structure, dependencies   |
+| **Model executable releases**     | DLLs, EXEs, runtime components |
+| **Model physical databases**      | Tables, schemas                |
+| **Model component-based systems** | COM+, CORBA, EJB, etc.         |
+### 3.G.iii Components
 1. Component
-	- A component is a physical and replaceable part of a system that conforms to and provides the realization of a set of interfaces. 
-	- Graphically, a component is rendered as rectangle with tabs
-2. Names
-	- Every component must have a name that distinguishes it from other components.
-	- a name is a textual string.
-	- That name alone is known as a simple name
-	- a path name is the component name prefixed by the name of the package in a which that component lives
+	- Physical, replaceable part of system that conforms to and provides interfaces.
+	- Notation of rectangle with two small protruding rectangles (tabs) on left side.
+	- Characteristics of Components:
+		- Physical (lives in world of bits)
+		- Replaceable (collaborates with others)
+		- Provides/requires interfaces
+2. Component Names
+	- each component has unique name (textual string)
+	- Simple name: Just the name (e.g., `Login.dll`)
+	- Path name: Package + name (e.g., `Security::Login.dll`)
 	- a component is typically drawn showing only its name, as in figure below.
 	- just with classes, we may draw components adorned with tagged values or with additional compartments to expose their details, as wee see in the figure.
 	- figure:
 		- ![[Pasted image 20260213212329.png]]
-3. Components and Classes
-	- in many ways, components are like classes:
-		- both have names; both may realize a set of interfaces; both may participate in dependency, generalization, and association relationships; both may be nested; both may have instances; both may be participants in interactions.
-		- However, there are some significant differences between components and classes.
-			- classes represent logical abstractions; components represent physical things that live in the world of bits.
-			- in short, components may live on nodes, classes may not.
-			- components represent the physical packaging of otherwise logical components and are at a different level of abstraction.
-			- classes may have attributes and operations directly.
-			- in general components only have operations that are reachable only through their interfaces.
-		- the first difference is the most important.
-			- when modeling a system, deciding if we should use a class or a component involves a simple decision - if the thing we are modeling lives directly on a node, we use a component; otherwise, use a class.
-		- the second difference suggests a relationship between class and components.
-			- in particular, a component is the physical implementation of a set of other logical elements, such as classes and collaborations.
-			- as figure shows the relationship between a component and the classes it implements can be shown explicitly by using a dependency relationship.
-		- most of the time, we'll never need to visualize these relationships graphically.
-			- rather, we will keep them as a part of the component's specification.
-		- the third difference points out how interfaces bridge components and classes.
-			- As described in more detail in the next section, components and classes may both realize an interface, but a component's services are usually available only through its interfaces.
-			- ![[Pasted image 20260213213108.png]]
-4. Components and Interfaces
-	- an interface is a collection of operations that are used to specify a service of a class or a component
-	- the relationship between component and interface is important.
-		- all the most common component-based operating system facilities (such as COM+, COBRA, and Enterprise Java Beans) use interfaces as the glue that binds components together.
-	- using one of these facilities, we decompose our physical implementation by specifying interfaces that represent the major seams in the system.
-	- We then provide components that realize the interfaces, along with other components that access the services through their interfaces.
+3. Interfaces
+	- Are model elements that define sets of operations that other model elements
+		- operations  used to specify a service of class or component
+	- Components interact through interfaces:
+		- Provided Interface:
+			- Services component offers
+			- Notation of Circle (ball) on component
+		- Required Interface
+			- Services component needs
+			- Notation of Half-Circle (socket) on component
 	- As figure below indicates, we can show the relationship between a component and its interfaces in one of two ways.
 		- ![[Pasted image 20260213213517.png]]
-	- The first (and most common) style renders the interface in its elided, iconic form.
-		- the component that realizes the interface is connected to the interface is connected to the interface using an elided realization relationship.
-	- The second style renders the interface in its expanded form, perhaps revealing its operations.
-		- the component that realizes the interface is connected to the interface using a full realization relationship.
-	- in both cases, the component that accesses the services of the other component through the interface is connected to the interface using a dependency relationship
-	- an interface that a component realizes is called an export interface, meaning an interface that the component provides as a service to other components.
-		- A component may provide many export interfaces.
-	- the interface that a component uses is called an import interface, meaning an interface that the component conforms to and so builds on.
-	- a component may conform to many import interfaces.
-		- also, a component may both import and export interfaces.
-	- a given interface may be exported by one component and imported by another.
-	- the fact that this interface
-5. Binary Replaceability
-	- the basic intent of every component-based operating system facility is to permit the assembly of systems from binary replaceable parts.
-	- This means that we can create a system out of components and then evolve that system by adding new components and replacing old ones, without rebuilding the system.
-	- Interfaces are the key to making this happen. When we specify an interface, we can drop into the executable system any component that conforms to or provides that interface.
+4. Relationships
+
+|Relationship|Notation|Description|
+|---|---|---|
+|**Dependency**|- - - →|One component uses another|
+|**Realization**|- - - ▷|Component implements interface|
+|**Association**|———|Structural connection|
+5. Components vs Classes
+![[Pasted image 20260213213108.png]]
+
+| Aspect             | Component               | Class                           |
+| ------------------ | ----------------------- | ------------------------------- |
+| **Level**          | Physical                | Logical                         |
+| **Location**       | Lives on nodes          | Abstract (no physical location) |
+| **Replaceability** | Binary replaceable      | Source code replaceable         |
+| **Interfaces**     | Only through interfaces | Direct operations               |
+| **Implementation** | Implements classes      | Implemented by components       |
+5. Kinds of Components
+
+| Type                        | Description             | Examples                       |
+| --------------------------- | ----------------------- | ------------------------------ |
+| **Deployment Components**   | Executable system parts | DLLs, EXEs, JARs               |
+| **Work Product Components** | Development artifacts   | Source files, data files       |
+| **Execution Components**    | Created at runtime      | COM+ objects, Enterprise Beans |
+6. Binary Replaceability
+	- We can create a system out of components and then evolve that system by adding new components and replacing old ones, without rebuilding the system.
+	- Interfaces are the key to making this happen. 
+	- When we specify an interface, we can drop into the executable system any component that conforms to or provides that interface.
 	- We can extend the system by making the components provide new services through other interfaces, which, in turn, other components can discover and use.
-	- These semantics explain the intent behind the definition of components in the UML. A component is a physical and replaceable part of a system that conforms to and provide the realization of a set of interfaces.
-	- First, a component is *physical*. it lives in the world of bits, not concepts.
-	- Second, a component is *replaceable*. A component is substitutable. it is possible replace a component with another that conforms to the same interfaces.
-	- Third, a component is *part of a system*. A component rarely stands alone. Rather, a given component collaborates with other components and in so doing exists in the architectural or technology context in which it is intended to be used.
-	- A component may be reused across many system. Therefore, a component represents a fundamental building block on which systems can be designed and composed.
+	- A component is a physical and replaceable part of a system that conforms to and provide the realization of a set of interfaces.
+	- A component may be reused across many system. 
+	- Therefore, a component is a fundamental building block on which systems can be designed and composed.
 	- This definition is a recursive, a system at one level of abstraction may simply be a component at a higher level of abstraction.
-	- Fourth, a component *confirms to and provides the realization of a set of interfaces*.
-6. Kinds of Components
-	- Three kinds of components may be distinguished.
-	- First there are *deployment components*. these are the components necessary and sufficient to form an executable system, such as dynamic libraries (DLLs) and executables (EXEs)
-	- Second, there are *work product components*. these components are essentially the residue of the development process, consisting of things such as source code files and data files from which deployment components are created.
-	- These components do not directly participate in an executable system but are the work products of development that are used to create the executable system.
-	- Third are *execution components*. these components are created as a consequence of an executing system, such as COM+ object, which is instantiated from a DLL.
-7. Interfaces
-	- *interfaces* are model elements that define sets of operations that other model elements, such as classes, or components must implement.
-	- An implementing model element realizes an interface by overriding each of the operations that the interface declares.
-	- We can use interfaces in class  diagrams and component diagrams to specify a contract between the interface and the classifier that realizes the interface
-	- each interface specifies a well defined set of operations that have public visibility.
-	- the operation signatures tell the implementing classifiers what kind fo behavior to invoke, but not how they should invoke that behavior
-	- many classifiers can implement a single interface each one providing a unique implementation.
-	- Interfaces support the hiding of information and protect client code by publicly declaring certain behavior of services.
-	- we can specify the following types of interfaces.
-		- provided interfaces
-			- these interfaces describe the services that instance s of a classifier (supplier) offer to their clients.
-			- component realizes the interface.
-			- in other words, component implements the interfaces
-		- Required interfaces
-			- these interfaces specify the services that a classifier needs to perform its functions and to fulfill its own obligations to its clients.
-			- the component uses required interface.
-			- as the following figure illustrate, the diagram editor displays an interface in the following ways:
-				- class rectangle symbol that contains the keyword \<\< interface>>. This notation is also called the internal or class view.
-				- ![[Pasted image 20260214094633.png]]
-			- we use the class shape when we need to model the details of the interface.
-			- compartments in the class s shape display information about the attributes, operations, and signal receptions of the interface.
-			- ball and socket notation in which the implementation dependency from a classifier to the provided interface is displayed as a circle (ball) and the usage dependency from  a classifier to the required internal interface is displayed as a half-circle (socket). This notation is also called the external view.
-			- figure:
-				- ![[Pasted image 20260214094819.png]]
-			- we use the ball and socket notation, also called the lollypop notation, when we need to model only that provided and required interfaces exist.
-			- the UML provides a graphical representation for interfaces, as figure below shows. This notation permits us to visualize the specification of an abstraction apart from any implementation.
-				- figure:![[Pasted image 20260214094921.png]]
-### 3.G.iii Common Uses of Component Diagram
-- We use a component diagrams to model the static implementation view of a system.
-- this view primarily supports the configuration management of a system's parts, made up of components that can be assembled in various ways to produce a running system.
-- when we model the static implementation view of a system, we typically use component diagrams in one of four ways.
-	1. To model source code
-		- with most contemporary object-oriented programming languages, we'll cut code using integrated development environments that store our source code in files.
-		- We can use component diagrams to model the configuration management of these files, which represent work-product components.
-	2. To model executable releases.
-		- A release is a relatively complete and consistent set of artifacts delivered to an internal or external user.
-		- In the context of components, a release focuses on the parts necessary to deliver a running system.
-		- When we model a release using component diagrams, we visualize, specify and document the decision about physical parts that constitute our software, i.e., its deployment components.
-	3. to model executable releases
-		- we can think of a physical database as the concrete realization of a schema, living in the world of bits.
-		- schemas, in effect, offer an API to persistent information; the model of a physical database represents the storage of that information in the tables of a relational database or the pages of an object-oriented datbase.
-		- We use component diagrams to represent these and other kinds of physical databases.
-	4. to model physical databases
-		- some systems are quite static; their components enter the scene, participate in an execution, and then depart.
-		- other systems are more dynamic, involving mobile agents or components that migrate for purposes of load balancing and failure recovery.
-		- we use component diagrams in conjunction with some of the UML's diagrams for modeling behavior to represent these kinds of systems.
-### 3.G.iv Modeling Examples
+### 3.G.iv Common Uses of Component Diagram
+#### G.iii.a Modeling Source Code
+- Track file dependencies
+- Manage builds
+- Version control
+#### G.iii.b Modeling Executable Releases
+- Show runtime deployment units
+- Manage dependencies between binaries
+- Plan updates and patches
+#### G.iii.c Modeling Physical Databases
+- Tables as components
+- Stored procedures
+- Database schemas
+#### G.iii.d Modeling Adaptable Systems
+- Plug-in architectures
+- Dynamic loading
+- Component replacement
+### 3.3.G.v Component Diagram vs Deployment Diagram
+| Aspect            | Component Diagram          | Deployment Diagram         |
+| ----------------- | -------------------------- | -------------------------- |
+| **Focus**         | Software components        | Hardware nodes             |
+| **Shows**         | Code structure, interfaces | Physical deployment        |
+| **Elements**      | Components, interfaces     | Nodes, devices             |
+| **Relationships** | Dependencies, realizations | Associations, dependencies |
+| **Level**         | Implementation view        | Deployment view            |
+### 3.G.vi Modeling Examples
 1. source code:
 	- figure:
 		- ![[Pasted image 20260214100901.png]]
@@ -1260,32 +1267,83 @@ Postconditions:
 	- for this example, changing the source code file signal.h will require the recompilation of three other files: signal.cpp, interp.cpp and trasitively, device.cpp
 2. Adaptable systems
 	- If we want to show the details of each database, we can render them in their canonical form, a component stereotyped as a database.
+3. Complete E-Commerce System
+```
+┌──────────────────────────────────────────┐
+│            Client Tier                   │
+│  ┌─────────────────┐                     │
+│  │ <<component>>   │                     │
+│  │ Browser         │                     │
+│  │ (HTML/JS/CSS)   │                     │
+│  └─────────────────┘                     │
+└──────────────────────────────────────────┘
+                    │ HTTP/HTTPS
+                    ▼
+┌──────────────────────────────────────────┐
+│            Web Tier                      │
+│  ┌─────────────────┐                     │
+│  │ <<component>>   │                     │
+│  │ WebServer       │                     │
+│  │ (Apache/Tomcat) │                     │
+│  └─────────────────┘                     │
+└──────────────────────────────────────────┘
+                    │
+                    ▼
+┌──────────────────────────────────────────┐
+│          Business Tier                   │
+│  ┌─────────────────┐ ┌─────────────────┐ │
+│  │ <<component>>   │ │ <<component>>   │ │
+│  │ OrderService    │ │ PaymentService  │ │
+│  │ (EJB)           │ │ (EJB)           │ │
+│  └─────────────────┘ └─────────────────┘ │
+│  ┌─────────────────┐ ┌─────────────────┐ │
+│  │ <<component>>   │ │ <<component>>   │ │
+│  │ InventoryService│ │ UserService     │ │
+│  │ (EJB)           │ │ (EJB)           │ │
+│  └─────────────────┘ └─────────────────┘ │
+└──────────────────────────────────────────┘
+                    │ JDBC/JPA
+                    ▼
+┌──────────────────────────────────────────┐
+│          Data Tier                       │
+│  ┌─────────────────┐                     │
+│  │ <<component>>   │                     │
+│  │ Database        │                     │
+│  │ (Oracle/MySQL)  │                     │
+│  └─────────────────┘                     │
+└──────────────────────────────────────────┘
+```
 
 ## 3.3.H Deployment Diagram
 ### 3.H.i Concept
-- deployment diagrams are one of the two kinds of diagrams used in modeling the physical aspects of an object-oriented system
-- a deployment diagram shows the configuration of run time processing nodes and the components that live on thhem.
-- We use deployment diagrams to model the static deployment view of a system.
-- For the most part, this involves modeling the topology of the hardware on which our system executes.
-- Deployment diagrams are essentially class diagrams that focus on a system's nodes.
-- diagram commonly contain
-	- nodes
-	- dependency and association relationships
-- like all other diagrams, deployment diagrams may contain notes and constraints
-- deployment diagrams may also contain components, each of which must live on some node.
-- deployment diagrams may also contain packages or subsystems, both of which are used to group elements of our model into larger chunks.
-- sometimes we will want to place isntances in our deployment diagrams, as well, especially when we want to visualize  one instance of a family of hardware topologies.
-###  3.H.ii Components
+- **Deployment diagram** = shows the **physical architecture** of hardware and software in a system.
+- Models the **deployment view** of a system.
+- Represents **nodes**, **components**, and their **relationships**.
+- Shows **where** software components run on hardware.
+###  3.H.ii Purpose
+| Purpose                            | Description                                  |
+| ---------------------------------- | -------------------------------------------- |
+| **Model hardware topology**        | Processors, devices, connections             |
+| **Show component deployment**      | Which software runs on which hardware        |
+| **Plan system distribution**       | Client/server, embedded, distributed systems |
+| **Analyze performance**            | Network bandwidth, processing load           |
+| **Document physical architecture** | Installation, configuration                  |
+### 3.H.iii Components
 1. Node
-	- a node is a physical element that exists at run time and represents a computation resource, generally having at least some memory and often, processing capability
-	- we use nodes to model the topology of the hardware on which our system executes.
-	- a node typically represents a processor or a device on which components may be deployed.
-	- good nodes accurately depicts the vocabulary of tehh hardware in our solution domain.
+	- a physical element that exists at run time, represents a computation resource
+	- generally has some memory and processing capability
+	- types:
+		- Processor:
+			- Has processing capability
+			- e.g., Server, PC, embedded CPU
+		- Device:
+			- Hardware with no processing
+			- e.g., Printer, sensor, modem
+	- used to model the topology of the hardware on which our system executes.
 	- graphically a node is rendered as a cube.
 2. Names
-	- A node name must be unique within its enclosing package.
-	- every node must have a name that distinguishes it from other nodes.
-	- a name is a textual string.
+	- is a textual string.
+	- must be unique within its enclosing package to distinguish other nodes.
 	- that name alone is known as a simple name;
 	- a path name is the node name prefixed by the name of the package in which that node lives.
 	- a node is typically shown only its  name, as in figure below.

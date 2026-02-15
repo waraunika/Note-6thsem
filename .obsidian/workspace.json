@@ -186,7 +186,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 246.5
+    "width": 246.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,6 +203,7 @@
   },
   "active": "4440260a1043bffd",
   "lastOpenFiles": [
+    "push.sh~",
     "OOSE/attachments/Pasted image 20260214165610.png",
     "OOSE/attachments/Pasted image 20260214105919.png",
     "OOSE/attachments/Pasted image 20260214105545.png",
@@ -212,7 +214,6 @@
     "OOSE/attachments/Pasted image 20260214094921.png",
     "OOSE/attachments/Pasted image 20260214094819.png",
     "OOSE/attachments/Pasted image 20260214094633.png",
-    "OOSE/attachments/Pasted image 20260213213517.png",
     "Project Management/MCQ/5.md",
     "Project Management/MCQ/4.md",
     "Project Management/MCQ/3.md",
