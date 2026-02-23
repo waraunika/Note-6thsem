@@ -364,3 +364,26 @@ A --> B[Next Statement]
 	- ![[Pasted image 20260223215235.png]]
 ---
 # 2.4 Optimizing Custom Single-Purpose Processors
+- technique of improving the design metrics as to get the best possible values of various design metrics.
+- optimization is the task of making design metric values the best possible.
+- optimization can be done by simplifying resulting design of any system utilizing various techniques.
+- different states in the FSM can be removed which does nothing and are redundant.
+- also we can share a component for same operations in different states and hence minimizing the size of the system as well as its cost.
+- other factors can be considered for optimum design some simple optimization that can be applied are discussed further.
+## Parameters of optimization
+1. Optimization of original program
+	- algorithm are analyzed in terms of time complexity and space complexity
+	- and hence we try to develop more efficient alternative algorithms.
+	- it involves decreasing of number of computations and size of variables if possible.
+2. Optimizing of FSDM
+	- The states that can be merged the reduce the number of states.
+	- The design must be aware if whether o/p timing may or may not be modified
+3. Optimizing Datapath
+	- many functional operations can share a single funcitonal unit if those operations occur in different stages.
+	- e.g., in GCD Datapath, single subtractor can be used and selection can be done using multiplexor.
+4. Optimizing FSM
+	- FSM can be optimized using state encoding and state minimization.
+	- State encoding is the task of assigning a unique log$_2$(n) bits to exeucte n states.
+	- state minimization is the task of merging equivalent states into a single state.
+5. Develop algorithm
+	- draw the state diagram and design the datapah, FSM of a custom single processor that determines the greatest divisor (GCD) of two numbers.

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0951d5b2db4c28e8",
+        "id": "12ca1763d83feabd",
         "type": "tabs",
         "children": [
           {
-            "id": "3564ad710f09b0bd",
+            "id": "7ffff0f96ac0f5ca",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -128,13 +128,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Embedded Systems/Chapter 2 Hardware Design Issues.md",
+                "file": "Embedded Systems/Chapter 3 Software Design Issues.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 2 Hardware Design Issues"
+              "title": "Outline of Chapter 3 Software Design Issues"
             }
           },
           {
@@ -168,8 +168,12 @@
       "audio-recorder:Start/stop recording": false
     }
   },
-  "active": "3564ad710f09b0bd",
+  "active": "7ffff0f96ac0f5ca",
   "lastOpenFiles": [
+    "daily-notes/2026-02-23.md",
+    "push.sh~",
+    "Embedded Systems/Chapter 2 Hardware Design Issues.md",
+    "Embedded Systems/Chapter 3 Software Design Issues.md",
     "Embedded Systems/attachments/Pasted image 20260223215235.png",
     "Embedded Systems/attachments/Pasted image 20260223215009.png",
     "Embedded Systems/attachments/Pasted image 20260223214523.png",
@@ -178,13 +182,10 @@
     "Embedded Systems/attachments/Pasted image 20260223213825.png",
     "Embedded Systems/attachments/Pasted image 20260223212821.png",
     "Embedded Systems/attachments/Pasted image 20260223210247.png",
-    "daily-notes/2026-02-23.md",
-    "Embedded Systems/Chapter 2 Hardware Design Issues.md",
     "daily-notes",
     "2026-02-23.md",
     "Embedded Systems/attachments/Pasted image 20260223204159.png",
     "Embedded Systems/attachments/Pasted image 20260223200612.png",
-    "Embedded Systems/attachments/Pasted image 20260223200411.png",
     "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
     "daily-notes/2026-02-22.md",
     "Untitled.canvas",
@@ -198,7 +199,6 @@
     "Embedded Systems/Chapter 6.md",
     "Embedded Systems/Chapter 5.md",
     "Embedded Systems/Chapter 4.md",
-    "Embedded Systems/Chapter 3.md",
     "Clippings/DeepSeek.md",
     "Embedded Systems",
     "Clippings/List of Roman deities - Wikipedia.md",
@@ -211,7 +211,6 @@
     "Antenna and Propagation/Chapter 2 - Antenna Parameters & Arrays.md",
     "Antenna and Propagation/Chapter 1 - Propagation and Antenna.md",
     "Antenna and Propagation/Chapter.md",
-    "push.sh~",
     "Project Management/MCQ",
     "Project Management",
     "OOSE/attachments",
