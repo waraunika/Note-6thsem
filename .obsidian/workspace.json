@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OOSE/Chapter 3.md",
+                "file": "Embedded Systems/Chapter 2 Hardware Design Issues.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 3"
-            }
-          },
-          {
-            "id": "4440260a1043bffd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "OOSE/Chapter 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 1"
+              "title": "Chapter 2 Hardware Design Issues"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -138,7 +123,22 @@
             }
           },
           {
-            "id": "34c12d740025a5a2",
+            "id": "2449cb5ce173346c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Embedded Systems/Chapter 2 Hardware Design Issues.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Chapter 2 Hardware Design Issues"
+            }
+          },
+          {
+            "id": "06a72d59ddf206cb",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -151,102 +151,71 @@
               "icon": "lucide-tags",
               "title": "Tags"
             }
-          },
-          {
-            "id": "3b74ca1daf5ac5ea",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "2449cb5ce173346c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "OOSE/Chapter 1.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of Chapter 1"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 370.5
+    "width": 370.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "audio-recorder:Start/stop recording": false
     }
   },
-  "active": "4440260a1043bffd",
+  "active": "3564ad710f09b0bd",
   "lastOpenFiles": [
+    "Embedded Systems/attachments/Pasted image 20260223215235.png",
+    "Embedded Systems/attachments/Pasted image 20260223215009.png",
+    "Embedded Systems/attachments/Pasted image 20260223214523.png",
+    "Embedded Systems/attachments/Pasted image 20260223214456.png",
+    "Embedded Systems/attachments/Pasted image 20260223214435.png",
+    "Embedded Systems/attachments/Pasted image 20260223213825.png",
+    "Embedded Systems/attachments/Pasted image 20260223212821.png",
+    "Embedded Systems/attachments/Pasted image 20260223210247.png",
+    "daily-notes/2026-02-23.md",
+    "Embedded Systems/Chapter 2 Hardware Design Issues.md",
+    "daily-notes",
+    "2026-02-23.md",
+    "Embedded Systems/attachments/Pasted image 20260223204159.png",
+    "Embedded Systems/attachments/Pasted image 20260223200612.png",
+    "Embedded Systems/attachments/Pasted image 20260223200411.png",
+    "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
+    "daily-notes/2026-02-22.md",
+    "Untitled.canvas",
     "OOSE/Chapter 3.md",
     "OOSE/Chapter 1.md",
-    "push.sh~",
-    "OOSE/attachments/Pasted image 20260214165610.png",
-    "OOSE/attachments/Pasted image 20260214105919.png",
-    "OOSE/attachments/Pasted image 20260214105545.png",
-    "OOSE/attachments/Pasted image 20260214105525.png",
-    "OOSE/attachments/Pasted image 20260214105430.png",
-    "OOSE/attachments/Pasted image 20260214104447.png",
-    "OOSE/attachments/Pasted image 20260214100901.png",
-    "OOSE/attachments/Pasted image 20260214094921.png",
-    "OOSE/attachments/Pasted image 20260214094819.png",
-    "OOSE/attachments/Pasted image 20260214094633.png",
-    "Project Management/MCQ/5.md",
-    "Project Management/MCQ/4.md",
-    "Project Management/MCQ/3.md",
-    "Project Management/MCQ/2.md",
-    "Project Management/MCQ/1.md",
+    "Embedded Systems/attachments",
+    "Embedded Systems/Chapter 10.md",
+    "Embedded Systems/Chapter 8.md",
+    "Embedded Systems/Chapter 9.md",
+    "Embedded Systems/Chapter 7.md",
+    "Embedded Systems/Chapter 6.md",
+    "Embedded Systems/Chapter 5.md",
+    "Embedded Systems/Chapter 4.md",
+    "Embedded Systems/Chapter 3.md",
+    "Clippings/DeepSeek.md",
+    "Embedded Systems",
+    "Clippings/List of Roman deities - Wikipedia.md",
+    "daily-notes/2026-02-20.md",
+    "Antenna and Propagation/Chapter 4 - Propagation and Radio Frequency Spectrum.md",
+    "Clippings",
+    "daily-notes/2026-02-16.md",
     "Untitled.md",
+    "Antenna and Propagation/Chapter 3 - Antennas Classification.md",
+    "Antenna and Propagation/Chapter 2 - Antenna Parameters & Arrays.md",
+    "Antenna and Propagation/Chapter 1 - Propagation and Antenna.md",
+    "Antenna and Propagation/Chapter.md",
+    "push.sh~",
     "Project Management/MCQ",
-    "2026-02-11.md",
     "Project Management",
-    "2026-02-10.md",
-    "Short Points/Untitled.md",
-    "2026-02-08.md",
-    "2026-01-28.md",
-    "2026-01-22.md",
-    "2026-01-21.md",
-    "2026-01-20.md",
-    "2026-02-03.md",
-    "Short Points/Antenna/Chapter 2.md",
-    "Short Points/Antenna/Chapter 1.md",
     "OOSE/attachments",
-    "Untitled.canvas",
-    "2026-01-25.md",
-    "Antenna and Propag/Chapter 3 - Antennas Classification.md",
-    "Antenna and Propag/Chapter 1 - Propagation and Antenna.md",
     "Short Points/Antenna/attachments",
-    "Chapter.md",
-    "Short Points/Antenna",
-    "Short Points",
-    "attachments",
-    "Antenna and Propag/Chapter.md",
-    "Syllabus.md",
-    "Antenna and Propag/attachments",
-    "English"
+    "Short Points/Antenna"
   ]
 }

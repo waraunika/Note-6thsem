@@ -11,5 +11,7 @@
   },
   "alwaysUpdateLinks": true,
   "spellcheck": true,
-  "readableLineLength": false
+  "readableLineLength": false,
+  "promptDelete": false,
+  "openBehavior": "daily"
 }

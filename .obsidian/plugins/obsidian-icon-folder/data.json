@@ -6,9 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "1️⃣",
-      "3️⃣",
-      "📡"
+      "🔟",
+      "9️⃣",
+      "8️⃣",
+      "7️⃣",
+      "6️⃣"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -34,5 +36,15 @@
   },
   "Short Points/Antenna": "📡",
   "OOSE/Chapter 3.md": "3️⃣",
-  "OOSE/Chapter 1.md": "1️⃣"
+  "OOSE/Chapter 1.md": "1️⃣",
+  "Embedded Systems/Chapter 1 Introduction to Embedded System.md": "1️⃣",
+  "Embedded Systems/Chapter 2 Hardware Design Issues.md": "2️⃣",
+  "Embedded Systems/Chapter 3.md": "3️⃣",
+  "Embedded Systems/Chapter 4.md": "4️⃣",
+  "Embedded Systems/Chapter 5.md": "5️⃣",
+  "Embedded Systems/Chapter 6.md": "6️⃣",
+  "Embedded Systems/Chapter 7.md": "7️⃣",
+  "Embedded Systems/Chapter 8.md": "8️⃣",
+  "Embedded Systems/Chapter 9.md": "9️⃣",
+  "Embedded Systems/Chapter 10.md": "🔟"
 }

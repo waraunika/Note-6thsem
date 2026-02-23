@@ -48,9 +48,9 @@
 - a **roadmap** for building software through predictable steps
 - Goal is to ensure high-quality software
 Roles:
-	- **Software engineers** perform the work
-	- **Managers** manage/adapt the process
-	- **Stakeholders** contribute to defining, building, and testing.
+- **Software engineers** perform the work
+- **Managers** manage/adapt the process
+- **Stakeholders** contribute to defining, building, and testing.
 - **Importance**:
 	- Provides structure, stability and control
 ### 2.A.i Software Development Life Cycle
@@ -78,7 +78,7 @@ Roles:
 	- Produce **Design Document Specification** (DDS) with:
 		- multiple design approaches
 		- System Components, data flow, UI mock-ups, integration points
-	- Review DDS with stakeholds
+	- Review DDS with stakeholders
 	- Select best design based on:
 		- risk, robustness, modularity, budget, time
 	- DDS includes: architectural diagrams, module specs, data models, tech stack
@@ -88,7 +88,7 @@ Roles:
 	- Use tools: Compilers, Debuggers, Interpreters
 	- Languages: C, C++, Java, PHP, etc high level language, chosen per software type
 5. **Testing the Product**
-	- Testing occurs in all stages, but this phase is dedicated to detect tracking and fixing.
+	- Testing occurs in all stages, but this phase is dedicated to defect-tracking and fixing.
 	- Repeat until product meets SRS quality standards
 6. **Deployment in the Market and Maintenance**
 	- Release product to market (may be staged)
@@ -101,15 +101,15 @@ Roles:
 - divides work into distinct phases for better design, management, and control.
 - provides guidelines for carrying out SDLC stages
 ### 2.B.i Factors in choosing software model
-| S.N. | Factor                     | Consideration                                              |
-| ---- | -------------------------- | ---------------------------------------------------------- |
-| 1.   | **Project Requirements**   | Clarity, stability, need for iterative clarification       |
-| 2.   | **Project Size**           | Larger projects need more detailed planning and structure  |
-| 3.   | **Project Complexity**     | Unclear/changing requirements may require flexible models. |
-| 4.   | **Cost of Delay**          | Time sensitivity vs. Flexible timelines                    |
-| 5.   | **Customer Involvement**   | Level of ongoing stakeholder participation                 |
-| 6.   | **Familiarity with Techn** | Team's expertise with domain, tools, language              |
-| 7.   | **Project Resources**      | Availability of funds, staff and other resources           |
+| S.N. | Factor                          | Consideration                                              |
+| ---- | ------------------------------- | ---------------------------------------------------------- |
+| 1.   | **Project Requirements**        | Clarity, stability, need for iterative clarification       |
+| 2.   | **Project Size**                | Larger projects need more detailed planning and structure  |
+| 3.   | **Project Complexity**          | Unclear/changing requirements may require flexible models. |
+| 4.   | **Cost of Delay**               | Time sensitivity vs. Flexible timelines                    |
+| 5.   | **Customer Involvement**        | Level of ongoing stakeholder participation                 |
+| 6.   | **Familiarity with Technology** | Team's expertise with domain, tools, language              |
+| 7.   | **Project Resources**           | Availability of funds, staff and other resources           |
 
 ---
 ## 1.2.C Types of Software Process Models (SPM)
@@ -408,8 +408,8 @@ or
 ---
 ## 1.2.E Flowchart for Choosing SPM:
 ```mermaid
-flowchart TD
-    Start[Start: Choose Software Process Model] --> Q1{Are requirements<br>clear & stable?}
+flowchart LR
+   Q1{Are requirements<br>clear & stable?}
 
     Q1 -->|Yes| Q2{Project size?}
     Q1 -->|No| Q3{Is customer feedback<br>needed early?}
@@ -637,7 +637,7 @@ flowchart TD
 	- must be clear
 4. **Verifiable**:
 	- is verifiable if and only if there exists some cost effective process that can check whether the final product meets the reuqirement
-5. **Modifiable:
+5. **Modifiable**:
 	- is modifiable if its structure and style such that any necessary change can be made easily while preserving completeness and consistency
 6. **Consistency**:
 	- consistency is necessary to achieve correct results across the system, done by:

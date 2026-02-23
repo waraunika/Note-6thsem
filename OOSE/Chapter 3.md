@@ -20,12 +20,13 @@ Present at: [[#3.A.v Class Relationship]]
 | **Construct** | Map models directly to implementation code                     |
 | **Document**  | Capture architectural decisions, requirements, design          |
 ## 3.2.C Five views of UML
-| View                | Focus                                              | Diagrams Used                                 |
-| ------------------- | -------------------------------------------------- | --------------------------------------------- |
-| **Use Case View**   | System Functionality from user persepctive         | Use Case                                      |
-| **Logical View**    | System structure (classes, objects, relationships) | Class, Object, State, Sequence, Communication |
-| **Process View**    | Concurrency, performance, scalability              | Activity, State, Sequence                     |
-| **Deployment View** | Physical distribution across hardware              | Deployment                                    |
+| View                    | Focus                                              | Diagrams Used                                 |
+| ----------------------- | -------------------------------------------------- | --------------------------------------------- |
+| **Use Case View**       | System functionality from user perspective         | Use Case                                      |
+| **Logical View**        | System structure (classes, objects, relationships) | Class, Object, State, Sequence, Communication |
+| **Implementation View** | Code organization (components, files)              | Component                                     |
+| **Process View**        | Concurrency, performance, scalability              | Activity, State, Sequence                     |
+| **Deployment View**     | Physical distribution across hardware              | Deployment                                    |
 ## 3.2.D Conceptual Model of UML
 Has 3 major elements
 ### 2.D.i Basic Building Blocks
@@ -190,7 +191,7 @@ Figures:
 - most common UML diagram for object oriented modeling
 - represents the logical view of a system.
 - blueprint for implementation
-### 3.A.ii Notation
+#### Notation
 - A class is rendered as a rectangle divided into 3 compartments
 	- Name, Attribute & Operations
 - figure:
@@ -327,7 +328,7 @@ Figures:
 | Association | Description of a set of links, each of which relates two or more objects                                                                                            |                                      |
 | Signal      | the specification of an asynchronous message communicated between instances                                                                                         |                                      |
 | Component   | a modular part of a system that hides its implementation behind a set of external interfaces                                                                        | ![[Pasted image 20260208105843.png]] |
-| Node        | a physical element that exists at run time and that represents a computational resource generally having atleast some memory and often processing capabilities.     | ![[Pasted image 20260208110136.png]] |
+| Node        | a physical element that exists at run time and that represents a computational resource <br>generally having atleast some memory and often processing capabilities. | ![[Pasted image 20260208110136.png]] |
 | Use Case    | - a description of a set of a sequence of actions, including variants<br>		- that a system performs that yields an observable result of value to a particular actor | ![[Pasted image 20260208110147.png]] |
 | Subsystem   | a component that represents a major part of a system                                                                                                                | ![[Pasted image 20260208110155.png]] |
 ### 3.A.vi Example
@@ -365,7 +366,7 @@ Figures:
 └──────┘ └───────┘
 ```
 2. Diagram Tool Example
-![[Pasted image 20260213201103.png]]
+![[Pasted image 20260213201103.png | 1200]]
 ## 3.3.B Object Diagram
 ### 3.B.i Concept
 - object diagram = snapshot of system at a specific point in time.
@@ -387,9 +388,9 @@ Figures:
 - Both parts underlined
 - example:
 ```
-┌─────────────┐
+┌────────────────┐
 │ john : Student │  ← Named object
-└─────────────┘
+└────────────────┘
 
 ┌─────────────┐
 │ : Student   │  ← Anonymous object
@@ -1004,7 +1005,7 @@ Postconditions:
 | **Final State**     | ![[Pasted image 20260208103039.png]] | End of activity flow              |
 | **Object Flow**     | ![[Pasted image 20260208102746.png]] | Object passing between activities |
 | **Time Event**      | ![[Pasted image 20260208103438.png]] | Timer or delay                    |
-| **Swimlanes**       |                                      |                                   |
+
 
 1. Swimlanes
 	- when modeling workflows of business processes, to partition the activity states on an activity diagram into groups, each group representing the business organization responsible for those activities
@@ -1082,7 +1083,7 @@ Postconditions:
 		- e.g., `insertCard`
 	- Guard
 		- condition that must be true for the trigger to cause the transition
-		- e.g., `[cardValid`
+		- e.g., `[cardValid]`
 	- Action/Effect
 		- what happen during transition.
 		- e.g., `/readPIN`
@@ -1714,7 +1715,7 @@ Postconditions:
 ║ + alert()   ║
 └═════════════┘
 ```
-#### 5. **Parameterized Class (Template)
+#### 5. **Parameterized Class (Template)**
 - **Definition**: Class with **type parameters** for generic programming.
 - **Notation**: Dotted rectangle in upper-right corner with parameters.
 - **Purpose**: Reusable class definitions.
