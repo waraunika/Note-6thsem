@@ -1,5 +1,10 @@
 - **6 Hours**
 - **8 Marks**
+# For Assessment
+1. Explain different types of arbitration methods used in peripherals devices to gain control of system bus.
+   [[#5.3 Arbitration]]
+2. Describe the purpose of the DMA controller. Draw the flow of actions between peripheral and memory using DMA.
+   [[#5.2.C Direct Memory Access]]
 # 5.1 Communication Basics
 # 5.2 Microprocessor Interfacing
 ## 5.2.A I/O Addressing
@@ -17,7 +22,7 @@
 - after that, processor relinquishes the system bus.
 - finally, the data transfer between memory and peripheral is initiated by DMA controller without the involvement of processor.
 - hence, the overhead required for storing and restoring the state is eliminated. 
-- also, the processor can continue its regulr task unless it requires the system bus or the particular data being transferred.
+- also, the processor can continue its regular task unless it requires the system bus or the particular data being transferred.
 ### 2.C.ii Block Diagram
 ![[Pasted image 20260224174155.png]]
 ### 2.C.iii Operation
@@ -35,9 +40,9 @@
 - each of the peripherals, which are connected to the arbiter can make request for the service
 - using certain priority mechanism, arbiter selects a peripheral to permit the required service.
 - the main advantage of this arbitration is that it can support advanced priority schemes.
-- also failure of a single peripheral does nt have any impact on the operation of whole system.
+- also failure of a single peripheral doesn't have any impact on the operation of whole system.
 - the system must be redesigned if new peripherals are to be added.
-- so this method is less flexible if new perpherasls are required to be added or removed.
+- so this method is less flexible if new perpherals are required to be added or removed.
 - arbiter is connected to system bus for configuration only
 - the configuration may include setting priorities of the peripherals.
 ### 3.A.ii Block Diagram

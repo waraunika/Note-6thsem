@@ -1,30 +1,65 @@
 - **5 Hours**
 - **8 Marks**
+# For Assessment
+1. Compose 4Kx16 ROM using 1Kx8 ROMs. [[#Example 3 Compose 1 K x 8 ROMs into a 4K x 16 ROM]]
+2. Explain storage permanence of memory. [[#Storage Permanence]]
+3. Explain fully associative cache mapping technique [[#B.i.b Fully Associative mapping]]
+4. Explain replacement algorithms used in cache memory. [[#4.B.ii Cache-Replacement Policy]]
 # 4.1 Memory Write Ability and Storage Permanence
-- a memory stores large number of bits.
-- for m words of each n bits
-	- memory can store total of m * n bits.
-- to access each word, address input signals are defined.
-- Log$_2$(m) address inputs are required to select m words.
-- also if there are k address inputs then the memory can have 2$^k$ words.
-- Figure
-	- ![[Pasted image 20260224155508.png]]
-- for example: A 4096 x 8 memory
-	- stores 32768 bits
-	- requires 12 (2$^{12}$ = 4096) address signals
-	- eight input/output data signals.
-- a memory access may refer to memory read - retrieve the word of a particular address, or memory write - store a word in a particular address.
-- control input signal r/w is used to indicate the type of access.
-- another control input signal, enable, which when asserted is used to access the memory.
-- multiport memory supports multiple accesses to different locations simultaneously.
-- multiport systems have multiple sets of control lines, address lines and data lines.
-- external
-	- ![[Pasted image 20260224155724.png]]
-- Conventionally, ROM is referred as a memory that a processor can only read, and it holds stored bits even without a power source.
-- whereas, RAM is referred as a memory that a processor can both read and write but loses its stored bits if power is removed.
-- But contemporarily, advanced ROMs, EEPROM and Flash, can be read as well as programmed and advanced RAMs, NVRAMs, can hold their bits even power is removed.
-- Advancement of memory have blurred the distinction between the RAM and ROM.
-- Different memories are differentiated based on two characteristics write ability and storage permanence.
+## Memory Write Ability
+- Write Ability refers to the manner and speed that a particular memory can be written.
+- Every memory must have a way to write bits onto it but the manner and speed of such writing varies among different memory.
+- In-system programmable is used to categorize memories into two along the write ability axis.
+- In-system programmable memory can be programmed by a processor whereas non in-system programmable memory must be programmed by some external means.
+- Range of Write Ability 
+	- High End 
+		- processor can write to memory simply and quickly by setting its address lines, data input bits and control lines appropriately.
+		- Example: RAM
+	- Middle Range
+		- processor can write to memory a bit slower compared to high end.
+		- Example: EEPROM, FLASH 
+	- Lower Range
+		- special device called programmer is used to write into the memory
+		- The device must apply suitable voltage levels to write to the memory.
+		- E.g.: EPROM, OTP ROM
+	- Low End
+		- bits are stored during fabrication
+		- Example: Mask-programmed ROM
+		- 
+## Storage Permanence
+- refers to the ability of a memory device to retain its stored data (bits) after those bits have been written. It is a fundamental characteristic that determines how and where a particular memory type can be used in an embedded system.
+- Memory types are primarily divided into two broad categories along the storage permanence axis:
+	- **Non-Volatile Memory (NVM):** Can hold its stored bits even after power is no longer supplied to the device. The data persists through power cycles.
+	- **Volatile Memory (VM):** Requires continuous power to retain its data. Once power is removed, the stored information is lost.
+- However, storage permanence is not simply a binary "yes" or "no" property. It exists on a spectrum, or **range**, from bits that fade almost instantly to those that last forever (or until the chip is destroyed).
+### The Spectrum of Storage Permanence
+#### 1. Low End: The Refresh Required Tier
+- **Behavior:** Memory at this end of the spectrum begins to lose its stored bits almost immediately after they are written. To retain data, the memory must be constantly and periodically **refreshed** (read and rewritten).
+- **Characteristics:**
+    - High density (can store a lot of data in a small area).
+    - Low cost per bit.
+    - High power consumption due to the constant refresh cycles.
+- **Example:** **Dynamic RAM (DRAM)** . Used as the main memory (RAM) in computers, where its high density and low cost are essential, and a dedicated memory controller handles the constant refresh.
+#### 2. Lower Range: The Power-On Dependent Tier
+- **Behavior:** Memory in this range holds its bits perfectly and indefinitely, but **only as long as power is continuously applied to the memory chip**. The moment power is cut, the data vanishes.
+- **Characteristics:**
+    - Very fast read and write speeds.
+    - No need for a complex refresh controller.
+    - Requires more transistors per bit than DRAM, making it less dense and more expensive.
+- **Example:** **Static RAM (SRAM)** . Used for processor caches (L1, L2, L3) where speed is paramount, and the system knows the data is only needed while the power is on.
+#### 3. Middle Range: The Long-Term Retention Tier
+- **Behavior:** This category bridges the gap between volatile and non-volatile. Memory here can hold its bits for an extended period—days, months, or even years—**after the memory's power source has been turned off**.
+- **Characteristics:**
+    - Offers the key benefit of non-volatility: data persists through power cycles.
+    - Write speeds are generally slower than volatile memory and may have a limited number of write cycles.
+- **Example:** **Non-Volatile RAM (NVRAM)** , which often refers to technologies like **Flash memory**, **EEPROM**, or battery-backed SRAM. Used in USB drives, SSDs, and firmware storage (BIOS/UEFI).
+#### 4. High End: The Permanent Tier
+- **Behavior:** Memory at this end is truly permanent. It will never lose its stored bits, regardless of power, and will retain the data for the entire lifespan of the chip, provided the chip itself is not physically damaged.
+- **Characteristics:**
+    - Extremely stable and reliable.
+    - The data is written during the manufacturing process and cannot be altered (or is very difficult to alter) by the end-user.
+- **Example:** **Mask-Programmed Read-Only Memory (Mask ROM)** . Used for mass-produced devices where the firmware is absolutely final and will never need an update, such as in some older appliances or for immutable boot code.
+---
 # 4.2 Common Memory Types
 # 4.3 Composing Memory
 - composing memory is needed when there is a need of particular-sized memory, which is not readily available.
@@ -35,7 +70,7 @@
 ## 4.3.A Case 1: to increase the width of words.
 - when the number of words in the available memory is same to that of required one but the number of bits or width of word is not enough then the width must be increased.
 - to do that, the available memories are connected side by side as shown in the given example.
-### Example: Compose 1K x 8 ROMs into 1K x 32 ROM
+### Example 1: Compose 1K x 8 ROMs into 1K x 32 ROM
 - the available ROM 1K x 8 and required ROM of 1K x 32 have same number of words
 - but width is different.
 - number of ROM to be placed side by side is given by n.
@@ -49,7 +84,7 @@
 - when the width of the word in the available memory and required memory is same but the number of words are different, then the words must be increased.
 - we connect the ROMs top to bottom and data line of each ROM is ORed.
 - Since the number of words has to be increased, extra high-order address is required to select the particular ROM which can be implemented by using appropriate decoder.
-### Example 3: Compose 1K x 8 ROMs into a 4K x 8 ROM
+### Example 2: Compose 1K x 8 ROMs into a 4K x 8 ROM
 - The available ROM 1K x 8 and required ROM 4k x 8 have width of 8 bits but the number of words is different.
 - Number of ROMs and size of decoder can be determined as
 	- N = number of words in required ROM / number of words in available ROM = 4k / 1k = 4
