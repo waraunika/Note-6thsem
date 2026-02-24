@@ -78,16 +78,12 @@
 	- **Low Volume:** A technology with low NRE cost might be best, even if its unit cost is higher (e.g., Technology A).
     - **High Volume:** A technology with a high NRE cost can be justified if it has a very low unit cost, as the NRE cost is amortized over millions of units (e.g., Technology C).
 ### # Example: The Digital Camera
-
 A digital camera serves as a classic example of an embedded system:
-
 - **Single Function:** Its primary purpose is to capture and store images.
-    
 - **Tightly Constrained:** It must be affordable (**cost**), portable (**size**), and run on batteries (**power**).
-    
 - **Real-Time Behavior:** It must process images quickly enough (**performance**) to be usable.
-    
 - **Reactive Nature:** More advanced cameras can react to the environment by detecting faces or smiles (**reactive/flexibility**).
+---
 # 1.2 Classification of Embedded Systems
 ## 1.2.A Classification based on Generation
 | Generation            | Time Period (Approx.) | Key Concept                  | Feature 1                                                                                                       | Feature 2                                                             | Example                                                                                | Other Key Points-1                                                                                                                   | Other Key Points-2                                                                                                                        |

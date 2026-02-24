@@ -1,5 +1,9 @@
 - **4 Hours**
 - **8 Marks**
+# For Assessment
+1. What is optimization? What are the parameter you consider for optimization of single purpose processor? [[#2.4.B Core Optimization Techniques]]
+2. Develop algorithm: draw the state diagram and design the Datapath, FSM of a custom single purpose processor that determines the greatest common divisor (GCD) of two numbers. [[#Example 1 GCD]]
+3. Design a single purpose processor that calculates the factorial of an integer. Include FSMD, Datapath, and FSM in the design. [[#Example 2 Factorial]]
 # 2.1 Combination Logic
 - digital circuit whose output is purely a function of its present inputs.
 - combination logic circuits are made up from basic gates or universal gates that are combined or connected together to produce more complex switching circuits.
@@ -322,12 +326,27 @@ A --> B[Next Statement]
 - however, the complex actions and conditions of FSMD are replaced by Boolean expressions using the control signals defined within datapath.
 - for every register write operations (assignment statement, arithmetic statements), register load signal is asserted and corresponding multiplexor selection line is activated if there are two or more sources for a given register.
 - also the logical operations are replaced by the control signals of its corresponding functional block.
-## Example
+## Example 1: GCD
 - Design a single purpose processor that calculates the GCD of two numbers.
 - Include FSMD, Datapaht and  FSM in the design.
 ### Black Box
 ![[Pasted image 20260223214435.png]]
 ### Functionality Code
+```c
+int x, y;
+while(1) {
+	while(!go_in);
+	x = x_in;
+	y = y_in;
+	while (x != y) {
+		if (x < y)
+			y = y - x;
+		else
+			x = x - y;
+	}
+	d_out = x;
+}
+```
 ![[Pasted image 20260223214456.png]]
 ### FSM
 ![[Pasted image 20260223214523.png]]
@@ -344,13 +363,14 @@ A --> B[Next Statement]
 	- similar is the case for register y.
 	- for connections, the output of registers x and y are connected to inputs of subtracting blocks and comparing blocks.
 	- also the line representing x_in and x - y are connected to the inputs of mux whose output is fed to register x.
-	- similary, y_in and y -  x are connected to the register y through mux.
+	- similarly, y_in and y -  x are connected to the register y through mux.
 	- and, the output  f x register is connected to input of register d.
 	- all connections must be done so as to represent the corresponding operation in the functionality.
 - Control Signals:
 	- load signal of registers x_ld for register x, y_ld for register y and d_ld for register d
 	- selection lines of multiplexor: x_sel for multiplexor associated with register x and y_self for multiplexor associated with register y.
 	- signals from logical block: x_neq_y and x_lt_y are used for x not equal to y and x less than y respectively.
+- Figure:
 	- ![[Pasted image 20260223215009.png]]
 ### FSM
 - all actions and conditions are replaced by equivalent Boolean expressions as used in datapath.
@@ -363,27 +383,75 @@ A --> B[Next Statement]
 - Figure:
 	- ![[Pasted image 20260223215235.png]]
 ---
+---
+## Example 2: Factorial
+### Black Box
+![[Pasted image 20260224201550.png]]
+### Structured Algorithm (Program)
+```c
+int x, a;
+while(1) {
+	while(!f_i);
+		d = 1;
+		x = x_i;
+		while (x != 0) {
+			d = d * x;
+			x = x - 1;
+		}
+			d_0 = d;
+ }
+```
+### FSM
+![[Pasted image 20260224201809.png]]
+### Controller
+![[Pasted image 20260224201835.png]]
+### Datapath
+![[Pasted image 20260224201850.png]]
+
+---
 # 2.4 Optimizing Custom Single-Purpose Processors
-- technique of improving the design metrics as to get the best possible values of various design metrics.
-- optimization is the task of making design metric values the best possible.
-- optimization can be done by simplifying resulting design of any system utilizing various techniques.
-- different states in the FSM can be removed which does nothing and are redundant.
-- also we can share a component for same operations in different states and hence minimizing the size of the system as well as its cost.
-- other factors can be considered for optimum design some simple optimization that can be applied are discussed further.
-## Parameters of optimization
-1. Optimization of original program
-	- algorithm are analyzed in terms of time complexity and space complexity
-	- and hence we try to develop more efficient alternative algorithms.
-	- it involves decreasing of number of computations and size of variables if possible.
-2. Optimizing of FSDM
-	- The states that can be merged the reduce the number of states.
-	- The design must be aware if whether o/p timing may or may not be modified
-3. Optimizing Datapath
-	- many functional operations can share a single funcitonal unit if those operations occur in different stages.
-	- e.g., in GCD Datapath, single subtractor can be used and selection can be done using multiplexor.
-4. Optimizing FSM
-	- FSM can be optimized using state encoding and state minimization.
-	- State encoding is the task of assigning a unique log$_2$(n) bits to exeucte n states.
-	- state minimization is the task of merging equivalent states into a single state.
-5. Develop algorithm
-	- draw the state diagram and design the datapah, FSM of a custom single processor that determines the greatest divisor (GCD) of two numbers.
+## 2.4.A Concept
+- process of improving a system's design metrics (cost, performance, power, size) to achieve the best possible values.
+- for a custom single-purpose processor (a digital circuit designed for a specific task), 
+	- optimization involves simplifying the design at various levels. 
+	- The goal is to reduce area (size/cost) and improve performance by eliminating redundancy and sharing resources.
+## 2.4.B Core Optimization Techniques
+
+### 1. Optimizing the Original Program
+- **Concept:** Before building hardware, analyze the algorithm that describes the system's behavior.
+- **Action:**
+    - Analyze **time complexity** (how fast it runs) and **space complexity** (memory it needs).
+    - Look for more efficient alternative algorithms that achieve the same result.
+    - Reduce the number of computations.
+    - Minimize the size of variables if possible.
+- **Benefit:** A more efficient algorithm leads to simpler, faster, and less power-hungry hardware.
+### 2. Optimizing the Finite State Machine with Datapath (FSDM)
+- **Concept:** At the architectural level, optimize the state diagram that controls the datapath.
+- **Action:**
+    - **State Reduction:** Identify and merge states that are redundant or perform no action.
+    - **Timing Consideration:** The designer must be aware of whether merging states will alter the timing of the output signals. If output timing is critical, some optimizations may not be permissible.
+- **Benefit:** Fewer states lead to a simpler controller (FSM), reducing its size and complexity.
+### 3. Optimizing the Datapath (Resource Sharing)
+- **Concept:** Hardware components in the datapath (like adders, subtractors, multipliers) are expensive in terms of chip area. They don't need to be used all the time.
+- **Action:**
+    - Identify functional operations (e.g., subtraction, addition) that occur in **different states** of the system's execution.
+    - Instead of having a dedicated unit for each operation, use a **single, shared functional unit**.
+    - Use **multiplexers** to route the correct data to and from the shared unit at the right time.
+- **Example:** In the datapath for a GCD calculator, instead of having multiple subtractors, a **single subtractor** can be used for every subtraction operation. Multiplexers select which numbers get subtracted at each step.
+- **Benefit:** Drastically reduces the **size** (gate count) and **cost** of the system.
+### 4. Optimizing the FSM (Controller Logic)
+- **Concept:** Once the number of states is fixed, optimize the logic that implements the state machine itself.
+- **Action:**
+    - **State Encoding:** Assigning unique binary codes to each state. The choice of encoding (e.g., binary, one-hot, Gray code) can significantly impact the complexity of the next-state and output logic, affecting both speed and area.
+    - **State Minimization:** The formal process of merging two or more states that are functionally equivalent (i.e., for every possible input, they produce the same outputs and transition to the same next state).
+- **Benefit:** Results in a smaller, faster, and less power-consuming control unit.
+### 5. Develop Algorithm (Iterative Process)
+- Optimization is not a linear, one-time task. It is often an **iterative process**.
+- After optimizing the datapath and FSM, the designer might gain new insights and return to step 1 to modify the algorithm further, leading to even greater improvements.
+### Summary of Optimization Goals
+| Level of Optimization    | Key Action                                     | Primary Benefit                             |
+| ------------------------ | ---------------------------------------------- | ------------------------------------------- |
+| **Algorithm**            | Reduce computations, use efficient algorithms. | Lower complexity, smaller memory footprint. |
+| **FSDM (State Diagram)** | Merge redundant states.                        | Simpler controller (FSM).                   |
+| **Datapath**             | Share functional units (e.g., one subtractor). | Smaller size, lower cost.                   |
+| **FSM (Logic)**          | Optimize state encoding and minimize states.   | Smaller, faster control logic.              |
