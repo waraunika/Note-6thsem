@@ -22,17 +22,31 @@
             }
           },
           {
-            "id": "44463e0b4f885bd4",
+            "id": "be7411d13193e645",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily-notes/2026-02-24.md",
+                "file": "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-02-24"
+              "title": "Chapter 1 Introduction to Embedded System"
+            }
+          },
+          {
+            "id": "e680beee7dc48677",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 1 Introduction to Embedded System"
             }
           },
           {
@@ -50,20 +64,6 @@
             }
           },
           {
-            "id": "be7411d13193e645",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 1 Introduction to Embedded System"
-            }
-          },
-          {
             "id": "703ef7a52738f98d",
             "type": "leaf",
             "state": {
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -224,14 +224,15 @@
       "audio-recorder:Start/stop recording": false
     }
   },
-  "active": "be7411d13193e645",
+  "active": "e680beee7dc48677",
   "lastOpenFiles": [
     "Embedded Systems/Chapter 5 Interfacing.md",
+    "daily-notes/2026-02-24.md",
+    "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
     "Embedded Systems/attachments/Pasted image 20260224184444.png",
     "Embedded Systems/attachments/Pasted image 20260224183933.png",
     "Embedded Systems/attachments/Pasted image 20260224175540.png",
     "Embedded Systems/attachments/Pasted image 20260224174155.png",
-    "daily-notes/2026-02-24.md",
     "Embedded Systems/Chapter 4 Memory.md",
     "Embedded Systems/Chapter 3 Software Design Issues.md",
     "Embedded Systems/attachments/Pasted image 20260224171607.png",
@@ -245,7 +246,6 @@
     "daily-notes/2026-02-23.md",
     "daily-notes",
     "2026-02-23.md",
-    "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
     "daily-notes/2026-02-22.md",
     "Untitled.canvas",
     "OOSE/Chapter 3.md",

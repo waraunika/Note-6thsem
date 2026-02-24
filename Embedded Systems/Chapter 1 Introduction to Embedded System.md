@@ -1,5 +1,11 @@
 - **3 Hours**
 - **4 Marks**
+
+# For Assessment:
+(Click to scroll to answer)
+1. What is a design metric. Explain the various design metrics of embedded system: [[#1.1.D Design Metrics]]
+2. Classify the embedded system based on generations: [[#1.2.A Classification based on Generation]]
+3. Explain different purpose of embedded system. What are the features of an embedded system? Explain with examples. [[#1.4 Purpose, Features and Application]]
 # 1.1 Embedded Systems Overview
 ## 1.1.A Introduction
 - Embedded System (**E.S.**) is a combination of computer hardware and software and may have additional mechanical or other parts designed to perform a specific function.
@@ -34,102 +40,62 @@
 - RTOS defines the way the system works and sets the rules during the execution of the application software.
 - Win CE, VxWorks, Embedded Linux, etc.
 ## 1.1.D Design Metrics
-- A design metric is a measurable feature of a system's implementation.
-- Some of the commonly used metrics include:
-	- NRE cost
-		- non-recurring engineering cost
-		- represents the monetary cost for designing the system.
-		- large number of units can be produced without any additional design cost.
-		- Since cost doesn't occur more than once for a particular system, it is termed as non-recurring.
-	- Unit Cost:
-		- monetary cost of manufacturing each unit of the system excluding NRE cost
-	- Size:
-		- physical space required by the system.
-		- for software it is measured in terms of bytes and for hardware it is measured in terms of no. of gates or transistors.
-	- Performance:
-		- it represents the execution of the system
-	- Power:
-		- The amount of power consumed by the system
-		- may determine the lifetime of a battery
-		- or cooling requirements of the IC
-	- Flexibility:;
-		- ability to change the functionality of the system without incurring heavy NRE cost.
-	- Time to Prototype:
-		- the time needed to build a working version of the system, which may be bigger or more expensive than the final system implementation.
-		- can be used to verify the system's usefulness and correctness and to refine the system's functionality.
-	- Time to Market:
-		- time required to develop a system to the point that it can be released and sold to customers.
-	- Maintainability:
-		- the ability to modify the system after its initial release
-	- Correctness:
-		- we can check the functionality throughout the process of designing the system and we can insert test circuitry to check that manufacturing was correct.
-	- Safety:
-		- the system is supposed to cause no harm.
-### # The Time to Market Design Metric
-- Introduction of an embedded system to the marketplace significantly affects the overall system profitability.
-- the market window, period during which the product have highest sales, for products is getting shorter, so a short delay on introduction of product to the marketplace can render huge loss.
-- using a simplified model of revenue, we will deduce the loss of revenue that can occur due to the delayed entry of a product in the market.
-- ![[Pasted image 20260222110557.png]]
-- This model assumes the peak of the market occurs at the halfway point, denoted as W, of the product life.
-- the peak is same for delayed entry.
-- the revenue for an on-time market entry is the area of the triangle labeled On-time, and for delayed entry is the area of triangle labeled *Delayed*.
-- The difference between the areas of two triangles gives the revenue loss for a delayed entry.
-- Revenue Loss = ((On time - Delayed) / On Time) * 100
-- Area of On Time Triangle = $1/2$ * base * height
-	- = $1/2$ * 2 * W * W * tan($\beta$) (Assuming, market rise angle is $\beta$)
-	- W$^2$ tan($\beta$)
-- Area of delayed entry triangle = $\frac{1}{2} \cdot (2W - D) \cdot (W - D) \cdot \tan(\alpha)$
-- Assuming $\beta$ = $\alpha$ and on solving we get,
-	- Revenue Loss = $\left(\dfrac{D(3W - D)}{2W^2}\right) \cdot 100\%$
-### # The NRE and Unit Cost Design Metrics
-- The NRE cost is the one time monetary cost of designing the system, whereas the unit cost represents the monetary cost of manufacturing each copy of the system, excluding NRE cost.
-	- Total Cost = NRE cost + unit cost * # of units
-	- Per-product Cost = total cost / # of units
-		- NRE cost / # of units + unit cost
-- the larger the volume the per-product cost, since the NRE cost can be distributed over more products.
-- The per-product cost of the product approaches the unit cost for very large volume.
+- a measurable feature used to evaluate and compare the quality or characteristics of a system's implementation.
+- these metrics allow designers to make informed decisions by quantifying aspects like cost, performance, and physical size.
+### Key Design Metrics in Embedded Systems
+| SN  | Name                                    | Definition                                                                                                                                     | Key-Point                                                                                                                                                                                                                                                                                        |
+| --- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | Non-Recurring Engineering<br>(NRE) Cost | The one-time monetary cost spent on designing the system.                                                                                      | - This cost is incurred only once per design.<br>- Once the system is designed, any number of units can be produced without incurring this cost again.<br>- It includes expenses like salaries of the design team, software licenses, and prototyping.                                           |
+| 2   | Unit Cost                               | The monetary cost of manufacturing each individual copy (or unit) of the system.                                                               | - This cost excludes the NRE cost.<br>- It includes the cost of components, the manufacturing process, and packaging.<br>- For high-volume products, a small reduction in unit cost leads to massive savings.                                                                                    |
+| 3   | Size                                    | The physical space required by the system.                                                                                                     | - software: size is measured in bytes (memory footprint).<br>- hardware: it is measured by the number of gates or transistors on a chip.<br>- Smaller size often leads to lower cost and lower power consumption.                                                                                |
+| 4   | Performance                             | A measure of how quickly and efficiently the system executes its designated tasks. Key sub-metrics include:                                    | - Latency: The time between the start of a task and its completion.<br>- Throughput: The number of tasks the system can process within a given unit of time (e.g., tasks per second).<br>- Speedup: A way to compare two systems. It is calculated as `Performance of A / Performance of B`.<br> |
+| 5   | Power                                   | The amount of electrical power consumed by the system.                                                                                         | - High power consumption can shorten the lifetime of a battery in portable devices<br>- or increase the cooling requirements for integrated circuits (ICs).                                                                                                                                      |
+| 6   | Flexibility                             | The ability to change the system's functionality after it has been designed.                                                                   | - flexible system can be updated or adapted for new uses without incurring a heavy NRE cost.<br>- This is often a key advantage of software-based solutions over fixed hardware.                                                                                                                 |
+| 7   | Time to Prototype                       | The time needed to build a working version of the system (the prototype).                                                                      | - the prototype is used to verify the system's functionality and correctness with real users<br>- used to refine the design before mass production.                                                                                                                                              |
+| 8   | Time to Market                          | The total time required to develop a system from the initial concept to the point where it can be released and sold to customers.              | - critical business metric<br>- Being late to market can drastically reduce profits, even if the product is technically superior.                                                                                                                                                                |
+| 9   | Maintainability                         | The ease with which the system can be modified to fix bugs, improve performance, or adapt to a changing environment after its initial release. |                                                                                                                                                                                                                                                                                                  |
+| 10  | Correctness                             | Confidence that the system functions as intended.                                                                                              | achieved through continuous verification during the design process and by inserting test circuitry to ensure the manufacturing process was error-free.                                                                                                                                           |
+| 11  | Safety                                  | The assurance that the system will operate without causing harm to people, property, or the environment.                                       |                                                                                                                                                                                                                                                                                                  |
+### # The Impact of Time to Market
+- Introducing a product late can severely impact its profitability.
+- The "market window"
+	- the period of highest sales
+	- is getting shorter for most products.
+- Using a simplified revenue model (the "triangular" market window):
+	- **On-time entry** captures the full peak of the market.
+	- **Delayed entry** misses the peak, resulting in significantly less total revenue.
+- The revenue loss from a delay of **D** weeks in a market window of width **2W** weeks can be estimated by the formula:
+	- **Revenue Loss** = $$ \left( \dfrac{D(3W-D)}{2W^{2}} \right) \star 100\%$$
+	- This shows that even a short delay can result in a substantial percentage of revenue loss.
+### # Relationship Betn NRE Cost & Unit Cost
+- The total cost of producing a system is a combination of its one-time NRE cost and its per-unit manufacturing cost.
+	- **Total Cost = NRE Cost + (Unit Cost * Number of Units)**
+	- **Per-Product Cost = (NRE Cost / Number of Units) + Unit Cost**
+	- **The key takeaway is the effect of volume (number of units produced):**
+	- For **low volumes**, the NRE cost dominates, making the per-product cost high.
+    - For **high volumes**, the NRE cost is spread over many units, and the per-product cost approaches the unit cost.
+- This is why different technologies are chosen for different production volumes:
+	- **Low Volume:** A technology with low NRE cost might be best, even if its unit cost is higher (e.g., Technology A).
+    - **High Volume:** A technology with a high NRE cost can be justified if it has a very low unit cost, as the NRE cost is amortized over millions of units (e.g., Technology C).
+### # Example: The Digital Camera
 
-### # Example
-- let us consider products using three different technologies
-- Technology A with NRE cost of $2000 and unit cost of $100, B with NRE cost of $30,000 and unit cost $30, and C with NRE cost of $100000 and unit cost $2
-- A and B meet at 300 units which implies A yields lowest total cost for low volumes (< 300) units.
-- B yields lowest total cost for volume between 300 and 1800, since the line of technology B and C meet at 1800.
-- furthermore, tech C yields lowest cost for volumes above 1800.
-### # Performance Design Metric
-- Performance is a measure of duration the system takes to execute our desired tasks.
-- Though the performance of a system is governed by clock frequency or instructions per second.
-- main measures of performance are:
-	- Latency or response time: the time between the start of the task's execution and the end.
-	- throughput: the number of tasks that can be processed per unit time.
-	- Speedup: common method of comparing the performance of two systems.
-		- the speedup system A over system B is determined by:
-		- speedup of A over B = performed of A/performance of B
-### # Example of an embedded system - a digital camera
-- A digital camera can be taken as embedded system as it performs only a single function of capturing image.
-- it is tightly constrained as it is affordable, portable, and consumes less power.
-- as it is fast enough to process numeral images in milliseconds, it exhibits real time feature.
-- but however, a simple digital camera may not possess high degree of reactive attribute.
-- on the contrary, few contemporary digital cameras are capable of detecting human expressions.
+A digital camera serves as a classic example of an embedded system:
+
+- **Single Function:** Its primary purpose is to capture and store images.
+    
+- **Tightly Constrained:** It must be affordable (**cost**), portable (**size**), and run on batteries (**power**).
+    
+- **Real-Time Behavior:** It must process images quickly enough (**performance**) to be usable.
+    
+- **Reactive Nature:** More advanced cameras can react to the environment by detecting faces or smiles (**reactive/flexibility**).
 # 1.2 Classification of Embedded Systems
 ## 1.2.A Classification based on Generation
-### 2.A.i First Generation
-- designed using 8 bit microprocessors or 4 bit microcontrollers.
-- hardware circuits were simple and the firmware was developed using assembly code.
-- motor controller using 8085 can be an example of first generation embedded system.
-### 2.A.ii Second Generation
-- systems were built using 16 bit microprocessors and 8/16 bit microcontrollers.
-- more complex and powerful instructions were available for the designer to work with.
-- some systems involved embedded operating systems for their operation.
-- data acquisition systems can be an example of second generation.
-### 2.A.iii Third generation
-- system were designed with more advanced processor technology in the form of 32 bit processors and 16 bit microcontrollers.
-- along with complex and powerful instruction sets, instruction pipelining was introduced
-- better performance
-- dedicated embedded real time operating system implementation was another important feature in this generation.
-- also the concept of application specific processors like DSP and ASIC came into existence
-### 2.A.iv Fourth Generation
-- marked with advent of SoC, reconfigurable processors and multicore processors.
-- These embedded systems used high performance real time embedded operating systems for its operation.
+| Generation            | Time Period (Approx.) | Key Concept                  | Feature 1                                                                                                       | Feature 2                                                             | Example                                                                                | Other Key Points-1                                                                                                                   | Other Key Points-2                                                                                                                        |
+| --------------------- | --------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **First Generation**  | Early 1980s           | 8-bit Era                    | Built using **8-bit microprocessors** (e.g., Intel 8085) or **4-bit microcontrollers**.                         | Hardware circuits were simple.                                        | Firmware (software) was developed using **assembly code**.                             | Motor controller using the 8085 processor.                                                                                           | Marked the beginning of using microprocessors for dedicated control tasks.                                                                |
+| **Second Generation** | Mid 1980s - 1990s     | 16-bit & OS Introduction     | Built using **16-bit microprocessors** and **8/16-bit microcontrollers**.                                       | More complex and powerful instruction sets were available.            | Some systems began to incorporate **embedded operating systems**.                      | Data acquisition systems.                                                                                                            | The move to 16-bit allowed for more complex applications and the need for basic OS management.                                            |
+| **Third Generation**  | 1990s - 2000s         | High Performance & Real-Time | Built using **32-bit processors** and **16-bit microcontrollers**.                                              | Introduction of **instruction pipelining** for better performance.    | Implementation of dedicated **embedded Real-Time Operating Systems (RTOS)** .          | Application Specific Processors like **Digital Signal Processors (DSPs)** and **Application-Specific Integrated Circuits (ASICs)** . | The focus shifted to high performance and guaranteed response times for complex tasks like signal processing.                             |
+| **Fourth Generation** | 2000s - Present       | Integration & Parallelism    | Marked by the advent of **System-on-Chip (SoC)** , **reconfigurable processors**, and **multicore processors**. | High level of integration, placing an entire system on a single chip. | Use of high-performance real-time embedded operating systems to manage multiple cores. | Smartphones, modern network routers, and advanced automotive systems.                                                                | This generation is defined by the ability to build incredibly complex and powerful systems that are small, efficient, and reconfigurable. |
 ## 1.2.B Classification Based on Complexity and Performance
 ### 2.B.i Small Scale ES
 - designed with a single 8 or 16 bit microcontroller (8051 family, PIC16F8X, Hitachi H8)
@@ -197,50 +163,59 @@
 - microcontrollers for controlling application and digital signal processors (DSP) for huge data processing application are examples of application specific processors.
 - Block diagram of Application Specific Processors
 	- ![[Pasted image 20260223192838.png]]
-# 1.4 Purpose and Application of Embedded Systems
-## 1.4.A Purpose
+# 1.4 Purpose, Features and Application
+## 1.4.A Purpose of Embedded Systems
 ### 4.A.i Data Collection
-- data is collected from other external devices for storage, analysis, manipulation or transmission.
-- data may be in analog or digital form.
-- systems working with digital data require analog to digital converters if the collected data is in analog form.
-- the collected data can be used for meaningful purpose based on the functionality of the embedded system.
-- for instance, a digital camera collects data, stores it and finally procides graphical representation of data in the form of captured image.
+- **Definition:** The embedded system gathers data from the external environment or other devices for storage, analysis, manipulation, or transmission.
+- **Technical Details:**
+    - The collected data can be in **analog** or **digital** form.
+    - If the data is analog (e.g., a sound wave), the system requires an **Analog-to-Digital Converter (ADC)** to process it digitally.
+- **Example:** A **digital camera** collects light data through its sensor, stores it, and then processes it to provide a graphical representation in the form of a captured image.
 ### 4.A.ii Data Communication
-- ES is requierd to connect 2 or more devices which may be at close vicinity or at remote location.
-- the communication between devices can be done via wired line medium or wireless emdium.
-- ES are incorporated with different wireless module or wire-line modules for communication purpose.
-- Bluetooth, ZigBee, Wi-Fi and GSM are few wireless modules.
-- for wire-line purpose, an embedded system may have RS-232, SPI, I2C, USB and other serial and parallel protocols.
-- some embedded systems like network hubs, routers, etc. act as mediators in data communication and provide various features including data security.
+- **Definition:** The system's purpose is to connect two or more devices to exchange data, whether they are in close proximity or at remote locations.
+- **Technical Details:**
+    - Communication can occur via **wired** or **wireless** mediums.
+    - **Wireless Modules:** Bluetooth, ZigBee, Wi-Fi, GSM.
+    - **Wire-line Modules/Protocols:** RS-232, SPI, I2C, USB.
+- **Example:** A **network router** acts as a mediator in data communication, directing traffic between devices and the internet, and often providing features like data security.
 ### 4.A.iii Data Processing
-- collected data in embedded system is subjected to some sort of processing for which embedded systems are attributed with data processing modules.
-- speech coder, audio video codec, etc. can be few examples of data processing unit.
-- data processing includes the manipulation of data for appropriate purpose.
+- **Definition:** The system takes collected data and subjects it to manipulation or transformation to achieve a desired result.
+- **Technical Details:** Embedded systems are equipped with dedicated processing units (like microprocessors, DSPs, or codecs) to perform these tasks.
+- **Example:** An **audio codec** in a smartphone processes digital audio data, compressing it for storage or decompressing it for playback through the speakers.
 ### 4.A.iv Monitoring
-- ES are incorporated with sensors to check the state of the different parameters.
-- parameters can be current, voltage, temperature, humidity, etc which are continuously monitored and appropriate processing or controlling of devices is done.
-- however, the value of the parameters cannot be controlled by the system itself.
-- the values of parameters are used for some controlling purpose or for some graphical representation purpose or simply stored for further analysis and processing.
+- **Definition:** The system uses sensors to continuously check the state of various parameters in the environment.
+- **Technical Details:**
+    - Parameters can include current, voltage, temperature, humidity, pressure, etc.
+    - The system itself typically **does not control** these parameters. It simply observes, records, and may trigger alerts or display the information.
+- **Example:** A **digital thermometer** with a sensor monitors the room temperature and displays the value on an LCD screen. It does not change the temperature.
 ### 4.A.v Control
-- for control purpose, actuators along with sensors are present in the embedded systems.
-- the sensor connected in input port detects the change in the desired parameter and the actuators at output port are controlled accordingly to implement the desired functionality.
-- electric motors are example of actuators.
-- in an object avoiding robot, ultrasonic sensor senses the presence of certain kind of object and the motor is rotated accordingly to avoid the collision.
-### 4.A.vi Application specific user interface
-- to provide the better use interface based on application has been one of the concerns of contemporary embedded systems. Keypads, simple LCD modules, speakers, etc are basic and common interface for users. 
-- however, sensitive touch pad along with high definition display has been the sophisticated interface implemented in current scenario.
-## 4.B Application
-1. Household appliances: 
-	- Microwave ovens, television, DVD players and recorders.
-2. Office automation
-	- fax machines, printers, scanners
-3. business equipment
-	- alarm systems, card readers
-4. automobiles
-	- engine controller, fuel injection, antilock brakes
-5. networking
-	- modem, network cards, network switches and routers
-6. medical equipment
-7. aerospace equipment
-8. integrated systems in aircraft and missiles
-9. industrial and military applications
+- **Definition:** The system actively manages and regulates physical parameters or devices based on input from sensors.    
+- **Technical Details:** 
+	- This purpose requires both **sensors** (to detect changes) and **actuators** (to cause a physical change). Actuators, such as electric motors, valves, or solenoids, are controlled by the system's output.
+- **Example:** In an **object-avoiding robot**, an ultrasonic sensor detects an obstacle. The embedded system processes this input and controls the motors (actuators) to rotate in a different direction, thus avoiding a collision.
+### 4.A.vi Application-Specific User Interface
+- **Definition:** The system provides a means for the user to interact with the application, tailored to the device's specific function.
+- **Technical Details:**
+    - **Basic Interfaces:** Keypads, simple LCD modules, LEDs, speakers.
+    - **Sophisticated Interfaces:** Sensitive touchpads, high-definition displays, voice recognition modules        
+- **Example:** A **modern smart thermostat** uses a sensitive touchscreen and a high-definition display to provide an intuitive interface for the user to set schedules and monitor energy usage, unlike older thermostats with simple buttons and dials.
+## 1.4.B Features of Embedded Systems
+1. **Dedicated Functionality:** They are designed to perform a specific set of tasks repeatedly, rather than being a general-purpose machine for multiple applications.
+    - _Example:_ A **microwave oven** is dedicated to heating food. You cannot browse the internet on it.
+2. **Real-Time Operation:** Many embedded systems must react to events in the environment (inputs from sensors) and produce outputs within a strictly defined time frame. Failure to meet these timing constraints can lead to system failure.
+    - _Example:_ An **anti-lock braking system (ABS)** in a car must detect wheel lock and modulate brake pressure within milliseconds. A delay could cause the driver to lose control of the vehicle.
+3. **Resource Constraints:** They operate under tight constraints on **processing power, memory, and energy consumption**. This necessitates highly optimized and efficient software (code).
+    - _Example:_ A **fitness tracker** has a small battery, limited memory, and a low-power processor to last for days on a single charge, requiring extremely efficient code.
+4. **Reliability and Stability:** Embedded systems are often deployed in critical applications where failure is unacceptable. They must operate reliably for long periods without human intervention, often in harsh environments.
+    - _Example:_ The **engine control unit (ECU)** in a car must be extremely reliable. A failure while driving could be catastrophic.
+5. **Processing Power:** They contain a microcontroller or microprocessor to execute the instructions. The power required depends on the complexity of the task
+6. **Efficiency and Performance:** Designers constantly strive to balance performance (how fast tasks are completed) with efficiency (how little power and memory are used).
+## 1.4.C Applications of Embedded Systems
+1. **Household Appliances:** Microwave ovens, televisions, DVD players, smart refrigerators, washing machines.
+2. **Office Automation:** Fax machines, printers, scanners, photocopiers.
+3. **Business Equipment:** Alarm systems, card readers, point-of-sale (POS) terminals.
+4. **Automobiles:** Engine control units (ECU), fuel injection systems, anti-lock braking systems (ABS), airbag control, infotainment systems.
+5. **Networking & Communications:** Modems, network interface cards (NICs), network switches, routers, mobile phone base stations.
+6. **Medical Equipment:** Patient monitoring systems, pacemakers, infusion pumps, diagnostic imaging (MRI, CT scanners).
+7. **Aerospace & Defense:** Navigation systems in aircraft and missiles, flight control systems, avionics.
+8. **Industrial and Military Applications:** Robotics, process control systems in factories, surveillance systems, guidance systems.
