@@ -9,6 +9,7 @@
 # 5.2 Microprocessor Interfacing
 ## 5.2.A I/O Addressing
 ## 5.2.B Interrupts
+---
 ## 5.2.C Direct Memory Access
 ### 2.C.i Concept
 - When the communication between memory and peripherals involves microprocessor then there will, somehow, always be waste of processor's time.
@@ -32,6 +33,7 @@
 4. processor releases the system bus after seeing the request form DMA, and acknowledges about it to DMA
 5. DMA asserts acknowledge signal to peripheral, and starts transfer of data as requested
 6. after the completion of transfer, all control lines are deasserted and processor retakes the control of teh system bus.
+---
 # 5.3 Arbitration
 - mechanism through which a service or shared resource is provided to particular requesting device, out of many contenting devices for service.
 ## 5.3.A Priority Arbiter
@@ -65,6 +67,7 @@
 - each peripheral gets almost equal time for service from the arbiter.
 - this priority method is efficient when there is not much difference in priority among peripherals.
 - the priority of peripherals change based on the history of servicing of those peripherals, so the arbiter can get more complex in rotating activity
+---
 ## 5.3.B Daisy Chain Arbitration
 ### 3.B.i Introduction
 - peripherals are connected to each other in daisy-chain manner.
@@ -103,13 +106,15 @@ Case 2: When request is from upstream peripherals beyond P
 Case 3: When request is from P
 - REQ = 1, REQ_IN = X (don't care), resulting in REQ_OUT = 1
 - ACK_IN = 1, and REQ = 1 resulting in ACK = 1 and ACK_OUT = 0
+---
 ## 5.3.C Network-Oriented Arbitration
 - arbitration is done for multiple microprocessors sharing a common to form a network.
 - arbitration is build into the bus protocol, as bus is the only the medium that connects multiple processors
 - however, multiple processors may try to access the bus simultaneously resulting in data collision.
 - the protocol must be designed in such a way that the contending processors don't start sending the data at the same time.
 - also some statistical methods can be used so as to make chances of data collision very rare, if not eliminate it.
-- some protocols use efficient address encoding schemes in which higher prioritiy address will override the lower-priority one.
+- some protocols use efficient address encoding schemes in which higher priority address will override the lower-priority one.
+---
 # 5.4 Multilevel Bus Architectures
 # 5.5 Advanced Communication Principles
 # 5.6 Serial, Parallel and Wireless Protocols.

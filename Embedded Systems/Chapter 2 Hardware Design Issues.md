@@ -347,7 +347,6 @@ while(1) {
 	d_out = x;
 }
 ```
-![[Pasted image 20260223214456.png]]
 ### FSM
 ![[Pasted image 20260223214523.png]]
 ### Datapath for GCD Processor
@@ -366,12 +365,12 @@ while(1) {
 	- similarly, y_in and y -  x are connected to the register y through mux.
 	- and, the output  f x register is connected to input of register d.
 	- all connections must be done so as to represent the corresponding operation in the functionality.
-- Control Signals:
++- Control Signals:
 	- load signal of registers x_ld for register x, y_ld for register y and d_ld for register d
 	- selection lines of multiplexor: x_sel for multiplexor associated with register x and y_self for multiplexor associated with register y.
 	- signals from logical block: x_neq_y and x_lt_y are used for x not equal to y and x less than y respectively.
 - Figure:
-	- ![[Pasted image 20260223215009.png]]
+	- ![[Pasted image 20260223215009.png | 750]]
 ### FSM
 - all actions and conditions are replaced by equivalent Boolean expressions as used in datapath.
 - for example, action x = x_in is replaced by expressions x_sel =  0
@@ -389,7 +388,7 @@ while(1) {
 ![[Pasted image 20260224201550.png]]
 ### Structured Algorithm (Program)
 ```c
-int x, a;
+int x, d;
 while(1) {
 	while(!f_i);
 		d = 1;
@@ -435,7 +434,7 @@ while(1) {
 - **Concept:** Hardware components in the datapath (like adders, subtractors, multipliers) are expensive in terms of chip area. They don't need to be used all the time.
 - **Action:**
     - Identify functional operations (e.g., subtraction, addition) that occur in **different states** of the system's execution.
-    - Instead of having a dedicated unit for each operation, use a **single, shared functional unit**.
+    - Instead of having a dedicated unit for each operation, use a **single, shared functional unit**
     - Use **multiplexers** to route the correct data to and from the shared unit at the right time.
 - **Example:** In the datapath for a GCD calculator, instead of having multiple subtractors, a **single subtractor** can be used for every subtraction operation. Multiplexers select which numbers get subtracted at each step.
 - **Benefit:** Drastically reduces the **size** (gate count) and **cost** of the system.

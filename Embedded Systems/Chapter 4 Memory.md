@@ -27,7 +27,8 @@
 		- Example: Mask-programmed ROM
 		- 
 ## Storage Permanence
-- refers to the ability of a memory device to retain its stored data (bits) after those bits have been written. It is a fundamental characteristic that determines how and where a particular memory type can be used in an embedded system.
+- refers to the ability of a memory device to retain its stored data (bits) after those bits have been written. 
+- It is a fundamental characteristic that determines how and where a particular memory type can be used in an embedded system.
 - Memory types are primarily divided into two broad categories along the storage permanence axis:
 	- **Non-Volatile Memory (NVM):** Can hold its stored bits even after power is no longer supplied to the device. The data persists through power cycles.
 	- **Volatile Memory (VM):** Requires continuous power to retain its data. Once power is removed, the stored information is lost.
@@ -48,7 +49,7 @@
     - Requires more transistors per bit than DRAM, making it less dense and more expensive.
 - **Example:** **Static RAM (SRAM)** . Used for processor caches (L1, L2, L3) where speed is paramount, and the system knows the data is only needed while the power is on.
 #### 3. Middle Range: The Long-Term Retention Tier
-- **Behavior:** This category bridges the gap between volatile and non-volatile. Memory here can hold its bits for an extended period—days, months, or even years—**after the memory's power source has been turned off**.
+- **Behavior:** This category bridges the gap between volatile and non-volatile. Memory here can hold its bits for an extended period, days, months, or even years, **after the memory's power source has been turned off**.
 - **Characteristics:**
     - Offers the key benefit of non-volatility: data persists through power cycles.
     - Write speeds are generally slower than volatile memory and may have a limited number of write cycles.
@@ -184,7 +185,7 @@
 	- Random replacement: replaces the block randomly without following any specific algorithm
 	- LRU algorithm is based on time, in which block not accessed for longest time is replaced by the new block.
 	- FIFO method uses queue mechanism to replace the first entered block.
-		- each block is pushed into the queue when accesssed.
+		- each block is pushed into the queue when accessed.
 		- and replacement is required when blocks are popped out from the queue.
 	- LRU technique is based on number of time the block is accessed.
 		- the block which accessed less number of times is replaced.

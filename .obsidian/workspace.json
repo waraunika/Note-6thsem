@@ -8,21 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7ffff0f96ac0f5ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily-notes/2026-02-24.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-02-24"
-            }
-          },
-          {
-            "id": "be7411d13193e645",
+            "id": "1ac0a049a88bbdbe",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -50,7 +36,7 @@
             }
           },
           {
-            "id": "703ef7a52738f98d",
+            "id": "77aebc178aa90f07",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -64,7 +50,7 @@
             }
           },
           {
-            "id": "7012a7cf79485572",
+            "id": "2d21f7f0e658ab70",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +64,7 @@
             }
           },
           {
-            "id": "2d21f7f0e658ab70",
+            "id": "9a93edfbecf0754a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -92,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -199,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Embedded Systems/Chapter 5 Interfacing.md",
+                "file": "Embedded Systems/Chapter 3 Software Design Issues.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 5 Interfacing"
+              "title": "Outline of Chapter 3 Software Design Issues"
             }
           },
           {
@@ -239,14 +225,21 @@
       "audio-recorder:Start/stop recording": false
     }
   },
-  "active": "2d21f7f0e658ab70",
+  "active": "9a93edfbecf0754a",
   "lastOpenFiles": [
     "Embedded Systems/Chapter 4 Memory.md",
-    "Embedded Systems/Chapter 5 Interfacing.md",
     "Embedded Systems/Chapter 3 Software Design Issues.md",
-    "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
-    "daily-notes/2026-02-24.md",
     "Embedded Systems/Chapter 2 Hardware Design Issues.md",
+    "Embedded Systems/Chapter 1 Introduction to Embedded System.md",
+    "Embedded Systems/Chapter 5 Interfacing.md",
+    "daily-notes/2026-02-25.md",
+    "daily-notes/2026-02-24.md",
+    "Chapter.md",
+    "Dec 31.md",
+    "Jan 5.md",
+    "Signals and Systems.md",
+    "Syllabus.md",
+    "Embedded Systems/attachments/Pasted image 20260224214640.png",
     "Embedded Systems/attachments/Pasted image 20260224201850.png",
     "Embedded Systems/attachments/Pasted image 20260224201835.png",
     "Embedded Systems/attachments/Pasted image 20260224201809.png",
@@ -256,7 +249,6 @@
     "Embedded Systems/attachments/Pasted image 20260224175540.png",
     "Embedded Systems/attachments/Pasted image 20260224174155.png",
     "Embedded Systems/attachments/Pasted image 20260224171607.png",
-    "Embedded Systems/attachments/Pasted image 20260224163851.png",
     "push.sh~",
     "daily-notes/2026-02-23.md",
     "daily-notes",
@@ -277,11 +269,6 @@
     "daily-notes/2026-02-20.md",
     "Antenna and Propagation/Chapter 4 - Propagation and Radio Frequency Spectrum.md",
     "Clippings",
-    "daily-notes/2026-02-16.md",
-    "Untitled.md",
-    "Antenna and Propagation/Chapter 3 - Antennas Classification.md",
-    "Antenna and Propagation/Chapter 2 - Antenna Parameters & Arrays.md",
-    "Antenna and Propagation/Chapter 1 - Propagation and Antenna.md",
     "Project Management/MCQ",
     "Project Management",
     "OOSE/attachments",

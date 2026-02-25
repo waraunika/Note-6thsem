@@ -1,4 +1,4 @@
-- **6 Hours**
+b- **6 Hours**
 - **8 Marks**
 # For Assessment
 1. Explain with diagram about pipelining. Explain 5 stage pipelining. [[#Pipelining]]
@@ -22,7 +22,7 @@
 ```
 #### 2. Decode Instruction
 - **Action:** The instruction in the Instruction Register is interpreted.
-- **Mechanism:** The processor's control unit examines the **opcode** (operation code) field of the instruction to determine what operation needs to be performed (e.g., add, load, branch). It also identifies the operands—where the input data is located (registers or memory addresses) and where the result should be stored.
+- **Mechanism:** The processor's control unit examines the **opcode** (operation code) field of the instruction to determine what operation needs to be performed (e.g., add, load, branch). It also identifies the operands, where the input data is located (registers or memory addresses) and where the result should be stored.
 - **Result:** The control unit generates the necessary signals for the next stages.
 ```
 [Instruction Register] 
@@ -72,7 +72,8 @@
 - It does not make an individual instruction execute faster (latency)
 - but it allows multiple instructions to be processed simultaneously, significantly improving overall system performance.
 ### Concept
-The idea is similar to an assembly line in a factory. The execution of a task (an instruction) is divided into a sequence of smaller, independent stages. While one stage is working on one instruction, other stages can work on different instructions.
+- The idea is similar to an assembly line in a factory.
+- The execution of a task (an instruction) is divided into a sequence of smaller, independent stages. While one stage is working on one instruction, other stages can work on different instructions.
 - **Without Pipelining:** An instruction must complete all its stages before the next instruction can begin.
 - **With Pipelining:** As soon as the first instruction moves from Stage 1 to Stage 2, Stage 1 is freed up to start working on the second instruction.
 ### Conditions for an Efficient Pipeline
@@ -104,23 +105,23 @@ A classic example is a RISC processor pipeline with five stages. Let's visualize
 5. **WB:** Write Back (results to registers)
 **The Diagram:**
 ```Clock Cycle:     1   2   3   4   5   6   7   8   9   10  11  12
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 1   |IF |ID |EX |MEM|WB |   |   |   |   |   |   |   |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 2   |   |IF |ID |EX |MEM|WB |   |   |   |   |   |   |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 3   |   |   |IF |ID |EX |MEM|WB |   |   |   |   |   |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 4   |   |   |   |IF |ID |EX |MEM|WB |   |   |   |   |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 5   |   |   |   |   |IF |ID |EX |MEM|WB |   |   |   |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 6   |   |   |   |   |   |IF |ID |EX |MEM|WB |   |   |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 7   |   |   |   |   |   |   |IF |ID |EX |MEM|WB |   |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 Instruction 8   |   |   |   |   |   |   |   |IF |ID |EX |MEM|WB |
-                + --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+ --+
+                + - + - + - + - + - + - + - + - + - + - + - + - +
 ```
 ### Performance Comparison
 Let's analyze the diagram above, assuming each stage takes one clock cycle.
