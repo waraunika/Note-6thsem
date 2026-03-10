@@ -709,7 +709,7 @@ The three-level system adds an intermediate layer for better traffic management:
 | **Burst error** | Multiple consecutive bits corrupted |
 ### 5.E.ii Error Correction
 **Definition:** Process of correcting detected errors.
-### 5.E.iiiParity Check Method
+### 5.E.iii Parity Check Method
 **How it works:**
 - Extra bit (parity bit) sent with data
 - Provides additional information about the data
