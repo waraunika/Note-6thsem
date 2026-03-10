@@ -93,15 +93,6 @@
 | 0    | 0   | 0   | 0   | 1   |
 | 1    | 0   | 1   | 1   | 1   |
 y = ac+bc'
-#### Combinational circuit
-```
-			 ┌---┐_
-a ---- |     └┐ 
-			 |      |-----
-c ---- |    _┌┘
-			 └---┘
-c ----
-```
 ## RT-Level Combinational Components
 - Register-transfer or RT level components are generally used when the design of the circuit becomes complex. 
 - As the number of input increases, the complexity of the design increase.

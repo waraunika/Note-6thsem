@@ -319,3 +319,4 @@ Comparing the speed of different processors is not as straightforward as compari
     - **1 MIPS ≈ 1757 Dhrystones/second**
 - Using this, the performance of other processors can be compared to the classic VAX 11/780.
 # 3.7 General-Purpose Processor Design
+## Not asked in exam, so skipped for now

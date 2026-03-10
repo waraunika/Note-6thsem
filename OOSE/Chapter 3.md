@@ -885,7 +885,7 @@ Postconditions:
 5. Bus ticket reservation
    ![[Pasted image 20260208083724.png]]
 6. Online shopping
-   ![[Pasted image 20260208083743.png]]
+   ![[Pasted image 20260208083743.png | 1000000]]
 ### 3.D.ii Communication Diagram
 #### D.ii.a Concept
 - AKA **Collaboration Diagram**
@@ -1608,26 +1608,26 @@ Postconditions:
 └─────────────┘
 ```
 ### 3.H.vi Component vs Deployment
-|Aspect|Component Diagram|Deployment Diagram|
-|---|---|---|
-|**Focus**|Software components|Hardware nodes|
-|**Elements**|Components, interfaces|Nodes, devices, components on nodes|
-|**Shows**|Code structure, dependencies|Physical deployment|
-|**Relationships**|Dependencies, realizations|Communication paths|
-|**Level**|Implementation view|Deployment view|
-|**Question answered**|_What are the parts?_|_Where do they run?_|
+| Aspect                | Component Diagram            | Deployment Diagram                  |
+| --------------------- | ---------------------------- | ----------------------------------- |
+| **Focus**             | Software components          | Hardware nodes                      |
+| **Elements**          | Components, interfaces       | Nodes, devices, components on nodes |
+| **Shows**             | Code structure, dependencies | Physical deployment                 |
+| **Relationships**     | Dependencies, realizations   | Communication paths                 |
+| **Level**             | Implementation view          | Deployment view                     |
+| **Question answered** | _What are the parts?_        | _Where do they run?_                |
 ## 3.3.I Summary
-|Diagram|View|Focus|
-|---|---|---|
-|**Class Diagram**|Logical|Static structure|
-|**Object Diagram**|Logical|Instances at a moment|
-|**Use Case Diagram**|Use Case|Functional requirements|
-|**Sequence Diagram**|Dynamic|Time-ordered messages|
-|**Communication Diagram**|Dynamic|Message + structure|
-|**Activity Diagram**|Dynamic|Workflow/process|
-|**State Diagram**|Dynamic|Object lifecycle|
-|**Component Diagram**|Implementation|Physical code structure|
-|**Deployment Diagram**|Deployment|Hardware topology|
+| Diagram                   | View           | Focus                   |
+| ------------------------- | -------------- | ----------------------- |
+| **Class Diagram**         | Logical        | Static structure        |
+| **Object Diagram**        | Logical        | Instances at a moment   |
+| **Use Case Diagram**      | Use Case       | Functional requirements |
+| **Sequence Diagram**      | Dynamic        | Time-ordered messages   |
+| **Communication Diagram** | Dynamic        | Message + structure     |
+| **Activity Diagram**      | Dynamic        | Workflow/process        |
+| **State Diagram**         | Dynamic        | Object lifecycle        |
+| **Component Diagram**     | Implementation | Physical code structure |
+| **Deployment Diagram**    | Deployment     | Hardware topology       |
 # 3.4 Advanced Classes
 ### 3.4.A Overview
 - Beyond basic class notation (name, attributes, operations), UML provides **advanced class features** for precise modeling.

@@ -6,7 +6,7 @@
 3. Explain fully associative cache mapping technique [[#B.i.b Fully Associative mapping]]
 4. Explain replacement algorithms used in cache memory. [[#4.B.ii Cache-Replacement Policy]]
 # 4.1 Memory Write Ability and Storage Permanence
-## Memory Write Ability
+## 4.1.A Memory Write Ability
 - Write Ability refers to the manner and speed that a particular memory can be written.
 - Every memory must have a way to write bits onto it but the manner and speed of such writing varies among different memory.
 - In-system programmable is used to categorize memories into two along the write ability axis.
@@ -25,15 +25,14 @@
 	- Low End
 		- bits are stored during fabrication
 		- Example: Mask-programmed ROM
-		- 
-## Storage Permanence
+## 4.1.B Storage Permanence
 - refers to the ability of a memory device to retain its stored data (bits) after those bits have been written. 
 - It is a fundamental characteristic that determines how and where a particular memory type can be used in an embedded system.
 - Memory types are primarily divided into two broad categories along the storage permanence axis:
 	- **Non-Volatile Memory (NVM):** Can hold its stored bits even after power is no longer supplied to the device. The data persists through power cycles.
 	- **Volatile Memory (VM):** Requires continuous power to retain its data. Once power is removed, the stored information is lost.
 - However, storage permanence is not simply a binary "yes" or "no" property. It exists on a spectrum, or **range**, from bits that fade almost instantly to those that last forever (or until the chip is destroyed).
-### The Spectrum of Storage Permanence
+### 1.B.i The Spectrum
 #### 1. Low End: The Refresh Required Tier
 - **Behavior:** Memory at this end of the spectrum begins to lose its stored bits almost immediately after they are written. To retain data, the memory must be constantly and periodically **refreshed** (read and rewritten).
 - **Characteristics:**
