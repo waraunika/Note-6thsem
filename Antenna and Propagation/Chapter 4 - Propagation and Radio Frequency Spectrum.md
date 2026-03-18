@@ -1,41 +1,41 @@
-# Ground or Surface Wave
-## Concept
+# 1 Ground or Surface Wave
+## 1.1 Concept
 - also called surface wave propagation
 - refers to radio waves that travel along the earth's surface, following its curvature.
 - these waves glide over the ground and enable communication beyond the optical horizon through diffraction
 -  Geometry of Ground Reflected Wave
   -  ![[Pasted image 20260318125233.png]]
-## Technical Details
-### Frequency Range and Bands
+## 1.2 Technical Details
+### 1.2.1 Frequency Range and Bands
 | Parameter             | Value                                                            |
 | --------------------- | ---------------------------------------------------------------- |
 | Range                 | 10 kHz to 2 MHz                                                  |
 | Bands                 | VLF, LF, and MF                                                  |
 | Upper Practical limit | ~ 3MHz (above this, attenuation makes ground wave impracticable) |
-### Polarization
+### 1.2.2 Polarization
 | Parameter | Value                                         |
 | --------- | --------------------------------------------- |
 | Linear    | primarily Vertical Polarization               |
 | Why?      | vertical polarization minimizes ground losses |
-### Key Parameters
+### 1.2.3 Key Parameters
 | Parameter          | Typical Value             |
 | ------------------ | ------------------------- |
 | Transmission Power | Few kW to several MW      |
 | Coverage Distance  | Upto ~ 1000 km            |
 | Transmission Mode  | AM (Amplitude Modulation) |
 | Antenna Pattern    | Omnidirectional           |
-### Frequency vs Coverage
+### 1.2.4 Frequency vs Coverage
 | Band            | Typical Coverage              |
 | --------------- | ----------------------------- |
 | LW              | ~ 1000 km                     |
 | MF              | ~ 100 miles (160 km)          |
 | 3 MHz and above | Impracticable for ground wave |
 | 10 MHz          | 1-2 miles only                |
-### Radio Horizon
+### 1.2.5 Radio Horizon
 - approximately 4/3 times the optical horizon
 - beyond the horizon, direct and reflected waves are blocked by earth's curvature
 - propagation continues via diffracted surface wave.
-### Surface Conductivity (Best to worst)
+### 1.2.6 Surface Conductivity (Best to worst)
 - large body fresh water - very good
 - ocean or sea water - good
 - flat or hilly loamy soil - fair
@@ -43,10 +43,10 @@
 - desert - poor
 - jungle - very poor
 - dry sandy terrain, city centers - worst
-### Propagation Method
+### 1.2.7 Propagation Method
 - primary mechanism: diffraction
 - wave produces a mirrored copy beneath the Earth's surface during propagation
-### Attenuation Factors
+### 1.2.8 Attenuation Factors
 - increases with frequency
 	- Example 3 MHZ signal suffers 20 - 60 dB attenuation
 - Dependent on
@@ -54,8 +54,8 @@
 	- Absorbed by ground
 	- Reflection from surface
 	- wave tilt creating horizontal component (reduces field strength)
-## Other Details
-### Wavelength Distribution
+## 1.3 Other Details
+### 1.3.1 Wavelength Distribution
 | Wave Type    | Wavelength Range |
 | ------------ | ---------------- |
 | Radio waves  | > 0.1 m          |
@@ -65,7 +65,7 @@
 | UV rays      | 400 - 1 nm       |
 | X-rays       | 1 nm - 1 pm      |
 | Gamma rays   | < 1 pm           |
-### Factors Affecting Reception
+### 1.3.2 Factors Affecting Reception
 - Ionospheric effects: D/E layer absorption
 - Temporal variations
 	- Diurnal (Day/nigh)
@@ -77,30 +77,30 @@
 	- atmospheric absorption
 	- refraction
 	- thermal noise
-### Special Applications
+### 1.3.3 Special Applications
 - Marine communications: 10 - 110 kHz
 - Time & frequency management:
 	- 16 kHz (UK)
 	- 17.8 kHz (US)
-### Medium Wave Broadcasting
+### 1.3.4 Medium Wave Broadcasting
 - frequency range: 535 kHz - 1625 kHz
 - skip distance from sky wave can be minimized using ground wave
-## Adv/Disadv
-### Adv
+## 1.4 Adv/Disadv
+### 1.4.1 Adv
 - **Beyond horizon coverage**: Enables communication beyond the optical horizon
 - **Weather independence**: Relatively unaffected by atmospheric conditions (unlike sky waves)
 - **Global potential**: With sufficient power, can communicate between any two points
 - **Reliable**: Provides consistent regional coverage
 - **Minimizes skip distance**: Can fill in areas where sky wave coverage is problematic
-### Disadv
+### 1.4.2 Disadv
 - **High power requirements**: Needs relatively high transmission power
 -  **Frequency limited**: Only practical at VLF, LF, and MF bands
 - **Large antennas**: Lower frequencies require physically large antenna structures
 - **Surface dependent**: Losses vary considerably with ground material
 - **Frequency-dependent attenuation**: Attenuation increases with frequency
 - **Limited range at higher frequencies**: Coverage reduces dramatically above 2 MHz
-## Applications
-### Primary
+## 1.5 Applications
+### 1.5.1 Primary
 1. **Broadcasting**
     - AM radio broadcast stations
     - Regional coverage on long and medium wave bands
@@ -113,64 +113,169 @@
 4. **Local Communications**
     - Regional radio coverage
     - Emergency broadcast systems
-### Typical Use Case
+### 1.5.2 Typical Use Case
 - **LF band**: Long-range navigation, time signals
 - **MF band**: AM broadcasting, maritime communications
 - **VLF band**: Submarine communications, global navigation
-### Coverage Optimization
+### 1.5.3 Coverage Optimization
 - Better performance over wet/humid terrain than dry
 - Coastal and maritime paths provide superior propagation
 - Agricultural and marshy land preferred over urban/dry areas
-- surface conductivity
+---
+# 2 Space Wave
+## 2.1 Concept
+- aka Direct Wave Propagation
+- refers to radio waves travelling directly 
+  - from the transmitting antenna to the receiving antenna
+  - without relying on
+    - reflection from the ionosphere or
+    - diffraction along the earth's surface.
+- this is primary mode for high-frequency communication and forms the basis for LOS and satellite communication.
+## 2.2 Technical Details
+### 2.2.1 Frequency Range and Bands
+- Frequency range: Above 30 MHz
+- Frequency bands: VHF, UHF and SHF
+- Typical applications: FM radio, TV broadcasting, radar, satellite communications, microwave links
 
-- ground wave (EM wave) produces  mirrored copy of induced wave beneath the surface of earth during propagation
-- the degree of attenuation is dependent upon a variety of factors
-  - frequency of the radio signal
-  - losses rise with increasing frequency
-- so it is impracticable above 3 MHz (SW)
-- typically a signal at 3.0 MHz will suffer an attenuation that may be in the region of 20 to 60 dB
-- high power HF radio broadcast stations may only be audible for a few miles from Tx site via ground wave.
-- salty sea water is the best, and rich agricultural or marshy land is also good.
-- dry sandy terrain and city centers are by the worst.
-- propagation method: diffraction
-- rx power depends on
-  - tx power
-  - frequency
-  - surface nature
-  - season wise
-- signal reception suffered by
-  - D/E layer's absorption
-  - Diurnally (Day time wise)
-  - Seasonally
-  - Annually (11 yrs sun cycle)
-  - fading effect
-- get attenuated
-  - due to earth imperfection, absorption and reflection by earth surface
-- attenuation increases with frequency
-- by the tilt in the wave as it progresses along the curvature of earth
-- due to this horizontal component of electric field get shorter, which reduces strength of electric field.
-- Effect of Imperfect Earth
-  - attenuation and attenuation distortion
-  - free space loss
-  - noise
-  - atmospheric absorption
-  - multipath
-  - refraction
-  - thermal noise
-- advantages:
-  - given enough power they can be used to communicate between any two points in the world.
-  - they are relatively unaffected atmospheric conditions like sky waves.
-- disadvantages:
-  - requires relatively high transmission power
-  - they are limited to very low, low and medium frequencies which require large antennas
-  - losses on the ground vary considerably with surface material
-  - ground wave get attenuated
-  - due to earth imperfection, absorption and reflection by earth surface and attenuation increases with frequency.
+### 2.2.2 Polarization
+- linear polarization (Horizontal or vertical)
+- Circular Polarization
+- Polarization selection depends on application and propagation environment.
 
-# 4.2 Space wave
-# 4.3 Direct and Ground Reflected wave
-### 4.3.1 Duct Propagation
-# 4.4 Ionospheric or Sky Wave
+### 2.2.3 Key Parameters
+| Parameter          | Typical Value                                        |
+| ------------------ | ---------------------------------------------------- |
+| Transmission Power | 1 kW (Typically)                                     |
+| Coverage Distance  | 30 - 70 km (terristrial), upto 36,000 km (satellite) |
+| Transmission Modes | AM, FM, PM                                           |
+| Antenna Pattern    | Unidirectional                                       |
+| Bandwidth          | Wide, Broad and Ultrawide                            |
+### 2.2.4 Distance Calculation
+- Diagram for Derivation
+  - ![[Pasted image 20260318134126.png]]
+- Distance between h$_t$ (height of transmitting antenna) and h$_r$ (height of receiving antenna)
+  - given by d = X$_1$ + x$_2$
+- where
+  - X$_1$ = $\large \sqrt{(R + h_t)^2 - R^2}$
+  - X$_2$ = $\large \sqrt{(R+h_r)^2 - R^2}$
+- then, for d we have:
+$$\large
+\begin{align}
+d &= \sqrt{(R + h_t)^2 - R^2} + \sqrt{(R + h_r)^2 - R^2}\\
+  &= \sqrt{2\cdot R\cdot h_t + h_t^2} + \sqrt{2\cdot R\cdot h_r + h_r^2}\\
+  \text{Here, R = 6378 km >> hr or ht}\\
+  &= \sqrt{2R}\left( \sqrt{h_t} + \sqrt{h_r} \right)\\
+  &= \sqrt{2\cdot 6378\cdot 10^3} (\sqrt{h_t} + \sqrt{h_r})\\
+  &= 3571.55 (\sqrt{h_t} + \sqrt{h_r})\\
+  &= 3.571 (\sqrt{h_t} + \sqrt{h_r})\ \text{km}
+\end{align}
+$$
+- here, h$_t$ and h$_r$ are in meter
+### 2.2.5 Skip Distance
+- minimum distance from transmitter where a sky wave returns to earth
+- for space wave, skip distance is not directly applicable as its a LSO mode
+- the formula above gives the maximum LOS distance before earth's curvature blocks the signal.
+### 2.2.6 Satellite Communication Distance
+- Geostationary Satellites: ~35,786 (~36,000) km above Earth
+- Provides hemispheric or global coverage depending on antenna design
+## 2.3 Other Details
+### 2.3.1 Propagation Characteristics
+- Space wave consists of two components
+  1. Direct Wave: Travels directly from transmitter to receiver
+  2. Ground-reflected wave: Reflects off the earth surface before reaching receiver
+- Field strength reduces as distance increases
+- Limited by Earth's curvature (beyond horizon -> no signal)
+### 2.3.2 Factors Affecting Reception
+- Atmospheric conditions:
+  - Temperature inversions
+  - Humidity variations
+  - Pressure changes
+- Ionospheric conditions:
+  - Refraction at lower frequencies
+  - Scintillation effects
+- Propagation effects:
+  - Fading (multipath interference)
+  - Absorption by atmospheric gases
+  - Rain attenuation (especially at higher frequencies)
+  - Diffraction around obstacles
+### 2.3.3 Microwave Links
+- Typical link distances: up to 100 km
+- beyond 100 km, becomes very uneconomical due to:
+  - need for tall towers
+  - multiple repeaters required
+  - increased power requirements
+### 2.3.4 Comparison with other propagation modes
+| Aspect      | Space Wave        | Ground Wave | Sky Wave                         |
+| ----------- | ----------------- | ----------- | -------------------------------- |
+| Frequency   | > 30 MHz          | < 2 MHz     | 2 - 30 MHz                       |
+| Range       | LOS limited       | ~ 1000 km   | Global                           |
+| Reliability | Weather dependent | Stable      | Variable (ionospheric dependent) |
+## 2.4 Adv/Disadv
+### 2.4.1 Adv
+1. Wide bandwidth: 
+	- Supports high-data-rate communications
+2. Directional capability:
+	- Unidirectional antennas reduce interference and increase efficiency
+3. Multiple polarization options:
+	- Flexibility in system design
+4. Satellite communication:
+	- Enables global coverage through space links
+5. Frequency reuse:
+	- Directional beams allow frequency reuse in different areas
+6. Less susceptible to ionospheric disturbances:
+	- Unlike sky wave at lower frequencies
+7. Secure:
+	- Directional beams reduce interception risk
+### 2.4.2 Disadv
+1. Line-of-sight limitation: Blocked by Earth's curvature and obstacles
+2. Distance limited: Terrestrial range typically 30-70 km without repeaters
+3. Obstacle sensitivity: Buildings, hills, and vegetation can block signals
+4. Atmospheric effects: Rain, fog, and atmospheric gases cause attenuation
+5. Tower height requirements: Tall structures needed for longer ranges
+6. Economic constraints: Repeaters and tall towers increase infrastructure costs
+## 2.5 Applications
+### 2.5.1 Primary Applications
+1. **Broadcasting**
+    - FM radio (VHF band)
+    - Television broadcasting (VHF/UHF)
+    - Digital audio broadcasting
+2. **Telecommunications**
+    - Microwave point-to-point links
+    - Cellular mobile networks
+    - Wireless local loops
+    - Wi-Fi and WLAN
+3. **Satellite Communications**
+    - Geostationary satellites (36,000 km)
+    - Low Earth Orbit (LEO) satellites
+    - Direct broadcast satellite TV
+    - Satellite internet
+    - Global navigation systems (GPS, GNSS)
+4. **Radar Systems**
+    - Air traffic control radar
+    - Weather radar
+    - Military surveillance
+    - Automotive radar
+5. **Mobile Communications**
+    - Mobile phones (2G/3G/4G/5G)
+    - Two-way radios
+    - Emergency services communications
+### 2.5.2 Typical Use Cases by Band
+| Band | Frequency Range | Common Applications               |
+| ---- | --------------- | --------------------------------- |
+| VHF  | 30-300 MHz      | FM radio, TV, air traffic control |
+| UHF  | 300 MHz-3 GHz   | Mobile phones, TV, GPS, Wi-Fi     |
+| SHF  | 3-30 GHz        | Satellite, radar, microwave links |
+| EHF  | 30-300 GHz      | 5G, advanced radar, research      |
+### 2.5.3 Special Applications
+- **Remote sensing**: Earth observation satellites
+- **Radio astronomy**: Space wave propagation essential for receiving cosmic signals
+- **Drone communications**: Control and data links
+- **Smart grid**: Utility monitoring and control
+- **IoT connectivity**: Long-range IoT systems (LoRa, Sigfox at sub-GHz frequencies)
+---
+# 3 Direct and Ground Reflected wave
+### 3.1.1 Duct Propagation
+# 4 Ionospheric or Sky Wave
 Short wave is Sky Wave
 - long distance communication system
 - large area coverage with skip distance 
@@ -211,7 +316,7 @@ Short wave is Sky Wave
 	- Diurnally (Day time wise)
 	- Seasonally
 	- Annually (11 year's sunspot cycle)
-### Sky Wave
+### 4.1.1 Sky Wave
 - Different layers in ionospheric affect sky wave
 - D-layer exists only during Day time
 - E-layer more active at Night time
@@ -219,14 +324,14 @@ Short wave is Sky Wave
 - E-layer using day time @ 2400 km cover
 - higher frequency needs greater ionization density for radio waves reflection back
 
-### Ionospheric or Sky Wave
+### 4.1.2 Ionospheric or Sky Wave
 - more sunspots, the greater the ionizations
 - thus 11 year's sunspot cycle is considered
 - actually, signal is Refracted from ionized layers due to layer's refractive index change
 - but it looks like the signal was reflected from ionosphere is a radio mirror, at virtual height of the ionosphere
 - revolves around the refraction mechanism in the ionosphere
 
-### Ionosphere
+### 4.1.3 Ionosphere
 - region lying between 90 km to 450 km
 - contains charge particles & takes ionization
 - plays important role for space communications
@@ -256,7 +361,7 @@ Short wave is Sky Wave
 - maximum frequency at which total internal reflection from Ionospheric takes place is called Critical frequency (f$_{Crt}$) at 90$^0$.
 - mathematically, f$_{Crt}$ = 9$\sqrt{N_{max}}$
 
-### Ionospheric or Sky Wave
+### 4.1.4 Ionospheric or Sky Wave
 - structural details of the ionosphere
 	- refraction mechanism depends on a number of factors including
 		- frequency of operation
@@ -284,5 +389,5 @@ Short wave is Sky Wave
 -> sanjeevan sir told me to contact him after our class he will be in department 
 - 5pm ki 4pm? k ko lagi  after class? 2:25 
 - yo paxi nai hola class ma koi pani xaina yetti matra student vayo vane I will cancel SG sir discussion session sir le alik manchhe chainxa class ma thorai vayo vane lidina vaneko xa 
-# 4.5 Tropospheric Wave
-# 4.6 Radio frequency spectrum and its propagation characteristics
+# 5 Tropospheric Wave
+# 6 Radio frequency spectrum and its propagation characteristics
