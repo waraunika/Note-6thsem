@@ -1,4 +1,172 @@
-# 4.1 Ground or Surface Wave
+# Ground or Surface Wave
+## Concept
+- also called surface wave propagation
+- refers to radio waves that travel along the earth's surface, following its curvature.
+- these waves glide over the ground and enable communication beyond the optical horizon through diffraction
+-  Geometry of Ground Reflected Wave
+  -  ![[Pasted image 20260318125233.png]]
+## Technical Details
+### Frequency Range and Bands
+| Parameter             | Value                                                            |
+| --------------------- | ---------------------------------------------------------------- |
+| Range                 | 10 kHz to 2 MHz                                                  |
+| Bands                 | VLF, LF, and MF                                                  |
+| Upper Practical limit | ~ 3MHz (above this, attenuation makes ground wave impracticable) |
+### Polarization
+| Parameter | Value                                         |
+| --------- | --------------------------------------------- |
+| Linear    | primarily Vertical Polarization               |
+| Why?      | vertical polarization minimizes ground losses |
+### Key Parameters
+| Parameter          | Typical Value             |
+| ------------------ | ------------------------- |
+| Transmission Power | Few kW to several MW      |
+| Coverage Distance  | Upto ~ 1000 km            |
+| Transmission Mode  | AM (Amplitude Modulation) |
+| Antenna Pattern    | Omnidirectional           |
+### Frequency vs Coverage
+| Band            | Typical Coverage              |
+| --------------- | ----------------------------- |
+| LW              | ~ 1000 km                     |
+| MF              | ~ 100 miles (160 km)          |
+| 3 MHz and above | Impracticable for ground wave |
+| 10 MHz          | 1-2 miles only                |
+### Radio Horizon
+- approximately 4/3 times the optical horizon
+- beyond the horizon, direct and reflected waves are blocked by earth's curvature
+- propagation continues via diffracted surface wave.
+### Surface Conductivity (Best to worst)
+- large body fresh water - very good
+- ocean or sea water - good
+- flat or hilly loamy soil - fair
+- rocky terrain - poor
+- desert - poor
+- jungle - very poor
+- dry sandy terrain, city centers - worst
+### Propagation Method
+- primary mechanism: diffraction
+- wave produces a mirrored copy beneath the Earth's surface during propagation
+### Attenuation Factors
+- increases with frequency
+	- Example 3 MHZ signal suffers 20 - 60 dB attenuation
+- Dependent on
+	- Earth's imperfection
+	- Absorbed by ground
+	- Reflection from surface
+	- wave tilt creating horizontal component (reduces field strength)
+## Other Details
+### Wavelength Distribution
+| Wave Type    | Wavelength Range |
+| ------------ | ---------------- |
+| Radio waves  | > 0.1 m          |
+| Microwaves   | 0.1 - 1 mm       |
+| Infrared     | 1 - 700 nm       |
+| Visible rays | 700 - 400 nm     |
+| UV rays      | 400 - 1 nm       |
+| X-rays       | 1 nm - 1 pm      |
+| Gamma rays   | < 1 pm           |
+### Factors Affecting Reception
+- Ionospheric effects: D/E layer absorption
+- Temporal variations
+	- Diurnal (Day/nigh)
+	- Seasonal changes
+	- 11 year sunspot cycle
+- Propagation effects
+	- fading
+	- multipath interference
+	- atmospheric absorption
+	- refraction
+	- thermal noise
+### Special Applications
+- Marine communications: 10 - 110 kHz
+- Time & frequency management:
+	- 16 kHz (UK)
+	- 17.8 kHz (US)
+### Medium Wave Broadcasting
+- frequency range: 535 kHz - 1625 kHz
+- skip distance from sky wave can be minimized using ground wave
+## Adv/Disadv
+### Adv
+- **Beyond horizon coverage**: Enables communication beyond the optical horizon
+- **Weather independence**: Relatively unaffected by atmospheric conditions (unlike sky waves)
+- **Global potential**: With sufficient power, can communicate between any two points
+- **Reliable**: Provides consistent regional coverage
+- **Minimizes skip distance**: Can fill in areas where sky wave coverage is problematic
+### Disadv
+- **High power requirements**: Needs relatively high transmission power
+-  **Frequency limited**: Only practical at VLF, LF, and MF bands
+- **Large antennas**: Lower frequencies require physically large antenna structures
+- **Surface dependent**: Losses vary considerably with ground material
+- **Frequency-dependent attenuation**: Attenuation increases with frequency
+- **Limited range at higher frequencies**: Coverage reduces dramatically above 2 MHz
+## Applications
+### Primary
+1. **Broadcasting**
+    - AM radio broadcast stations
+    - Regional coverage on long and medium wave bands
+2. **Maritime Communications**
+    - Ship-to-shore communications (10-110 kHz)
+    - Navigation systems
+3. **Time and Frequency Standards**
+    - National time signal services
+    - Frequency reference distribution
+4. **Local Communications**
+    - Regional radio coverage
+    - Emergency broadcast systems
+### Typical Use Case
+- **LF band**: Long-range navigation, time signals
+- **MF band**: AM broadcasting, maritime communications
+- **VLF band**: Submarine communications, global navigation
+### Coverage Optimization
+- Better performance over wet/humid terrain than dry
+- Coastal and maritime paths provide superior propagation
+- Agricultural and marshy land preferred over urban/dry areas
+- surface conductivity
+
+- ground wave (EM wave) produces  mirrored copy of induced wave beneath the surface of earth during propagation
+- the degree of attenuation is dependent upon a variety of factors
+  - frequency of the radio signal
+  - losses rise with increasing frequency
+- so it is impracticable above 3 MHz (SW)
+- typically a signal at 3.0 MHz will suffer an attenuation that may be in the region of 20 to 60 dB
+- high power HF radio broadcast stations may only be audible for a few miles from Tx site via ground wave.
+- salty sea water is the best, and rich agricultural or marshy land is also good.
+- dry sandy terrain and city centers are by the worst.
+- propagation method: diffraction
+- rx power depends on
+  - tx power
+  - frequency
+  - surface nature
+  - season wise
+- signal reception suffered by
+  - D/E layer's absorption
+  - Diurnally (Day time wise)
+  - Seasonally
+  - Annually (11 yrs sun cycle)
+  - fading effect
+- get attenuated
+  - due to earth imperfection, absorption and reflection by earth surface
+- attenuation increases with frequency
+- by the tilt in the wave as it progresses along the curvature of earth
+- due to this horizontal component of electric field get shorter, which reduces strength of electric field.
+- Effect of Imperfect Earth
+  - attenuation and attenuation distortion
+  - free space loss
+  - noise
+  - atmospheric absorption
+  - multipath
+  - refraction
+  - thermal noise
+- advantages:
+  - given enough power they can be used to communicate between any two points in the world.
+  - they are relatively unaffected atmospheric conditions like sky waves.
+- disadvantages:
+  - requires relatively high transmission power
+  - they are limited to very low, low and medium frequencies which require large antennas
+  - losses on the ground vary considerably with surface material
+  - ground wave get attenuated
+  - due to earth imperfection, absorption and reflection by earth surface and attenuation increases with frequency.
+
 # 4.2 Space wave
 # 4.3 Direct and Ground Reflected wave
 ### 4.3.1 Duct Propagation
