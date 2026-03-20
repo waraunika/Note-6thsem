@@ -11,14 +11,10 @@
             "id": "c8864ddb984870d8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Antenna and Propagation/Chapter 4 - Propagation and Radio Frequency Spectrum.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Chapter 4 - Propagation and Radio Frequency Spectrum"
+              "title": "New tab"
             }
           }
         ]
@@ -78,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "eaf33f7d715fa62b",
@@ -170,24 +165,27 @@
   },
   "active": "c8864ddb984870d8",
   "lastOpenFiles": [
-    "Antenna and Propagation/attachments/Pasted image 20260319141440.png",
-    "Antenna and Propagation/Chapter 3 - Antennas Classification.md",
     "Antenna and Propagation/Chapter 2 - Antenna Parameters & Arrays.md",
+    "Antenna and Propagation/attachments/3.jpg",
+    "Antenna and Propagation/attachments/2.jpg",
+    "Antenna and Propagation/attachments/1.jpg",
+    "Antenna and Propagation/attachments/Pasted image 20260126223838.png",
+    "Antenna and Propagation/attachments/Pasted image 20260126223826.png",
+    "Antenna and Propagation/attachments/3l22.png",
+    "Antenna and Propagation/attachments/3l2.jpg",
+    "Antenna and Propagation/attachments/2l 1.png",
+    "Antenna and Propagation/attachments/2l.png",
+    "Antenna and Propagation/attachments/Pasted image 20260126223238.png",
+    "Antenna and Propagation/Chapter 2.md",
+    "Antenna and Propagation/Chapter 1.md",
+    "Short Points/Antenna/Chapter 2.md",
+    "Antenna and Propagation/Chapter 1 - Propagation and Antenna.md",
     "Antenna and Propagation/Chapter 4 - Propagation and Radio Frequency Spectrum.md",
-    "attachments/Screenshot_2026-01-28_PageMarker_1.png",
-    "attachments/Pasted image 20260125121104.png",
-    "attachments/Pasted image 20260125120948.png",
-    "attachments/Pasted image 20260125120325.png",
-    "attachments/Pasted image 20260106104854.png",
+    "Antenna and Propagation/Chapter 3 - Antennas Classification.md",
     "Chapter.md",
     "Dec 31.md",
     "Jan 5.md",
-    "Antenna and Propagation/attachments/Pasted image 20260319134359.png",
-    "Antenna and Propagation/attachments/Pasted image 20260319133558.png",
-    "Antenna and Propagation/attachments/Pasted image 20260319131551.png",
     "Antenna and Propagation/Chapter 4 - Propagation and Radio Frequency Spectrum.md~",
-    "Antenna and Propagation/attachments/Pasted image 20260318134126.png",
-    "Antenna and Propagation/attachments/Pasted image 20260318125233.png",
     "Communication System/rough.md",
     "daily-notes/2026-01-21.md",
     "daily-notes/2026-01-22.md",
@@ -203,10 +201,6 @@
     "Communication System/Chapter 9 - Bandpass Data Communication Systems.md",
     "Communication System/Chapter 8 - Baseband Data Communication Systems.md",
     "Communication System/Chapter 2 - Representation of signals and systems in communication.md",
-    "daily-notes/2026-01-20.md",
-    "daily-notes/2026-03-09.md",
-    "daily-notes/2026-02-25.md",
-    "daily-notes/2026-02-24.md",
     "Project Management/MCQ 2",
     "Embedded Systems/Lab",
     "push.sh~",
