@@ -1,10 +1,8 @@
-# 1 Ground or Surface Wave
+x# 1 Ground or Surface Wave
 ## 1.1 Concept
 - also called surface wave propagation
 - refers to radio waves that travel along the earth's surface, following its curvature.
 - these waves glide over the ground and enable communication beyond the optical horizon through diffraction
--  Geometry of Ground Reflected Wave
-  -  ![[Pasted image 20260318125233.png]]
 ## 1.2 Technical Details
 ### 1.2.1 Frequency Range and Bands
 | Parameter             | Value                                                            |
@@ -273,38 +271,102 @@ $$
 - **Smart grid**: Utility monitoring and control
 - **IoT connectivity**: Long-range IoT systems (LoRa, Sigfox at sub-GHz frequencies)
 ---
-# 3 Direct and Ground Reflected wave
-### 3.1.1 Duct Propagation
-# 4 Ionospheric or Sky Wave
-Short wave is Sky Wave
-- long distance communication system
-- large area coverage with skip distance 
-- higher the frequency greater the Energy
-- wave reflected back to earth
-- 2 - 30 MHz
+# 3 Ground Reflected wave
+- Reflected Signal as the transmission will be reflected by a number of objects
+- including
+	- earth's surface
+	- any hills
+	- or large building
+- radio waves
+	- ground or surface wave propagation
+	- space wave propagation
+		- LOS or direct wave
+		- indirect or Ground reflected wave
+	- sky wave propagation
+-  Figure for Geometry of Ground Reflected Wave
+	- ![[Pasted image 20260318125233.png]]
+## 3.1.1 Duct Propagation
+- Figure for working of propagation of waves in atmospheric duct
+	- ![[Pasted image 20260319131551.png]]
+- radio duct or just ducing
+- tropospheric ducting
+- atmospheric duct
+- temperature inversion
+- super refraction
+- EM propagation within tropospheric layer
+- duct propagation for VHF and UHF frequencies
+- affect propagation in 50 MHz to 450 MHz
+- propagation distance few hundred to 2000 km
+- it usually happens 30 - 50 m above ground
+- usually decrease in Temp of 6.5$^0$ C / km as h $\uparrow$
+- but it is opposite under certain weather condition, i.e. temperature inversion
+- as air density $\downarrow$, refractive index $\uparrow$
+- with increasing height above the ground
+- change in refractive index is linear and gradual
+- guides teh radio waves along teh curvature of the earth
+- thereby allowing the spreading of wave fronts in a horizontal manner only
+- waves are bent by atmospheric refraction
+- under certain atmospheric conditions produce a layer of air in the troposphere
+- that will be at a higher temperature than the layers of air above and below it
+- layer of warm air is trapped above cooled air
+	- often over the surface of water
+- such a layer will provide a duct creating a path through the warmer layer of air
+- which has less signal loss than cooler layers above and below
+- wave being reflected from the ionosphere or gliding over the surface of the earth
+- due to undergoing successive refraction from the troposphere.
+- atmospheric duct is the region present in lower atmosphere
+- which is a result of temperature inversion
+- the duct behaves as a waveguide in the atmosphere
+- troposphere is extended upto 15 km from the surface of the earth
+- duct propagation takes place nearly about 30-50m above the troposphere
+- duct propagation occurs in troposphere and earth surface
+- temperature of this region generally remains constant
+- duct propagation allows the propagation of the signals beyond horizon
+- this means that unlike surface wave propagation
+- it permits the signal transmission without assuring the need for having a line of sight distance between the two antennas
+- even duct propagation for VHF and UHF bands
+# Ionospheric or Sky Wave
+-  Overview of Frequency Spectrum
 
-- radio window
-	- 300 kHz to 10 GHz
-	- HF: 3 MHz - 30 MHz
-	- VHF: 30 MHz - 300 MHz
-	- UHF: 300 MHz - 3 GHz
-
-- Band: Mainly HF
-- wave is affected by atmospheric (ionospheric) changes
-- medium play vital role in iosphere
-- transmission mode AM
-- Tx power: Few kWs (Typically 0.5 ~ 5 kW)
+| Frequency (Hz) | Range          | Radio Presence |
+| -------------- | -------------- | -------------- |
+| 10             | VLF            |                |
+| 100            | VLF            |                |
+| 1k             | VLF            | RADIO          |
+| 10k            | LF             | RADIO          |
+| 100k           | MF             | RADIO          |
+| 1M             | HF (3-30 M)    | RADIO          |
+| 10M            | VHF (30-300 M) | RADIO          |
+| 100M           | UHF (300 - 3G) | RADIO          |
+| 1G             | SHF            | RADIO          |
+| 10G            | EHF            | RADIO          |
+| 100G           | INFRARED       |                |
+| 1 T            | INFRARET       |                |
+| 10 T           | VISIBLE        |                |
+| 100T           | V/UV           |                |
+| 10E15          | UV             |                |
+| 10E16          | UV             |                |
+| 10E17          | UV             |                |
+| 10E18          | XRAY           |                |
+| 10E19          | XRAY           |                |
+| 10E20          | GAMMA          |                |
+| 10E21          | GAMMA          |                |
+| 10E22          | COSMIC         |                |
+| 10E23          | COSMIC         |                |
+| 10E24          | COSMIC         |                |
+- Short wave is the sky wave
+- short wave is used for long distance communication systems
+- wave reflected back to the earth
+- higher the frequency greater the energy
+- large area coverage with skip distance
+- mainly frequency range: 2 MHZ to 30 MHz
+- mainly HF
+- wave is affected by atmospheric changes
+- medium play vital role in Ionosphere
+- Transmission mode is AM
+- Tx power: few KWs (typically 0.5 ~ 5 KW)
 - Different layers in ionosphere take part
 - refraction for different SW frequencies
-
-- Minimum skip distance is influenced by number of factors
-	- frequency of operation
-	- state of the ionosphere
-	- angle of radiation
-	- degree of ionization
-	- seasons
-	- local time is very important for ionizations
-
 - propagation method: refraction equivalent to reflection
 - Rx power depends on
 	- Tx power
@@ -316,22 +378,18 @@ Short wave is Sky Wave
 	- Diurnally (Day time wise)
 	- Seasonally
 	- Annually (11 year's sunspot cycle)
-### 4.1.1 Sky Wave
 - Different layers in ionospheric affect sky wave
 - D-layer exists only during Day time
 - E-layer more active at Night time
 - During day time F-Layer is divided into Two parts
 - E-layer using day time @ 2400 km cover
 - higher frequency needs greater ionization density for radio waves reflection back
-
-### 4.1.2 Ionospheric or Sky Wave
 - more sunspots, the greater the ionizations
 - thus 11 year's sunspot cycle is considered
 - actually, signal is Refracted from ionized layers due to layer's refractive index change
 - but it looks like the signal was reflected from ionosphere is a radio mirror, at virtual height of the ionosphere
 - revolves around the refraction mechanism in the ionosphere
-
-### 4.1.3 Ionosphere
+## Ionosphere
 - region lying between 90 km to 450 km
 - contains charge particles & takes ionization
 - plays important role for space communications
@@ -339,6 +397,88 @@ Short wave is Sky Wave
 - decreases gradually at the to about 1.29 x 10$^{-10}$ kg / m$^3$
 - temperature rises form -90$^0$ C to 400$^0$ C to a height of 110 km
 - this region is also called thermosphere
+- structural details of the ionosphere
+	- refraction mechanism depends on a number of factors including
+		- frequency of operation
+		- angle of takeoff and
+		- ionospheric conditions
+	- ionospheric is a region above the Mesosphere
+	- it is composed of ionized layers
+	- four layers: D, E, F$_1$, F$_2$
+	- they are assumed to exist at different heights
+	- distances of these layers, from the earth, are normally referred to the heights
+	- at which the concentration of ionized electrons is Maximum
+	- figure for variation of electron density N with height h
+		- ![[Pasted image 20260319134359.png]]
+- structure
+	- F2 layer: 250 - 400 km
+	- F1 layer: 150 - 250 km
+	- E layer: 90 - 140 km
+	- D layer 50/60 - 90 km
+- D layer
+	- height: 50 - 90 km above the earth's surface
+	- photo ionization of O$_2$ Molucules mainly
+	- present only in day time
+	- largely absent in the night
+	- ionization in the D layer is low due to less UV light penetrates to this level
+	- ionic density of 400 /cc
+	- electronic density (N) is max at noon
+	- critical frequency (F$_{crt}$) is about 100 kHz at vertical incidence
+	- maximum usable frequency (f$_{MUF}$) < 3 MHz
+	- at 30 MHz, Waves cross the D layer attenuated.
+	- its structural details are not yet known with certainty
+	- for VLF and LF the space between the D layer
+	- and the ground acts as a huge waveguide (Duct)
+		- making communication possible
+	- needs large antennas and high power transmitters
+	- at LW and MW ranges, this layer is highly absorptive and limits daytime communication is not possible via D-layer
+- E layer
+	- exists between 90 - 140 km above the surface
+	- maximum density at 110 km
+	- ionization of all gases by X ray
+	- electron density max is 4 x 1 0^ 5 / cc at 110 km
+	- critical frequency (f$_{CRT}$) ~ 3 MHz - 5 MHz (in HF range)
+	- effective for some band of SW at Day time
+	- useful for Day time Comm
+	- almost constant for diurnal or seasonal variations
+	- governed by UV light from the sun
+	- uniformly decays with time at Night
+	- this layer permits medium distance communication in LF and HF bands
+	- at night, the D layer slightly rises and the E layer slightly lowers to form one layer
+	- which is again called E layer
+- F layer
+	- F1 laayer exists between 
+		- 150 to 250 km above the earth's surface in summer
+		- and 200 to 220 km in winter
+	- this laayer is almost constant with little diurnal or seasonal variations
+	- maximum electron density is at ~ 220 km 
+	- this layer remains ionized all the time
+	- ionization of all gases by UV, X rays & cosmic rays
+	- electron density max < 4 x 10^5 / cc
+	- f$_{CRT}$ ~ 5 MHz - 12 MHz (HF range)
+	- day time breaks and merges F1 and F2 layers
+	- very useful for HF reflection from it
+	- F2 layer exists between 250 to 500 km
+	- at night, the F1 layer slightly rises and the F2 layer slightly lowers to form one layer
+	- which is again called teh F2 layer
+	- it is sometimes also referred to F layer
+	- it is more variable in nature
+	- F2 is responsible for most of the HF long-distance communication
+- Sporadic E basics
+	- Sporadic E, Es, arises when intense clouds of ionization form in the region E of teh ionosphere
+	- the level of ionization is upto about five times 
+	- this level reached during the peak of a sunspot cycle
+	- low tx power may be heard via sporadic E
+	- sporadic E propagation by its name is Sporadic and unpredictable by nature
+	- but it enables radio signals to travel over much greater distances
+	- often at higher frequenceis that would noramlly be possible via the ionosphere
+	- sporadic is a mode of radio propagation that occurs on occassions
+	- sporadic E is not easy to predict
+	- affects Radio communciation on Frequencies from a few MHz to lower band of VHF
+	- on some occasions it can affect radio communication on around 150 MHz and sometimes even above this
+	- sporadic E is not normally used for radio communication purposes
+	- although radio amateurs use it
+	- adds noises and may cover high distance
 - UV rays and x-rays from sun produce ionization
 - ionized layer is not uniform
 - due to varying composition of atmosphere at different heights
@@ -353,41 +493,65 @@ Short wave is Sky Wave
 - the Charge Density of Ionosphere increases with Height
 	- which results in the decrease in its Refractive index
 - higher to lower refractive index causes EM wave having internal refraction
-
 - frequencies less than 2 MHz are absorbed
 - frequencies greater than 30 MHz pass through it
 - frequency range from 2 - 30 MHz can be propagated
 - 3 - 30 MHz can be propagated
 - maximum frequency at which total internal reflection from Ionospheric takes place is called Critical frequency (f$_{Crt}$) at 90$^0$.
 - mathematically, f$_{Crt}$ = 9$\sqrt{N_{max}}$
+## Sky Wave minimum skip distance
+- minimum skip distance is influenced by a number of factors
+	- frequency of operation
+	- state of the ionosphere
+	- angle or radiation
+	- degree of ionization
+	- seasons
+- local time is very important for ionizations
+- figure for types of sky wave function in propagation
+	- ![[Pasted image 20260319133558.png]]
+# Critical Frequency, MUF, Skip Distance
+- F$i$
+	- the highest frequency that returns from an ionospheric layer at a vertical incidence is called f$_{CRT}$ for that particular layer
+	- for a regular layer, it is proportional to the square root of maximum electron density in the layer
+- maximum usable frequency F$_{MUF}$
+	- when the frequency exceed F$_{CRT}$, the return will depend upon the angle of incidence at a particulr  ionospheric layer
+	- thus for a specified angle of incidence, there will be a maximum frequency which will be reflected back
+	- the maximum possible value of frequency for which reflection takes place for a given distance of propagation is termed as MUF
+	- beyond MUF, wave will not be returned
+	- sky wave requires the angle of reflection to be 90$^0$.
+	- if $\large \phi_i$ is the incident angle and $\large \phi_r$ is the reflection angle, the refractive index n can be written as
+		- $$
+			\large
+			\begin{align}
+			n = \dfrac{\sin(\phi_i)}{\sin(\phi_r)}=\sin(\phi_i)&=\sqrt{1-\dfrac{81N_{max}}{f^2_{MUF}}}\\
+			\sin^2(\phi_i) &= 1-\dfrac{81N_{max}}{f^2_{MUF}}\\
+			\text{here,}\ f_c^2 \text{= 81 N}_{max}\\
+			\sin^2(\phi_i) &= 1-\dfrac{f_c^2}{f^2_{MUF}}\\
+			\cos^2(\phi_i) &= \dfrac{f_c^2}{f^2_{MUF}}\\
+			f^2_{MUF} = f_c^2\cdot \sec^2(\phi_i)
+			f_{MUF} = f_c\cdot \sec(\phi_i)
+			\end{align}
+			$$
+## Skip Distance
+### When earth is flat
+- figure for derivation
+	- ![[Pasted image 20260319141440.png]]
+- Parameters
+	- AC length = distance between two stations on earth = D
+	- O = mid point, so AO = OC = D/2
+	- BO = normal at incidence = h
+	- angle ABO = i, angle OBC = r
+- we have:
+$$
+\large
+\begin{align}
+cos(\theta_i) = \dfrac{OB}{OA} = \dfrac{h}{\sqrt{h^2 + \dfrac{d^2}{4}}} = \dfrac{h}{h\sqrt{1+\dfrac{d^2}{4h^2}}} &= \dfrac{1}{\sqrt{1+\dfrac{d^2}{4h^2}}}\\
+\text{from MUF and CF derivation we have,}\\
+f_{MUF} = f_c \sec(\theta_i)\\
+f_{MUF} = f_c \sqrt{1+\left( \dfrac{d}{2h} \right)^2}\\
+\left( \dfrac{d}{2h} \right)^2 = \dfrac{f_{MUF}^2}{f_{c}^2} - 1\\
+d = 2h\sqrt{\dfrac{f_{MUF}^2}{f_{c}^2} - 1}
+\end{align}
+$$
 
-### 4.1.4 Ionospheric or Sky Wave
-- structural details of the ionosphere
-	- refraction mechanism depends on a number of factors including
-		- frequency of operation
-		- angle of takeoff and
-		- ionospheric conditions
-	- ionospheric is a region above the Mesosphere
-	- it is composed of ionized layers
-	- four layers: D, E, F$_1$, F$_2$
-	- they are assumed to exist at different heights
-	- distances of these layers, from the earth, are normally referred to the heights
-	- at which the concentration of ionized electrons is Maximum
-- D layer
-	- height: 50 - 90 km above the earth's surface
-	- photo ionization of O$_2$ Molucules mainly
-	- present only in day time
-	- largely absent in the night
-	- ionization in the D layer is low due to less UV light penetrates to this level
-	- ionic density of 400 /cc
-	- electronic density (N) is max at noon
-	- critical frequency (F$_{crt}$) is about 100 kHz at vertical incidence
-	- maximum usable frequency (f$_{MUF}$) < 3 MHz
-	- at 30 MHz, Waves cross the D layer attenuated.
-	- its structural details are not yet known with certainty
-
--> sanjeevan sir told me to contact him after our class he will be in department 
-- 5pm ki 4pm? k ko lagi  after class? 2:25 
-- yo paxi nai hola class ma koi pani xaina yetti matra student vayo vane I will cancel SG sir discussion session sir le alik manchhe chainxa class ma thorai vayo vane lidina vaneko xa 
-# 5 Tropospheric Wave
-# 6 Radio frequency spectrum and its propagation characteristics
+# 6 RF spectrum and its propagation characteristics
