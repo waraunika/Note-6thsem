@@ -1,15 +1,15 @@
 # 1 Definition of Project and Project Management
 - A project is a temporary endeavor undertaken to create a unique product, service, or result. It is non-routine, has a defined start and end, and operates within specific constraints.
-## Expert Definitions
+## 1.1 Expert Definitions
 - **Project Management Institute (PMI):** A temporary endeavor to create a unique product or service.
 - **Cleland & King:** A combination of human and non-human resources pulled together in a temporary organization to achieve a specified purpose.
 - **Harold Kerzner:** A series of activities and tasks with a specific objective, defined start/end dates, funding limits, and resource consumption.
 - **Harvey Maylor:** Any non-repetitive, low-volume, high-variety activity with a start and finish, undertaken to meet specific performance objectives within defined schedule, cost, and performance parameters.
 - **Govinda R. Agrawwal:** A set of one-time activities designed to attain specific objectives within the constraints of time, cost, and quality in a dynamic environment.
-## Engineering Projects
+## 1.2 Engineering Projects
 - A specific type of project involving technological systems (e.g., buildings, power plants).
 - Often defined by legislation, requiring execution by registered engineers or licensed engineering companies.
-## Challenges in IT Projects
+## 1.3 Challenges in IT Projects
 - **Communication:** 
 	- Bridging gaps between technical teams, business stakeholders, and end-users.
 - **Staff Turnover:** 
@@ -28,7 +28,7 @@
 	- Knowledge leaving the organization, impacting maintenance and future development.
 - **Regulatory Requirements:** 
 	- Compliance with evolving standards (e.g., data protection, accessibility).
-## Importance of PM
+## 1.4 Importance of PM
 - **Increases Success Rate:** 
 	- It provides a structured framework that significantly improves the likelihood of meeting objectives, staying on schedule, and adhering to budget.
 - **Manages Constraints:** 
@@ -45,7 +45,7 @@
 	- By delivering the intended product on time and within budget, it builds trust and satisfaction with the client or beneficiary.
 - **Provides a Competitive Advantage:** 
 	- Organizations that manage projects well can execute strategies faster, innovate more effectively, and adapt to market changes more readily.
-## Characteristics
+## 1.5 Characteristics
 - **Specific Objective:** 
 	- Every project has a clear, defined goal (the deliverable). Success is measured by achieving this objective.
 - **Temporary:**
@@ -72,13 +72,13 @@
 - Objectives are the desired outcomes that guide all project activities.
 - A project without a clear objective is directionless.
 - Well-defined objectives help to align the team, secure commitment, and measure success.
-### SMART Objectives
+## 2.1 SMART Objectives
 - **S**pecific: Clearly defined and unambiguous.
 - **M**easurable: Quantifiable to track progress and confirm completion.
 - **A**greeable (or Achievable): Accepted and committed to by all key stakeholders.
 - **R**ealistic: Achievable given available resources, time, and expertise.
 - **T**ime-bound: Have a defined deadline for completion.
-### Triple Constraints
+## 2.2 Triple Constraints
 - aka The Iron Triangle
 - **Time:** The schedule for the project, including deadlines for milestones and final delivery.
 - **Cost:** The approved budget, including all resources, labor, materials, and overheads.
@@ -102,19 +102,19 @@
 | **Key Purpose**         | Single-purpose, Multi-purpose                                                      |
 | **Nature of Contract**  | Emergency, Fixed Budget, Fixed Time                                                |
 # 4 Project Life Cycle
-- A project progresses through a series of phases from start to finish.
+**- A project progresses through a series of phases from start to finish.
 - This is its life cycle.
-### Generic Life Cycle (Type 1)
+## 4.1 Generic Life Cycle (Type 1)
 1. **Formulation:** Identifying the need and defining the project concept.
 2. **Planning:** Developing the detailed roadmap, including feasibility studies, design, and appraisals.
 3. **Implementation:** Executing the plan, building the deliverable, and monitoring & controlling progress.
 4. **Termination:** Handing over the final product, evaluating success, and closing the project.
-### Simplified Life Cycle (Type 2)
+## 4.2 Simplified Life Cycle (Type 2)
 1. **Conceive:** Define the project's goals and purpose.
 2. **Develop:** Design the project plan and processes.
 3. **Execute:** Deliver the project work.
 4. **Finish:** Finalize, hand over, and review.
-### IT System Development Life Cycle (SDLC)
+## 4.3 IT System Development Life Cycle (SDLC)
 A common life cycle for software and IT projects, often iterative or agile.
 1. **Communication:** Requirement analysis, feasibility study, project proposal.
 2. **Planning:** Scheduling, cost estimation, quality, change, and risk management plans.
