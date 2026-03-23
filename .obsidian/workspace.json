@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project Management/Chapter 3 Portfolio and Project Management Institute's Framework.md",
+                "file": "Project Management/Chapter 4 Project Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 3 Portfolio and Project Management Institute's Framework"
+              "title": "Chapter 4 Project Management"
             }
           }
         ]
@@ -128,13 +128,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Antenna and Propagation/Chapter 4 - Propagation and Radio Frequency Spectrum.md",
+                "file": "Project Management/Chapter 4 Project Management.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Chapter 4 - Propagation and Radio Frequency Spectrum"
+              "title": "Outline of Chapter 4 Project Management"
             }
           },
           {
@@ -157,8 +157,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 315.5,
-    "collapsed": true
+    "width": 315.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -170,8 +169,8 @@
   },
   "active": "51baba4bffe20453",
   "lastOpenFiles": [
-    "Project Management/Chapter 2 Project Management Body of Knowledge.md",
     "Project Management/Chapter 3 Portfolio and Project Management Institute's Framework.md",
+    "Project Management/Chapter 2 Project Management Body of Knowledge.md",
     "Project Management/Chapter 1 Introduction.md",
     "Project Management/attachments/Pasted image 20260323123527.png",
     "Project Management/attachments/Pasted image 20260323123502.png",
