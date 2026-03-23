@@ -1,5 +1,5 @@
-# Basics
-## Intro to PMBOK
+# 1 Basics
+## 1.1 Intro to PMBOK
 - PMBOK is a collection of Processes and Knowledge Areas generally accepted as best practice within Project Management.
 - published by Project Management Institute (PMI)
 - Universality:
@@ -10,7 +10,7 @@
 - Overlap:
 	- Some areas overlap with general management disciplines, including financial forecasting, organizational behavior, and planning techniques.
 - PMBOK Framework organizes project management into 5 process Groups and 10 Knowledge areas.
-## Process Groups
+## 1.2 Process Groups
 | Process Group                   | Description                                                                                                                                                              |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **1. Initiating**               | Defines and authorizes the project or a phase. This is where the project charter is developed and stakeholders are identified.                                           |
@@ -27,7 +27,7 @@
 		- the mechanisms, actions, or systems applied to the inputs to create the outputs (e.g., Software, meetings, data analysis).
 	- Outputs:
 		- The documents, deliverables, or knowledge produced as a result of the process.
-## Knowledge Areas
+## 1.3 Knowledge Areas
 |Knowledge Area|Description|
 |---|---|
 |**1. Project Integration Management**|The processes to coordinate and unify all elements of the project. This is the central hub.|
@@ -42,26 +42,26 @@
 |**10. Project Stakeholder Management**|Processes to identify and engage stakeholders and manage their expectations.|
 - A knowledge area represents a complete set of concepts, terms, and activities that make up a professional field or area of specialization.
 - each knowledge area contains processes from across the process groups.
-## PMBOK Guides
-### Knowledge need for Project Management
+## 1.4 PMBOK Guides
+### 1.4.1 Knowledge need for Project Management
 - Application Area Knowledge,  Standards and Regulations
 - Understanding the Project
 - Environment
 - General Management knowledge and Skills
 - Interpersonal Skills
-### Skills Requirement of a Project Manager
+### 1.4.2 Skills Requirement of a Project Manager
 - Technical Skills
 - managerial skills
 - interpersonal skills
 - conceptual skills
 - team building skills
-# Project Environment
+# 2 Project Environment
 - Projects do not exist in a vacuum.
 - They are influenced by their environment, which consists of forces that can impact the project's ability to achieve its objectives. 
 - Projects must be flexible and adapt to these dynamic forces, which often create **complexity, uncertainty, and competition for resources**.
 - Project Environment can be classified into 3 concentric layers.
-## Project Environment Classification
-### Internal Environment
+## 2.1 Project Environment Classification
+### 2.1.1 Internal Environment
 - **Location:** Within the project's direct control.
 - **Influence:** Can be directly managed and altered by the project team.
 - **Elements:**
@@ -69,7 +69,7 @@
     - Internal constraints (e.g., budget, deadlines)
     - Project structure and governance
     - Allocated resources (team, equipment, budget)
-### Task Environment
+### 2.1.2 Task Environment
 - aka Stakeholder Environment
 - **Location:** Immediately surrounding the project.
 - **Influence:** Directly interacts with and affects project activities. The project can influence these elements but not fully control them.
@@ -81,7 +81,7 @@
     - Government & Regulatory Bodies
     - Labor Unions
     - Financiers (Owners, Shareholders, Donors, Parent Organization)
-### External Environment
+### 2.1.3 External Environment
 - **Location:** Broad forces in the external surroundings that affect the climate in which the project operates.
 - **Influence:** The project cannot control these forces and must adapt to them. Pre-assessment is typically done using a **PESTLE Analysis**.
 
@@ -93,7 +93,7 @@
 | **Technological**           | Level of technological advancement, rate of technological change, R&D activity, technology transfer. |
 | **Legal**                   | Relevant laws, labor laws, courts, administrative bodies, contractual regulations.                   |
 | **Environmental (Natural)** | Climate change, global warming, geography, ecological constraints, weather patterns.                 |
-# General Management Skill
+# 3 General Management Skill
 - A project manager must possess a blend of general management skills to effectively lead a project. 
 - These skills span various functional areas:
 	- **Planning:** Strategic, tactical, and operational planning.
@@ -106,14 +106,14 @@
 	- **Contracting & Commercial Law:** Procurement, purchasing, managing contracts.
 	- **HR Management:** Rewarding, motivating, counseling, and performance management.
 	- **Decision Making:** Problem-solving and conflict resolution.
-# The Project Manager
-## Skills Required
+# 4 The Project Manager
+## 4.1 Skills Required
 - **Technical Skills:** Understanding the specific tools, techniques, and technology of the project (e.g., CPM, software, engineering principles).
 - **Managerial Skills:** Planning, organizing, and controlling resources.
 - **Interpersonal Skills:** Communication, influencing, negotiation, and conflict resolution.
 - **Conceptual Skills:** The ability to see the "big picture" and understand how the project fits into the broader organization.
 - **Team Building Skills:** The ability to form a cohesive, high-performing team from a group of diverse individuals.
-## Effective/Ineffective Project Manager
+## 4.2 Effective/Ineffective Project Manager
 | Effective Project Manager                             | Ineffective Project Manager                            |
 | ----------------------------------------------------- | ------------------------------------------------------ |
 | Leads by example                                      | Sets bad examples                                      |
@@ -122,7 +122,7 @@
 | Is a good communicator and motivator                  | Is a poor communicator and demotivates others          |
 | Stands up to top-level management to protect the team | Complains about top-level management to the team       |
 | Supports team members and encourages new ideas        | Lacks team spirit and is conservative/avoids new ideas |
-## Essential interpersonal and managerial skills
+## 4.3 Essential interpersonal and managerial skills
 - **Energized & Initiator:** Maintains high energy, is proactive, and can work under pressure.
 - **Communication:** Expresses ideas clearly and simply in written and oral form, ensuring completeness and soliciting feedback.
 - **Influencing:** The ability to persuade others to act or see things from a different perspective.
@@ -132,7 +132,7 @@
 - **Negotiation:** Resolves conflicts and achieves consensus to find the best solution.
 - **Problem Solver:** Looks beyond the immediate team to understand the broader organizational context.
 - **Global Literacies:** Ability to work effectively in cross-cultural environments and understand diverse cultural issues.
-## Problem solving using problem trees
+## 4.4 Problem solving using problem trees
 - A **Problem Tree** is a visual, analytical tool used to find solutions by mapping the hierarchy of causes and effects related to a core problem.
 - **Steps to Develop a Problem Tree:**
 	1. **Identify** the major problems within the stated problem area.
@@ -147,7 +147,7 @@
 		- ![[Pasted image 20260323123502.png]]
 	- for diseases
 		- ![[Pasted image 20260323123527.png | 700]]
-## Roles and Responsibilities of a Project Manager
+## 4.5 Roles and Responsibilities of a Project Manager
 **Roles:**
 - **Leadership Role:** Providing vision, direction, and motivation.
 - **Balancing Role:** Managing trade-offs between time, cost, scope, and stakeholder expectations.
