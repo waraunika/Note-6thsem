@@ -2462,3 +2462,6 @@ POSTCONDITIONS:
 | **Analysis**     | Identify objects from use case steps |
 | **Design**       | Design realization of use cases      |
 | **Testing**      | Basis for test cases                 |
+
+
+[[Chapter 4 Object Oriented Analysis]]
