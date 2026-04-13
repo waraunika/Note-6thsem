@@ -1,3 +1,6 @@
+- **5 Hours**
+
+[[Chapter 3 Structural, Behavioral and Architectural Modeling]]
 # Iterative Development
 ## Concept
 - Iterative Development = cyclical process where you make and test incremental adjustments.

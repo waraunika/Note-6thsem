@@ -1,3 +1,6 @@
+- **6 Hours**
+
+[[Chapter 5 Object Oriented Design]]
 # Overview of Testing
 ## Definition
 - **Software Testing** = process to identify correctness, completeness, and quality of developed software.
@@ -311,4 +314,4 @@ Messages between: ATM, CardReader, BankSystem, Account
 |**Interclass Testing**|Multiple class collaboration; random, partition, scenario, behavioral methods|
 
 
-[[Chapter 6 Object Oriented Testing]]
+[[Chapter 7 Managing Object Oriented Software Engineering]]

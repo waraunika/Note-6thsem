@@ -1,3 +1,6 @@
+- **5 Hours**
+
+[[Chapter 6 Object Oriented Testing]]
 # Project Selection and Preparation
 ## Process Maturity Levels (SEI Capability Maturity Model)
 | Level | Name       | Description                                                                    |
@@ -242,3 +245,5 @@ Risk Identification → Risk Assessment (Analysis + Prioritization) → Risk Con
 | **Risk Types**                | Schedule, Budget, Operational, Technical, Programmatic                   |
 | **SQA**                       | Quality Control (product) + Quality Engineering (process)                |
 | **Metrics**                   | Product, Process, Project; OO-specific: classes, operations, reuse       |
+
+[[Chapter 1 Introduction to Software and Software Engineering]]

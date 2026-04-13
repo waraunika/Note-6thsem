@@ -1,5 +1,7 @@
 ---
 ---
+- **8 Hours**
+[[Chapter 2 Object Oriented Concepts and Modeling]]
 # 3.1 Class Relationship
 Present at: [[#3.A.v Class Relationship]]
 # 3.2 Conceptual Model of UML

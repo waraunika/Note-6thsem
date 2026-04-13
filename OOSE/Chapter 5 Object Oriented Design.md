@@ -1,3 +1,6 @@
+- **8 Hours**
+
+[[Chapter 4 Object Oriented Analysis]]
 # Concepts
 ## OOA vs OOD
 | Aspect       | Object Oriented Analysis (OOA)                            | Object Oriented Design (OOD)                                          |

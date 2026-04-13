@@ -1,3 +1,6 @@
+- **5 Hours**
+
+[[Chapter 7 Managing Object Oriented Software Engineering]]
 # 1.1 Introduction to Software Engineering
 ## 1.1.A Concept
 ### 1.A.i Software
@@ -669,3 +672,6 @@ are frozen
 - **Reality**: Requirements **evolve** due to market changes, user feedback, new insights.
 - **Implication**: Agile/iterative approaches are needed because **change is inevitable**.
 - **Lesson**: Rather than resisting change, process models should **embrace flexibility** (e.g., Agile, Spiral, Evolutionary models).
+
+
+[[Chapter 2 Object Oriented Concepts and Modeling]]

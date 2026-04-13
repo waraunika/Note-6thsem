@@ -1,3 +1,6 @@
+- **8 Hours**
+
+[[Chapter 1 Introduction to Software and Software Engineering]]
 # 1 Fundamental Concepts of Object Orientation
 ## 1.1 Class
 - **Definition**: Blueprint or template that describes characteristics and behavior of similar objects.
@@ -360,4 +363,4 @@ double globalTaxRate = 0.15;  // Global visibility (avoid in OOP)
 | **Visibility**    | Public (+), private (-), protected (#), package (~)           |
 
 
-[[Chapter 3]]
+[[Chapter 3 Structural, Behavioral and Architectural Modeling]]
