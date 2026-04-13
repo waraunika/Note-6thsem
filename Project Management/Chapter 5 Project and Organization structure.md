@@ -1,3 +1,5 @@
+- **2 Hours**
+- **4 Marks**
 # 1 Organization
 - An organization is a group of people with diverse knowledge and skills working together to achieve a common organizational goal.
 - Projects can't be run in isolation.

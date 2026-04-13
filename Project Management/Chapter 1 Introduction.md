@@ -1,5 +1,6 @@
 # 1 Definition of Project and Project Management
-- A project is a temporary endeavor undertaken to create a unique product, service, or result. It is non-routine, has a defined start and end, and operates within specific constraints.
+- A project is a temporary endeavor undertaken to create a unique product, service, or result. 
+- It is non-routine, has a defined start and end, and operates within specific constraints.
 ## 1.1 Expert Definitions
 - **Project Management Institute (PMI):** A temporary endeavor to create a unique product or service.
 - **Cleland & King:** A combination of human and non-human resources pulled together in a temporary organization to achieve a specified purpose.

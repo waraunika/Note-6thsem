@@ -1,3 +1,5 @@
+- **4 Hours**
+- **7 Marks**
 # 1 Basics
 ## 1.1 Intro to PMBOK
 - PMBOK is a collection of Processes and Knowledge Areas generally accepted as best practice within Project Management.
@@ -9,7 +11,7 @@
 	- CPM, PERT, WBS, EVA
 - Overlap:
 	- Some areas overlap with general management disciplines, including financial forecasting, organizational behavior, and planning techniques.
-- PMBOK Framework organizes project management into 5 process Groups and 10 Knowledge areas.
+- PMBOK Framework organizes project management into 5 process Groups and 10 (last is newly added, for exam: upto 9) Knowledge areas.
 ## 1.2 Process Groups
 | Process Group                   | Description                                                                                                                                                              |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -28,18 +30,18 @@
 	- Outputs:
 		- The documents, deliverables, or knowledge produced as a result of the process.
 ## 1.3 Knowledge Areas
-|Knowledge Area|Description|
-|---|---|
-|**1. Project Integration Management**|The processes to coordinate and unify all elements of the project. This is the central hub.|
-|**2. Project Scope Management**|Ensures the project includes all the work required (and only the work required) to complete it successfully.|
-|**3. Project Schedule (Time) Management**|Processes to manage the timely completion of the project.|
-|**4. Project Cost Management**|Processes involved in planning, estimating, budgeting, financing, and controlling costs.|
-|**5. Project Quality Management**|Processes that incorporate the organization's quality policy to ensure the project meets its objectives.|
-|**6. Project Resource Management**|Processes to identify, acquire, and manage the resources (people and physical) needed for the project.|
-|**7. Project Communications Management**|Processes to ensure timely and appropriate planning, collection, creation, and distribution of project information.|
-|**8. Project Risk Management**|Processes concerned with conducting risk management planning, identification, analysis, responses, and monitoring.|
-|**9. Project Procurement Management**|Processes to purchase or acquire products, services, or results from outside the project team.|
-|**10. Project Stakeholder Management**|Processes to identify and engage stakeholders and manage their expectations.|
+| Knowledge Area                            | Description                                                                                                         |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **1. Project Integration Management**     | The processes to coordinate and unify all elements of the project. This is the central hub.                         |
+| **2. Project Scope Management**           | Ensures the project includes all the work required (and only the work required) to complete it successfully.        |
+| **3. Project Schedule (Time) Management** | Processes to manage the timely completion of the project.                                                           |
+| **4. Project Cost Management**            | Processes involved in planning, estimating, budgeting, financing, and controlling costs.                            |
+| **5. Project Quality Management**         | Processes that incorporate the organization's quality policy to ensure the project meets its objectives.            |
+| **6. Project Resource Management**        | Processes to identify, acquire, and manage the resources (people and physical) needed for the project.              |
+| **7. Project Communications Management**  | Processes to ensure timely and appropriate planning, collection, creation, and distribution of project information. |
+| **8. Project Risk Management**            | Processes concerned with conducting risk management planning, identification, analysis, responses, and monitoring.  |
+| **9. Project Procurement Management**     | Processes to purchase or acquire products, services, or results from outside the project team.                      |
+| **10. Project Stakeholder Management**    | Processes to identify and engage stakeholders and manage their expectations.                                        |
 - A knowledge area represents a complete set of concepts, terms, and activities that make up a professional field or area of specialization.
 - each knowledge area contains processes from across the process groups.
 ## 1.4 PMBOK Guides

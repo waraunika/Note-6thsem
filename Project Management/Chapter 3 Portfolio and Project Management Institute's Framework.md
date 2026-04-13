@@ -1,3 +1,5 @@
+- **2 Hours**
+- **4 Marks**
 # 1 Program Management
 - A **program** is a group of related projects managed in a coordinated way to obtain benefits and control that are not available from managing them individually.
 ## 1.1 Aspects of Program Management
@@ -33,13 +35,13 @@
 | **Failure to Deliver Value**             | Even when IT investment is recognized as important, projects often fail to deliver value because they are not aligned with business objectives.                          |
 | **Overcommitment & Poor Prioritization** | Organizations launch more projects than they can handle effectively and fail to set priorities based on business objectives, leading to resource bottlenecks and delays. |
 ### 2.1.3 Key benefits of PPM
-|Benefit|Description|
-|---|---|
-|**Closer Alignment of IT with Business**|Provides a holistic view of the entire project portfolio, enabling executives to understand where IT dollars are spent and which projects continue to deliver value.|
-|**Better IT Governance**|Enables real-time monitoring of project progress and provides detailed data to support compliance requirements (e.g., Sarbanes-Oxley Act).|
-|**Cost Reductions & Productivity Increases**|Helps identify redundancies, allocate resources appropriately, make better staffing/outsourcing decisions, and spot opportunities for asset reuse.|
-|**Business-Based Decision Making**|Allows managers to make decisions based not only on projected costs but also on anticipated risks and returns in relation to other projects in the portfolio.|
-|**More Predictable Project Outcomes**|Bridges the gap between business managers and project practitioners, ensures consistent processes, and helps assess project status in real time.|
+| Benefit                                      | Description                                                                                                                                                          |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Closer Alignment of IT with Business**     | Provides a holistic view of the entire project portfolio, enabling executives to understand where IT dollars are spent and which projects continue to deliver value. |
+| **Better IT Governance**                     | Enables real-time monitoring of project progress and provides detailed data to support compliance requirements (e.g., Sarbanes-Oxley Act).                           |
+| **Cost Reductions & Productivity Increases** | Helps identify redundancies, allocate resources appropriately, make better staffing/outsourcing decisions, and spot opportunities for asset reuse.                   |
+| **Business-Based Decision Making**           | Allows managers to make decisions based not only on projected costs but also on anticipated risks and returns in relation to other projects in the portfolio.        |
+| **More Predictable Project Outcomes**        | Bridges the gap between business managers and project practitioners, ensures consistent processes, and helps assess project status in real time.                     |
 ### 2.1.4 Types of PPM Users
 | User Type                       | Focus                                 | Key Activities                                                                                                                                                             |
 | ------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -111,3 +113,45 @@
 | **Inadequate Resources**         | Insufficient staff, budget, equipment, or time to complete the project.                     |
 | **Financial Limitations**        | Budget constraints or funding cuts during the project lifecycle.                            |
 | **Lack of Historical Data**      | No access to past project data, lessons learned, or benchmarks for planning and estimation. |
+# Project Management Institute
+- is the leading professional organization for project, program and portfolio management, founded in 1969.
+- it sets industry standards, conducts research and provides certifications (like Project Management Professional)
+## Framework
+- has **Stakeholders need, Expectation**
+- Involve **project integration management**.
+	- has two sets of integration: core function and facilitating function.
+	- **core function**:
+		- scope management, time management, cost management, quality management
+	- **facilitating function**:
+		- HR management, communication management, risk management procurement management
+- integrate with **Tools & Techniques**
+- to attain project success
+## Knowledge Areas of PMI Framework
+- PM essentially gives you the ability to manage a portfolio of projects similar to how you may manage a portfolio of various investments, such as stocks.
+- By maintaining a balanced portfolio, we can reduce the risks of individual projects and produce an overall higher rate of return
+- PPM allows managers to identify project risks and quickly address them.
+### Classification
+1. Stakeholders need and Expectation
+	- a stakeholder is any individual, group or party that has interest in an organization and the outcomes of its actions.
+	- common example: employees, customers, shareholders, suppliers, communities, and governments.
+2. Core Knowledge Areas
+	- includes scope, time, cost and quality management
+3. Facilitating Knowledge Areas
+	- include human resource, communication, risk, procure management
+4. Integrative Knowledge Areas
+	- includes project integration management
+5. Tools and Techniques
+	- tools and techniques can help to increase understanding in any of above knowledge areas
+	- most vital in core knowledge ares
+	- although project management software facilitates the use of these tools and techniques, the same techniques have long been used with paper and pencil.
+# Project Management vs Portfolio Management
+| SN  | Project M                                                                                           | Portfolio M                                                                                                 |
+| --- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1   | refers to "Do projects right"                                                                       | Do the right projects                                                                                       |
+| 2   | application of knowledge, skills, tools, and techniques to project activities to meet project goals | collection of projects to meet organization strategy                                                        |
+| 3   | project management is about directing a single project successfully                                 | about selecting and successfully executing right projects for the organization                              |
+| 4   | Temporary process but unique                                                                        | ongoing process that has to be performed on a daily basis                                                   |
+| 5   | doesn't make strategic plans and doesn't  prioritize projects                                       | makes plan and prioritizes projects.                                                                        |
+| 6   | main goal is to complete a single project and provide service                                       | main goal is to look at all projects and in turn improve return of investment as well as reduction of costs |
+| 7   | this management is basically used for small scale projects and more detailed one                    | management is basically used for not only large scale projects but also for more diffused one               |
+

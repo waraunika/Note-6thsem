@@ -38,7 +38,7 @@
 | **Cost & Staffing Levels** | Cost and staffing levels are **low at the start**, **higher toward the middle/end** as work intensifies, and **drop rapidly** as the project closes.                                                                                                                                    |
 | **Risk & Uncertainty**     | Risk and uncertainty are **highest at the start** of the project and progressively decrease as more information becomes known and deliverables are completed.                                                                                                                           |
 | **Stakeholder Influence**  | The ability of stakeholders to influence the final characteristics of the project's product and its final cost is **highest at the start** and gets **progressively lower** as the project continues. Changes become more expensive and difficult to implement later in the life cycle. |
-### 3.1.3 Representative Project Life Cycel
+### 3.1.3 Representative Project Life Cycle
 | Industry                 | Life Cycle Phases                                                                                                              |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 | **Defense Acquisition**  | Strategic Planning → Concept & Technology Development → System Development & Demonstration → Production & Deployment → Support |
