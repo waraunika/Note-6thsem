@@ -1,15 +1,15 @@
 - **8 Hours**
 
 [[Chapter 4 Object Oriented Analysis]]
-# Concepts
-## OOA vs OOD
+# 1 Concepts
+## 1.1 OOA vs OOD
 | Aspect       | Object Oriented Analysis (OOA)                            | Object Oriented Design (OOD)                                          |
 | ------------ | --------------------------------------------------------- | --------------------------------------------------------------------- |
 | **Focus**    | Finding and describing objects/concepts in problem domain | Defining software objects and their collaborations                    |
 | **Question** | _What_ does the system need?                              | _How_ will the system be built?                                       |
 | **Example**  | Book, Library, Librarian as concepts                      | Book software object with `title` attribute and `getChapter()` method |
 | **Output**   | Conceptual model, requirements                            | Architecture, detailed design                                         |
-## Characteristics of OOD
+## 1.2 Characteristics of OOD
 | Characteristic              | Description                                                           |
 | --------------------------- | --------------------------------------------------------------------- |
 | **Objects as Abstractions** | Objects represent real-world or system entities and manage themselves |
@@ -17,25 +17,25 @@
 | **Service-Oriented**        | System functionality expressed in terms of object services            |
 | **Message Passing**         | Communication between objects through messages                        |
 | **Distribution**            | Objects may be distributed, execute sequentially or in parallel       |
-# Booch method for OOD
-## Overview
+# 2 Booch method for OOD
+## 2.1 Overview
 - Authored by **Grady Booch** (1992, revised 1994)
 - Widely used OO analysis and design methodology
 - **Notation** superseded by UML (combined with OMT and OOSE)
 - **Methodology** incorporated into Rational Unified Process (RUP)
-## Diagrams Used in Booch Method
+## 2.2 Diagrams Used in Booch Method
 | Level                    | Diagrams                                                                     |
 | ------------------------ | ---------------------------------------------------------------------------- |
 | **Design Level**         | Class diagram, Object diagram, State transition diagram, Interaction diagram |
 | **Implementation Level** | Module diagram, Process diagram                                              |
-## Micro Development Process
+## 2.3 Micro Development Process
 - **Definition**: Daily activity of individual developer or small team; analysis and design phases intentionally blurred.
 - **Steps**:
 	1. Identify classes and objects at a given level of abstraction
 	2. Identify semantics of these classes and objects
 	3. Identify relationships among these classes and objects
 	4. Specify interface, then implementation of these classes and objects
-## Macro Development Process
+## 2.4 Macro Development Process
 - **Definition**: Higher-level process focusing on **Risk** and **Architectural vision**.
 - **Activity Cycle**:
 
@@ -46,7 +46,7 @@
 | **Design**            | Create an architecture            |
 | **Evolution**         | Implementation                    |
 | **Maintenance**       | Evolution after delivery          |
-## Micro vs Macro Process
+## 2.5 Micro vs Macro Process
 | Aspect       | Micro Process                         | Macro Process                    |
 | ------------ | ------------------------------------- | -------------------------------- |
 | **Scope**    | Daily individual/small team           | Overall project lifecycle        |
@@ -54,12 +54,12 @@
 | **Duration** | Short cycles                          | Long-term phases                 |
 | **Blurring** | Analysis/design intentionally blurred | Clear phase distinctions         |
 | **Output**   | Class specifications                  | Project milestones, architecture |
-# The Coad-Yourdon Method
-## Overview
+# 3 The Coad-Yourdon Method
+## 3.1 Overview
 - Primary strength in **system analysis**
 - Describes **static characteristics**
 - Addresses both application and infrastructure
-### SOSAS Steps
+### 3.1.1 SOSAS Steps
 | Step           | Description                                                                            |
 | -------------- | -------------------------------------------------------------------------------------- |
 | **Subjects**   | Data flow diagrams for objects                                                         |
@@ -67,14 +67,14 @@
 | **Structures** | Classification structures (inheritance) and composition structures (other connections) |
 | **Attributes** | Identify attributes of each class                                                      |
 | **Services**   | Identify all behaviors/methods for each class                                          |
-### Four Major System Components
+### 3.1.2 Four Major System Components
 | Component                       | Description                       |
 | ------------------------------- | --------------------------------- |
 | **Problem Domain Component**    | Core business objects             |
 | **Human Interaction Component** | User interface elements           |
 | **Task Management Component**   | Concurrency and task coordination |
 | **Data Management Component**   | Storage and retrieval of objects  |
-# Relationship between OOA and OOD
+# 4 Relationship between OOA and OOD
 ![[Pasted image 20260401143130.png]]
 ```
 ┌────────────────────────────────────────────────────────────────┐
@@ -107,13 +107,13 @@
 │  └─────────────────┘                                           │
 └────────────────────────────────────────────────────────────────┘
 ```
-## OOA, OOD, OOP Relationship
+## 4.1 OOA, OOD, OOP Relationship
 | Phase   | Focus                                              | Output                           |
 | ------- | -------------------------------------------------- | -------------------------------- |
 | **OOA** | Understanding problem domain, identifying concepts | Requirements, conceptual classes |
 | **OOD** | Defining software objects and their collaborations | Architecture, detailed design    |
 | **OOP** | Implementing design in code                        | Executable software              |
-## Example
+## 4.2 Example
 - Library System
 - **OOA**: Identify Book, Member, Librarian as concepts
 - **OOD**: Define Book class with `title`, `author`, `ISBN` attributes and `issue()`, `return()` methods; define relationships
@@ -128,7 +128,7 @@
 	- the object relationship model
 - responsibilities design
 	- is derived using the attributes, operations and collaborations described in CRC model.
-## Layers in Design Model
+## 4.3 Layers in Design Model
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                     DESIGN MODEL LAYERS                         │
@@ -170,20 +170,20 @@
 	- this layer establishes the internal and external interfaces for the system
 - The Responsibilities Layer:
 	- this layer contains the data structure and algorithmic design for all operations and attributes for each object.
-## Generic Component for OOD
+## 4.4 Generic Component for OOD
 | Component                       | Description                                                                             |
 | ------------------------------- | --------------------------------------------------------------------------------------- |
 | **Problem Domain Component**    | Problem domain classes from OOA; subsystems implementing customer requirements directly |
 | **Human Interaction Component** | Subsystems for user interface, interaction design                                       |
 | **Task Management Component**   | Subsystems for controlling and coordinating concurrent tasks                            |
 | **Data Management Component**   | Subsystems for storage and retrieval of object                                          |
-# System Design Process
-## Definition
+# 5 System Design Process
+## 5.1 Definition
 - System design develops architectural detail 
 - required to build a system or product, 
 - defining modules, architecture, components, interfaces, and data 
 - based on specified requirements.
-## System Design Activities
+## 5.2 System Design Activities
 | Activity                       | Description                                   |
 | ------------------------------ | --------------------------------------------- |
 | **Partition analysis model**   | Divide into cohesive subsystems               |
@@ -195,12 +195,12 @@
 | **Design control mechanisms**  | Define system control flow                    |
 | **Handle boundary conditions** | Consider initialization, termination, failure |
 | **Review trade-offs**          | Evaluate design alternatives                  |
-## Partition the Analysis Model
-## Subsystems
+## 5.3 Partition the Analysis Model
+## 5.4 Subsystems
 - **Definition**: Cohesive collections of classes, relationships, and behavior packaged together
 - **Characterized by**: Responsibilities (services they provide)
 - **Interface**: Well-defined interface for external communication
-## Subsystem Characteristics
+## 5.5 Subsystem Characteristics
 | Characteristic            | Description                                      |
 | ------------------------- | ------------------------------------------------ |
 | **Cohesion**              | Elements share common property or function       |
@@ -208,27 +208,27 @@
 | **Small number**          | Keep number of subsystems manageable             |
 | **Internal partitioning** | Can be further divided to reduce complexity      |
 | **Communication**         | Peer-to-peer or client-server between subsystems |
-# Concurrency and Subsystem allocation
-## Identifying Inherent Concurrency
+# 6 Concurrency and Subsystem allocation
+## 6.1 Identifying Inherent Concurrency
 - Two objects are **inherently concurrent** if they react to events simultaneously without interacting
 - Example: CPU and speaker must operate concurrently
-## Concurrency Options
+## 6.2 Concurrency Options
 | Option                                         | When to Use                                      |
 | ---------------------------------------------- | ------------------------------------------------ |
 | **Allocate to independent processors**         | High performance, physical distribution required |
 | **Allocate to same processor with OS support** | Cost-effective, less overhead                    |
-## Decision Factor
+## 6.3 Decision Factor
 - Performance requirements
 - Cost constraints
 - Interprocessor communication overhead
-# Task Management
-## Task Characteristics
+# 7 Task Management
+## 7.1 Task Characteristics
 | Aspect          | Considerations                                              |
 | --------------- | ----------------------------------------------------------- |
 | **Initiation**  | Event-driven or clock-driven (both activated by interrupts) |
 | **Priority**    | High-priority tasks get immediate resource access           |
 | **Criticality** | High-criticality tasks continue even in degraded mode       |
-## Task Template
+## 7.2 Task Template
 | Field                | Description                               |
 | -------------------- | ----------------------------------------- |
 | **Task Name**        | Name of the object                        |
@@ -237,37 +237,37 @@
 | **Services**         | List of operation responsibilities        |
 | **Coordinated By**   | How object behavior is invoked            |
 | **Communicates Via** | Input/output data values relevant to task |
-# Data Management Component
-## Areas of Concern
+# 8 Data Management Component
+## 8.1 Areas of Concern
 1. Management of critical application data
 2. Infrastructure for storage and retrieval of objects
-## Design Approach
+## 8.2 Design Approach
 - **Layered design**: Isolate low-level data manipulation from high-level attribute handling
 - **DBMS**: Often used as common data store for all subsystems
-# Resource Management Component
+# 9 Resource Management Component
 - Resources: disk drives, processors, communication lines, databases, objects
 - **Design challenge**: Subsystems compete for resources concurrently
 - **Solution**: Design control mechanisms regardless of resource nature
-# Intersubsystem Communication
-## Contract Definition
+# 10 Intersubsystem Communication
+## 10.1 Contract Definition
 | Element            | Description                    |
 | ------------------ | ------------------------------ |
 | **Type**           | Client-server or peer-to-peer  |
 | **Collaborators**  | Participating subsystems       |
 | **Components**     | Subsystems supporting services |
 | **Message Format** | Structure of communication     |
-# Object Design Process
-## Purpose
+# 11 Object Design Process
+## 11.1 Purpose
 - Prepare for implementation based on system design decisions
 - Transform analysis and system design models
 - Investigate alternative implementations
 - Minimize execution time, memory, and other cost measures
-## Forms of Object Description
+## 11.2 Forms of Object Description
 | Form                           | Description          | Contents                                                       |
 | ------------------------------ | -------------------- | -------------------------------------------------------------- |
 | **Protocol Description**       | Interface definition | Messages an object can receive, corresponding operations       |
 | **Implementation Description** | Internal details     | Private data structures, procedural descriptions of operations |
-## Object Design Steps
+## 11.3 Object Design Steps
 | Step                                           | Description                            |
 | ---------------------------------------------- | -------------------------------------- |
 | 1. Develop problem statement                   | Clarify the problem to be solved       |
@@ -280,8 +280,8 @@
 | 8. Check accessibility                         | Ensure queries can be answered         |
 | 9. Iterate and refine                          | Continuously improve model             |
 | 10. Group classes into modules                 | Organize into cohesive packages        |
-# Comparisons
-## Structured vs OO System Design
+# 12 Comparisons
+## 12.1 Structured vs OO System Design
 | Aspect                 | Structured Design       | Object Oriented Design          |
 | ---------------------- | ----------------------- | ------------------------------- |
 | **Primary Unit**       | Functions/modules       | Objects                         |
@@ -290,39 +290,39 @@
 | **Maintainability**    | Harder (ripple effects) | Easier (localized changes)      |
 | **Real-world Mapping** | Artificial              | Natural                         |
 | **Change Impact**      | Widespread              | Localized                       |
-## System Design vs Object Design
+## 12.2 System Design vs Object Design
 | Aspect      | System Design                 | Object Design                         |
 | ----------- | ----------------------------- | ------------------------------------- |
 | **Focus**   | High-level architecture       | Detailed object internals             |
 | **Scope**   | Overall system structure      | Individual objects                    |
 | **Output**  | Subsystems, processors, tasks | Attribute types, operation algorithms |
 | **Linkage** | Defines framework             | Fills in details within framework     |
-# Design Patterns
-## Concept
+# 13 Design Patterns
+## 13.1 Concept
 - **Design Pattern** = reusable solution to common design problems
 - Captures proven solutions in a structured format
-## Use in OOAD
+## 13.2 Use in OOAD
 | Benefit            | Description                              |
 | ------------------ | ---------------------------------------- |
 | **Reusability**    | Solutions can be applied across projects |
 | **Communication**  | Common vocabulary for designers          |
 | **Best Practices** | Encapsulates expert knowledge            |
 | **Documentation**  | Well-documented, understood solutions    |
-## Common Design Patterns
+## 13.3 Common Design Patterns
 | Pattern       | Purpose                                            |
 | ------------- | -------------------------------------------------- |
 | **Singleton** | Ensure only one instance of a class                |
 | **Factory**   | Create objects without specifying concrete classes |
 | **Observer**  | Notify dependents of state changes                 |
 | **MVC**       | Separate presentation from business logic          |
-# Mapping Design to Code
-## Process
+# 14 Mapping Design to Code
+## 14.1 Process
 1. **Class Definition**: Convert class diagram to class declarations
 2. **Attribute Implementation**: Map attributes to instance variables
 3. **Operation Implementation**: Implement methods as defined
 4. **Relationship Implementation**: Implement associations (references, collections)
 5. **Interface Implementation**: Implement required interfaces
-## Example: Construction Company
+## 14.2 Example: Construction Company
 **Class Diagram Elements**:
 - `Company` (1) ― (\*) `Project`
 - `Project` (1) ― (1) `ProjectManager`
@@ -352,21 +352,21 @@ class TeamMember {
     private String category; // designer, plumber, etc.
 }
 ```
-# Exception and Error Handling
-## Types of Exceptions
+# 15 Exception and Error Handling
+## 15.1 Types of Exceptions
 | Type                     | Description                 | Example                                     |
 | ------------------------ | --------------------------- | ------------------------------------------- |
 | **Checked Exceptions**   | Must be handled or declared | IOException, SQLException                   |
 | **Unchecked Exceptions** | Runtime; may not be handled | NullPointerException, ArrayIndexOutOfBounds |
 | **Errors**               | Serious system problems     | OutOfMemoryError, StackOverflowError        |
-## Exception Handling in OOP
-### Mechanisms
+## 15.2 Exception Handling in OOP
+### 15.2.1 Mechanisms
 - `try` – block where exception may occur
 - `catch` – block that handles specific exception
 - `throw` – explicitly raise exception
 - `throws` – declare exceptions that method may throw
 - `finally` – block that always executes
-### Example:
+### 15.2.2 Example:
 ```java
 try {
     // risky operation
@@ -378,7 +378,7 @@ try {
     // cleanup code
 }
 ```
-## Error Handling Best Practices
+## 15.3 Error Handling Best Practices
 |Practice|Description|
 |---|---|
 |**Specific Exceptions**|Catch specific rather than generic|
@@ -386,7 +386,7 @@ try {
 |**Logging**|Record errors for analysis|
 |**Resource Cleanup**|Use finally or try-with-resources|
 |**Fail Fast**|Detect errors early|
-# Interface and Implementation in OOD
+# 16 Interface and Implementation in OOD
 |Concept|Description|
 |---|---|
 |**Interface**|Contract specifying what operations are available|
@@ -409,8 +409,8 @@ public class CreditCardProcessor implements PaymentProcessor {
     }
 }
 ```
-# Object DBMS
-## Major Features
+# 17 Object DBMS
+## 17.1 Major Features
 |Feature|Description|
 |---|---|
 |**Object Identity**|Unique OIDs for objects|
@@ -419,7 +419,7 @@ public class CreditCardProcessor implements PaymentProcessor {
 |**Inheritance**|Class hierarchies in database|
 |**Polymorphism**|Operations on subtypes|
 |**Persistence**|Objects survive program execution|
-## Object DBMS vs RDBMS
+## 17.2 Object DBMS vs RDBMS
 |Aspect|Object DBMS|RDBMS|
 |---|---|---|
 |**Data Model**|Objects and classes|Tables and rows|
@@ -430,7 +430,7 @@ public class CreditCardProcessor implements PaymentProcessor {
 |**Query Language**|Object Query Language (OQL)|SQL|
 |**Performance**|Better for complex objects|Better for simple queries|
 |**Schema Evolution**|Easier|Requires migration|
-# Summary
+# 18 Summary
 |Topic|Key Points|
 |---|---|
 |**OOA vs OOD**|OOA: _what_; OOD: _how_|
