@@ -420,29 +420,29 @@ public class CreditCardProcessor implements PaymentProcessor {
 |**Polymorphism**|Operations on subtypes|
 |**Persistence**|Objects survive program execution|
 ## 17.2 Object DBMS vs RDBMS
-|Aspect|Object DBMS|RDBMS|
-|---|---|---|
-|**Data Model**|Objects and classes|Tables and rows|
-|**Data Representation**|Complex objects|Flat tables|
-|**Relationships**|Direct references|Foreign keys|
-|**Inheritance**|Supported|Not directly supported|
-|**Encapsulation**|Methods stored with data|Business logic separate|
-|**Query Language**|Object Query Language (OQL)|SQL|
-|**Performance**|Better for complex objects|Better for simple queries|
-|**Schema Evolution**|Easier|Requires migration|
+| Aspect                  | Object DBMS                 | RDBMS                     |
+| ----------------------- | --------------------------- | ------------------------- |
+| **Data Model**          | Objects and classes         | Tables and rows           |
+| **Data Representation** | Complex objects             | Flat tables               |
+| **Relationships**       | Direct references           | Foreign keys              |
+| **Inheritance**         | Supported                   | Not directly supported    |
+| **Encapsulation**       | Methods stored with data    | Business logic separate   |
+| **Query Language**      | Object Query Language (OQL) | SQL                       |
+| **Performance**         | Better for complex objects  | Better for simple queries |
+| **Schema Evolution**    | Easier                      | Requires migration        |
 # 18 Summary
-|Topic|Key Points|
-|---|---|
-|**OOA vs OOD**|OOA: _what_; OOD: _how_|
-|**Booch Method**|Micro (daily) + Macro (project) processes|
-|**Coad-Yourdon**|SOSAS: Subjects, Objects, Structures, Attributes, Services|
-|**Design Layers**|Subsystem → Class/Object → Message → Responsibilities|
-|**OOD Components**|Problem domain, Human interaction, Task management, Data management|
-|**System Design**|Partition, concurrency, allocation, UI, data management|
-|**Object Design**|Protocol + Implementation descriptions|
-|**Design Patterns**|Reusable solutions to common problems|
-|**Exception Handling**|Checked, unchecked, errors; try-catch-finally|
-|**Object DBMS**|OIDs, inheritance, encapsulation; vs RDBMS|
+| Topic                  | Key Points                                                          |
+| ---------------------- | ------------------------------------------------------------------- |
+| **OOA vs OOD**         | OOA: _what_; OOD: _how_                                             |
+| **Booch Method**       | Micro (daily) + Macro (project) processes                           |
+| **Coad-Yourdon**       | SOSAS: Subjects, Objects, Structures, Attributes, Services          |
+| **Design Layers**      | Subsystem → Class/Object → Message → Responsibilities               |
+| **OOD Components**     | Problem domain, Human interaction, Task management, Data management |
+| **System Design**      | Partition, concurrency, allocation, UI, data management             |
+| **Object Design**      | Protocol + Implementation descriptions                              |
+| **Design Patterns**    | Reusable solutions to common problems                               |
+| **Exception Handling** | Checked, unchecked, errors; try-catch-finally                       |
+| **Object DBMS**        | OIDs, inheritance, encapsulation; vs RDBMS                          |
 
 
 [[Chapter 6 Object Oriented Testing]]

@@ -302,16 +302,16 @@ Messages between: ATM, CardReader, BankSystem, Account
    → State: Order.confirmed
 ```
 # 7 Summary
-|Topic|Key Points|
-|---|---|
-|**Verification vs Validation**|Verification: building right? (static); Validation: building right product? (dynamic)|
-|**Importance of Testing**|Confidence, weakness identification, quality measurement, requirements validation|
-|**OOT vs Conventional**|Class as unit; state-based testing; inheritance, polymorphism considerations|
-|**Testing Levels**|Unit → Integration → System → Acceptance|
-|**Integration Types**|Big Bang, Top Down, Bottom Up|
-|**OOT Strategies**|Fault-based, scenario-based, random, partition, behavioral|
-|**Test Case Design**|State-based sequences; collaboration testing|
-|**Interclass Testing**|Multiple class collaboration; random, partition, scenario, behavioral methods|
+| Topic                          | Key Points                                                                            |
+| ------------------------------ | ------------------------------------------------------------------------------------- |
+| **Verification vs Validation** | Verification: building right? (static); Validation: building right product? (dynamic) |
+| **Importance of Testing**      | Confidence, weakness identification, quality measurement, requirements validation     |
+| **OOT vs Conventional**        | Class as unit; state-based testing; inheritance, polymorphism considerations          |
+| **Testing Levels**             | Unit → Integration → System → Acceptance                                              |
+| **Integration Types**          | Big Bang, Top Down, Bottom Up                                                         |
+| **OOT Strategies**             | Fault-based, scenario-based, random, partition, behavioral                            |
+| **Test Case Design**           | State-based sequences; collaboration testing                                          |
+| **Interclass Testing**         | Multiple class collaboration; random, partition, scenario, behavioral methods         |
 
 
 [[Chapter 7 Managing Object Oriented Software Engineering]]

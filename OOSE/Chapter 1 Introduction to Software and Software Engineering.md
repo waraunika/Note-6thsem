@@ -1,9 +1,9 @@
 - **5 Hours**
 
 [[Chapter 7 Managing Object Oriented Software Engineering]]
-# 1.1 Introduction to Software Engineering
-## 1.1.A Concept
-### 1.A.i Software
+# 1 Introduction to Software Engineering
+## 1.1 1.1.A Concept
+### 1.1.1 1.A.i Software
 - more than just program code
 - **executable code** serving a computational purpose.
 - consists of:
@@ -13,11 +13,11 @@
 - built for:
 	- specific customer (**tailored**)
 	- general market (**generic**)
-### 1.A.ii Engineering
+### 1.1.2 1.A.ii Engineering
 - developing **quality product**s using
 	- scientific principles
 	- standards **within budget and time**
-### 1.A.iii Definition of SE
+### 1.1.3 1.A.iii Definition of SE
 - Branch of CS focused on **quality software development** using well-defined methods.
 - **Goal**: efficient, reliable, long term software
 - used for **large systems**, not just single programs
@@ -32,7 +32,7 @@
 	- **Facilitates Team Collaboration & Maintenance**:
 		- Establishes clear documentation, standardized practices, and version control, enabling multiple developers to work cohesively and allowing for future updates and scaling.
 ---
-## 1.1.B Types of Software
+## 1.2 1.1.B Types of Software
 | S.N. | Type                          | Description                 | Examples                            |
 | ---- | ----------------------------- | --------------------------- | ----------------------------------- |
 | 1    | **Application**               | Software for End-Users      |                                     |
@@ -43,8 +43,8 @@
 
 ---
 ---
-# 1.2 Software processes and software process models
-## 1.2.A Software Processes
+# 2 Software processes and software process models
+## 2.1 1.2.A Software Processes
 - A **framework** of activities, actions, and tasks performed to create a software work product
 - **not rigid**
 	- adaptable to choose appropriate actions based on the project
@@ -56,7 +56,7 @@ Roles:
 - **Stakeholders** contribute to defining, building, and testing.
 - **Importance**:
 	- Provides structure, stability and control
-### 2.A.i Software Development Life Cycle
+### 2.1.1 2.A.i Software Development Life Cycle
 - structured process to **design, develop, and test** high quality software
 - **aims** to:
 	- meet/exceed customer expectations
@@ -67,7 +67,7 @@ Roles:
 	- to improve software quality and development efficiency.
 - the following figure is a graphical representation of the various stages of a typical SDLC.
   ![[sdlc.png | 500]]
-### 2.A.ii Typical stages
+### 2.1.2 2.A.ii Typical stages
 1. **Planning and Requirement Analysis**
 	- **Most Critical Stage**
 	- Inputs: Customer, sales, market surveys, domain experts
@@ -99,11 +99,11 @@ Roles:
 	- Gather feedback -> enhance if needed.
 	- Post-release: maintenance for existing customers.
 ---
-## 1.2.B Software Process Model
+## 2.2 1.2.B Software Process Model
 - A methodology to organize and execute SDLC phases
 - divides work into distinct phases for better design, management, and control.
 - provides guidelines for carrying out SDLC stages
-### 2.B.i Factors in choosing software model
+### 2.2.1 2.B.i Factors in choosing software model
 | S.N. | Factor                          | Consideration                                              |
 | ---- | ------------------------------- | ---------------------------------------------------------- |
 | 1.   | **Project Requirements**        | Clarity, stability, need for iterative clarification       |
@@ -115,17 +115,17 @@ Roles:
 | 7.   | **Project Resources**           | Availability of funds, staff and other resources           |
 
 ---
-## 1.2.C Types of Software Process Models (SPM)
+## 2.3 1.2.C Types of Software Process Models (SPM)
 At the end of this, at 1.2.D, comparison table for short references
-### 2.C.i Waterfall Model
-#### C.i.a Concept
+### 2.3.1 2.C.i Waterfall Model
+#### 2.3.1.1 C.i.a Concept
 - **first SPM**, linear-sequential approach
 - **simple**, easy to understand
 - **Phases must complete sequentially**, no overlap.
 - Output of one phase = input to next.
-#### C.i.b Figure
+#### 2.3.1.2 C.i.b Figure
 ![[Pasted image 20260207101311.png]]
-#### C.i.c Phases
+#### 2.3.1.3 C.i.c Phases
 1. **Requirement Analysis**
 	- Requirement Specifications are developed and documented in **Requirement Specification Document** (RDS).
 	- Understand what the system should do
@@ -148,11 +148,11 @@ At the end of this, at 1.2.D, comparison table for short references
 	- to fix potential issues, patches are released.
 	- also to enhance the product, some better versions are released.
 	- have a stable system for customers with bug fixes and enhancements.
-#### C.i.d When to Use
+#### 2.3.1.4 C.i.d When to Use
 - **Requirements: clear, fixed**, well-documented
 - Technology is **stable & understood**
 - **Short projects** with ample resources
-#### C.i.e Adv/Disadv
+#### 2.3.1.5 C.i.e Adv/Disadv
 | S.N. | Adv                                     | Disadv                                                    |
 | ---- | --------------------------------------- | --------------------------------------------------------- |
 | 1    | Simple and easy to understand & use     | no revision/reflection during phases                      |
@@ -161,8 +161,8 @@ At the end of this, at 1.2.D, comparison table for short references
 | 4    | Easy task arrangement                   | not suitable for changing requirements                    |
 | 5    | well-defined stages                     | Poor for long, complex, OOP projects                      |
 | 6    | well understood milestones              | not a good model for complex and object-oriented projects |
-### 2.C.ii. V model
-#### C.ii.a Concept
+### 2.3.2 2.C.ii. V model
+#### 2.3.2.1 C.ii.a Concept
 - extension of waterfall
 	- that emphasizes verification and validation
 - development phase <-> testing phase planned in parallel
@@ -175,9 +175,9 @@ At the end of this, at 1.2.D, comparison table for short references
 		- that evaluates the software after developing system to 
 		- determine if customer expectations are met.
 		- and right products are built.
-#### C.ii.b Figure
+#### 2.3.2.2 C.ii.b Figure
 ![[Pasted image 20260207103157.png]]
-#### C.ii.c Phases
+#### 2.3.2.3 C.ii.c Phases
 1. **Requirement Analysis**
 	- Gathering requirement from customer to understand their requirements and expectations
 2. **System Design**:
@@ -206,11 +206,11 @@ At the end of this, at 1.2.D, comparison table for short references
 	4. User Acceptance Testing:
 		- UAT is performed in a user environment that resembles the production environment.
 		- UAT verifies that the delivered system meets user's requirement and system is ready for use in real world.
-#### C.ii.d When to Use:
+#### 2.3.2.4 C.ii.d When to Use:
 - requirements clearly defined & fixed
 - high discipline and early defect detection needed.
 - small to medium projects.
-#### C.ii.e Adv/Disadv
+#### 2.3.2.5 C.ii.e Adv/Disadv
 | S.N. | Adv                                                     | Disadv                             |
 | ---- | ------------------------------------------------------- | ---------------------------------- |
 | 1    | disciplined, easy to manage                             | high risk & uncertainty            |
@@ -219,21 +219,21 @@ At the end of this, at 1.2.D, comparison table for short references
 | 4    | Good progress tracking                                  | unstable for changing requirements |
 
 ---
-### 2.C.iii Incremental Model
-#### C.ii.a Concept
+### 2.3.3 2.C.iii Incremental Model
+#### 2.3.3.1 C.ii.a Concept
 - requirements divided into standalone modules
 - each module goes through full cycle:
 	- Requirement -> Design -> Code -> Test
 - working software early in life cycle
 - subsequent releases add functionality incrementally.
-#### C.ii.b Figure
+#### 2.3.3.2 C.ii.b Figure
 ![[Pasted image 20260207110456.png]]
-#### C.ii.c When to Use:
+#### 2.3.3.3 C.ii.c When to Use:
 - long development schedules
 - customer needs early release of core features
 - teams not highly skilled
 - easier to manage per module
-#### C.ii.d Adv/Disadv
+#### 2.3.3.4 C.ii.d Adv/Disadv
 | SN  | Adv                                       | Disadv                                  |
 | --- | ----------------------------------------- | --------------------------------------- |
 | 1   | early working software                    | needs good planning                     |
@@ -242,16 +242,16 @@ At the end of this, at 1.2.D, comparison table for short references
 | 4   | client gets functionality early           |                                         |
 
 ---
-### 2.C.iv RAD Model
-#### C.ii.a Concept
+### 2.3.4 2.C.iv RAD Model
+#### 2.3.4.1 C.ii.a Concept
 - Rapid Application Development
 - High-speed linear sequential model
 - project is broken into small, independent modules
 - each module: Analyze -> Design -> Code -> Test
 - Time-boxed delivery i.e. fast delivery, of 60-90 days per module.
-#### C.ii.b Figure
+#### 2.3.4.2 C.ii.b Figure
 ![[Pasted image 20260207111321.png]]
-#### C.ii.c Phases
+#### 2.3.4.3 C.ii.c Phases
 1. **Business Modelling**
 	- define flow of information within the organization, so that it covers all functions
 	- clarify nature, type, source, process of information.
@@ -263,12 +263,12 @@ At the end of this, at 1.2.D, comparison table for short references
 	- code generation using 4th General Language
 5. **Testing**
 	- test the new program component.
-#### C.ii.d When to Use
+#### 2.3.4.4 C.ii.d When to Use
 - Requirements well-known, user involved thorughout
 - Modularizable system with reusable component
 - Short development timeframe
 - Skilled teams & automated tools available
-#### C.ii.e Adv/Disadv
+#### 2.3.4.5 C.ii.e Adv/Disadv
 | S.N. | Adv                                  | Disadv                                                                                                   |
 | ---- | ------------------------------------ | -------------------------------------------------------------------------------------------------------- |
 | 1    | fast delivery of functional software | requires highly skilled professionals                                                                    |
@@ -278,41 +278,41 @@ At the end of this, at 1.2.D, comparison table for short references
 | 5.   |                                      | Not for large projects (needs many teams)                                                                |
 
 ---
-### 2.C.v Evolutionary Process Model
-#### C.ii.a Concept
+### 2.3.5 2.C.v Evolutionary Process Model
+#### 2.3.5.1 C.ii.a Concept
 - also called successive versions model
 - combines iterative + incremental approaches
 - initial requirements & architecture defined upfront, then evolved through feedback.
 - Delivers working versions incrementally over time
 - each cycle ends with a user-accessible product; feedback shapes next iteration.
-#### C.ii.b Figure
+#### 2.3.5.2 C.ii.b Figure
 ![[Pasted image 20260207113002.png]]
-#### C.ii.d When to Use
+#### 2.3.5.3 C.ii.d When to Use
 - Large projects with modular, incrementally deliverable components
 - Customer wants core features early (not full software at once)
 - requirements may evolve based on feedback
 - Object-Oriented systems (easily partitioned into objects)
 - New technology being learned during development
-#### C.ii.e Adv/Disadv
+#### 2.3.5.4 C.ii.e Adv/Disadv
 | S.N. | Adv                                         | Diasdv                                                        |
 | ---- | ------------------------------------------- | ------------------------------------------------------------- |
 | 1    | early user access & feedback                | hard to partition system into acceptable deliverable versions |
 | 2    | Core modules thoroughly tested              | Requires continuous customer involvement                      |
 | 3    | Reduces errors through iterative refinement | High time investment                                          |
-### 2.C.vi Iterative Model
-#### C.ii.a Concept
+### 2.3.6 2.C.vi Iterative Model
+#### 2.3.6.1 C.ii.a Concept
 - iterative process starts with a simple implementation of a small subset of requirements
 - enhances versions iteratively until full system is ready
 - repeated cycles (iterations) each produce a new version
 - Agile and Scrum are based on iterative + iterative principles.
-#### C.ii.b Figure
+#### 2.3.6.2 C.ii.b Figure
 ![[Pasted image 20260207114712.png]]
-#### C.ii.c When to Use
+#### 2.3.6.3 C.ii.c When to Use
 - major requirements clear, but details may evolve
 - time to market constraint exists
 - new technology being adopted by the team
 - contract-based skilled resources per iteration.
-#### C.ii.e Adv/Disadv
+#### 2.3.6.4 C.ii.e Adv/Disadv
 | S.N. | Adv                                            | Disadv                                          |
 | ---- | ---------------------------------------------- | ----------------------------------------------- |
 | 1    | Early working functionality                    | requires more resources                         |
@@ -323,8 +323,8 @@ At the end of this, at 1.2.D, comparison table for short references
 | 6    | High-risk parts tackled first                  | project end-date uncertain                      |
 | 7    | risk-driven, manageable milestones             | highly skilled team needed for risk analysis    |
 | 8    |                                                | progress depends heavily on risk analysis phase |
-### 2.C.vii. Spiral Model
-#### C.ii.a Concept
+### 2.3.7 2.C.vii. Spiral Model
+#### 2.3.7.1 C.ii.a Concept
 - important SDLC
 - provides risk handling
 - risk-driven iterative model combining prototyping + systematic waterfall
@@ -334,9 +334,9 @@ At the end of this, at 1.2.D, comparison table for short references
 - first loop: product specification
 - later loops: prototypes transitioning to final versions
 - risk handling via prototyping at each phase.
-#### C.ii.b Figure
+#### 2.3.7.2 C.ii.b Figure
 ![[Pasted image 20260207115519.png]]
-#### C.ii.c Phases per loop
+#### 2.3.7.3 C.ii.c Phases per loop
 1. Planning: Define objectives, alternatives, constraints
 2. Risk Analysis: Identify & Resolve risks
 3. Engineering: Develop & test product
@@ -347,20 +347,20 @@ or
 - model: prepare datatypes, schema, etc for a feature
 - construction: prepare prototypes for the model
 - deployment: release new feature to customer base
-#### C.ii.d When to use
+#### 2.3.7.4 C.ii.d When to use
 - large, high-risk projects.
 - requirements unclear or evolving
 - long-term projects needing continuous risk assessment
 - customer feedback integrated regularly.
-#### C.ii.e Adv/Disadv
+#### 2.3.7.5 C.ii.e Adv/Disadv
 | S.N. | Adv                          | Disadv                               |
 | ---- | ---------------------------- | ------------------------------------ |
 | 1    | Risk handling built-in       | complex to manage                    |
 | 2    | good for large projects      | expensive (prototyping and analysis) |
 | 3    | flexibility requirements     | over-dependence on risk analysis     |
 | 4    | higher customer satisfaction | difficult time management            |
-### 2.C.viii. Prototype Model
-#### C.ii.a Concept
+### 2.3.8 2.C.viii. Prototype Model
+#### 2.3.8.1 C.ii.a Concept
 - prototype = working replica of the product developed early in the life cycle
 - used when requirements are unclear or unstable
 - allows early customer feedback to refine the product iteratively.
@@ -369,21 +369,21 @@ or
 	2. Build initial prototype with basic functionality.
 	3. Test -> gather feedback -> refine
 	4. Repeat until customer approves
-#### C.ii.b Types
+#### 2.3.8.2 C.ii.b Types
 | Type                | Description                                                                            | Use Cases                                  |
 | ------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------ |
 | **Rapid Throwaway** | quick, disposable prototypes to explore ideas                                          | Early feedback, idea validation            |
 | **Evolutionary**    | Prototype incrementally refined into final product                                     | Saves time; avoids rebuilding from scratch |
 | **Incremental**     | Product broken into pieces;<br>each prototyped separately and then merged              | Complex systems; parallel development.     |
 | **Extreme**         | 3-phase for web development:<br>static HTML -> simulated services -> final integration | Web applications; fast, focused delivery   |
-#### C.ii.b Figure
+#### 2.3.8.3 C.ii.b Figure
 ![[Pasted image 20260207180256.png]]
-#### C.ii.c When to Use
+#### 2.3.8.4 C.ii.c When to Use
 - unclear or changing requirements
 - user interfaces, high-tech systems, complex algorithms
 - to demonstrate technical feasibility.
 - when customer involvement is high.
-#### C.ii.e Adv/Disadv
+#### 2.3.8.5 C.ii.e Adv/Disadv
 | S.N. | Adv                                                   | Diasdv                                          |
 | ---- | ----------------------------------------------------- | ----------------------------------------------- |
 | 1    | early visibility of product -> customer satisfaction  | frequent requirement changes                    |
@@ -396,7 +396,7 @@ or
 | 8    |                                                       | customer may lose interest if prototype is poor |
 
 ---
-## 1.2.D Comparison/Reference Table
+## 2.4 1.2.D Comparison/Reference Table
 | Model            | Concept                                      | How It’s Developed                                               | Key Point 1                           | Key Point 2                              | Major Strength                         | Major Weakness                          | Best For                                        |
 | ---------------- | -------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------- | ---------------------------------------- | -------------------------------------- | --------------------------------------- | ----------------------------------------------- |
 | **Waterfall**    | Linear, sequential phases                    | One phase completes before next starts                           | Rigid, no overlap                     | Clear milestones & docs                  | Simple, easy to manage                 | No working software until late          | Small, stable requirement projects              |
@@ -409,9 +409,9 @@ or
 | **Prototyping**  | Build working replica early for feedback     | Prototype → feedback → refine until accepted                     | Requirements clarified via prototypes | Early customer involvement               | Early visibility, error detection      | Costly, poor documentation, scope creep | Unclear/changing requirements; UI-heavy systems |
 
 ---
-## 1.2.E Flowchart for Choosing SPM:
+## 2.5 1.2.E Flowchart for Choosing SPM:
 ```mermaid
-flowchart LR
+flowchart TD
    Q1{Are requirements<br>clear & stable?}
 
     Q1 -->|Yes| Q2{Project size?}
@@ -442,12 +442,11 @@ flowchart LR
 
     class Q1,Q2,Q3,Q4,Q5,Q6,Q7 decision
     class Waterfall,VModel,Spiral,Prototype,Incremental,Evolutionary,Agile model
-    class Start,End startEnd
 ```
 ---
 ---
-# 1.3 Agile Software Developments
-## 1.3.A Concept
+# 3 Agile Software Developments
+## 3.1 1.3.A Concept
 - Agile = swift, versatile, adaptive
 - Iterative development approach with short cycles (1-4 Weeks)
 - Breaks project into small increments.
@@ -457,7 +456,7 @@ flowchart LR
 	- Minimize risk, 
 	- reduce delivery time, 
 	- deliver working software frequently
-## 1.3.B Phases
+## 3.2 1.3.B Phases
 
 | S.N. | Phase                         | Description                                                      |
 | ---- | ----------------------------- | ---------------------------------------------------------------- |
@@ -467,7 +466,7 @@ flowchart LR
 | 4    | **Testing/Quality Assurance** | Continuous testing, bug fixing, performance checks               |
 | 5    | **Deployment**                | Release product to user environment                              |
 | 6    | **Feedback**                  | Gather use feedback -> incorporate in next iteration             |
-## 1.3.C Origins
+## 3.3 1.3.C Origins
 - Agile Manifesto (2001) by Kent Beck and others
 - Four core values:
 	- individuals & interactions > processes & tools
@@ -477,7 +476,7 @@ flowchart LR
 - Incremental delivery with frequent releases.
 - Best for changing requirements, time-critical apps
 - Examples: Scrum, XP, Crystal, FDD, Kanban.
-## 1.3.D Principles of Agile methods
+## 3.4 1.3.D Principles of Agile methods
 1. **Customer involvement**
 	- customer should be involved in development process
 		- to provide and prioritize new system requirements and 
@@ -494,7 +493,7 @@ flowchart LR
 5. **Maintain simplicity**
 	- focus on simplicity in developing software and in development process wherever possible
 	- work to eliminate complexity from the system.
-## 1.3.E Adv/Disadv
+## 3.5 1.3.E Adv/Disadv
 | S.N. | Adv                             | Disadv                             |
 | ---- | ------------------------------- | ---------------------------------- |
 | 1    | high stake holder Engagement    | less predictable timelines         |
@@ -506,26 +505,26 @@ flowchart LR
 
 ---
 ---
-# 1.4 Requirements Engineering processes
+# 4 Requirements Engineering processes
 - Requirements Engineering (RE):
 	- systematic process of identifying, documenting, and managing software requirements
 	- Transforms real-world problems into clear, actionable software specifications.
 - Requirements Management (RM):
 	- subset of RE
 	- focuses on tracking and controlling changes.
-## 1.4.A Steps for RE
+## 4.1 1.4.A Steps for RE
 |     | Step                          | Description                                                 | Key Activities                                                                          |
 | --- | ----------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | 1   | **Elicit Requirements**       | Understand the problem and gather stakeholder needs         | Interviews, workshops, observation, background research                                 |
 | 2   | **Requirement Specification** | Document functional and non-functional requirements clearly | use DFD, UML, SRS, user stories                                                         |
 | 3   | **Verification & Validation** | Ensure requirements are correct and meet real needs         | Verification: are we building it right?<br>Validation: Are we building the right thing? |
 | 4   | **Requirement Management**    | Ongoing tracking, prioritization, and change handling       | Traceability matrices, version control, stakeholder communication                       |
-## 1.4.B Why RE is important?
+## 4.2 1.4.B Why RE is important?
 -  avoid pitfalls like scope creep, miscommunication, rework
 - serves as a compass for development, ensuring alignment with business goals.
 - keep all stakeholders on the same page regarding deliverables and expectations
 - reduces risk by clarifying what needs to be built before development begins.
-## 1.4.C Why Identify Requirements?
+## 4.3 1.4.C Why Identify Requirements?
 |     | Reason                                | Explanation                                                                        |
 | --- | ------------------------------------- | ---------------------------------------------------------------------------------- |
 | 1   | **Defines Objects & Classes**         | Requirements help identify real-world entities -> map to classes/objects           |
@@ -538,22 +537,22 @@ flowchart LR
 
 ---
 ---
-# 1.5 System modeling
-## 1.5.A Concept
+# 5 System modeling
+## 5.1 1.5.A Concept
 - process of creating abstract graphical representations of a system using notations like UML
 - Each model shows a different perspective of the system
 - Used to 
 	- understand functionality
 	- communicate with stakeholders
 	- guide design & implementation
-## 1.5.B Perspectives
+## 5.2 1.5.B Perspectives
 | Perspective | What it Shows                                                     | UML Diagrams Often Used                             |
 | ----------- | ----------------------------------------------------------------- | --------------------------------------------------- |
 | External    | System context & environment                                      | Use Case Diagrams                                   |
 | Interaction | Interactions between system & environment, or internal components | Sequence Diagrams, Communication Diagrams           |
 | Structural  | Organization of system components or data structures              | Class Diagrams, Object Diagrams, Component Diagrams |
 | Behavioral  | Dynamic behavior & response to events                             | State Diagrams, Activity Diagrams                   |
-## 1.5.C Useful UML Diagrams for System Modeling
+## 5.3 1.5.C Useful UML Diagrams for System Modeling
 | Diagram          | Purpose                                                                  | Used For                             |
 | ---------------- | ------------------------------------------------------------------------ | ------------------------------------ |
 | Use Case Diagram | Shows interactions between system and external actors                    | Capturing functional requirements    |
@@ -561,7 +560,7 @@ flowchart LR
 | Sequence Diagram | Shows time-ordered interactions between objects/actors                   | Dynamic behavior, process flows      |
 | Activity Diagram | Shows workflow or process steps                                          | Business processes, algorithms       |
 | State Diagram    | Shows how system responds to internal/external events                    | Real-time systems, stateful behavior |
-## 1.5.D Why Model Both existing and new systems?
+## 5.4 1.5.D Why Model Both existing and new systems?
 1. Existing System:
 	- understand current functionality, 
 	- identify strengths/weaknesses,
@@ -571,7 +570,7 @@ flowchart LR
 	- discuss design
 	- document for implementation
 	- validate with stakeholders
-## 1.5.E Why Need Different System Models
+## 5.5 1.5.E Why Need Different System Models
 |Reason|Explanation|
 |---|---|
 |**Different Stakeholders, Different Views**|Managers, developers, testers, and customers need different levels of abstraction.|
@@ -584,14 +583,14 @@ flowchart LR
 
 ---
 ---
-# 1.6 Software prototyping
+# 6 Software prototyping
 - prototype is a working model of software with some limited functionality
 - the prototype does not always hold the exact logic used in the actual software application and is an extra effort to be considered under effort estiamtion
 - prototyping is used to allow the users evaluate developer proposals and try them out before implementation
 - it also helps understand the requirements which are user specific and may not have been considered by the developer during product design.
 ---
 ---
-# 1.7 Object Oriented Software Development
+# 7 Object Oriented Software Development
 - in software there are severa way to approach a model.
 - the 2 most common ways are from an algorithmic persepctive and from an object oriented perspective
 - traditional view of software development takes an algorithmic persepctive
@@ -607,16 +606,16 @@ flowchart LR
 		- in the middle layer you will find objects such as transaction and business rules, as well as higher level views of problem entities, such as customer, products and orders.
 	- the object-oriented approach to software development is decidedly a part of the mainstream simply because it has proved to be of value in building system in all sorts of problem domains and encompasses all degree of size and complexity.
 	- most contemporary languages operating systems and tools are object oriented in some fashion giving greater the world in terms of objects.
-## 1.7.A SRS Document
+## 7.1 1.7.A SRS Document
 - generated as output of requirement analysis
 - SRS should be consistent, correct and complete document
 - SRS contains functional and non-functional requirements only, it does not offer design suggestions, possible to technology or business issues or any other information
-### 1.7.A.i Problems without SRS Document
+### 7.1.1 1.7.A.i Problems without SRS Document
 - important problem if no SRS Document:
 	- the system would not be implemented according to customer needs
 	- software developers would not know whether what they are developing is what exactly required by the customer
 	- without SRS document, it will be very much difficult for the maintenance engineers to understand the functionality of the system
-### 1.7.A.ii Goals of SRS Document
+### 7.1.2 1.7.A.ii Goals of SRS Document
 1. Feedback to customer: 
 	- provides the feedback to the customer
 2. Problem Decomposition:
@@ -624,12 +623,12 @@ flowchart LR
 	- the simple act of writing down software requirements in a well designed format that helps break down the problem into its component parts in an orderly fashion
 3. input to design specification: 
 	- SRS document must contain sufficient detail in the functional system requirements so that a design solution can be devised
-### 1.7.A.iii properties of a Good SRS document
+### 7.1.3 1.7.A.iii properties of a Good SRS document
 1. Concise: should be consistent and complete
 2. Structured: A well-structured document is easy to understand and modify.
 3. Black box view: it should only specify what the system should do and refrain from stating how to do these
 4. verifiable: it should be possible to determine whether or not requirements have been met in an implementaiton.
-### 1.7.A.iv Characteristics of an SRS Document
+### 7.1.4 1.7.A.iv Characteristics of an SRS Document
 1. **Correctness**:
 	- SRS is correct if every requirements included in the SRS represents something required in the final system
 2. **Completeness**:
@@ -650,7 +649,7 @@ flowchart LR
 	- should be written in such a way that it is possible to create a test plan to confirm whether specifications can be met and requirements can be delivered
 8. **Clarity**:
 	- should be clear
-## 1.7.B Functional  & Non-functional Requirements
+## 7.2 1.7.B Functional  & Non-functional Requirements
 | Aspect            | Functional Requirements                            | Non-Functional Requirements                                 |
 | ----------------- | -------------------------------------------------- | ----------------------------------------------------------- |
 | **Definition**    | Describe **what** the system should do             | Describe **how well** the system should perform             |
@@ -662,7 +661,7 @@ flowchart LR
 | **Priority**      | Often higher in early stages                       | Critical for user satisfaction & scalability                |
 | **Documentation** | Use cases, user stories, SRS                       | Quality attributes, SLAs, constraints in SRS                |
 | **Example**       | The system shall allow users to reset passwords    | the password reset process shall complete within 5 seconds. |
-## 1.7.C Walking on water and developing software
+## 7.3 1.7.C Walking on water and developing software
 > Walking on water and developing software from specification are easy if both
 are frozen
 - main point is about impracticality of rigid unchanging requirements in software development

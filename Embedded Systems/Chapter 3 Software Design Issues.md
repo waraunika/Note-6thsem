@@ -141,6 +141,15 @@ Let's analyze the diagram above, assuming each stage takes one clock cycle.
 - it contains multiple independent instructions in a single word.
 - several operations are encoded in a single machine instruction.
 - the compiler detects and schedules the instructions.
+### 2.3.1 Comparison
+| Feature                  | Superscalar                              | VLIW (Very Long Instruction Word)                    |
+| ------------------------ | ---------------------------------------- | ---------------------------------------------------- |
+| **Scheduling**           | Dynamic (hardware at runtime)            | Static (compiler at compile time)                    |
+| **Hardware complexity**  | High (out-of-order execution, renaming)  | Lower (no runtime scheduling logic)                  |
+| **Instruction packing**  | Multiple instructions issued dynamically | Multiple operations packed into one long instruction |
+| **Binary compatibility** | Better across implementations            | Poor (different VLIW layouts)                        |
+| **Example**              | ARM Cortex-A, Intel Core                 | TI C6000, Itanium (EPIC)                             |
+| **Power efficiency**     | Lower (active hardware)                  | Higher (compiler does work)                          |
 # 3 Programmer's View
 # 4 Development Environment
 - Processors along with the different development tools are used for the development of software or an embedded system.

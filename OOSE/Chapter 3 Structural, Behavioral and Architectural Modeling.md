@@ -2,10 +2,10 @@
 ---
 - **8 Hours**
 [[Chapter 2 Object Oriented Concepts and Modeling]]
-# 3.1 Class Relationship
+# 1 Class Relationship
 Present at: [[#3.A.v Class Relationship]]
-# 3.2 Conceptual Model of UML
-## 3.2.A Concept of UML
+# 2 Conceptual Model of UML
+## 2.1 3.2.A Concept of UML
 - Unified Modeling Language
 - standardized visual language for specifying, constructing and documenting software systems.
 - is not a method, only notation.
@@ -14,14 +14,14 @@ Present at: [[#3.A.v Class Relationship]]
 	- OMT (Object Modeling Technique)
 		- precursor to UML
 		- focusing on objects, dynamics and functions
-## 3.2.B Use of UML in System Development
+## 2.2 3.2.B Use of UML in System Development
 | Purpose       | Description                                                    |
 | ------------- | -------------------------------------------------------------- |
 | **Visualize** | Represent complex systems graphically for better understanding |
 | **Specify**   | Build precise, unambigouus models of systems                   |
 | **Construct** | Map models directly to implementation code                     |
 | **Document**  | Capture architectural decisions, requirements, design          |
-## 3.2.C Five views of UML
+## 2.3 3.2.C Five views of UML
 | View                    | Focus                                              | Diagrams Used                                 |
 | ----------------------- | -------------------------------------------------- | --------------------------------------------- |
 | **Use Case View**       | System functionality from user perspective         | Use Case                                      |
@@ -29,16 +29,16 @@ Present at: [[#3.A.v Class Relationship]]
 | **Implementation View** | Code organization (components, files)              | Component                                     |
 | **Process View**        | Concurrency, performance, scalability              | Activity, State, Sequence                     |
 | **Deployment View**     | Physical distribution across hardware              | Deployment                                    |
-## 3.2.D Conceptual Model of UML
+## 2.4 3.2.D Conceptual Model of UML
 Has 3 major elements
-### 2.D.i Basic Building Blocks
-#### D.i.a Things
+### 2.4.1 2.D.i Basic Building Blocks
+#### 2.4.1.1 D.i.a Things
 - nouns of the model
 - structural - mostly static parts
 - behavioral - dynamic parts
 - grouping things - organizational parts
 - annotational things - explanatory parts
-##### i.a.1 Structural Things
+##### 2.4.1.1.1 i.a.1 Structural Things
 | Thing             | Description                                                  | Notation                                            |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------------------- |
 | **Class**         | Set of objects with shared attributes, operations, semantics | Rectangle with name, attributes, operations         |
@@ -46,23 +46,23 @@ Has 3 major elements
 | **Collaboration** | Defines interaction between roles                            | Dashed ellipse                                      |
 | **Use Case**      | Sequence of actions yielding observable result               | Ellipse with name                                   |
 | **Component**     | Physical resource (processor/device)                         | Cube                                                |
-##### i.a.2 Behavioral Things
+##### 2.4.1.1.2 i.a.2 Behavioral Things
 | Thing             | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | **Interaction**   | Set of messages exchanged between objects            |
 | **State Machine** | Behavior showing states and transitions of an object |
 | **Activity**      | Flow of control between steps                        |
-##### i.a.3 Grouping Things
+##### 2.4.1.1.3 i.a.3 Grouping Things
 | Thing             | Description                                    | Notation                                            |
 | ----------------- | ---------------------------------------------- | --------------------------------------------------- |
 | **Package**       | General-purpose mechanism to group elements    | Tabbed folder                                       |
-##### i.a.4 Annotational Things
+##### 2.4.1.1.4 i.a.4 Annotational Things
 | Thing    | Description                 | Notation                        | Figure:                                     |
 | -------- | --------------------------- | ------------------------------- | ------------------------------------------- |
 | **Note** | Comment attached to element | Rectangle with dog eared corner | ![[Pasted image 20260207224041.png \| 400]] |
-#### D.i.b Relationships
+#### 2.4.1.2 D.i.b Relationships
 - verbs of the model
-##### i.b.1 Dependency Relationship
+##### 2.4.1.2.1 i.b.1 Dependency Relationship
 - One thing (client) uses another thing (supplier)
 - change to supplier may affect client
 - unidirectional (client -> supplier)
@@ -70,12 +70,12 @@ Has 3 major elements
  - used when one class uses operations/variables of another; temporary connection.
 - figure:
   ![[Pasted image 20260208112349.png]]
-##### i.b.2 Association Relationship
+##### 2.4.1.2.2 i.b.2 Association Relationship
 - Structural connection between objects of two classes.
 - notation of solid line connecting clauses
 - binary association: connects exactly 2 classes
 - N-ary association: connects 3+ classes
-###### Association Adornments:
+###### 2.4.1.2.2.1 Association Adornments:
 | Adornment    | Description                                          | Example                   |
 | ------------ | ---------------------------------------------------- | ------------------------- |
 | Name         | Describes nature of relationship                     | `works for`               |
@@ -95,7 +95,7 @@ Figures:
 	2. ![[Pasted image 20260209082131.png]]
 5. Composition:
 	1. ![[Pasted image 20260214165610.png]]
-###### Multiplicity Values
+###### 2.4.1.2.2.2 Multiplicity Values
 | Expression    | Meaning             |
 | ------------- | ------------------- |
 | `1`           | Exactly one         |
@@ -103,7 +103,7 @@ Figures:
 | `0..*` or `*` | Zero or more (many) |
 | `1..*`        | One or more         |
 | `2..5`        | Integer range       |
-##### i.b.3 Aggregation vs Composition
+##### 2.4.1.2.3 i.b.3 Aggregation vs Composition
 | Aspect        | Aggregation             | Composition                       |
 | ------------- | ----------------------- | --------------------------------- |
 | Diamond       | Hollow                  | Filled                            |
@@ -111,31 +111,30 @@ Figures:
 | sharing       | part can be shared      | part belongs to exactly one whole |
 | example       | Car <-> Wheel           | Window <- Frame                   |
 | Relationship  | "has-a" (weaker)        | "contains" (stronger)             |
-##### i.b.4 Generalization
+##### 2.4.1.2.4 i.b.4 Generalization
 - Parent/child relationship where child inherits from parent
 - notation of solid line with hollow triangular arrowhead (-> ▷ ) pointing to parent.
 - also called inheritance "is-a" relationship
 - figure:
 	- ![[Pasted image 20260208112711.png]]
-##### i.b.5 Realization
+##### 2.4.1.2.5 i.b.5 Realization
 - one element specifies behavior, another implements it.
 - notation of: dashed line with hollow triangular arrowhead.
 - commonly uses: Interface - -> Class, Use Case - -> Collaboration.
-
 	- Dependency, Association, Generalization, Realization
 - Diagrams (views of the model)
 	- 13 diagram types organized into structural/behavioral categories
-### 2.D.ii Rules
+### 2.4.2 2.D.ii Rules
 - How building blocks may be put together
 - Rules for:
 	- Naming (what one can call things)
 	- Scope (context visibility)
 	- Integrity (how things relate properly)
-### 2.D.iii Common Mechanisms
+### 2.4.3 2.D.iii Common Mechanisms
 - Stereotypes -> Extend UML vocabulary ( `<<include>>`, `<<extend>>`)
 - Tagged values -> properties (`{author=Smith}`)
 - Constraints -> rules (`{balance >= 0}`)
-## 3.2.E Conceptual Model vs Implementation Model
+## 2.5 3.2.E Conceptual Model vs Implementation Model
 | Aspect          | Conceptual Model                 | Implementation Model                   |
 | --------------- | -------------------------------- | -------------------------------------- |
 | **Purpose**     | Understand real-world domain     | Build software system                  |
@@ -144,7 +143,7 @@ Figures:
 | **Audience**    | Stakeholders, domain experts     | Developers, testers                    |
 | **Change**      | Stable (domain rarely changes)   | Volatile (code evolves)                |
 | **Examples**    | Domain model, conceptual classes | Class Diagram with methods, DB schemas |
-## 3.2.F Behavioral Model of the System
+## 2.6 3.2.F Behavioral Model of the System
 - Describes dynamic behavior of objects over time
 - it answers how the system responds to events
 - Diagrams used:
@@ -152,7 +151,7 @@ Figures:
 	- Activity Diagram (workflow)
 	- Sequence Diagram (message ordering)
 	- Communication Diagram (message structure)
-## 3.2.G Domain Modeling
+## 2.7 3.2.G Domain Modeling
 - Domain Model = visual representation of real world concepts, not software classes.
 - Shows:
 	- Conceptual classes (real world entities)
@@ -162,7 +161,7 @@ Figures:
 	- Bridges communication gap between domain experts and developers
 	- Capture key terminology and relationships
 	- Foundation for design class diagrams.
-## 3.2.H Conceptual Classes
+## 2.8 3.2.H Conceptual Classes
 - Definition:
 	- Real world concepts or things in the domain of interest
 - not software classes -> they exist regardless of system
@@ -170,7 +169,7 @@ Figures:
 	- noun identification (underline nouns in requirements)
 	- category lists (use predefined categories)
 	- reuse existing domain models
-### 2.H.i Category List Method:
+### 2.8.1 2.H.i Category List Method:
 | Category         | Examples                    |
 | ---------------- | --------------------------- |
 | Physical objects | Bok, Car, Product           |
@@ -178,7 +177,7 @@ Figures:
 | Transactions     | Sale, Payment, Order        |
 | People           | Customer, Employee, Manager |
 | Organizations    | Department, Company, Bank   |
-### 2.H.ii Online Movie Ticket Booking
+### 2.8.2 2.H.ii Online Movie Ticket Booking
 - Conceptual classes: Movie, Show, Theater, Seat, Booking, Payment, Customer
 - Not Conceptual classes: Database, Connection, Controller
 	- these are design/implementation
@@ -186,27 +185,27 @@ Figures:
 - The vocabulary of the UML encompasses three kinds of building blocks:
 ---
 ---
-# 3.3 UML Diagrams
-## 3.3.A Class Diagram
-### 3.A.i Concept
+# 3 UML Diagrams
+## 3.1 3.3.A Class Diagram
+### 3.1.1 3.A.i Concept
 - Class diagram = static structure diagram showing system's classes, attributes, operations and relationships
 - most common UML diagram for object oriented modeling
 - represents the logical view of a system.
 - blueprint for implementation
-#### Notation
+#### 3.1.1.1 Notation
 - A class is rendered as a rectangle divided into 3 compartments
 	- Name, Attribute & Operations
 - figure:
   ![[Pasted image 20260208104157.png]]
-### 3.A.ii Components
-#### A.iii.a Class Name
+### 3.1.2 3.A.ii Components
+#### 3.1.2.1 A.iii.a Class Name
 - **Simple name**: Just the class name (e.g., `Student`)
 - **Qualified Name**: Package + classname (e.g., `University::Student)
 - **Abstract class**: Name in italics of `{abstract}`
 - a class maybe drawn showing only its name as shown below
 - symbols:
 	- ![[Pasted image 20260208104404.png]]
-#### A.iii.b Attributes
+#### 3.1.2.2 A.iii.b Attributes
 | Visbility | Symbol | Meaning                                |
 | --------- | ------ | -------------------------------------- |
 | Public    | +      | Accessibly by any class                |
@@ -241,7 +240,7 @@ Figures:
 		- ![[Pasted image 20260208104526.png]]
 	- 2.
 		- ![[Pasted image 20260208104553.png]]
-#### A.iii.c Operations
+#### 3.1.2.3 A.iii.c Operations
 - abstraction of something you can do to an object that is shared by all objects of that class
 - Implementation of a service can be requested from an object.
 - Represents what the class does.
@@ -263,7 +262,7 @@ Figures:
 ```
 - Figure:
 	- ![[Pasted image 20260208104825.png]]
-#### A.iii.d Responsibilities
+#### 3.1.2.4 A.iii.d Responsibilities
 - Contract or obligation of a class
 - Documented in a separate compartment at bottom
 - Textual description of what class must provide
@@ -283,8 +282,8 @@ Figures:
 │ • Handle course registration      │
 └───────────────────────────────────┘
 ```
-### 3.A.iv Advanced Class Features
-#### A.iv.a Multiplicity of a class
+### 3.1.3 3.A.iv Advanced Class Features
+#### 3.1.3.1 A.iv.a Multiplicity of a class
 - number of instances a class may have.
 - written in upper right corner
 - example
@@ -303,17 +302,17 @@ Figures:
 ```
 - figure:
 	- ![[Pasted image 20260208110654.png]]
-#### A.iv.b Abstract, Root, Leaf
+#### 3.1.3.2 A.iv.b Abstract, Root, Leaf
 | Type            | Notation                    | Meaning            |
 | --------------- | --------------------------- | ------------------ |
 | Abstract Class  | *ClassName* or `{abstract}` | Cannot instantiate |
 | Abstract Method | *methodName()*              | No implementation  |
 | Root Class      | `{root}`                    | No ancestors       |
 | Leaf Class      | `{leaf}`                    | No descendants     |
-#### A.iv.c Polymorphic Elements
+#### 3.1.3.3 A.iv.c Polymorphic Elements
 - Methods with same signature in different classes.
 - Represented in *italics*.
-### 3.A.v Class Relationship
+### 3.1.4 3.A.v Class Relationship
 | Relationship       | Notation | Description                  |
 | ------------------ | -------- | ---------------------------- |
 | **Dependency**     | - - - →  | Uses relationship            |
@@ -322,7 +321,7 @@ Figures:
 | **Composition**    | ◆———     | Contains (strong whole-part) |
 | **Generalization** | —▷       | Inheritance (is-a)           |
 | **Realization**    | - - - ▷  | Interface implementation     |
-### 3.A.vi UML classifiers
+### 3.1.5 3.A.vi UML classifiers
 | Name        | Description                                                                                                                                                         | Figure                               |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | Interface   | collection of operations that are used to specify a service of a class or component                                                                                 | ![[Pasted image 20260208105648.png]] |
@@ -333,7 +332,7 @@ Figures:
 | Node        | a physical element that exists at run time and that represents a computational resource <br>generally having atleast some memory and often processing capabilities. | ![[Pasted image 20260208110136.png]] |
 | Use Case    | - a description of a set of a sequence of actions, including variants<br>		- that a system performs that yields an observable result of value to a particular actor | ![[Pasted image 20260208110147.png]] |
 | Subsystem   | a component that represents a major part of a system                                                                                                                | ![[Pasted image 20260208110155.png]] |
-### 3.A.vi Example
+### 3.1.6 3.A.vi Example
 1. Library Management System
 ```txt
 ┌─────────────┐          ┌──────────────┐
@@ -369,8 +368,8 @@ Figures:
 ```
 2. Diagram Tool Example
 ![[Pasted image 20260213201103.png | 1200]]
-## 3.3.B Object Diagram
-### 3.B.i Concept
+## 3.2 3.3.B Object Diagram
+### 3.2.1 3.B.i Concept
 - object diagram = snapshot of system at a specific point in time.
 - Shows instances of classes (objects) and their relationships (links)
 - Also called instance diagram.
@@ -383,8 +382,8 @@ Figures:
 - expresses the static part of an interaction, consisting of the objects that corroborate, but without any of the messages passed among them.
 - figure:
 	- ![[Pasted image 20260214105919.png]]
-### 3.B.ii Components
-#### B.ii.a Objects
+### 3.2.2 3.B.ii Components
+#### 3.2.2.1 B.ii.a Objects
 - Notation: Rectangle with `objectName : ClassName` underlined
 - Format: `[instanceName] : [ClassName]`
 - Both parts underlined
@@ -398,7 +397,7 @@ Figures:
 │ : Student   │  ← Anonymous object
 └─────────────┘
 ```
-#### B.ii.b Object State
+#### 3.2.2.2 B.ii.b Object State
 - Attributes with Values
 - Can show attribute values in a second compartment
 - example:
@@ -411,7 +410,7 @@ Figures:
 │ gpa = 3.75          │
 └─────────────────────┘
 ```
-#### B.ii.c Links
+#### 3.2.2.3 B.ii.c Links
 - instance of an association that shows connection between objects.
 - notation of solid line between objects.
 - can show link name and role names.
@@ -424,16 +423,16 @@ Figures:
         │ takes               │
         └─────────────────────┘
 ```
-#### B.ii.d Multiplicity at Instance Level
+#### 3.2.2.4 B.ii.d Multiplicity at Instance Level
 - Shows actual number of connected objects at that moment.
-### 3.B.iii Purpose
+### 3.2.3 3.B.iii Purpose
 | Purpose       | Description                               |
 | ------------- | ----------------------------------------- |
 | **Visualize** | Concrete examples of system state         |
 | **Validate**  | Test class diagram against real scenarios |
 | **Document**  | Prototypical instances for understanding  |
 | **Debug**     | Trace object relationships at runtime     |
-### 3.B.iv Object vs Class Diagram
+### 3.2.4 3.B.iv Object vs Class Diagram
 | Aspect           | Class Diagram          | Object Diagram           |
 | ---------------- | ---------------------- | ------------------------ |
 | **Purpose**      | Blueprint/type         | Snapshot/instance        |
@@ -443,7 +442,7 @@ Figures:
 | **Multiplicity** | Shows possible range   | Shows actual connections |
 | **Abstraction**  | High-level             | Concrete                 |
 | **Time**         | Static (timeless)      | Specific moment          |
-### 3.B.v Examples
+### 3.2.5 3.B.v Examples
 1. Simple Object Diagram
 ```
 At a specific moment in a library system:
@@ -508,7 +507,7 @@ ATM Transaction at 10:30 AM:
 │ time = "10:30:00"     │   └─────────────────┘
 └───────────────────────┘
 ```
-### 3.B.vi When to Use
+### 3.2.6 3.B.vi When to Use
 | Scenario                             | Benefit                                         |
 | ------------------------------------ | ----------------------------------------------- |
 | **Testing class diagrams**           | Verify relationships work with real data        |
@@ -516,11 +515,11 @@ ATM Transaction at 10:30 AM:
 | **Reverse engineering**              | Show actual object structures from running code |
 | **Documenting prototypes**           | Capture typical system states                   |
 | **Debugging**                        | Visualize object connections at breakpoints     |
-### 3.3.B.vii Relationship with Other Diagrams
+### 3.2.7 3.3.B.vii Relationship with Other Diagrams
 - **Class Diagram** → defines the types
 - **Object Diagram** → shows instances of those types
 - **Interaction Diagrams** → object diagrams + messages (dynamic)
-### 3.3.B.viii Key Points for Exam
+### 3.2.8 3.3.B.viii Key Points for Exam
 - Object diagram = **snapshot in time**.
 - Object names are **underlined**: `instance : Class`.
 - Shows **attribute values**, not just types.
@@ -528,22 +527,22 @@ ATM Transaction at 10:30 AM:
 - Used to **validate class diagrams** with concrete examples.
 - Helpful for **testing, debugging, documentation**.
 ---
-## 3.3.C Use Case Diagram
-### 3.C.i Concept
+## 3.3 3.3.C Use Case Diagram
+### 3.3.1 3.C.i Concept
 - shows interactions between actors and use cases within a system boundary.
 - Captures functional requirements from an external perspective.
 - Answers: *What does the system do?*
 - doesn't care about how
 - represents the **use case view of the system**.
-### 3.C.ii Purpose
+### 3.3.2 3.C.ii Purpose
 | Purpose                           | Description                                 |
 | --------------------------------- | ------------------------------------------- |
 | **Capture requirements**          | Identify what users need from system        |
 | **Communicate with stakeholders** | Simple, non-technical view                  |
 | **Define scope**                  | System boundary separates internal/external |
 | **Drive development**             | Use cases guide design and testing          |
-### 3.C.iii Components
-#### C.iii.a Actor
+### 3.3.3 3.C.iii Components
+#### 3.3.3.1 C.iii.a Actor
 - **Definition**: Someone/something that interacts with the system (external).
 - **Notation**: Stick figure or rectangle with `<<actor>>`. 
 - **Location**: Outside system boundary.
@@ -568,7 +567,7 @@ ATM Transaction at 10:30 AM:
 | **Secondary**         | Administration/maintenance | Admin, Support Staff      |
 | **External Hardware** | Physical devices           | Card Reader, Sensor       |
 | **External System**   | Other software             | Payment Gateway, Database |
-#### C.iii.b Use Case
+#### 3.3.3.2 C.iii.b Use Case
 - **Definition**: Sequence of actions producing observable result of value to actor.
 - **Notation**: Ellipse with name inside.
 - **Name**: Verb phrase (e.g., "Withdraw Money", "Register Student").
@@ -589,15 +588,15 @@ ATM Transaction at 10:30 AM:
 			- customer requests for the new account form, fill the form and submit
 				- along with the minimal deposit
 			- at the end of complete successful process customer receives the passbook
-#### C.iii.c System Boundary
+#### 3.3.3.3 C.iii.c System Boundary
 - **Definition**: Rectangle separating system from external environment.
 - **Inside**: Use cases.
 - **Outside**: Actors.
 - Shows **scope** of system.
 - e.g., figure:
 	![[Pasted image 20260208074117.png]]
-#### C.iii.d Relationship
-##### iii.d.1 Association
+#### 3.3.3.4 C.iii.d Relationship
+##### 3.3.3.4.1 iii.d.1 Association
 - Actor <-> Use case
 - **Definition**: Communication between actor and use case.
 - **Notation**: Solid line.
@@ -608,7 +607,7 @@ ATM Transaction at 10:30 AM:
 │ Customer│───────│ Place Order │
 └─────────┘       └─────────────┘
 ```
-##### iii.d.2 Include Relationship
+##### 3.3.3.4.2 iii.d.2 Include Relationship
 - Use Case <-> Use Case
 - **Definition**: One use case **always includes** behavior of another.
 - **Notation**: Dashed arrow with `<<include>>`.
@@ -627,7 +626,7 @@ ATM Transaction at 10:30 AM:
 ```
 - figure:
 	- ![[Pasted image 20260208074521.png]]
-##### iii.d.3 Extend Relationship
+##### 3.3.3.4.3 iii.d.3 Extend Relationship
 - Use Case <-> Use Case
 - **Definition**: One use case **optionally** adds behavior to another.
 - **Notation**: Dashed arrow with `<<extend>>`.    
@@ -642,11 +641,11 @@ ATM Transaction at 10:30 AM:
 ```
 - figure:
 	- ![[Pasted image 20260208075001.png]]
-##### iii.d.4 Generalization 
+##### 3.3.3.4.4 iii.d.4 Generalization 
 - Actor <-> Actor or Use Case <-> Use Case
 - **Definition**: Parent/child relationship where child inherits from parent.
 - **Notation**: Solid line with hollow arrowhead pointing to parent.
-###### d.4.A Actor Generalization
+###### 3.3.3.4.4.1 d.4.A Actor Generalization
 ```
     ┌─────────┐
     │  User   │
@@ -658,7 +657,7 @@ ATM Transaction at 10:30 AM:
 │Customer│ │Admin  │
 └────────┘ └───────┘
 ```
-###### d.4.B Use Case Generalization
+###### 3.3.3.4.4.2 d.4.B Use Case Generalization
 ```
     ┌─────────────┐
     │ Purchase    │
@@ -673,7 +672,7 @@ ATM Transaction at 10:30 AM:
 │Ticket  │ │Ticket  │
 └────────┘ └────────┘
 ```
-### 3.C.iv Include vs Extend
+### 3.3.4 3.C.iv Include vs Extend
 | Aspect                        | Include (`<<include>>`)            | Extend (`<<extend>>`)       |
 | ----------------------------- | ---------------------------------- | --------------------------- |
 | **Optional?**                 | No (always executed)               | Yes (conditional)           |
@@ -682,7 +681,7 @@ ATM Transaction at 10:30 AM:
 | **Purpose**                   | Common functionality               | Optional/exceptional        |
 | **Execution**                 | Always                             | Only when condition true    |
 | **Example**                   | Validate user in every transaction | Apply discount only for VIP |
-### ### 3.C.v Documenting Use Cases
+### 3.3.5 ### 3.C.v Documenting Use Cases
 | Section               | Description                       |
 | --------------------- | --------------------------------- |
 | **Use Case Name**     | Verb phrase                       |
@@ -720,7 +719,7 @@ Postconditions:
   - Balance reduced by amount
   - Transaction recorded
 ```
-### 3.C.vi Complete Example
+### 3.3.6 3.C.vi Complete Example
 1. ATM System
 ```
 ┌──────────────────────────────────────┐
@@ -795,41 +794,41 @@ Postconditions:
 5. Banking Application
 	- figure:
 	  ![[Pasted image 20260208080733.png]]
-### 3.C.vii Main Points
+### 3.3.7 3.C.vii Main Points
 - Use case diagrams = **functional requirements** from **external view**.
 - **3 main components**: Actors, Use Cases, System Boundary.
 - **4 relationship types**: Association, Include, Extend, Generalization.
 - **Include** = mandatory, **Extend** = optional/conditional.
-- Use cases named with **verb phrases**.
+- Use cases named with **verb phrases**.`
 - Actors are **external** to system.
 - **System boundary** defines scope.
 ---
-## 3.3.D Interaction Diagram
+## 3.4 3.3.D Interaction Diagram
 - shows how objects interact via messages to accomplish a task
 - 2 types
 	1. Sequence diagram -> Emphasizes time ordering
 	2. Communication diagram -> Emphasizes structural relationships.
-### 3.D.i Sequence Diagram
-#### D.i.a Concept
+### 3.4.1 3.D.i Sequence Diagram
+#### 3.4.1.1 D.i.a Concept
 - Shows **message exchange** between objects over **time**.
 - Emphasizes **temporal order** (what happens when).
 - Used to model dynamic behavior of use cases.
-#### D.i.b Components
-##### i.b.1 Object/Participants
+#### 3.4.1.2 D.i.b Components
+##### 3.4.1.2.1 i.b.1 Object/Participants
 - **Notation**: Rectangle with `objectName : ClassName` (underlined).
 - Placed across top of diagram.
 - system parts that interact with each other
 - participants interact with each other by sending and receiving message
 - object is represented as:
 	- ![[Pasted image 20260208081102.png | 300]]
-##### i.b.2 Lifeline
+##### 3.4.1.2.2 i.b.2 Lifeline
 - **Notation**: Vertical dashed line below each object.
 - Represents object's **existence over time**.
 - most objects will be in existence for the duration of an interaction.
 - So these objects are aligned at the top of diagram with their lifeline from top to bottom of diagram
 -  figure:
 	  ![[Pasted image 20260208081333.png]]
-##### i.b.3 Activation Bar
+##### 3.4.1.2.3 i.b.3 Activation Bar
 - **Notation**: Tall thin rectangle on lifeline, can be marked by written message
 	- the top of rectangle is aligned with start of the action
 	- bottom is aligned with its completion
@@ -837,11 +836,11 @@ Postconditions:
 - AKA **focus of control**.
 - figure
 	  ![[Pasted image 20260208081346.png]]
-##### i.b.4 Messages
+##### 3.4.1.2.4 i.b.4 Messages
 - **Notation**: Arrow from sender lifeline to receiver lifeline.
 - flow in R->L or L->R direction
 - used to show interaction between objects.
-###### Types
+###### 3.4.1.2.4.1 Types
 | Type               | Notation                     | Description                    | Figure                                   |
 | ------------------ | ---------------------------- | ------------------------------ | ---------------------------------------- |
 | **Synchronous**    | →▸ (solid, filled arrow)     | Caller waits for response      | ![[Pasted image 20260208081631.png]]<br> |
@@ -850,14 +849,14 @@ Postconditions:
 | **Self/Reflexive** | ↻                            | Object sends message to itself | ![[Pasted image 20260208081732.png]]     |
 | **Create**         | → with `<<create>>`          | Creates new object             | ![[Pasted image 20260208081858.png]]     |
 | **Destroy**        | → with `<<destroy>>` and X   | Terminates object              | ![[Pasted image 20260208082013.png]]     |
-##### i.b.5 Time
+##### 3.4.1.2.5 i.b.5 Time
 - **Direction**: Top (start) to bottom (end).
 - Represents **ordering**, not duration.
 - describes the order in which interaction takes place
 - time on sequence diagram starts at top of the page just below the object and then progress down the page
 - figure:
 	![[Pasted image 20260208082152.png]]
-##### i.b.6 Combined Fragments (Control Structures)
+##### 3.4.1.2.6 i.b.6 Combined Fragments (Control Structures)
 - Condition:
 	- syntax: \[expression or condition] message-label
 	- the message is sent only if the condition is true
@@ -869,13 +868,13 @@ Postconditions:
 	- figure:
 		![[Pasted image 20260208082448.png]]
 - the control mechanisms suffice only for modeling simple alternatives
-##### i.b.7 Event
+##### 3.4.1.2.7 i.b.7 Event
 - created while sending/receiving message 
 - when interaction takes place, events are called as built in blocks for messages and signals
 - can be referred as smallest part of an interaction and event can occur at any given point in a time.
 - figure:
 	![[Pasted image 20260208082300.png]]
-#### D.i.c Example
+#### 3.4.1.3 D.i.c Example
 1. Order processing -> POS
    ![[Pasted image 20260208083551.png]]
 2. Borrowing Book from library
@@ -888,8 +887,8 @@ Postconditions:
    ![[Pasted image 20260208083724.png]]
 6. Online shopping
    ![[Pasted image 20260208083743.png | 1000000]]
-### 3.D.ii Communication Diagram
-#### D.ii.a Concept
+### 3.4.2 3.D.ii Communication Diagram
+#### 3.4.2.1 D.ii.a Concept
 - AKA **Collaboration Diagram**
 - Shows **message exchange** between objects focusing on **structural relationships**.
 - Objects can be placed anywhere (graph/network format).
@@ -898,11 +897,11 @@ Postconditions:
 - used to show the time ordering among messages
 - Notations:
   ![[Pasted image 20260208083956.png]]
-#### D.ii.b Components
-##### ii.b.1 Objects
+#### 3.4.2.2 D.ii.b Components
+##### 3.4.2.2.1 ii.b.1 Objects
 - Same notation as sequence diagram: `objectName : ClassName` (underlined). 
 - Connected by **links** (instances of associations).
-##### ii.b.2 Links
+##### 3.4.2.2.2 ii.b.2 Links
 - **Notation**: Solid line between objects.
 - Instance of association
 	- e.g., there is a link or path of navigation from a register to a sale, along which messages may flow, such as makePayment message
@@ -911,7 +910,7 @@ Postconditions:
 - Can show **stereotypes** for visibility: `<<local>>`, `<<global>>`, `<<parameter>>`, `<<self>>`
 	- figure:
 	  ![[Pasted image 20260208085017.png]]
-##### ii.b.3 Messages
+##### 3.4.2.2.3 ii.b.3 Messages
 - **Notation**: Arrow along link with **sequence number** and message name.
 - Format: `sequenceNumber : messageName(parameters)`
 - many messages may flow along a single link
@@ -940,7 +939,7 @@ Postconditions:
 	- if the details of the iteration clause are not important to the modeler, a simple '\*' can be used.
 	- figure:
 	  ![[Pasted image 20260208102221.png]]
-###### Sequence Numbering Rules:
+###### 3.4.2.2.3.1 Sequence Numbering Rules:
 | Pattern    | Meaning                                |
 | ---------- | -------------------------------------- |
 | `1:`       | First message                          |
@@ -950,7 +949,7 @@ Postconditions:
 | `1.1.1:`   | Deeper nesting                         |
 | `2a:, 2b:` | Conditional alternatives               |
 | `*1:`      | Iteration                              |
-##### ii.b.4 Instances
+##### 3.4.2.2.4 ii.b.4 Instances
 - any message can be used to create an instance,
 - convention to use a message named *create* for this purpose.
 - if another message name is used, the message may be annotated with UML stereotype, like so:` <<create>>`
@@ -958,7 +957,7 @@ Postconditions:
 - UML property `{new}` may be optionally be added to the instance box to highlight the creation.
 - figure:
 	  ![[Pasted image 20260208101735.png]]
-### D.ii.c Communication vs Sequence Diagram
+### 3.4.3 D.ii.c Communication vs Sequence Diagram
 | Aspect         | Sequence Diagram                 | Communication Diagram    |
 | -------------- | -------------------------------- | ------------------------ |
 | **Focus**      | Time ordering                    | Structural relationships |
@@ -968,7 +967,7 @@ Postconditions:
 | **Links**      | Implicit via lifelines           | Explicit lines           |
 | **Complexity** | Better for simple flows          | Better for many objects  |
 | **Space**      | Horizontal space for each object | Compact                  |
-### D.ii.d Example:
+### 3.4.4 D.ii.d Example:
   1. 
      ![[Pasted image 20260208084010.png]]
   2. collaboration diagram for bookRenew use case
@@ -981,20 +980,20 @@ Postconditions:
    ![[Pasted image 20260208102300.png]]
 6. another one:
    ![[Pasted image 20260208102313.png]]
-## 3.3.E Activity Diagram
-### 3.E.i Concept
+## 3.5 3.3.E Activity Diagram
+### 3.5.1 3.E.i Concept
 - **Activity diagram** = flowchart-like representation of **workflow** or **process**.
 - Shows flow of control from one activity to another.
 - Models **sequential and concurrent** activities.
 - Used for business process modeling, use case details, algorithm flow.
-### 3.E.ii Purpose
+### 3.5.2 3.E.ii Purpose
 | Purpose              | Description                        |
 | -------------------- | ---------------------------------- |
 | **Model workflows**  | Business processes, operations     |
 | **Detail use cases** | Show steps within a use case       |
 | **Model algorithms** | Logic flow with decisions/loops    |
 | **Show concurrency** | Parallel activities with fork/join |
-### 3.E.iii Symbols
+### 3.5.3 3.E.iii Symbols
 | Symbol              | Notation                             | Description                       |
 | ------------------- | ------------------------------------ | --------------------------------- |
 | **Initial State**   | ![[Pasted image 20260208102537.png]] | Start of activity flow            |
@@ -1015,7 +1014,7 @@ Postconditions:
 	- a swimlane specifies a locus of activities
 	- each swimlane has a high-level responsibility for part of overall activity of an activity diagram, and each swimlane may eventually be implemented by one or more classes
 	- in an activity diagram partitioned into swimlanes, every activity belongs to exactly one swimlane, but transitions may cross lanes.
-### 3.E.iii Example
+### 3.5.4 3.E.iii Example
 1. Activity diagram of borrowing a book from library
 	- figure:
 	  ![[Pasted image 20260208103525.png]]
@@ -1039,7 +1038,7 @@ Postconditions:
 		- The registrar asks the student to pay for the initial tuition.
 	- figure:
 	  ![[Pasted image 20260208104004.png]]
-#### 3.E.iv Activity vs Flowchart
+#### 3.5.4.1 3.E.iv Activity vs Flowchart
 | Aspect           | Activity Diagram      | Flowchart               |
 | ---------------- | --------------------- | ----------------------- |
 | **Scope**        | System/process level  | Algorithm/program level |
@@ -1047,20 +1046,20 @@ Postconditions:
 | **Swimlanes**    | Yes (responsibility)  | No                      |
 | **Object Flow**  | Yes                   | No                      |
 | **UML Standard** | Yes                   | No                      |
-## 3.3.F State Diagram
-### 3.F.i Concept
+## 3.6 3.3.F State Diagram
+### 3.6.1 3.F.i Concept
 - AKA **state machine** / **state chart** diagram
 - Models the **behavior of a single object**, over its lifetime
 - Show **states** an object can be and transitions between states in response to events.
 - Particularly useful for **reactive objects** (objects that respond to events).
-### 3.F.ii Purpose
+### 3.6.2 3.F.ii Purpose
 | Purpose                    | Description                                          |
 | -------------------------- | ---------------------------------------------------- |
 | **Model object lifecycle** | Show all possible states of an object                |
 | **Event-driven behavior**  | How object responds to events based on current state |
 | **Complex behavior**       | Objects with many states and transitions             |
 | **Real-time systems**      | Controllers, devices, protocols                      |
-### 3.F.iii Components
+### 3.6.3 3.F.iii Components
 1. States
 	- Condition or situation during object's life when it satisfies some condition, performs some activity, or waits for an event.
 	- state is denoted by a round cornered rectangle with the name of the state written inside it.
@@ -1139,7 +1138,7 @@ Postconditions:
 		- ![[Pasted image 20260213205139.png]]
 	- notice the use of fork and join pseudo-states, rather than choice and merge pseud-states.
 	- these symbols are used to synchronize the concurrent threads.
-### 3.F.iii SMD Examples
+### 3.6.4 3.F.iii SMD Examples
 1. Recruitment process
    - ![[Pasted image 20260213205032.png]]
 1.  sub states or compounded states example.
@@ -1150,7 +1149,7 @@ Postconditions:
 	- ![[Pasted image 20260213205452.png]]
 4. State diagram of a candy vending machine
 	- ![[Pasted image 20260213205517.png]]
-### State Diagram vs Activity Diagram
+### 3.6.5 State Diagram vs Activity Diagram
 
 | Aspect          | State Diagram          | Activity Diagram      |
 | --------------- | ---------------------- | --------------------- |
@@ -1161,20 +1160,20 @@ Postconditions:
 | **Best for**    | Reactive objects       | Business processes    |
 
 ---
-## 3.3.G Component Diagram
-### 3.G.i Concept
+## 3.7 3.3.G Component Diagram
+### 3.7.1 3.G.i Concept
 - **Component diagram** = shows **physical structure** of code/components in a system.
 - Models **implementation view** of the system.
 - Represents **components**, **interfaces**, and **relationships** between them.
 - Focuses on **binary replaceable parts** of a system.
-### 3.G.ii Purpose
+### 3.7.2 3.G.ii Purpose
 | Purpose                           | Description                    |
 | --------------------------------- | ------------------------------ |
 | **Model source code**             | File structure, dependencies   |
 | **Model executable releases**     | DLLs, EXEs, runtime components |
 | **Model physical databases**      | Tables, schemas                |
 | **Model component-based systems** | COM+, CORBA, EJB, etc.         |
-### 3.G.iii Components
+### 3.7.3 3.G.iii Components
 1. Component
 	- Physical, replaceable part of system that conforms to and provides interfaces.
 	- Notation of rectangle with two small protruding rectangles (tabs) on left side.
@@ -1235,24 +1234,24 @@ Postconditions:
 	- A component may be reused across many system. 
 	- Therefore, a component is a fundamental building block on which systems can be designed and composed.
 	- This definition is a recursive, a system at one level of abstraction may simply be a component at a higher level of abstraction.
-### 3.G.iv Common Uses of Component Diagram
-#### G.iii.a Modeling Source Code
+### 3.7.4 3.G.iv Common Uses of Component Diagram
+#### 3.7.4.1 G.iii.a Modeling Source Code
 - Track file dependencies
 - Manage builds
 - Version control
-#### G.iii.b Modeling Executable Releases
+#### 3.7.4.2 G.iii.b Modeling Executable Releases
 - Show runtime deployment units
 - Manage dependencies between binaries
 - Plan updates and patches
-#### G.iii.c Modeling Physical Databases
+#### 3.7.4.3 G.iii.c Modeling Physical Databases
 - Tables as components
 - Stored procedures
 - Database schemas
-#### G.iii.d Modeling Adaptable Systems
+#### 3.7.4.4 G.iii.d Modeling Adaptable Systems
 - Plug-in architectures
 - Dynamic loading
 - Component replacement
-### 3.3.G.v Component Diagram vs Deployment Diagram
+### 3.7.5 3.3.G.v Component Diagram vs Deployment Diagram
 | Aspect            | Component Diagram          | Deployment Diagram         |
 | ----------------- | -------------------------- | -------------------------- |
 | **Focus**         | Software components        | Hardware nodes             |
@@ -1260,7 +1259,7 @@ Postconditions:
 | **Elements**      | Components, interfaces     | Nodes, devices             |
 | **Relationships** | Dependencies, realizations | Associations, dependencies |
 | **Level**         | Implementation view        | Deployment view            |
-### 3.G.vi Modeling Examples
+### 3.7.6 3.G.vi Modeling Examples
 1. source code:
 	- figure:
 		- ![[Pasted image 20260214100901.png]]
@@ -1317,13 +1316,13 @@ Postconditions:
 └──────────────────────────────────────────┘
 ```
 
-## 3.3.H Deployment Diagram
-### 3.H.i Concept
+## 3.8 3.3.H Deployment Diagram
+### 3.8.1 3.H.i Concept
 - **Deployment diagram** = shows the **physical architecture** of hardware and software in a system.
 - Models the **deployment view** of a system.
 - Represents **nodes**, **components**, and their **relationships**.
 - Shows **where** software components run on hardware.
-###  3.H.ii Purpose
+### 3.8.2 3.H.ii Purpose
 | Purpose                            | Description                                  |
 | ---------------------------------- | -------------------------------------------- |
 | **Model hardware topology**        | Processors, devices, connections             |
@@ -1331,7 +1330,7 @@ Postconditions:
 | **Plan system distribution**       | Client/server, embedded, distributed systems |
 | **Analyze performance**            | Network bandwidth, processing load           |
 | **Document physical architecture** | Installation, configuration                  |
-### 3.H.iii Components
+### 3.8.3 3.H.iii Components
 1. **Node**
 	- a physical element that exists at run time, represents a computation resource
 	- generally has some memory and processing capability
@@ -1381,7 +1380,7 @@ Postconditions:
 │ WebServer   │───────────────│ ClientPC    │
 └─────────────┘               └─────────────┘
 ```
-### 3.H.iv Common uses
+### 3.8.4 3.H.iv Common uses
 1. **To model embedded systems**
 	- Hardware + software integration
 	- Sensor, actuators, contropllers
@@ -1405,8 +1404,8 @@ Postconditions:
 	- Network Architecture
 	- Hardware specifications
 	- Communication Protocols
-### 3.H.v Examples
-#### H.iv.a Simple Client-Server System
+### 3.8.5 3.H.v Examples
+#### 3.8.5.1 H.iv.a Simple Client-Server System
 ```
 ┌─────────────────────────┐      ┌─────────────────────────┐
 │      ClientPC           │      │      DatabaseServer     │
@@ -1424,7 +1423,7 @@ Postconditions:
             │          HTTPS (Internet)          │
             └────────────────────────────────────┘
 ```
-#### H.iv.b Three-Tier Architecture
+#### 3.8.5.2 H.iv.b Three-Tier Architecture
 ```
 ┌─────────────────┐
 │  Client Tier    │
@@ -1465,7 +1464,7 @@ Postconditions:
 │  └───────────┘  │
 └─────────────────┘
 ```
-#### H.iv.c: Embedded System
+#### 3.8.5.3 H.iv.c: Embedded System
 ```
 ┌───────────────────────────────────────┐
 │  Factory Floor                        │
@@ -1505,7 +1504,7 @@ Postconditions:
 │  └─────────────────┘                  │
 └───────────────────────────────────────┘
 ```
-#### H.iv.d Mobile/Cloud Application
+#### 3.8.5.4 H.iv.d Mobile/Cloud Application
 ```
 ┌──────────────────┐
 │  Mobile Device   │
@@ -1557,7 +1556,7 @@ Postconditions:
 │  └─────────────────────────────┘    │
 └─────────────────────────────────────┘
 ```
-#### H.iv.e With Node Stereotypes
+#### 3.8.5.5 H.iv.e With Node Stereotypes
 ```
 ┌─────────────────────────┐
 │ <<processor>>           │
@@ -1585,7 +1584,7 @@ Postconditions:
 │   └─────────────────┘   │
 └─────────────────────────┘
 ```
-#### Example 6: With Communication Protocols
+#### 3.8.5.6 Example 6: With Communication Protocols
 ```
 ┌─────────────┐              ┌─────────────┐
 │  WebServer  │  <<HTTP>>    │  Client     │
@@ -1609,7 +1608,7 @@ Postconditions:
 │ ActiveMQ    │
 └─────────────┘
 ```
-### 3.H.vi Component vs Deployment
+### 3.8.6 3.H.vi Component vs Deployment
 | Aspect                | Component Diagram            | Deployment Diagram                  |
 | --------------------- | ---------------------------- | ----------------------------------- |
 | **Focus**             | Software components          | Hardware nodes                      |
@@ -1618,7 +1617,7 @@ Postconditions:
 | **Relationships**     | Dependencies, realizations   | Communication paths                 |
 | **Level**             | Implementation view          | Deployment view                     |
 | **Question answered** | _What are the parts?_        | _Where do they run?_                |
-## 3.3.I Summary
+## 3.9 3.3.I Summary
 | Diagram                   | View           | Focus                   |
 | ------------------------- | -------------- | ----------------------- |
 | **Class Diagram**         | Logical        | Static structure        |
@@ -1630,12 +1629,12 @@ Postconditions:
 | **State Diagram**         | Dynamic        | Object lifecycle        |
 | **Component Diagram**     | Implementation | Physical code structure |
 | **Deployment Diagram**    | Deployment     | Hardware topology       |
-# 3.4 Advanced Classes
-### 3.4.A Overview
+# 4 Advanced Classes
+### 4.1.1 3.4.A Overview
 - Beyond basic class notation (name, attributes, operations), UML provides **advanced class features** for precise modeling.
 - Used when standard class notation isn't sufficient for complex scenarios.
-### 3.4.B Advanced Class Features
-#### 1. **Class Multiplicity**
+### 4.1.2 3.4.B Advanced Class Features
+#### 4.1.2.1 1. **Class Multiplicity**
 - **Definition**: Number of instances a class may have.
 - **Notation**: Multiplicity expression in **upper-right corner** of class rectangle.
 - **Purpose**: Specify cardinality constraints at class level.
@@ -1662,7 +1661,7 @@ Postconditions:
 |`1..*`|One or more|
 |`3`|Exactly three|
 |`2..5`|Two to five|
-#### 2. **Abstract Class**
+#### 4.1.2.2 2. **Abstract Class**
 - **Definition**: Class that **cannot be instantiated**; used only as parent.
 - **Notation**: Class name in _italics_ OR `{abstract}` below name.
 - **Purpose**: Provide common interface/behavior for subclasses.
@@ -1682,7 +1681,7 @@ Postconditions:
 └──────┘       └──────┘
 ```
 
-#### 3. **Root, Leaf, and Polymorphic Elements**
+#### 4.1.2.3 3. **Root, Leaf, and Polymorphic Elements**
 | Type                      | Notation  | Meaning                               |
 | ------------------------- | --------- | ------------------------------------- |
 | **Root Class**            | `{root}`  | No ancestors (top of hierarchy)       |
@@ -1702,7 +1701,7 @@ Postconditions:
 │ Car │       │ Bike│ ← cannot be subclassed
 └─────┘       └─────┘
 ```
-#### 4. **Active Class**
+#### 4.1.2.4 4. **Active Class**
 - **Definition**: Class whose instances **own a thread of control** and can initiate activities.
 - **Notation**: Thick border on class rectangle.
 - **Purpose**: Model concurrent/autonomous objects.
@@ -1717,7 +1716,7 @@ Postconditions:
 ║ + alert()   ║
 └═════════════┘
 ```
-#### 5. **Parameterized Class (Template)**
+#### 4.1.2.5 5. **Parameterized Class (Template)**
 - **Definition**: Class with **type parameters** for generic programming.
 - **Notation**: Dotted rectangle in upper-right corner with parameters.
 - **Purpose**: Reusable class definitions.
@@ -1735,7 +1734,7 @@ Postconditions:
 │ List<Student>   │
 └─────────────────┘
 ```
-#### 6. **Utility Class**
+#### 4.1.2.6 6. **Utility Class**
 - **Definition**: Class with only **class-scoped features** (static methods/attributes).
 - **Notation**: `«utility»` stereotype.
 - **Purpose**: Group related functions; no instances.
@@ -1750,7 +1749,7 @@ Postconditions:
 │ + cos(x): double│
 └─────────────────┘
 ```
-#### 7. **Metaclass**
+#### 4.1.2.7 7. **Metaclass**
 - **Definition**: Class whose instances are **classes**.
 - **Notation**: `«metaclass»` stereotype.
 - **Purpose**: Model class-of-class relationships (e.g., in modeling tools).
@@ -1769,8 +1768,8 @@ Postconditions:
 │   Student       │ ← this is a class (instance of Class)
 └─────────────────┘
 ```
-### 3.4.C Advanced Attribute Features
-#### 1. **Attribute Multiplicity**
+### 4.1.3 3.4.C Advanced Attribute Features
+#### 4.1.3.1 1. **Attribute Multiplicity**
 - **Definition**: How many values an attribute can hold.
 - **Notation**: `[min..max]` after type.
 ```
@@ -1782,7 +1781,7 @@ Postconditions:
 │ - grades: int[5]      ← exactly five
 └─────────────────┘
 ```
-#### 2. **Derived Attribute**
+#### 4.1.3.2 2. **Derived Attribute**
 - **Definition**: Attribute whose value can be **computed** from others.
 - **Notation**: `/` before attribute name.
 ```
@@ -1793,7 +1792,7 @@ Postconditions:
 │ - /age: int     ← computed from birthDate
 └─────────────────┘
 ```
-#### 3. **Attribute Properties**
+#### 4.1.3.3 3. **Attribute Properties**
 | Property     | Meaning                            | Notation     |
 | ------------ | ---------------------------------- | ------------ |
 | **readOnly** | Cannot change after initialization | `{readOnly}` |
@@ -1809,8 +1808,8 @@ Postconditions:
 │ - tags: String[*] {bag}
 └─────────────────┘
 ```
-### 3.4.D Advanced Operation Features
-#### 1. **Query Operation**
+### 4.1.4 3.4.D Advanced Operation Features
+#### 4.1.4.1 1. **Query Operation**
 - **Definition**: Operation that **doesn't modify** the object state.
 - **Notation**: `{query}` property.
 ```
@@ -1824,7 +1823,7 @@ Postconditions:
 │ + deposit(amount: Money)  ← not a query
 └─────────────────┘
 ```
-#### 2. **Operation Concurrency**
+#### 4.1.4.2 2. **Operation Concurrency**
 | Stereotype     | Meaning                             |
 | -------------- | ----------------------------------- |
 | `{sequential}` | Must coordinate access              |
@@ -1838,7 +1837,7 @@ Postconditions:
 │ + cancel() {sequential}
 └─────────────────┘
 ```
-### 3.4.E Visibility Beyond Basic
+### 4.1.5 3.4.E Visibility Beyond Basic
 | Visibility    | Symbol | Scope        | Meaning                             |
 | ------------- | ------ | ------------ | ----------------------------------- |
 | **Public**    | `+`    | Any          | Accessible to all                   |
@@ -1859,7 +1858,7 @@ Postconditions:
 │ - calculateTax()│
 └─────────────────┘
 ```
-### 3.4.F Advanced Class Relationships Summary
+### 4.1.6 3.4.F Advanced Class Relationships Summary
 | Feature                 | Purpose               | Example                       |
 | ----------------------- | --------------------- | ----------------------------- |
 | **Class Multiplicity**  | Limit instances       | Singleton (1), ControlRod (3) |
@@ -1869,13 +1868,13 @@ Postconditions:
 | **Parameterized Class** | Generics/templates    | List<T>                       |
 | **Utility Class**       | Static methods        | MathUtils                     |
 | **Metaclass**           | Class-of-classes      | Class (in modeling tools)     |
-# 3.5 Advanced Relationship
-### 3.5.A Overview
+# 5 Advanced Relationship
+### 5.1.1 3.5.A Overview
 - Beyond basic relationships (dependency, association, generalization), UML provides **advanced relationships** for more precise modeling.
 - Used when standard relationships don't capture specific semantics.
-### 3.5.B Types of Advanced Relationships
+### 5.1.2 3.5.B Types of Advanced Relationships
 
-#### 1. **Derived Association**
+#### 5.1.2.1 1. **Derived Association**
 - **Definition**: Association that can be **computed** from other associations.
 - **Notation**: `/` (slash) before association name.
 - **Purpose**: Show redundancy explicitly; avoid duplication.
@@ -1893,7 +1892,7 @@ Postconditions:
      │ WorksFor│
      └─────────┘
 ```
-#### 2. **Qualified Association**
+#### 5.1.2.2 2. **Qualified Association**
 - **Definition**: Association with a **qualifier** that selects among multiple target objects.
 - **Notation**: Small rectangle on association end (qualifier).
 - **Purpose**: Reduce multiplicity; act like dictionary/hash lookup.
@@ -1907,7 +1906,7 @@ Postconditions:
 Without qualifier: Bank (1) ──── (0..*) Account
 With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 ```
-#### 3. **Association Class**
+#### 5.1.2.3 3. **Association Class**
 - **Definition**: Association that has **attributes/operations** of its own.
 - **Notation**: Class attached to association with dashed line.
 - **Purpose**: Model properties of the relationship itself    
@@ -1925,7 +1924,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
          │ jobTitle  │
          └───────────┘
 ```
-#### 4. **Composition with Shared vs Exclusive Ownership**
+#### 5.1.2.4 4. **Composition with Shared vs Exclusive Ownership**
 - **Shared Composition**: Part can belong to multiple wholes (rare).
 - **Exclusive Composition**: Part belongs to exactly one whole (standard).
 ```
@@ -1936,7 +1935,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │ Room    │◇─────────│ Wall    │ (shared - hollow diamond)
 └─────────┘          └─────────┘
 ```
-#### 5. **Powertype**
+#### 5.1.2.5 5. **Powertype**
 - **Definition**: Class whose instances are **subclasses** of another class.
 - **Notation**: Dependency with `<<powertype>>` stereotype.
 ```
@@ -1953,7 +1952,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │Reptile  │
 └─────────┘
 ```
-#### 6. **Interface Realization with Ball/Socket**
+#### 5.1.2.6 6. **Interface Realization with Ball/Socket**
 - More precise than basic realization:
     - **Provided Interface**: Ball (○) - services offered
     - **Required Interface**: Socket (⊂) - services needed
@@ -1964,7 +1963,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │ (requires) │  (provides) │            │
 └────────────┘             └────────────┘
 ```
-### 3.5.C Advanced Relationship Summary
+### 5.1.3 3.5.C Advanced Relationship Summary
 | Relationship          | Notation                   | Purpose                          | Example                              |
 | --------------------- | -------------------------- | -------------------------------- | ------------------------------------ |
 | Derived Association   | `/name`                    | Computed value                   | `age` from `birthDate`               |
@@ -1973,7 +1972,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | Composition Types     | ◆ (exclusive) / ◇ (shared) | Ownership semantics              | Window-Frame vs Room-Wall            |
 | Powertype             | `<<powertype>>`            | Type whose instances are classes | Species classifies Animal subclasses |
 | Interface Assembly    | ○─⊂                        | Component wiring                 | Plug-in architecture                 |
-### 3.5.D When to Use Advanced Relationships
+### 5.1.4 3.5.D When to Use Advanced Relationships
 | Scenario                      | Advanced Relationship |
 | ----------------------------- | --------------------- |
 | Relationship has its own data | Association Class     |
@@ -1982,14 +1981,14 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | Part sharing semantics        | Shared Composition    |
 | Classifies subclasses         | Powertype             |
 | Component-based wiring        | Interface Assembly    |
-# 3.6 Interface
-### 3.6.A Concept
+# 6 Interface
+### 6.1.1 3.6.A Concept
 - **Interface** = collection of **operations** that specify a **service** of a class or component.
 - **No implementation**, only declaration.
 - Defines a **contract** between provider and consumer.
 - Supports **information hiding** and **loose coupling**.
-### 3.6.B Interface Notation
-#### 1. **Class/Expanded Notation**
+### 6.1.2 3.6.B Interface Notation
+#### 6.1.2.1 1. **Class/Expanded Notation**
 ```
 ┌─────────────────┐
 │ «interface»     │
@@ -2000,7 +1999,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │ + trackOrder()  │
 └─────────────────┘
 ```
-#### 2. **Ball/Lollipop Notation (Provided Interface)**
+#### 6.1.2.2 2. **Ball/Lollipop Notation (Provided Interface)**
  ```
     ┌─────────┐
     │ Order   │───○ IOrder
@@ -2008,21 +2007,21 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
     └─────────┘
  ```
 - Ball (○) = provided interface (services offered)
-#### 3. **Socket Notation (Required Interface)**
+#### 6.1.2.3 3. **Socket Notation (Required Interface)**
     ┌─────────┐
     │ Payment │───⊂ IPayment
     │ Client  │
     └─────────┘
 - Socket (⊂) = required interface (services needed)
-#### 4. **Ball-and-Socket Assembly**
+#### 6.1.2.4 4. **Ball-and-Socket Assembly**
 ```
 ┌─────────┐    ○───⊂    ┌─────────┐
 │ ComponentA │───────────│ ComponentB │
 │ (requires) │           │ (provides) │
 └─────────┘               └─────────┘
 ```
-### 3.6.C Interface Relationships
-#### 1. **Realization** (Class → Interface)
+### 6.1.3 3.6.C Interface Relationships
+#### 6.1.3.1 1. **Realization** (Class → Interface)
 - Class **implements** interface operations.
 - Notation: Dashed line with hollow triangle arrowhead.
 ```
@@ -2031,7 +2030,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │ Service │                    │    IOrder       │
 └─────────┘                    └─────────────────┘
 ```
-#### 2. **Usage/Dependency** (Client → Interface)
+#### 6.1.3.2 2. **Usage/Dependency** (Client → Interface)
 - Client **uses** interface.
 - Notation: Dashed arrow (→).
 ```
@@ -2040,7 +2039,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │ Client  │                    │    IPayment     │
 └─────────┘                    └─────────────────┘
 ```
-#### 3. **Interface Inheritance**
+#### 6.1.3.3 3. **Interface Inheritance**
 - Interface can **extend** another interface.
 - Notation: Solid line with hollow triangle (like class inheritance).
 ```
@@ -2056,7 +2055,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │IAdvanced│       │IExtended│
 └────────┘       └────────┘
 ```
-### 3.6.D Provided vs Required Interfaces
+### 6.1.4 3.6.D Provided vs Required Interfaces
 | Aspect          | Provided Interface | Required Interface |
 | --------------- | ------------------ | ------------------ |
 | **Definition**  | Services offered   | Services needed    |
@@ -2077,7 +2076,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │  └─⊂ IAuth (required)           │
 └─────────────────────────────────┘
 ```
-### 3.6.E Interface vs Abstract Class
+### 6.1.5 3.6.E Interface vs Abstract Class
 | Aspect                   | Interface                      | Abstract Class                  |
 | ------------------------ | ------------------------------ | ------------------------------- |
 | **Implementation**       | No implementation              | Can have partial implementation |
@@ -2086,8 +2085,8 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | **Constructors**         | No                             | Yes                             |
 | **Methods**              | All abstract (by default)      | Mix of abstract/concrete        |
 | **When to use**          | Capability/contract            | Common base with shared code    |
-### 3.6.F Interface Examples
-#### Example 1: Multiple Interfaces
+### 6.1.6 3.6.F Interface Examples
+#### 6.1.6.1 Example 1: Multiple Interfaces
 ```
 ┌─────────────────┐
 │   «interface»   │
@@ -2115,7 +2114,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
         │   IFax)          │
         └─────────────────┘
 ```
-#### Example 2: Component with Interfaces
+#### 6.1.6.2 Example 2: Component with Interfaces
 ```
 ┌─────────────────────────────────┐
 │       OnlineStoreSystem         │
@@ -2136,7 +2135,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │                                 │
 └─────────────────────────────────┘
 ```
-#### Example 3: Interface Segregation
+#### 6.1.6.3 Example 3: Interface Segregation
 ```
 // Bad: Fat interface
 ┌─────────────────┐
@@ -2172,7 +2171,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 └─────────────────┘
 ```
 
-### 3.6.G Interface in Component-Based Development
+### 6.1.7 3.6.G Interface in Component-Based Development
 | Concept                   | Role of Interface                                           |
 | ------------------------- | ----------------------------------------------------------- |
 | **Binary Replaceability** | Components can be swapped if they implement same interfaces |
@@ -2180,26 +2179,26 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | **Contract-Based Design** | Interface defines exact contract between provider/consumer  |
 | **Versioning**            | New interface versions allow evolution                      |
 | **Testing**               | Mock implementations for testing                            |
-# 3.8 Interactions
-### 3.8.A Concept
+# 7 Interactions
+### 7.1.1 3.8.A Concept
 - **Interaction** = behavior comprising a set of **messages exchanged** among a set of **objects** within a context to accomplish a purpose.
 - Captures **dynamic behavior** of collaborating objects.
 - Represented by **interaction diagrams** (Sequence, Communication).
-### 3.8.B Elements of Interaction
-#### 1. **Object**
+### 7.1.2 3.8.B Elements of Interaction
+#### 7.1.2.1 1. **Object**
 - Instance of a class participating in interaction.
 - Notation: `objectName : ClassName` (underlined).
-#### 2. **Message**
+#### 7.1.2.2 2. **Message**
 - Communication between objects conveying information with expectation of activity.
 - Can be: operation call, signal, creation, destruction.
-#### 3. **Link**
+#### 7.1.2.3 3. **Link**
 - Connection path between objects along which messages flow.
 - Instance of an association.
-#### 4. **Lifeline**
+#### 7.1.2.4 4. **Lifeline**
 - Represents object's existence over time.
-#### 5. **Activation**
+#### 7.1.2.5 5. **Activation**
 - Period during which object is performing an action.
-### 3.8.C Types of Interactions
+### 7.1.3 3.8.C Types of Interactions
 | Type                        | Description         | Diagram                     |
 | --------------------------- | ------------------- | --------------------------- |
 | **Simple Interaction**      | Linear sequence     | Sequence Diagram            |
@@ -2207,7 +2206,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | **Iterative Interaction**   | Loops/repetition    | Sequence (loop fragment)    |
 | **Concurrent Interaction**  | Parallel activities | Sequence (par fragment)     |
 | **Structured Interaction**  | Nested/combined     | Any with combined fragments |
-### 3.8.D Message Types
+### 7.1.4 3.8.D Message Types
 | Message Type       | Notation               | Description      |
 | ------------------ | ---------------------- | ---------------- |
 | **Synchronous**    | →▸ (solid, filled)     | Caller waits     |
@@ -2216,18 +2215,18 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | **Create**         | → with «create»        | New object       |
 | **Destroy**        | → with «destroy» and X | Terminate object |
 | **Self/Reflexive** | ↻                      | Message to self  |
-### 3.8.E Interaction Contexts
-#### 1. **Within an Operation**
+### 7.1.5 3.8.E Interaction Contexts
+#### 7.1.5.1 1. **Within an Operation**
 - Messages inside a single method.
-#### 2. **Within a Class**
+#### 7.1.5.2 2. **Within a Class**
 - All interactions involving instances of a class
-#### 3. **Within a Component**
+#### 7.1.5.3 3. **Within a Component**
 - Internal collaboration of component parts.
-#### 4. **Within a Use Case**
+#### 7.1.5.4 4. **Within a Use Case**
 - Realization of a use case scenario
-#### 5. **Within a System**
+#### 7.1.5.5 5. **Within a System**
 - Overall system behavior.
-### 3.8.F Combined Fragments (Revisited)
+### 7.1.6 3.8.F Combined Fragments (Revisited)
 | Fragment            | Purpose                           | Syntax            |
 | ------------------- | --------------------------------- | ----------------- |
 | **alt**             | Alternative paths (if-else)       | `alt [condition]` |
@@ -2238,9 +2237,9 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | **ignore/consider** | Ignore/consider specific messages | `ignore {event}`  |
 | **assert**          | Assert condition                  | `assert`          |
 | **neg**             | Invalid/negative scenario         | `neg`             |
-### 3.8.G Interaction Examples
+### 7.1.7 3.8.G Interaction Examples
 
-#### Example 1: Simple Interaction (Sequence)
+#### 7.1.7.1 Example 1: Simple Interaction (Sequence)
 ```
 ┌─────┐         ┌─────┐         ┌─────┐
 │:User│         │:ATM │         │:Bank│
@@ -2257,7 +2256,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
    │<───────────────│                │
    │                │                │
 ```
-#### Example 2: Complex Interaction with Combined Fragments
+#### 7.1.7.2 Example 2: Complex Interaction with Combined Fragments
 ```
 ┌─────┐         ┌─────┐         ┌─────┐
 │:User│         │:ATM │         │:Bank│
@@ -2290,34 +2289,34 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
    end opt          │                │
    │                │                │
 ```
-### 3.8.H Interaction vs Other Concepts
+### 7.1.8 3.8.H Interaction vs Other Concepts
 | Concept           | Relationship to Interaction                              |
 | ----------------- | -------------------------------------------------------- |
 | **Collaboration** | Society of objects working together (structure)          |
 | **Interaction**   | Behavior of collaboration (dynamics)                     |
 | **Use Case**      | Defines goal; interaction realizes it                    |
 | **Operation**     | Single service; interaction may span multiple operations |
-# 3.9 Use Cases
-### 3.9.A Concept
+# 8 Use Cases
+### 8.1.1 3.9.A Concept
 - **Use case** = description of a sequence of actions a system performs that yields an **observable result of value** to an actor.
 - Captures **functional requirements** from user perspective.
 - Answers: _What does the system do?_ (not how).
-### 3.9.B Use Case Components
-#### 1. Use Case Name
+### 8.1.2 3.9.B Use Case Components
+#### 8.1.2.1 Use Case Name
 - **Verb phrase** (e.g., "Withdraw Money", "Register Student")
 - Should be **unique** and **descriptive**
-#### 2. Actor
+#### 8.1.2.2 Actor
 - **Primary Actor**: Initiates use case, gets value
 - **Secondary Actor**: Participates but doesn't initiate
 - **Supporting Actor**: Provides service (e.g., payment system)
-#### 3. Flow of Events
+#### 8.1.2.3 Flow of Events
 - **Basic Flow**: Normal, happy path
 - **Alternative Flows**: Variations, exceptions
-#### 4. Precondition
+#### 8.1.2.4 Precondition
 - What must be true **before** use case begins
-#### 5. Postconditions
+#### 8.1.2.5 Postconditions
 - What must be true **after** use case completes successfully
-### 3.9.C Use Case Template
+### 8.1.3 3.9.C Use Case Template
 | Section               | Description       | Example (Withdraw Money)                                                              |
 | --------------------- | ----------------- | ------------------------------------------------------------------------------------- |
 | **Use Case Name**     | Verb phrase       | Withdraw Money                                                                        |
@@ -2327,20 +2326,20 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | **Basic Flow**        | Normal sequence   | 1. Customer inserts card  <br>2. System validates card  <br>3. Customer enters PIN... |
 | **Alternative Flows** | Exceptions        | Invalid card, wrong PIN, insufficient funds                                           |
 | **Postconditions**    | What changes      | Balance reduced, transaction recorded                                                 |
-### 3.9.D Writing Good Use Cases
-#### Guidelines:
+### 8.1.4 3.9.D Writing Good Use Cases
+#### 8.1.4.1 Guidelines:
 1. **Focus on user goals**, not system internals
 2. Use **active voice** ("Customer enters PIN" not "PIN is entered")
 3. Keep **technology independent**
 4. Each step should be **atomic** (single action)
 5. Show **value** to actor
-#### Common Mistakes
+#### 8.1.4.2 Common Mistakes
 - Too detailed (design-level)
 - Too vague (missing steps)
 - Mixed with non-functional requirements
 - No clear actor goal
-### 3.9.E Use Case Relationships (Detailed)
-#### 1. **Include Relationship** (`<<include>>`)
+### 8.1.5 3.9.E Use Case Relationships (Detailed)
+#### 8.1.5.1 1. **Include Relationship** (`<<include>>`)
 - **Definition**: Base use case **always includes** behavior of included use case.
 - **Purpose**: Reuse common functionality across multiple use cases.
 - **Direction**: Base → Include
@@ -2355,7 +2354,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
                                   └─────────────┘
 ```
 
-#### 2. **Extend Relationship** (`<<extend>>`)
+#### 8.1.5.2 2. **Extend Relationship** (`<<extend>>`)
 - **Definition**: Extension use case **optionally adds** behavior to base use case.
 - **Purpose**: Handle optional/exceptional behavior.
 - **Direction**: Extension → Base
@@ -2368,7 +2367,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
      ▲
      │ extension point: after validation
 ```
-#### 3. **Generalization**
+#### 8.1.5.3 3. **Generalization**
 - **Definition**: Child use case inherits from parent, may override/add steps.
  - **Purpose**: Common behavior with specialization.
 ```
@@ -2385,7 +2384,7 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 │Ticket  │ │Ticket  │
 └────────┘ └────────┘
 ```
-### 3.9.F Include vs Extend vs Generalization
+### 8.1.6 3.9.F Include vs Extend vs Generalization
 | Aspect                     | Include              | Extend               | Generalization               |
 | -------------------------- | -------------------- | -------------------- | ---------------------------- |
 | **Mandatory?**             | Yes                  | No (optional)        | Depends                      |
@@ -2394,23 +2393,23 @@ With qualifier:    Bank (1) ─[accNo]─ (0..1) Account
 | **Purpose**                | Common functionality | Optional/exceptional | Specialization               |
 | **Execution**              | Always               | When condition true  | Substituted                  |
 | **Example**                | Validate user        | Apply discount       | MovieTicket vs ConcertTicket |
-### 3.9.G Use Case Levels
+### 8.1.7 3.9.G Use Case Levels
 | Level             | Scope            | Example                   |
 | ----------------- | ---------------- | ------------------------- |
 | **Summary/Cloud** | Business process | "Manage Customer Account" |
 | **User Goal**     | Single user goal | "Withdraw Money"          |
 | *Subfunction**    | Reusable piece   | "Validate PIN"            |
-### 3.9.H Use Case Formats
-#### 1. **Brief Format**
+### 8.1.8 3.9.H Use Case Formats
+#### 8.1.8.1 1. **Brief Format**
 - One paragraph summary
 - For simple use cases or early analysis
-#### 2. **Casual Format**
+#### 8.1.8.2 2. **Casual Format**
 - Several paragraphs
 - Includes basic flow and some alternatives
-#### 3. **Fully Dressed Format**
+#### 8.1.8.3 3. **Fully Dressed Format**
 - Complete template with all sections
 - For critical, complex use cases
-### 3.9.I Complete Example: "Borrow Book" (Fully Dressed)
+### 8.1.9 3.9.I Complete Example: "Borrow Book" (Fully Dressed)
 ```
 USE CASE: Borrow Book
 ACTORS:
@@ -2457,7 +2456,7 @@ POSTCONDITIONS:
   - Member's borrowed count incremented
   - Book removed from available list
 ```
-### 3.9.J Use Cases in OOAD
+### 8.1.10 3.9.J Use Cases in OOAD
 | Phase            | Use Case Role                        |
 | ---------------- | ------------------------------------ |
 | **Requirements** | Capture functional requirements      |
