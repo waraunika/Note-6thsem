@@ -127,6 +127,7 @@
 - ![[Pasted image 20260126135836.png]]
 ---
 # 2 Linear Dipole/Monopole
+Formally, not been asked in exam in detail, so just bits and pieces for concept without much formatting upto Folded Dipole Antenna.
 ## 2.1 Short and Very Short Dipole
 - infinitesimal (very short) dipole
 	- omnidirectional
@@ -163,20 +164,97 @@
 - figure:
 	- ![[Pasted image 20260310195655.png]]
 ## 2.4 Monopole
-# 3 Travelling Wave Antenna
+### 2.4.1 Concept
+- Definition:
+	- A monopole antenna consists of a single conducting rod or element mounted perpendicularly over a ground plane (which can be natural; earth or artificial sheet, car roof)
+	- It is effectively one half of a dipole antenna, with the ground plane acting a mirror to create the missing half electrically.
+- Nature:
+	- Category of Long Wire Antenna
+	- The most common and practical vertical antenna, especially for mobile and broadcasting
+	- physically realizable, simple and extremely rugged
+	- often called **Marconi Antenna** in AM broadcasting
+	- often called **Whip Antenna** in mobile/VHF.
+### 2.4.2 Features
+- Vertical orientation over a conducting ground plane.
+- Omnidirectional in azimuth (horizontal plane)
+	- radiates equally in all 360$\D$ horizontally.
+- Direction in elevation (vertical plane)
+	- maximum radiation is along the horizon (low angle)
+	- ideal for ground wave and short-range communication
+- The ground plane can be real earth (with radial wires)
+	- or an artificial metallic sheet.
+- for a perfect quarter-wavelength $\large \lambda/4$ monopole,
+	- the ground plane creates an image antenna that,
+	- together with the real element,
+	- behaves like a half-wave dipole in the upper hemisphere.
+- Vertically polarized
+	- electric field is vertical, which couples well with ground wave propagation
+	- and vertical whip antenna on vehicles
+- simple impedance matching 
+	- can be fed directly with 50$\large \Omega$ if properly tuned
+- can be electrically lengthened via loading coils (inductors) when physically height is limited
+- can be electrically shortened using capacitive hats (not common).
+### 2.4.3 Antenna Specification
+| Parameter             | Typical Value / Description                                    |
+| --------------------- | -------------------------------------------------------------- |
+| Common Length         | $\lambda/4$ (most common), also $\lambda/8$, $3\lambda/8$, etc |
+| Radiation resistance  | ~36 $\Omega$, half of dipole's 72 $\Omega$                     |
+| Directivity           | ~3.2 (5 dBi) for $\lambda/4$ monopole                          |
+| Gain                  | ~2.5 dBi relative to isotropic                                 |
+| Polarization          | Vertical (linear)                                              |
+| Impedance (practical) | 30-50 $\Omega$                                                 |
+| BW                    | Narrow to moderate, typically 5-10% FBW                        |
+| Efficiency            | 50-95% depending on ground conductivity                        |
+| Frequency range       | From LF (100 kHz) to VHF (300 MHz)                             |
+| Power handling        | Milliwatts to megawatts (AM broadcast: 50-100 kW)              |
+### 2.4.4 Working Principle
+- The monopole is fed between its base and the ground plane.
+- The ground plane reflects the signal, creating an image of the monopole on the opposite sides
+- The combination of the real monopole and its image behave like a vertical dipole of length 2h where $h$ is the physical height
+- For a $\lambda/4$ monopole, the image creates a virtual $\lambda/2$ dipole
+- Radiation pattern is the upper half of a dipole's donut shape, giving maximum radiation along horizon
+- The ground plane eliminates radiation downward,
+	- doubling gain in the upper hemisphere compared to isotropic radiation
+- at medium frequencies (AM), the antenna launches a ground wave that follows the Earth's curvature via diffraction
+- at High Frequencies (HF) and at night on MF, skywave propagation occurs when the signal bounce off the ionosphere.
+### 2.4.5 Adv/Disadv
+- **ADV**
+	- simple, ruggeed, and low-cost to construct
+	- omnidirectional coverage in horizontal plane
+	- vertically polarized matches common mobile whip antennas
+	- low angle radiation good for local ground wave
+	- easy to feed with coaxial cable
+	- small footprint/size
+	- can be made physically shorter/longer
+- **DISADV**
+	- requires a ground plane
+	- lower gain than directional antennas
+	- susceptible to noise
+	- limited range
+	- large physical size at low frequencies
+	- narrow bandwidth
+### 2.4.6 Application
+- AM Medium wave broadcasting (500 kHz to 1.7 MHz)
+- FM Radio and TV Broadcasting (VHF)
+- Mobile communications (whip antenna/walkie-talkie)
+- Base stations for cellular/police
+- consumer electronics (wifi routers, gps receivers)
+- aerospace and marine for VHF communication
+- Military for manpack radios (whip)
+- ground wave communication (short range HF communication 2-10MHz over land or sea)
+### 2.4.7 Figure
+![[Pasted image 20260425082432.png]]
 
-# 4 Directional Antennas
-not asked in exams, so skipped
 
 ---
-# 5 Travelling Wave Antennas
-## 5.1 Description
-### 5.1.1 Concept
+# 3 Travelling Wave Antennas
+## 3.1 Description
+### 3.1.1 Concept
 - definition:
 	- antennas that operate with a predominantly travelling wave of current along their structure, as opposed to standing waves in resonant antennas.
 - a continuous conductor is terminated with a matched load resistor at its end to absorb the travelling wave, preventing reflections and standing waves.
 - non-resonant antennas, characterized by progressive wave propagation and resistive termination
-### 5.1.2 Features
+### 3.1.2 Features
 - Non-resonant operation: no standing waves, operates over a wide frequency range
 - terminated design: ends in a matched resistor to absorb forward energy, minimizing reflections
 - unidirectional radiations: typically produces a single major lobe in the direction of wave travel.
@@ -184,7 +262,7 @@ not asked in exams, so skipped
 - continuous source radiation: radiation occurs along the entire length of the antenna not just at discontinuities
 - propagation method: primarily designed for skywave (ionospheric) propagation
 - no reflected wave components: virtually all incident energy is either radiated or absorbed by the termiantion.
-### 5.1.3 Specification
+### 3.1.3 Specification
 - BW: very wide (multiple octaves possible)
 - efficiency: ~50% theoretical maximum (half the power absorbed by termination resistor)
 - radiation pattern: unidirectional main lobe with minor side lobes.
@@ -192,13 +270,13 @@ not asked in exams, so skipped
 - polarization: Generally horizontal linear polarization
 - directivity: moderate to high, depending on length and configuration
 - power handling: high (termination resistor must dissipate significant power)
-### 5.1.4 Working
+### 3.1.4 Working
 - RF energy travels along the antenna wire as a traveling wave.
 - As the wave propagates, it continuously radiates energy along its length.
 - The remaining energy reaches the termination resistor, where it is absorbed as heat rather than reflected.
 - This absence of reflected waves eliminates standing wave patterns, making the antenna non-resonant.
 - The cumulative radiation from all points along the wire creates a directional pattern with maximum radiation in the forward direction.
-### 5.1.5 Adv / Disadv
+### 3.1.5 Adv / Disadv
 1. Adv
 	- Very wide BW
 	- stable impedance
@@ -211,26 +289,25 @@ not asked in exams, so skipped
 	- complex construction
 	- high power consumption, lost in resistor
 	- fixed direction
-### 5.1.6 Applications
+### 3.1.6 Applications
 - HF point-to-point communication: long distance skywave links
 - shortwave broadcasting
 - military communication
 - direction-finding array
 - receiving antenna where wide bandwidth is prioritized over efficiency
-### 5.1.7 Figure:
+### 3.1.7 Figure:
 1. Antenna
    ![[Pasted image 20260126141408.png | 600]]
 2. Radiation Pattern for travelling/standing wave
    ![[Pasted image 20260126141935.png | 600]]
 ---
-
-## 5.2 Single/Long Wire Antenna
-### 5.2.1 Concept
+## 3.2 Single/Long Wire Antenna
+### 3.2.1 Concept
 - definition:
 	- straight conductor that is long compared to the wavelength (typically 2$\lambda$ to 8$\lambda$), operating either as a resonant (unterminated) or non-resonant (terminated) antenna
 - aka Beverage antenna, wave antenna, or harmonic antenna
 - functions as a lossy transmission line where radiation occurs continuously along its length rather than at specific points
-### 5.2.2 Features
+### 3.2.2 Features
 - length is 2$\lambda$ to 8 $\lambda$ long
 - can be configured for unidirectional (terminated) or bidirectional (unterminated) radiation
 - polarization: horizontal if wire is horizontal to ground, vertical if wire is vertical
@@ -238,7 +315,7 @@ not asked in exams, so skipped
 - harmonic operation: can operate on multiple harmonics of its fundamental frequency
 - gain increases directly with number of half wavelengths (N)
 - directivity increases and radiation angle ($\theta$) decreases as antenna length increases
-### 5.2.3 Antenna Specification
+### 3.2.3 Antenna Specification
 - length formula:
 	- physical length (in feet) = 429 $\dfrac{N - 0.05}{f}$ , f in MHz
 	- feed point impedance of about 500 to 600 Ohm
@@ -248,7 +325,7 @@ not asked in exams, so skipped
 	- efficiency ~ 50%
 	- frequency range: suitable for amateur bands (144 - 148 MHz), LF and HF bands
 	- Apex angle, varies from ~ 35 degree for 8 $\lambda$ to ~ 70 for 2$\lambda$ length
-### 5.2.4 Working
+### 3.2.4 Working
 - when antenna length accommodates multiple half-wavelengths at the operating frequency, it becomes more effective with higher gain and better directivity
 - for the terminated version, the travelling wave propagates along the wire, radiates continuously and remaining energy is absorbed by the termination resistor
 - for the unterminated version, standing waves form, creating a bidirectional pattern
@@ -256,7 +333,7 @@ not asked in exams, so skipped
 - wire orientation determines polarization (horizontal wire -> horizontal polarization)
 - radiation angle decreases as wire length increases
 - primarily used in HF bands, suitable for both transmission and reception
-### 5.2.5 Adv / Disadv
+### 3.2.5 Adv / Disadv
 - adv
 	- simple construction
 	- low cost
@@ -270,25 +347,26 @@ not asked in exams, so skipped
 	- large space requirement
 	- directional limitations
 	- susceptible to noise
-### 5.2.6 application
+### 3.2.6 application
 - commercial, military
 - amateur radio
 - receiving antenna
 - tunnel/enclosed space communication
 - shortwave listening
-### 5.2.7 Figure:
+### 3.2.7 Figure:
 1. general working of long wire
    ![[Pasted image 20260126150126.png | 600]]
 2. gain comparison with length
    ![[Pasted image 20260126150410.png | 600]]
 ---
-## 5.3 V Antenna
-### 5.3.1 Concept
+---
+## 3.3 V Antenna
+### 3.3.1 Concept
 - Definition:
 	- an antenna formed by two long wire antennas arranged in V shape, either terinated (non resonant) or unterminated (resonant)
 - combines radiation from two long wire elements to create a more directional pattern than a single long wire.
 - The phase relationship and physical configuration determine radiation characteristics.
-### 5.3.2 Features
+### 3.3.2 Features
 - shape is of V letter
 - two configuration:
 	- terminated V: non resonant, unidirectional, end-fire radiation, wideband
@@ -300,7 +378,7 @@ not asked in exams, so skipped
 	- θ > β: Beam tilted upward from axis
 	- θ < β: Beam splits into multiple lobes
 - gain enhancement: approximately double that of a single long wire antenna
-### 5.3.3 Specifications
+### 3.3.3 Specifications
 - frequency range: 3- 30 MHz (HF band)
 - Gain of 7-12 dBi (higher than single long wire)
 - apex angle 35 degree for 8$\lambda$ legs to 75 degree for 2$\lambda$ legs, optimal around 72
@@ -313,7 +391,7 @@ not asked in exams, so skipped
 - beamwidth: typically horizontal
 - feed point impedance: varies with configuration, fed at apex
 - requires large ground area but low supporting structures.
-### 5.3.4 Working
+### 3.3.4 Working
 - two long wire elements are arranged at an angle (apex angle)
 - they are fed 180 degree out of phase
 - radiation from the two wires combines constructively along the axis of V, creating a directional pattern
@@ -321,7 +399,7 @@ not asked in exams, so skipped
 - for the unterminated version, standing waves form, creating a bidirectional broadside pattern.
 - The beam elevation and horizontal pattern are interdependent, determined by leg length, apex angle and height above ground.
 - the tilt of the horizontally polarized beam is controlled by these geometric parameters.
-### 5.3.5 Adv / Disadv
+### 3.3.5 Adv / Disadv
 - adv
 	- high gain
 	- simple construction and easy installation
@@ -336,13 +414,13 @@ not asked in exams, so skipped
 	- standing waves
 	- interdependent parameters
 	- pattern sensitivity
-### 5.3.6 Applications
+### 3.3.6 Applications
 - shortwave communication
 - commercial radio
 - military communication
 - amateur radio
 - receiving arrays
-### 5.3.7 Figure
+### 3.3.7 Figure
 1. general introduction to V antenna:
    ![[Pasted image 20260126152937.png | 600]]
 2. apex angle figure
@@ -352,18 +430,19 @@ not asked in exams, so skipped
 4. terminated vee antenna, that should have had resistance at its terminals
    ![[Pasted image 20260126155048.png | 600]]
 
-## 5.4 Rhombic Antenna
-### 5.4.1 Concept
+---
+## 3.4 Rhombic Antenna
+### 3.4.1 Concept
 - definition:
 	- a travelling wave antenna formed by four long wires arranged in a diamond (rhombus) shape, typically horizontally mounted above ground
 - can be visualized as 2 V-antennas connected at their ends, creating a more directive unidirectional pattern through constructive interference of travelling waves along all four legs
-### 5.4.2 Features
+### 3.4.2 Features
 - structure of 4 equal length wires on diamond shape in 2 Vee antenna configuration. opposite acute angles of the rhombus are equal
 - utilizes travelling wave propagation along its legs
 - typically terminated with a resistor to absorb remaining energy and prevent reflections
 - feed point and terminating point must be properly aligned along the main axis
 - primarily HF: 3 - 30 MHz, but can be designed for VHF: 30 - 300 MHz
-### 5.4.3 Specification
+### 3.4.3 Specification
 - frequency range: 3-300 MHz (common: 3 - 30 MHz)
 - leg length: typically 2 - 8 $\lambda$
 - termination resistance of 600 - 800 $\Omega$
@@ -374,7 +453,7 @@ not asked in exams, so skipped
 - radiation pattern is highly directional unidirectional lobe along main axis
 - front to back ratio is 20-30 dB (which is very good)
 - efficiency of 50 - 70 %
-### 5.4.4 Working:
+### 3.4.4 Working:
 - antenna is fed at one acute angle via a balanced transmission line (twin-lead or through balun)
 - RF energy travels as a wave along all four legs simultaneously
 - radiation occurs progressively along each leg, with waves combining constructively in the forward direction.
@@ -382,7 +461,7 @@ not asked in exams, so skipped
 - this creates a unidirectional radiation pattern with maximum gain along the antenna's main axis
 - the termination resistor dissipates 30-50% of input power as heat
 - if left unterminated, the antenna becomes bidirectional but with standing wave and narrower bandwidth
-### 5.4.5 Adv / Disadv
+### 3.4.5 Adv / Disadv
 1. Adv
 	- very high directivity
 	- extremely wide bandwidth
@@ -400,7 +479,7 @@ not asked in exams, so skipped
 	- complex design optimization
 	- multiple supports requred
 	- land intensive
-### 5.4.6 Application
+### 3.4.6 Application
 - long distance HF communication
 - shortwave broadcasting
 - military communication
@@ -408,21 +487,21 @@ not asked in exams, so skipped
 - receiving arrays
 - VHF/UHF links
 - backbone communication links
-### 5.4.7 Figure:
+### 3.4.7 Figure:
 1. General structure:
    ![[Pasted image 20260126160647.png | 600]]
 2. Radiation pattern of rhombic antenna:
    ![[Pasted image 20260126162156.png | 600]]
 ---
-# 6 Aperture Antenna
-## 6.1 Description
-### 6.1.1 Concept
+# 4 Aperture Antenna
+## 4.1 Description
+### 4.1.1 Concept
 - definition:
 	- a type of antenna that consist of a flaring metal waveguide shaped like a horn to direct radio waves in a beam.
 - serves as a transition between a waveguide and freespace
 - basic principle:
 	- the flared opening (i.e. aperture) acts as an impedance transformer, gradually matching the impedance of the waveguide to that of free space, while also directing and shaping the radiation pattern
-### 6.1.2 Features
+### 4.1.2 Features
 - flared structure
 - broadband operation
 	- wide bandwidth of 10-20% of center frequency
@@ -434,7 +513,7 @@ not asked in exams, so skipped
 - dimensional precision
 - no resonant elements
 - radiation pattern can be accurately calculated form physical dimensions
-### 6.1.3 Specification
+### 4.1.3 Specification
 - frequency range: Microwave frequencies (300 MHz to 30 + GHz)
 - gain of 10 - 25 dBi, depending on size and flare
 - FBW of 10-20%
@@ -444,13 +523,13 @@ not asked in exams, so skipped
 - VSWR typically 1.1 : 1 t o 1.5 : 1 over operational bandwidth
 - efficiency: 50 - 80 %
 - side lobes: 20 to 30 db below main lobe for standard horns
-### 6.1.4 Working
+### 4.1.4 Working
 - RF energy enters through the waveguide feed (rectangular, circular, or coaxial)
 - as the wave propagates through the flaring section, the expanding cross section gradually transforms the waveguide mode to a free space plane wave.
 - the flare controls the phase distribution acorss the aperture, determining the radiation pattern.
 - the aperture size, shape determines the beamwidth, gain, side lobe
 - the smooth transition minimizes reflections resulting in good impedance matching over a broad frequency range
-### 6.1.5 Adv / Disadv
+### 4.1.5 Adv / Disadv
 1. Adv
 	- simple construction
 	- wide bandwidth
@@ -464,13 +543,14 @@ not asked in exams, so skipped
 	- moderate gain, is lower than parabolic for its size
 	- manufacturing precision must be high
 	- can be heavy compared to others
-### 6.1.6 Application
+### 4.1.6 Application
 - Microwave point to point links comunication
 - radar systems' primary radiator
 - satllite communication
 - radio astronomy
 - broadcasting microwave relay links
-## 6.2 Horn Antenna
+---
+## 4.2 Horn Antenna
 - useful and simple radiator excited by waveguide
 - popular in microwave band (above 1 GHz)
 	- large waveguides are required for low frequencies
@@ -483,7 +563,7 @@ not asked in exams, so skipped
 	- used as a feed element for reflector (dishes) & lens antennas.
 	- used in satellite tracking and in short range radar systems.
 - two basic types:
-### 6.2.1 Rectangular Horn
+### 4.2.1 Rectangular Horn
 - a horn obtained by flaring of rectangular waveguide
 - can be further subclassified as sectoral and pyramidal horn
 	1. Sectorial Horn
@@ -491,14 +571,14 @@ not asked in exams, so skipped
 		- Rectangulaar Horn flared in H-Plane is Sectorial H Horn
 	2. Pyramidal Horn
 		- A horn with flaring in both E and H planes is Pyramidal
-### 6.2.2 Conical Horn
+### 4.2.2 Conical Horn
 - a horn obtaianed by flaring of circular waveguide is conical horn
-### 6.2.3 Figure:
+### 4.2.3 Figure:
 - Some types:
 	- ![[Pasted image 20260310213605.png]]
 - Radiation Pattern:
 	- ![[Pasted image 20260310213736.png]]
-### 6.2.4 Derivation for flare angle & length of horn
+### 4.2.4 Derivation for flare angle & length of horn
 - consider a cross section of horn:
 	- ![[Pasted image 20260310213950.png]]
 	- L = horn length in meters
@@ -529,8 +609,8 @@ not asked in exams, so skipped
 	- E-plane horn: $\dfrac{56^{0}\times \lambda}{a_E}$
 	- H-plane horn: $\dfrac{67^{0}\times \lambda}{a_H}$
 	- Circular horn: $\dfrac{58^{0}\times \lambda}{D}$
-## 6.3 Slot Antenna
-## 6.4 Reflector Antenna
+---
+## 4.3 Reflector Antenna
 - widely used to modify the radiation pattern of a radiating element
 - reflector antenna -- secondary antenna
 - can be of any geometrical configuration but the most common are 
@@ -538,7 +618,7 @@ not asked in exams, so skipped
 - most important in microwave radiation application
 - figure:
 	- ![[Pasted image 20260310204522.png]]
-### 6.4.1 Flat Sheet Reflectors
+### 4.3.1 Flat Sheet Reflectors
 - using image theory, below structure (large flat sheet reflector behind a dipole) is equivalent to two element array with an out of phase excitation and spacing equal to twice the distance 'S'
 - finite reflector produces some back radiation due to the diffraction at the edge of the reflector.
 - figure:
@@ -554,12 +634,12 @@ not asked in exams, so skipped
 	- installation of large reflector is difficult due to weight and wind position
 		- can be solved using grid wires with loss in efficiency
 	- small flat sheets can be used but they are sensitive to small frequency changes.
-### 6.4.2 Parabolic Reflector
+### 4.3.2 Parabolic Reflector
 - If the primary antenna (feed) is non directional then the paraboloid will produce a beam of radiation whose Beamwidth is given by $$\Phi \cong\ \dfrac{70\lambda}{D}$$
 - the maximum power gain of an antenna using an uniformly illuminated paraboloid reflector is given by $$A_{p} = 6\ \left(\dfrac{D}{\lambda}\right)^2 $$
 - If the intensity of illumination falls off at the edges then the power gain will be $$A_{p} \approx\ 4.2\ \left( \dfrac{D}{\lambda} \right)^2$$
-### 6.4.3 Feed mechanisms for a paraboloid
-#### 6.4.3.1 Dipole Feed
+### 4.3.3 Feed mechanisms for a paraboloid
+#### 4.3.3.1 Dipole Feed
 - simplest feed
 - suffers from spillover loss
 - side lobes results due to edge diffraction
@@ -567,11 +647,11 @@ not asked in exams, so skipped
 - improved but causes considerable aperature blocking
 - figure:
 	- ![[Pasted image 20260310212201.png]]
-#### 6.4.3.2 Feed mechanism for a paraboloid
+#### 4.3.3.2 Feed mechanism for a paraboloid
 - horn antenna pointing at the main reflector
 - the small obstruction is negligible
 - ![[Pasted image 20260310212448.png | 150]] ![[Pasted image 20260310212459.png | 270]] ![[Pasted image 20260310212508.png|245]]
-#### 6.4.3.3 Cassegrain feed
+#### 4.3.3.3 Cassegrain feed
 - an important feeding method based on astronomical reflecting telescopes
 - used when it is desired to place the primary antenna in a convenient position to shorten the length of transmission line or wave guide.
 - Figure:
@@ -591,8 +671,9 @@ not asked in exams, so skipped
 	- which in turn achieves more gain
 - Uses:
 	- radar
-# 7 Array Antenna
-## 7.1 Yagi Uda
+---
+# 5 Array Antenna
+## 5.1 Yagi Uda
 - directional antena
 - wide range of applications from short, medium to long range due to its directional characteristics
 - comprises of two types of elements
@@ -602,7 +683,7 @@ not asked in exams, so skipped
 	- parasitic element
 		- reflector element 
 		- and director element
-### 7.1.1 Components
+### 5.1.1 Components
 1. Driven Element:
 	- It is an active element that is connected to the supply
 	- it can be dipole or folded dipole in most yagi uda antenna
@@ -612,9 +693,9 @@ not asked in exams, so skipped
 3. Director Element
 	- passive element that is not connected to the supply
 	- it is used to direct the major lobe of the driven element.
-#### 7.1.1.1 Components Figure:
+#### 5.1.1.1 Components Figure:
 ![[Pasted image 20260126174042.png | 600]]
-### 7.1.2 Adv/Disadv
+### 5.1.2 Adv/Disadv
 1. Advantage
 	- High gain
 	- high front to back lobe ratio
@@ -622,13 +703,13 @@ not asked in exams, so skipped
 	- light weight
 2. Disadvantage
 - for high gain, it becomes very long
-### 7.1.3 Design
-##### 7.1.3.1.1 Question:
+### 5.1.3 Design
+##### 5.1.3.1.1 Question:
 1. five element
 2. 100 MHz\
 3. effective length = 0.48 $\lambda$
 4. spacing = 0.15 $\lambda$
-##### 7.1.3.1.2 Solution:
+##### 5.1.3.1.2 Solution:
 1. f = 100 MHz
 2. $\lambda_c$ = $$\dfrac{c}{f}\ =\ =\ \dfrac{3\cdot10^8}{100*10^6} = 3m$$
 3. for 5 element yagi uda antenna we have:
@@ -655,12 +736,13 @@ not asked in exams, so skipped
 10. Final figure:
     ![[Pasted image 20260126181121.png | 600]]
 ---
-## 7.2 Log Periodic Antenna
-### 7.2.1 Context
+---
+## 5.2 Log Periodic Antenna
+### 5.2.1 Context
 - A broadband antenna that is designed to provide such electrical characteristics that may vary repeatedly in periodic manner with logarithmic of the frequency of operation is known as log-periodic antenna
 - this mean, impedance and radiation pattern are the factors that are logarithmic function of the frequency.
 - frequency range of 30 MHz to 3 GHz
-### 7.2.2 Construction
+### 5.2.2 Construction
 - constructed using several half wave dipole elements of different lengths and spacing,
 	- arranged along a common axis
 - the length and spacing of dipoles increase gradually from the narrow end
@@ -669,9 +751,9 @@ not asked in exams, so skipped
 	- which is transposed between adjacent dipoles.
 - the feed is usually connected at the apex (narrow end).
 - this construction allows the antenna to operate over a wide range of frequencies
-### 7.2.3 Figure
+### 5.2.3 Figure
 ![[Pasted image 20260126181855.png | 600]]
-### 7.2.4 Characteristics
+### 5.2.4 Characteristics
 - excitation to the antenna is provided at the shorter length side in case of single active region,
 	- while at the center in case of two inactive regions
 - to have unidirectional radiation pattern,
@@ -679,44 +761,347 @@ not asked in exams, so skipped
 	- and negligible towards right
 - the transmission line inactive region must possess desired characteristics impedance with very small or negligible radiation
 - in the active region to have strong radiation, magnitude and phase of the currents must be proper
-### 7.2.5 Advantages
+### 5.2.5 Advantages
 - it offers a compact structure
 - it provides adjustable gain according to the requirement.
 - these offer negligible loss of power when terminated.
-### 7.2.6 Disadvantages
+### 5.2.6 Disadvantages
 - the mounting platform must be sufficient strength to elements
 - it is quite expensive than other antennas.
-## 7.3 Phase Array
-# 8 Broadband & Special Elements
-## 8.1 Helical Antenna
-- Helical antenna is useful at very high frequency and ultra high frequencies to provide circular polarization.
-- one of the technique to reduce the physical size of a wire antenna is to wind it over an imaginary cylinder. This structure is called a helix.
-- Working Diagram:
-	- ![[Pasted image 20260310221324.png]]
-- length of one turn = $\sqrt{S^{2}\ +\ (\pi D)^2}$
-- N = number of turns
-- C = circumference = $\pi$D
-- $\alpha$ = Pitch angle =$\tan^{-1} \left(\dfrac{S}{\pi D}\right)$
-- l = distance between helix and ground plane.
-- helical antennaa is connected between the coaxial cable and ground plane i.e. center conductor attached to helical wire and outer conductor to ground plane
-- ground plane is made of radial and concentric conductors.
-- typically diameter of ground plane > $\dfrac{3\lambda}{4}$ 
-- the radiation characteristics of helical antenna depend upon the diameter D and spacing S.
-- helical antenna is operated in two modes.
-### 8.1.1 Axial Mode Helix
-- operated in axial mode when C ~ $\lambda$ & S = $\lambda/4$
-- radiates max energy along its axis with one major lobe and several minor lobes
-- the pitch angle in this mode is usually between 12 to 15 degrees
-- input impedance Z ~ 140 C/$\lambda$ =  140 $\Omega$
-- pattern is highly directional & circularly polarized.
-- used in satellite communications in VHF/UHF bands
-### 8.1.2 Normal Mode Helix
-- operated in normal mode when dimensions of helical antennas are very small compared to operaating wavelength (D << $\lambda$ & NL << $\lambda$)
-- the radiation pattern is very similar to the loops (a << $\lambda$ ) and dipoles (l < $\lambda$) 
-- has an omnidirectional pattern and hence is a popular antenna for mobile and wireless handset applications.
-## 8.2 Microstrip Antenna
-## 8.3 Spiral Antenna
-## 8.4 Loop Antenna
-# 9 Other
-## 9.1 Large Plane Sheet
-## 9.2 Small Plane Sheet
+---
+# 6 Broadband & Special Elements
+## 6.1 Helical Antenna
+### 6.1.1 Concept
+- Definition:
+	- A helical antenna consists of a conducting wire wound in the form of a helix (screw thread) above a ground plane.
+	- It is fed by a coaxial cable:
+		- the center conductor connects to the helix and
+		- outer conductor connects to the ground plane.
+- Nature:
+	- A specialized antenna that provides circular polarization and directional gain in its most common mode.
+	- Extremely popular in VHF and UHF bands for satellite and space communication
+	- Can operate in two distinct modes depending on the helix dimensions relative to wavelength.
+### 6.1.2 Features
+- Helical geometry: wire wound around an imaginary cylinder.
+- Ground plane required: typically a circular a square metallic plate
+- Two operating modes:
+	- Normal Mode (Broadside) - helix electrically small, omnidirectional pattern.
+	- Axial Mode (End-fire) - helix dimensions comparable to wavelength, highly directional with circular polarization
+- Circular Polarization Capability : a major advantage over dipoles and monopoles
+- Broadband: (in axial mode) can achieve 2:1 bandwidth ratio
+- Moderate to high gain in axial mode (upto 15-20 dBi) with many turns
+- Simple feed - directly connected to 50$\Omega$ or 75$\Omega$ coaxial cable.
+- Self-matching in axial mode - input impedance around 100-200$\Omega$, easily matched.
+- can be enclosed in a radome (radar dome) for outdoor/space use
+### 6.1.3 Antenna Specifications
+#### 6.1.3.1 Geometric Parameters
+| Parameter             | Symbol            | Formula/Description                                    |
+| --------------------- | ----------------- | ------------------------------------------------------ |
+| Diameter of helix     | D                 | Distance between opposite points of one turn           |
+| Circumference         | C                 | C = $\large \pi D$                                     |
+| turn spacing          | S                 | Distance between adjacent turns (center to center)     |
+| Pitch angle           | $\large \alpha$   | $\alpha = \tan^{-1}\left(\dfrac{S}{\pi\cdot D}\right)$ |
+| Length of one turn    | $\large L_{turn}$ | $\large \sqrt{S^2 + (\pi \cdot D)^2}$                  |
+| Number of turns       | N                 | Typically 5 to 20 for axial mode                       |
+| Total helix length    | A                 | $A = N \times S$                                       |
+| Ground plane diameter | $\large D_g$      | $\large \ge 3\lambda/4$ recommended                    |
+| Ground-helix distance | L                 | distance between helix and ground plane                |
+#### 6.1.3.2 Electrical Specification
+| Parameter               | Normal Mode                              | Axial Mode                                               |
+| ----------------------- | ---------------------------------------- | -------------------------------------------------------- |
+| Condition               | $\large D \ll \lambda$, $NL \ll \lambda$ | $\large C \approx \lambda$, $\large S \approx \lambda/4$ |
+| C                       | Very small ($\large \ll \lambda$)        | $\large 0.75\lambda$ to $\large 1.33\lambda$             |
+| S                       | Very small                               | $\large 0.2\lambda$ to $\large 0.35\lambda$              |
+| $\large \alpha$         | very small ($\large < 5$$\D$)            | $\large 0.2\lambda$ to $\large 0.35\lambda$              |
+| Gain                    | ~1.5 to 3 dBi                            | ~ 10 to 20 dBi                                           |
+| Polarization            | Linear (same as small loop/dipole)       | Circular (RHCP or LHCP)                                  |
+| Radiation pattern       | Omnidirectional (broadside)              | Unidirectional (end fire)                                |
+| Input impedance         | high capacitive                          | ~ 100 to 200$\O$                                         |
+| Beamwidth               | 90$\D$ to 180$\D$                        | 30$\D$ to 80$\D$                                         |
+| Axial Ratio             | N/A                                      | < 3 dB                                                   |
+| Typical frequency range | 100 MHz - 1 GHz                          | 200 MHz - 5 GHz                                          |
+### 6.1.4 Working Principle
+#### 6.1.4.1 Common to Both Modes
+- the helix supports a travelling wave of current along its length
+- the coaxial feed launches energy at the base
+- the ground plane provides a reflection boundary
+- the helix geometry determines the phase velocity and radiation characteristics
+#### 6.1.4.2 Normal Mode Working
+**Operating Conditions**
+- $\large D \ll \lambda$ (electrically small, less than 1:10 ratio)
+- NL $\large \ll \lambda$ (very short compared to wavelength)
+**Working**:
+1. The helix behaves as a combination of small loop antenna and a short dipole, both electrically small.
+2. The loop element produces magnetic field radiation; the dipole element produces electric field radiation.
+3. The turns are so close together that the helix acts like a continuous structure, not a resonant element.
+4. By adjusting $\large \alpha$, the loop and dipole contributions can be balanced to achieve circular polarization
+	- rare in normal mode, more common in axial mode
+5. Typically, normal mode helices produce linear polarization similar to a short monopole
+6. The radiation pattern is omnidirectional in the horizontal plane and donut shape in vertical plane.
+7. phase velocity on normal mode helix si slow
+**Limitations**
+- very low radiation resistance, fraction of an ohm
+- poor efficiency (< 10 - 30%)
+- extremely narrow bandwidth
+- used only when small size is critical
+#### 6.1.4.3 Axial Mode Working
+**Operating Conditions**
+- C $\large \approx \lambda$ (typically 0.75 ~ 1.33 $\lambda$)
+- S $\large \approx \lambda/4$ (typically 0.2 to 0.35$\lambda$)
+- N $\large \ge 5$ for good directivity
+**Working**
+1. A travelling wave propagates along helix wire at a velocity slightly less than the speed of light.
+2. The circumference being approximately one wavelength creates in-phase currents on adjacent turns
+3. This in-phase condition causes constructive interference along the helix axis.
+4. the wave radiated from each turn adds in phase in the forward direction (end-fire)
+5. The ground plane suppress backward radiation
+6. the radiation is circularly polarized because of horizontal and vertical components of the travelling wave are 90$\D$ out of phase
+### 6.1.5 Adv/Disadv
+- ADV: AXIAL MODE
+	- Circular polarization is immune to farady rotation in ionosphere; works with any orientation of receiving antenna
+	- High gain in compact volume, 10-20 dBi from only few wavelengths long
+	- Broadband can operate over 2:1 frequency range without retuning
+	- simple feed
+	- self matching (impedance is primarily resistive and stable)
+	- low side lobes
+	- mechanically simple
+- ADV: NORMAL MODE
+	- very small size, can be made much shorter than $\large \lambda/4$ monopole
+	- omnidirectional pattern - suitable for portable devices
+	- simple construction  - just wound wire
+- DISADV: AXIAL
+	- Requires ground plane, that adds to bulk
+	- physically long for high gain
+	- limited gain per turn: after 20 turns, additional turns give minimal improvements
+	- circularly polarization purity degrades at band edges
+	- higher cost than simple monopole/dipole
+	- not suitable for very low frequencies due to large size
+- DISADV: NORMAL
+	- Very low radiation resistance (often less than 1$\O$) -> poor efficiency
+	- Narrow bandwidth
+	- low gain similar to short dipole
+	- difficult to match capacitive reactance
+	- rarely used in practice, short monopole better in use.
+### 6.1.6 Application
+- Satellite communication
+- Space temetry
+- Radio astronomy
+- GPS antennas
+- Military communication
+- Weather radar
+- WiFi and wireless links
+### 6.1.7 Figure
+- ![[Pasted image 20260310221324.png]]
+---
+## 6.2 Microstrip Antenna
+### 6.2.1 Concept
+- Definition:
+	- A low-profile antenna consisting of a thing conducting patch mounted on a dielectric substrate over ground plane.
+	- Also called patch antenna
+- Nature:
+	- Planar, lightweight, and easily fabricated using PCB technology.
+	- Ideal for integration with microwave circuits.
+### 6.2.2 Features
+- Flat, compact structure: thickness much smaller than wavelength
+- printed circuit construction for low cost, mass production
+- conformal: can be mounted on curved surfaces
+- typically linearly polarized
+- narrow bandwidth
+- low gain (5 - 9 dBi)
+- easy to form arrays for higher gain
+### 6.2.3 Specifications
+- Frequency range: 1 GHz to 100 GHz
+- Patch shape: rectangular (most common), circular, triangular
+- Dielectric constant: 2.2 to 12 (lower $\large \epsilon_r$ -> higher BW)
+- substrate thickness : 0.01 to 0.05 $\L$
+- bandwidth: 1-5% 
+- gain: 5 - 9 dBi
+- polarization: linear (or circular with dual feed)
+- radiation pattern: broadside
+- input impedance: typically 50/100$\O$
+- efficiency: 70-90%
+### 6.2.4 Working
+- the patch acts as a resonant cavity open at the edges
+- RF energy is fed via coaxial probe, microstrip line, or aperture coupling
+- At resonance (path length $\approx$ $\L$/2) fringing fields at the edge radiate
+- the two radiating edges are out of phase, producing broadside radiation
+- ground plane prevents backward radiation
+### 6.2.5 Adv/Disadv
+- ADV:
+	- very low profile and lightweight
+	- low manufacturing cost (PCB tech)
+	- easy to integrate with active circuits
+	- conformal to surfaces
+	- can be made in arrays
+- DISADV:
+	- narrow bandwidth
+	- low gain per element
+	- low power handling
+	- surface wave losses in substrate
+	- requires precision fabrication at high frequencies
+### 6.2.6 Applications
+- Mobile phones and tablets (internal antennas)
+- GPS receivers
+- satellite communication (conformal arrays)
+- radar systems
+- automotive radar
+---
+## 6.3 Spiral Antenna
+### 6.3.1 Concept
+- Definition:
+	- a frequency independent antenna formed by two or more spiral-shaped metallic arms on a dielectric substrate
+- Nature:
+	- extremely broadband (several octaves) with constant impedance and pattern
+	- provides circular polarization (usually)
+### 6.3.2 Features
+- Self complementary structure (metal and air gaps are equal width)
+- Frequency-independent - electrical properties repeat logarithmically
+- circular polarization
+- bidirectional radiation often backed with a cavity for unidirectional
+- low profile (flat printed construction)
+### 6.3.3 Working
+- travelling wave propagates outward along the spiral arms
+- the active region (where radiation occurs) is where the circumference $\approx$ $\L$
+- as frequency changes, the active region moves inward/outward along the spiral
+- this movement maintains constant radiation characteristics over a wide bandwidth
+- the two orthogonal are fed 180$\D$ out of phase
+- radiation is circularly polarized of the geometry's inherent rotation.
+### 6.3.4 Adv/Disadv
+- Adv
+	- extremely wide bandwidth
+	- stable radiation pattern and impedance
+	- circular polarization
+	- low profile
+	- simple feed (balun required)
+- Disadv:
+	- dispersion (different frequencies radiation radiate from different regions)
+	- lower gain than resonant antennas
+	- bidirectional pattern (requires cavity for unidirectional, adds depth)
+	- larger size at lower frequencies
+	- efficiency loss in cavity backing
+### 6.3.5 Application
+- broadband surveillance
+- EMC/EMI testing
+- direction finding
+- satellite communication
+- ground penetrating radar
+---
+## 6.4 Loop Antenna
+### 6.4.1 Concept
+- Definition:
+	- closed loop conductor (circular, square, triangular) used for receiving or transmitting
+- Nature:
+	- can be electrically small (magnetic dipole) or large (resonant)
+	- often used as a receiving antenna due to low noise.
+### 6.4.2 Feature
+- Two categories
+	- small loop (circumference < $\L$/4), magnetic field antenna, low radiation resistance
+	- large loop (circumference $\approx \L$), resonant, higher efficiency
+- typically vertically polarized for omnidirectional pattern
+- low noise reception
+- can be shielded for near-field cancellation
+### 6.4.3 Working
+- Small Loop
+	1. the loop behaves as a magnetic dipole (not electric)
+	2. current is uniform around the loop (no standing waves)
+	3. maximum radiation is in the plane of the loop; null perpendicular to loop
+	4. the loop responds to the H-field, rejecting nearby E-field noise.
+- Large Loop
+	1. for circumference $\approx \L$, a standing wave exists
+	2. Can be fed at various points to achieve different patterns
+	3. A square loop (quad) is popular for amateur radio (2-3 dBi)
+### 6.4.4 Adv/Disadv
+- Adv:
+	- very low noise (small loop)
+	- compact at low frequencies (small loop)
+	- simple construction
+	- can be directional (figure-8 pattern)
+	- shielded loops reject local interference
+- Disadv:
+	- very low efficiency (small loop)
+	- narrow bandwidth (small loop)
+	- requires high-Q tuning capacitor for small loop
+	- Weak signal output (small loop) requires preamplifier
+### 6.4.5 Application
+- AM broadcast reception
+- direction finding
+- near field RFID
+- TV reception
+- wireless power transfer (resonant loops)
+---
+# 7 Other
+## 7.1 Large Plane Sheet
+### 7.1.1 Concept
+- Definition:
+	- A large flat conducting sheet placed behind a radiating element (e.g., dipole) to reflect forward radiation and increase directivty
+- Nature:
+	- passive reflector, not fed directly
+	- uses image theory to create an equivalent array
+### 7.1.2 Features
+- Size $\gg \L$
+- increases gain by eliminating backward radiation
+- simple construction
+- can be solid or wire mesh
+- frequency sensitive
+### 7.1.3 Working
+1. Uses image theory, the sheet acts as a mirror.
+2. The antenna and its image form a two-element array.
+3. Spacing (S) determines phase difference between real and image.
+4. At S = λ/4, image currents are in phase → maximum forward gain.
+5. At S = λ/2, pattern develops multiple lobes.
+6. Finite sheet produces edge diffraction (some back radiation).
+### 7.1.4 Adv / Disadv
+- **Advantages:**
+	- Simple and cheap
+	- Significant gain improvement
+	- Excellent front-to-back ratio
+	- Easy to analyze (image method)
+- **Disadvantages:**
+	- Large and heavy (especially at lower frequencies)
+	- Wind loading problems
+	- Solid sheets are heavy; mesh saves weight
+	- Fixed direction (cannot steer)
+	- Spacing critical for optimal performance
+### 7.1.5 Applications
+- **Radio telescopes** (large reflecting ground screens)
+- **HF/VHF base station antennas** (reflector behind dipole)
+- **Microwave antennas** (corner and parabolic reflectors use same principle)
+- **EMC anechoic chambers** (floor reflectors)
+- **Point-to-point links** (simple reflector behind yagi)
+---
+## 7.2 Small Plane Sheet
+### 7.2.1 Concept
+- Definition:
+	- A flat conducting sheet whose size is comparable to or smaller than the wavelength, placed behind a radiating element
+- Nature:
+	- acts as director or reflector, not a perfect mirror
+### 7.2.2 Features
+- Size $\approx \L$ or less
+- edge diffraction is significant
+- beam shaping rather than true reflection
+- sensitive to frequency
+- can be used as a parasitic element like in yagi, but flat)
+### 7.2.3 Working
+1. Image theory is not accurate because sheet is finite
+2. the small sheet scatters and diffracts the incident wave
+3. at certain spacings, it can act as a reflector (like yagi reflector)
+- at other spacings, it acts as director
+- field pattern depend critically on S/$\L$ and sheet size
+- edge currents create side lobes and back radiation
+### 7.2.4 Adv/Disadv
+- Adv:
+	- Compact and lightweight
+	- can be used where large sheet is impractical
+	- simple to add to existing antenna
+- Disadv:
+	- very narrow bandwidth
+	- unpredictable pattern without simulation
+	- lower gain improvement than large sheet
+	- high sensitivity to exact dimensions
+	- edge diffraction causes pattern distortion
+### 7.2.5 Application
+- Portable VHF/UHF antenna
+- Yagi-Uda antenna
+- test antenna
+- handheld directional antenna
+---

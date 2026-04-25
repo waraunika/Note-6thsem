@@ -3,6 +3,7 @@
 - also called surface wave propagation
 - refers to radio waves that travel along the earth's surface, following its curvature.
 - these waves glide over the ground and enable communication beyond the optical horizon through diffraction
+---
 ## 1.2 Technical Details
 ### 1.2.1 Frequency Range and Bands
 | Parameter             | Value                                                            |
@@ -52,6 +53,7 @@
 	- Absorbed by ground
 	- Reflection from surface
 	- wave tilt creating horizontal component (reduces field strength)
+---
 ## 1.3 Other Details
 ### 1.3.1 Wavelength Distribution
 | Wave Type    | Wavelength Range |
@@ -83,6 +85,7 @@
 ### 1.3.4 Medium Wave Broadcasting
 - frequency range: 535 kHz - 1625 kHz
 - skip distance from sky wave can be minimized using ground wave
+---
 ## 1.4 Adv/Disadv
 ### 1.4.1 Adv
 - **Beyond horizon coverage**: Enables communication beyond the optical horizon
@@ -97,6 +100,7 @@
 - **Surface dependent**: Losses vary considerably with ground material
 - **Frequency-dependent attenuation**: Attenuation increases with frequency
 - **Limited range at higher frequencies**: Coverage reduces dramatically above 2 MHz
+---
 ## 1.5 Applications
 ### 1.5.1 Primary
 1. **Broadcasting**
@@ -129,6 +133,7 @@
     - reflection from the ionosphere or
     - diffraction along the earth's surface.
 - this is primary mode for high-frequency communication and forms the basis for LOS and satellite communication.
+---
 ## 2.2 Technical Details
 ### 2.2.1 Frequency Range and Bands
 - Frequency range: Above 30 MHz
@@ -176,6 +181,7 @@ $$
 ### 2.2.6 Satellite Communication Distance
 - Geostationary Satellites: ~35,786 (~36,000) km above Earth
 - Provides hemispheric or global coverage depending on antenna design
+---
 ## 2.3 Other Details
 ### 2.3.1 Propagation Characteristics
 - Space wave consists of two components
@@ -208,6 +214,8 @@ $$
 | Frequency   | > 30 MHz          | < 2 MHz     | 2 - 30 MHz                       |
 | Range       | LOS limited       | ~ 1000 km   | Global                           |
 | Reliability | Weather dependent | Stable      | Variable (ionospheric dependent) |
+
+---
 ## 2.4 Adv/Disadv
 ### 2.4.1 Adv
 1. Wide bandwidth: 
@@ -231,6 +239,7 @@ $$
 4. Atmospheric effects: Rain, fog, and atmospheric gases cause attenuation
 5. Tower height requirements: Tall structures needed for longer ranges
 6. Economic constraints: Repeaters and tall towers increase infrastructure costs
+---
 ## 2.5 Applications
 ### 2.5.1 Primary Applications
 1. **Broadcasting**
@@ -279,6 +288,7 @@ $$
 	- or other large obstacles (hills, buildings). 
 - It typically combines with the direct (LOS) wave in space wave propagation,
 	- leading to interference and multipath effects.
+---
 ## 3.2 Technical Details
 ### 3.2.1 Propagation Context
 Radio waves propagate via three primary mechanisms:
@@ -294,6 +304,7 @@ Radio waves propagate via three primary mechanisms:
     - Large buildings
 - Geometry of ground reflected wave: _(refer to diagram)_
 	-  ![[Pasted image 20260318125233.png]]
+---
 ## 3.3 Key Characteristics
 | Parameter       | Detail                                |
 | --------------- | ------------------------------------- |
@@ -307,6 +318,7 @@ Radio waves propagate via three primary mechanisms:
     - Amplitude reduction (depending on reflection coefficient of surface)
     - Path length difference relative to direct wave
 - Resulting field at receiver = Direct wave + Reflected wave (vector sum)
+---
 ## 3.4 Other Details
 ### 3.4.1 Reflection Effects
 - Reflection coefficient depends on:
@@ -325,16 +337,18 @@ Radio waves propagate via three primary mechanisms:
     - **Lobes** – constructive interference (signal enhancement)
     - **Nulls** – destructive interference (signal cancellation)
 - Pattern varies with antenna heights and distance
-## 3.5 Advantages
-1. Can provide signal enhancement at certain distances (constructive interference)
-2. Extends coverage beyond pure LOS in some cases
-3. Useful for over-water propagation paths
-## 3.6 Disadvantages
-1. Causes **multipath fading** – signal varies with location and time
-2. Creates **null zones** – areas of very weak reception
-3. Makes system design complex (requires height optimization)
-4. Frequency-selective fading in wideband systems
-## 3.7 Applications
+## 3.5 Adv/Disadv
+- Adv
+	1. Can provide signal enhancement at certain distances (constructive interference)
+	2. Extends coverage beyond pure LOS in some cases
+	3. Useful for over-water propagation paths
+- Disadv
+	1. Causes **multipath fading** – signal varies with location and time
+	2. Creates **null zones** – areas of very weak reception
+	3. Makes system design complex (requires height optimization)
+	4. Frequency-selective fading in wideband systems
+---
+## 3.6 Applications
 1. **Antenna siting** – optimizing heights to minimize destructive interference
 2. **Radar** – ground reflection used in target detection (multipath radar)
 3. **Broadcast planning** – predicting coverage areas with nulls and lobes
@@ -345,6 +359,7 @@ Radio waves propagate via three primary mechanisms:
 ## 4.1 Concept
 - Duct propagation occurs when radio waves become trapped in an atmospheric layer (duct) caused by temperature inversion in the troposphere.
 - The duct acts as a waveguide, guiding VHF/UHF signals far beyond the optical horizon without requiring line-of-sight.
+---
 ## 4.2 Technical Details
 ### 4.2.1 Frequency Range
 - **Primary affected frequencies**: 50 MHz to 450 MHz
@@ -369,6 +384,7 @@ Radio waves propagate via three primary mechanisms:
 ### 4.2.5 Refractive Index Relationship
 - As air density decreases → refractive index increases
 - Under inversion, change in refractive index is **non-linear** and creates a duct
+---
 ## 4.3 Other Details
 ### 4.3.1 Mechanism of Duct Formation
 1. Warm air layer forms above cooler air (often over water surfaces)
@@ -394,41 +410,44 @@ Radio waves propagate via three primary mechanisms:
 | Frequency     | <2 MHz      | 50-450 MHz               |
 | Range         | ~1000 km    | 2000 km (max)            |
 | LOS required? | No          | No                       |
-## 4.4 Advantages
-1. **Extreme range** – Communication far beyond horizon (hundreds to thousands of km)
-2. **No LOS required** – Unlike normal space wave propagation
-3. **Uses VHF/UHF bands** – Enables wide bandwidth communication over long distances
-4. **Lower power** – Exploits natural atmospheric phenomenon
-## 4.5 Disadvantages
-1. **Unpredictable** – Occurs only under specific weather conditions
-2. **Temporary** – Ducts last hours to days, then disappear
-3. **Interference cause** – Long-distance signals interfere with local services on same frequency
-4. **Not controllable** – Cannot be engineered reliably; only exploited when present
-5. **Seasonal/geographic** – More common over warm water bodies (e.g., Persian Gulf, Mediterranean)
-## 4.6 Applications
-### 4.6.1 Primary Exploitation
+## 4.4 Adv/Disadv
+- Adv
+	1. **Extreme range** – Communication far beyond horizon (hundreds to thousands of km)
+	2. **No LOS required** – Unlike normal space wave propagation
+	3. **Uses VHF/UHF bands** – Enables wide bandwidth communication over long distances
+	4. **Lower power** – Exploits natural atmospheric phenomenon
+- Disadv
+	1. **Unpredictable** – Occurs only under specific weather conditions
+	2. **Temporary** – Ducts last hours to days, then disappear
+	3. **Interference cause** – Long-distance signals interfere with local services on same frequency
+	4. **Not controllable** – Cannot be engineered reliably; only exploited when present
+	5. **Seasonal/geographic** – More common over warm water bodies (e.g., Persian Gulf, Mediterranean)
+---
+## 4.5 Applications
+### 4.5.1 Primary Exploitation
 1. **Over-the-horizon radar** – Detecting targets beyond normal radar range
 2. **Long-range VHF communication** – Military and maritime use
 3. **TV/FM DX-ing** – Amateur radio enthusiasts receiving distant stations
-### 4.6.2 Affected Systems (Usually Unintentionally)
+### 4.5.2 Affected Systems (Usually Unintentionally)
 | System            | Effect During Ducting                      |
 | ----------------- | ------------------------------------------ |
 | TV broadcast      | Reception of stations hundreds of km away  |
 | Cellular networks | Co-channel interference from distant cells |
 | FM radio          | Distant stations override local ones       |
 | VHF air traffic   | Unexpected long-range communication        |
-### 4.6.3 Geographic Hotspots
+### 4.5.3 Geographic Hotspots
 - Coastal regions (warm land/water temperature differences)
 - Persian Gulf (famous for ducting)
 - Mediterranean Sea
 - Great Lakes region
 - Tropical oceans (evaporation ducts are persistent)
-### 4.6.4 Weather Conditions Favoring Ducting
+### 4.5.4 Weather Conditions Favoring Ducting
 - **Temperature inversion** after clear, calm nights
 - **High-pressure systems** with stable air
 - **Warm air over cool water** (sea breezes)
 - **Early morning hours** (radiation inversions)
-## 4.7 Summary Table: All Three Wave Components
+---
+## 4.6 Summary Table: All Three Wave Components
 
 | Wave Component        | Mechanism                 | Frequency  | Range       | Reliability              |
 | --------------------- | ------------------------- | ---------- | ----------- | ------------------------ |
@@ -464,6 +483,7 @@ Where:
 - Higher frequencies require **greater ionization density** for reflection
 - Sunspot activity increases ionization (11-year cycle)
 - More sunspots → greater ionization → higher usable frequencies
+---
 ## 5.2 Ionosphere Structure
 ### 5.2.1 Overview
 - **Region**: 90 km to 450 km above Earth's surface
@@ -519,6 +539,7 @@ Where:
 - **90-140 km (E)**: High electron density
 - **140-250 km**: Density decreases
 - **250-350 km (F)**: High electron density again
+---
 ## 5.3 Other Details
 ### 5.3.1 Refraction Mechanism
 #### 5.3.1.1 Principle
@@ -555,23 +576,25 @@ Minimum skip distance depends on:
 |Behavior|Sporadic, unpredictable, not reliable|
 |Use|Radio amateurs; not used for commercial communication|
 |Effect|Adds noise, enables very long distances at low power|
-## 5.4 Advantages
-1. **Long distance** – Enables global communication (hundreds to thousands of km)
-2. **No infrastructure** – No satellites, cables, or repeaters needed
-3. **Wide coverage** – Large area coverage with skip distance
-4. **Beyond horizon** – Not limited by Earth's curvature
-5. **Low power potential** – Can work with few kW
-6. **Frequency flexibility** – Different layers support different frequency ranges
-## 5.5 Disadvantages
-1. **Unreliable** – Highly variable with time of day, season, sunspot cycle
-2. **Frequency dependent** – Only works in 2-30 MHz range
-3. **Absorption** – D layer absorbs lower frequencies during daytime
-4. **Fading** – Multipath from multiple layers causes signal variation
-5. **Skip zone** – Dead zone between ground wave coverage and first sky wave return
-6. **Noise** – Sporadic E and atmospheric noise affect reception
-7. **Predictability** – Requires propagation forecasting
-## 5.6 Applications
-### 5.6.1 Primary Applications
+## 5.4 Adv/Disadv
+- Adv
+	1. **Long distance** – Enables global communication (hundreds to thousands of km)
+	2. **No infrastructure** – No satellites, cables, or repeaters needed
+	3. **Wide coverage** – Large area coverage with skip distance
+	4. **Beyond horizon** – Not limited by Earth's curvature
+	5. **Low power potential** – Can work with few kW
+	6. **Frequency flexibility** – Different layers support different frequency ranges
+- Disadv
+	1. **Unreliable** – Highly variable with time of day, season, sunspot cycle
+	2. **Frequency dependent** – Only works in 2-30 MHz range
+	3. **Absorption** – D layer absorbs lower frequencies during daytime
+	4. **Fading** – Multipath from multiple layers causes signal variation
+	5. **Skip zone** – Dead zone between ground wave coverage and first sky wave return
+	6. **Noise** – Sporadic E and atmospheric noise affect reception
+	7. **Predictability** – Requires propagation forecasting
+---
+## 5.5 Applications
+### 5.5.1 Primary Applications
 1. **International broadcasting** – Shortwave radio (BBC, Voice of America, etc.)
 2. **Long-distance amateur radio** – Ham radio operators (DX communication)
 3. **Maritime communication** – Ship-to-shore HF links
@@ -579,7 +602,7 @@ Minimum skip distance depends on:
 5. **Military communication** – Tactical and strategic HF networks
 6. **Emergency communication** – Disaster relief when infrastructure fails
 7. **Remote area communication** – Polar regions, deserts, oceans
-### 5.6.2 Typical Use Cases by Layer
+### 5.5.2 Typical Use Cases by Layer
 
 | Layer          | Typical Use                         |
 | -------------- | ----------------------------------- |
@@ -587,7 +610,7 @@ Minimum skip distance depends on:
 | E (day)        | Medium-distance SW communication    |
 | F₁ (day)       | Long-distance HF                    |
 | F₂ (day/night) | Primary for global HF communication |
-### 5.6.3 Frequency Selection Guidelines
+### 5.5.3 Frequency Selection Guidelines
 
 | Condition       | Usable Frequencies                                                  |
 | --------------- | ------------------------------------------------------------------- |
@@ -595,7 +618,9 @@ Minimum skip distance depends on:
 | Nighttime       | Lower frequencies (2-10 MHz) – D layer absent, E/F lower ionization |
 | Sunspot maximum | Higher usable frequencies (up to 30+ MHz)                           |
 | Sunspot minimum | Lower usable frequencies (down to 2-3 MHz)                          |
-## 5.7 Frequency Spectrum Overview
+
+---
+## 5.6 Frequency Spectrum Overview
 | Frequency         | Range               | Radio Presence |
 | ----------------- | ------------------- | -------------- |
 | 10 Hz - 1 kHz     | VLF                 | —              |
@@ -616,7 +641,8 @@ Minimum skip distance depends on:
 | 10²⁰ - 10²² Hz    | Gamma               | —              |
 | 10²² - 10²⁴ Hz    | Cosmic              | —              |
 
-## 5.8 Summary Table: All Propagation Modes
+---
+## 5.7 Summary Table: All Propagation Modes
 | Mode             | Frequency  | Range       | Mechanism               | Reliability                      |
 | ---------------- | ---------- | ----------- | ----------------------- | -------------------------------- |
 | Ground wave      | <2 MHz     | ~1000 km    | Diffraction             | High                             |
@@ -631,6 +657,7 @@ Minimum skip distance depends on:
 - For a regular layer, it is proportional to the square root of the maximum electron density in the layer:  
   $\large f_c \propto \sqrt{N_{max}}$
   $\large f_c = 9\sqrt{N_{max}}$
+---
 ## 6.2 Maximum Usable Frequency (MUF)
 - When the frequency exceeds $f_c$, the return will depend upon the **angle of incidence** at a particular ionospheric layer.
 - Thus, for a specified angle of incidence, there will be a maximum frequency which will be reflected back.
@@ -638,15 +665,10 @@ Minimum skip distance depends on:
 - Beyond MUF, the wave will not be returned.
 - Sky wave requires the angle of reflection to be $90^\circ$.
 ### 6.2.1 Derivation of MUF Formula
-
 Let:
-
 - $\phi_i$ = incident angle
-    
 - $\phi_r$ = reflection angle
-    
 - $n$ = refractive index
-    
 
 We have:  
 $$\large
@@ -670,10 +692,7 @@ $$\large
 f_{MUF} = f_c\cdot \sec(\phi_i)
 $$
 
-
-
-
-
+---
 ## 6.3 Skip Distance
 ### 6.3.1 When earth is flat
 - figure for derivation
@@ -700,6 +719,7 @@ Rearranging, **Final equation**:
 $$\large
 d = 2h\sqrt{\dfrac{f_{MUF}^2}{f_{c}^2} - 1}
 $$
+---
 ### 6.3.2 When earth is curved
 ![[Pasted image 20260404104944.png]]
 **Parameters:**
@@ -707,6 +727,7 @@ $$
 - $R$ = radius of Earth
 - $h$ = height of the ionospheric layer
 - $\theta$ = half of the central angle subtended by the arc
+---
 **Step 1: Basic geometric relations**
 Arc length:  
 $$\large d' =2Rθ$$
@@ -719,6 +740,7 @@ $$
 $$OD=R\cos⁡(θ)$$
 $$BD=OE+EB−OD=R+h−R\cos⁡(θ)$$
 ​
+---
 **Step 2: Express $\cos(\theta_i)$**
 $$\large
 AB = \sqrt{(AD)^2+(BD)^2} = \sqrt{(R\sin(\theta))^2 + (R + h - R\cos(\theta))^2}$$
@@ -733,6 +755,7 @@ From MUF relation:
 $$\large
 \dfrac{f_c^2}{f^2_{MUF}} = (\cos(\theta_i))^2
 $$
+---
 **Step 3: Approximations for small $\theta$**
 We know:
 $$\large
@@ -767,6 +790,7 @@ $$\large
 \cos(\theta) = 1 - \dfrac{h}{R} = 1 - \dfrac{d'^2}{8R^2}
 $$
 
+---
 **Step 4: Derive $f_{MUF}$ in terms of $d'$**
 From $$\large f_{MUF}^2 = f_c^2 \sec^2(\theta_i) = f_c^2 \cdot \frac{1}{\cos^2(\theta_i)}$$
 we get, 
@@ -796,6 +820,7 @@ $$\large
 f_{MUF} = f_c \sqrt{ 1 + \dfrac{d'^2/4}{h+\dfrac{d'^2}{8R}} }
 $$
 
+---
 **Step 5: Express skip distance in terms of MUF**
 Let:
 $$\large
@@ -807,6 +832,7 @@ d' = 2 \left( h + \dfrac{d'^2}{8R} \right)\ X
 $$
 This is a quadratic equation, in $d'$. solving for $d'$ we get:
 $$\large d' = \dfrac{2R}X \pm \sqrt{\left( \dfrac RX \right)^2 - 2hR}$$
+---
 ## 6.4 Additional Frequency Definitions
 1.  Lowest Usable Frequency (LUF)
 The frequency below which the entire power gets absorbed by the ionosphere.
@@ -961,6 +987,7 @@ The frequency at which there is optimum return of wave energy (maximum signal st
 - **Wavelength:** 3 – 300 $\mu$m
 - **Propagation:** Strictly LOS, significant atmospheric absorption (does not penetrate fog).
 - **Applications:** Optical fiber communications, very short-range wireless, building-to-building links, night vision, heating.
+---
 ## 7.5 Summary: Long Wave, Medium Wave, and Short Wave
 | Feature                  | **Long Wave (LW)**                                          | **Medium Wave (MW)**                                     | **Short Wave (SW)**                                                         |
 | ------------------------ | ----------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------------- |
