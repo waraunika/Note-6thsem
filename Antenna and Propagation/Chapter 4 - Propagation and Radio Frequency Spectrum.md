@@ -809,15 +809,15 @@ $$\large
 $$
 Therefore:
 $$\large
-f_{MUF}^2 = f_c^2 \cdot\dfrac{\dfrac{d'^2}{4} + h+\dfrac{d'^2}{8R}}{h+\dfrac{d'^2}{8R}}
+f_{MUF}^2 = f_c^2 \cdot\dfrac{\dfrac{d'^2}{4} + h+\dfrac{d'^2}{8R}}{\left(h+\dfrac{d'^2}{8R}\right)^2}
 $$
 Simplify to get **main formula**:
 $$\large
-f_{MUF}^2 = f_c  \left(1 + \dfrac{d'^2/4}{h+\dfrac{d'^2}{8R}} \right)
+f_{MUF}^2 = f_c  \left(1 + \dfrac{d'^2/4}{\left( h+\dfrac{d'^2}{8R} \right)^2} \right)
 $$
 **Final curved Earth MUF Formula**:
 $$\large
-f_{MUF} = f_c \sqrt{ 1 + \dfrac{d'^2/4}{h+\dfrac{d'^2}{8R}} }
+f_{MUF} = f_c \sqrt{ 1 + \dfrac{d'^2/4}{\left(h+\dfrac{d'^2}{8R}\right)^2} }
 $$
 
 ---
@@ -831,7 +831,7 @@ $$\large
 d' = 2 \left( h + \dfrac{d'^2}{8R} \right)\ X
 $$
 This is a quadratic equation, in $d'$. solving for $d'$ we get:
-$$\large d' = \dfrac{2R}X \pm \sqrt{\left( \dfrac RX \right)^2 - 2hR}$$
+$$\large d' = \dfrac{2R}X \pm 2\sqrt{\left( \dfrac RX \right)^2 - 2hR}$$
 ---
 ## 6.4 Additional Frequency Definitions
 1.  Lowest Usable Frequency (LUF)

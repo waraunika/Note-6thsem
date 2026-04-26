@@ -1,0 +1,11 @@
+# 1 Concept and Definitions
+- Definition:
+	- An optical fiber is a
+	- flexible transparent fiber
+	- made of glass (silica) or plastic
+	- that acts as a waveguide for light.
+- It is slightly thicker than human hair
+- It is used to transmit light between two ends of fiber.
+- First developed: 1970
+- Revolutionized: Telecommunications, enabling the Information Age
+- Core principle: Total Internal Reflection (TIR)
