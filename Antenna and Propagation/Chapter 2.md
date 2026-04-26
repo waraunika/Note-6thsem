@@ -1,25 +1,25 @@
-# 2.1 Basic Antenna Parameters
-## A. Radiation pattern
+# 1 Basic Antenna Parameters
+## 1.1 Radiation pattern
 - graphical representation of the time average power density of the electric or magnetic field strength of an antenna as a function of space coordinate is known as radiation pattern.
 - if power taken for plotting -> power pattern
 - electric field -> electric field pattern
 - same for mag field
 - 3 patterns
-### A.1 Isotropic Radiation
+### 1.1.1 Isotropic Radiation
 - hypothetical, equal radiation in all direction 
 - independent of $\theta$, $\phi$,
 - no antenna is isotropic
 - 0 db antenna (no gain)
 - can be produced with combination of dipole antenna placed perpendicular to each other.
-### A.2 Omnidirectional Radiation
+### 1.1.2 Omnidirectional Radiation
 - antenna having the property of radiating or receiving EM waves as a function of elevation angle ($\theta$) is called omnidirectional pattern.
-### A.3 Directional Radiation
+### 1.1.3 Directional Radiation
 - antenna having the property of radiating more efficiently in some direction than in other direction
 - its radiation pattern -> directional radiation pattern
 - function of $\theta$ and/or $\phi$ 
 - figure:
   ![[Pasted image 20260126203218.png | 600]]
-## B. BeamWidth
+## 1.2 BeamWidth
 ![[Pasted image 20260126203533.png | 600]]
 - Major lobe:
 	- the portion of the radiation pattern containing the direction of maximum radiation
@@ -32,19 +32,7 @@
 	- SLR of 20 db or less is usually harmful in most application.
 	- front to back ratio (FBR) = $\dfrac{max\ P_{av}\ in\ back\ lobe}{max\ P_{av}\ in\ main\ lobe}$
 	- minimum value is used
-## C. Antenna Gain
-- ndjasda
-- kjadjnasd
-	- dnajs dasdjas
-	- adjkdndasjndjas
-		- kajsdjasndasjd
-			- pjsncasn
-			1. jdnjsandjsa
-			2. jnjan
-			3. snjansd
-			4. kjsanj
-
-
+## 1.3 Antenna Gain
 - this antenna gain is used for only aperture antenna
 - can be for both, Tx or Rx
 - only depends on $\lambda$
@@ -53,7 +41,7 @@
 - 4 $\pi$ / $\lambda$^2 is universal constant
 - $\eta$ is antenna efficiency where
 - $\eta$ = $$G \left( \dfrac{\lambda}{\pi D}\right)^2$$
-## D. Free space loss
+## 1.4 Free space loss
 - L$_{free}$ = $$\left( \dfrac{4\pi r}{\lambda} \right)^2 $$
 - loss due to signal spreading over distance
 - loss is directly proportional to square of freuency, 
@@ -61,7 +49,7 @@
 - in db, $$ [L_{free}] = 10\ \log\left(\dfrac{4\pi R}{\lambda}\right)^2$$
 - so, $$[L_{free}] = 20\log(4\pi) + 20\log\left(\frac{R}{\lambda}\right)$$
 - here, 20 log(4$\pi$) = 22
-## E. Antenna Noise Temperature
+## 1.5 Antenna Noise Temperature
 - included with system noise temperature
 - T$_0$ = k T$_s$ * B
 	- where k = Boltzmann's constant = 1.381 * 10$^{-23}$ J/K
@@ -69,7 +57,7 @@
 	- B = bandwidth of frequency being used.
 - measured in Rx side
 - also called power of noise P$_n$
-## F. Efficiency
+## 1.6 Efficiency
 - figure:
 ![[Pasted image 20260126205302.png | 500]]
 - defined as the ratio of power radiated to the total power supplied in Tx
@@ -99,7 +87,7 @@
 			- Zin = antenna input impedance
 			- Z0 = characteristic imepdance of the transmission line
 	- voltage standing wave ratio: $$\text{VSWR} = \dfrac{1 + \Gamma}{1 -\ \Gamma}$$
-## G. Effective Isotropic Radiated Power
+## 1.7 Effective Isotropic Radiated Power
 - EIRP = $$\dfrac{P_t\ *\ G_t}{L_{wg}}$$
 - where, 
 	- Pt = transmitting power
@@ -107,14 +95,14 @@
 	- Lwg = waveguide (cable loss)
 - EIRP = \[P$_t$] + \[G$_t$] - \[L$_{wg}$] dB W
 - it is always measured in Tx terminal
-## H. Power Flux Density
+## 1.8 Power Flux Density
 - aka radiation power density
 - short term PFD = $$\dfrac{\text{EIRP}}{4\pi R^2}$$
 - in log term: $$[PFD] = [P_t] + [G_t] - [L_{wg}] - [4\pi R^2]\ \text{dB w/m}^2 $$
 - where R is the distance between Tx and Rx
 - PFD = EIRP reduced by 4$\pi$ times square of R
 - it is function of radiation Tx antenna, measured in Tx antenna
-## I. Receiving Power
+## 1.9 Receiving Power
 - Main formula : $$P_{r}=A_{r}PFD$$
 - Solving further, $$P_{r}=A_{R}\cdot\frac{P_{t}G_{t}}{4\pi r^{2}\cdot L_{wg}}$$
 	- this is called Friis formula
@@ -126,37 +114,37 @@
 - next step, simplify: $$P_r = \frac{P_{t}\cdot A_{t}\cdot G_{r}}{L_{f}}\cdot\frac{1}{L_{wg}}\cdot\frac{4\pi}{\lambda^{2}}$$
 - ignore $\dfrac{4\pi}{\lambda^2}$ as it is universal constant, finally in log form:
 - final expression: $$[P_r] = [P_t] + [A_t] + [G_r] - [L_f] - [L_{wg}]$$
-## J. Receiving Power Intensity
+## 1.10 Receiving Power Intensity
 - here, $$P_{r}=PDF\cdot A_{eff}$$
 - we have for A effective: $$\frac{P_{t}G_{t}}{L_{wg}\cdot4\pi r^{2}}\cdot\eta\cdot A_{phy}$$
 - replacing for each formula for eta and A physical: $$\frac{P_{t}G_{t}}{L_{wg}\cdot4\pi r^{2}}\cdot G_{r}\left(\frac{\lambda}{\pi D}\right)^{2}\cdot\frac{\pi D^{2}}{4}$$
 - simplifying: $$\frac{P_{t}G_{t}G_{r}}{L_{wg}}\cdot\left(\frac{\lambda}{4\pi R}\right)^{2}$$
 - final result: $$P_{r}=\frac{P_{t}G_{t}G_{r}}{L_{wg}\cdot L_{f}}$$
-## K. Carrier to noise Ratio (C/N R)
+## 1.11 Carrier to noise Ratio (C/N R)
 - it is measured in receiving side at the input of antenna
 - C/N R = $\dfrac{P_r}{P_n}$ = $$\frac{P_{t}G_{t}G_{r}}{L_{f}}\cdot\left(\frac{\lambda}{4\pi r}\right)^{2}\cdot\frac{1}{kT_{s}B}$$
 - P$_r$ is receiving power intensity
 - antenna catches desired signal including noise power
 - CNR must be high so that more desired signal is received than noise
-## L. Carrier to Noise density (C/T)
+## 1.12 Carrier to Noise density (C/T)
 - It is measured, after Tuning circuit of Rx antenna
 - C/T ratio = C/N$_0$ = $$\frac{C}{N_{0}}=\frac{C}{N}\cdot B=\frac{P_{r}}{P_{n}}\cdot B=\frac{P_{r}}{kT_{s}B}\cdot B=\frac{P_{r}}{kT_{s}}$$
 - then, C  = $P_{r}=P_{t}G_{t}G_{r}\cdot\left(\frac{\lambda}{4\pi r}\right)^{2}\ \text{in\ J/K}$  
 - then, $N_{0}=kT_{s}$
-## M. Antenna Aperture
+## 1.13 Antenna Aperture
 - antenna aperture area can be effective or physical
 - A$_{eff}$ is always $\eta$ times smaller than A$_{phy}$
 - then, A$_{eff}$ = $\eta$  A$_{phy}$
 - similarly, it is applied for both in antenna length as well
 - L$_{eff}$ = $\eta$  L$_{phy}$
-## N. Gain to Noise Ratio G/T
+## 1.14 Gain to Noise Ratio G/T
 - aka figure of merit
 - ratio of receiving antenna gain to antenna temperature
 - it is measured in Rx side
 - G/T determines the quality and signal strength  and standard of earth station (ES)
 - imp factor in link design
 - link could be up/down link
-## O. Bandwidth
+## 1.15 Bandwidth
 - the range of frequency within the performance of the antenna
 	- with respect to some characteristics, conforms to a specific standard.
 - BW = $\Delta$ f = f$_2$ - f$_1$ 
@@ -167,7 +155,7 @@
 - 1 < FBW < 20: broadband
 - 20 < FBW < 50: wide band
 - 50 < FBW: ultra wide band
-## P. Beam Efficiency
+## 1.16 Beam Efficiency
 - maybe called radiation efficiency
 - used to judge quality of Tx and Rx antennas
 - for an antenna with its major lob directed along the z axis ($\theta$ = 0), the beam efficiency (BE) is described by: $BE=\dfrac{\text{Power\ transmitted\ with\ cone\ angle}\theta_{1}}{\text{Power\ transmitted\ by\ the\ antenna}}$ 
@@ -184,7 +172,7 @@
 	-  $\Omega_A$ = total beam area
 - ratio of main lobe to the total beam area $\dfrac{\Omega_m}{\Omega_A}$ = stray factor = $\epsilon_m$
 - and  $\epsilon_M$ + $\epsilon_m$ = 1
-## Q. Radiation Intensity
+## 1.17 Radiation Intensity
 - power radiated from an antenna per unit solid angle
 - measured in watts per steradian or per square degree
 - ratio of radiation intensity U($\theta, \phi$ ) as a function of angle to its maximum value.
@@ -192,7 +180,7 @@
 - where as the poynting vector S depends on the distance from the antenna
 	- that is varying inversely as the square of distance
 - radiation intensity is independent of distance
-## R. Input Impedance
+## 1.18 Input Impedance
 - aka Zin
 - impedance presented by antenna at its terminals
 - ratio of voltage to current at a terminals
@@ -213,7 +201,7 @@
 			- ohmic or load resistance
 			- for efficient radation, Rr must be very higher than R L
 			- loss resistance gives rise to power loss
-## S. Polarization
+## 1.19 Polarization
 - the orientation of electric field in the space coordinates
 - when receiving antenna alignment is not properly aligned with received wave, then polarization loss occurs
 - polarizer: it is fitted inside feed horn
@@ -231,7 +219,7 @@
 - polarization in the direction of maximum gain
 - frequency diversity or frequency reused techniques based on polarization
 	- for virtually doubled bandwidth
-## T. Directivity
+## 1.20 Directivity
 - ratio of radiation intensity in a given direction from the antenna to the radiation intensity averaged overall direction
 - the average radiation intensity is equal to the total power radiated by the antenna divided by 4$\pi$
 - D = $$=\ \frac{U_{max}}{U_{av}}=\frac{U_{m}}{U_{0}}=\frac{4\pi U_{m}}{4\pi U_{0}}=\frac{4\pi U_{m}}{P_{0}}$$
@@ -244,8 +232,8 @@
 - G = $\eta$ D
 - this $\eta$ has to do only with ohmic losses in the antenna
 - in Tx, these losses involve power fed to the antenna which is radiated but heats the antenna structure.
-# 2.2 Pattern Multiplication
-## 2.2.A Concept
+# 2 Pattern Multiplication
+## 2.1 Concept
 - Definition:
 	- pattern multiplication states that the total far-field radiation pattern of any array is the product of the element pattern (single antenna) and the array factor (pattern due to array configuration).
 	- it assumes identical, similarly oriented elements.
@@ -269,7 +257,7 @@
 	- it enables beam steering in both azimuth and elevation.
 	- provides higher gain, narrower beams and better sidelobe control than linear arrays
 	- used in advanced radar, MIMO systems, and satellite communications.
-## 2.2.B End Fire and Broadside Array
+## 2.2 End Fire and Broadside Array
 | Parameter                    | End Fire                                                                                                                    | Broadside Array                                                                                                               |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Direction of max radiation   | Along the axis of the array (parallel to the line of elements)                                                              | Perpendicular (broadside) to the axis of the array                                                                            |
@@ -282,12 +270,12 @@
 | multiplying of main lobe     | typically one main lobe (unidirectional)                                                                                    | typically 2 main lobes                                                                                                        |
 | no. of element               | not significant if odd/even                                                                                                 | usually odd number.                                                                                                           |
 | figure:                      | ![[b.jpg]]                                                                                                                  | ![[a.jpg]]                                                                                                                    |
-## 2.2.C Various Radiation Patterns
+## 2.3 Various Radiation Patterns
 ![[Pasted image 20260126223238.png]]
 ![[2l.png]]
 ![[3l2.jpg]]
 ![[3l22.png]]
-## 2.2.D Array of two element isotropic radiation
+## 2.4 Array of two element isotropic radiation
 ![[Pasted image 20260126223826.png]]
 ![[Pasted image 20260126223838.png]]
 - +ve term will produce retardation
@@ -302,18 +290,18 @@
 - $$2E_{0}\left(\frac{e^{-j\left(\frac{\alpha}{2}+\frac{2\pi}{\lambda}\cdot d\cos\left(\theta\right)\right)}+e^{j\left(\frac{\alpha}{2}+\frac{2\pi}{\lambda}\cdot d\cos\left(\theta\right)\right)}}{2}\right)$$
 - $$E=2E_{0}\cos\left(\frac{\alpha}{2}+\frac{2\pi}{\lambda}\cdot d\cos\left(\theta\right)\right)$$
 - $$E_{n}=\frac{E}{2E_{0}}=\cos\left(\frac{\alpha}{2}+\frac{2\pi}{\lambda}\cdot d\cos\left(\theta\right)\right)$$
-### D.i Conditions
-#### D.i.a  Broadside
+### 2.4.1 Conditions
+#### 2.4.1.1 Broadside
 condition: d = $\lambda$/2, $\alpha$ = 0
 En = cos$\left(\dfrac{\pi}{2}\cos(\theta)\right)$
 figure:
 ![[1.jpg | 400]]
-#### D.i.a  Endfire - 1
+#### 2.4.1.2 Endfire - 1
 condition: d = d = $\lambda$/2, $\alpha$ = $\pi$
 En = - sin$\left(\dfrac{\pi}{2}\cos(\theta)\right)$
 figure:
 ![[2.jpg | 440]]
-#### D.i.a  Endfire - 2
+#### 2.4.1.3 Endfire - 2
 condition: d = d = $\lambda$/2, $\alpha$ = $\pi$/2
 En = cos$\left(\dfrac{\pi}{4} + \dfrac{\pi}{2}\cos(\theta)\right)$
 figure:
